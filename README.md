@@ -1,0 +1,30 @@
+# Autorite 2.0 — Codex Handoff v1
+
+## Published sites
+- [Knowledge & Publication](https://autorite.org)
+- [Open Laboratory](https://autorite.net)
+
+Both sites are public and in English. Their www hostnames also work over HTTPS. They share the preparation record in `canonical/site-state.json`; site publication does not approve baseline freeze or research execution.
+
+Start with `CODEX_MASTER_INSTRUCTIONS.md`, then `FIRST_CODEX_PROMPT.txt`.
+
+## Authoritative baseline source
+Use `baseline/` as the authoritative bootstrap source, as confirmed by the user on 2026-10-07. Its updated publishing and site architecture documents (v0.2) take precedence over the older copies in `autorite-2-baseline-v0.1/`.
+
+`autorite-2-baseline-v0.1/` is a historical input package, not a second canonical source. Preserve it for provenance. This source selection does not itself approve a freeze or a release tag.
+
+Implementation clarifications: [handoff decisions](HANDOFF_CLARIFICATIONS.md), [data contract](RESEARCH_DATA_CONTRACT.md), [Cycle governance](CYCLE_GOVERNANCE.md), and [research execution gates](RESEARCH_EXECUTION_READINESS.md).
+
+This package contains:
+- frozen Baseline v0.1 source documents;
+- two-site product architecture;
+- monorepo blueprint;
+- research data contract;
+- governance and CI/CD plan;
+- implementation roadmap;
+- first Codex execution prompt;
+- Decision-0001 locking the two-site launch.
+
+The handoff intentionally stops before RP002A execution and before DNS/secrets.
+
+Additional locked decisions: open-ended program / closable Cycles, mandatory Cycle publications, Horizon identity, and shared obligation-based Cycle Ring.

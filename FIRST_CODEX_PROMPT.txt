@@ -1,0 +1,29 @@
+# FIRST_CODEX_PROMPT.txt
+
+You are bootstrapping Autorite 2.0 from the attached `Autorite_2_Codex_Handoff_v1` package.
+
+Read `CODEX_MASTER_INSTRUCTIONS.md` first, then the complete `baseline/` folder and the remaining handoff plans. Treat Baseline v0.1 as frozen scientific content. Do not invent, reinterpret or expand the theory during bootstrap.
+
+Your first task is M0 + M1 only:
+Apply `HANDOFF_CLARIFICATIONS.md`, the completed `RESEARCH_DATA_CONTRACT.md` and root `CYCLE_GOVERNANCE.md` as implementation rules. Use `RESEARCH_EXECUTION_READINESS.md` for pending execution gates; do not invent experiment parameters. M0 preserves the baseline snapshot; the release tag follows the M6 audit and explicit approval.
+
+1. inspect the package and report contradictions or missing implementation-critical information;
+2. create the monorepo structure in `REPOSITORY_BLUEPRINT.md`;
+3. preserve an immutable `baseline/v0.1` snapshot and create living `canonical/` copies;
+4. preserve `DECISION-0001` and `DECISION-0002`; the latter locks Horizon identity, open-ended program semantics and the shared Cycle Ring: autorite.org = public knowledge/publication; autorite.net = live research lab/network; Git = canonical research record;
+5. implement the v0.1 research record schema and validators using only the baseline object types/statuses/relations;
+6. create Cycle 1 package skeletons without fabricating results;
+7. add GitHub PR/issue templates and CI validation skeletons;
+8. produce `BOOTSTRAP_AUDIT.md` listing every implementation choice, deviation, unresolved decision and blocker.
+
+Do NOT yet:
+- execute RP002A;
+- perform literature collision;
+- reconstruct DAM X without source documents;
+- build a new ontology;
+- add object/status/relation types;
+- create a graph database;
+- build the final visual design of either site;
+- configure DNS or request secrets.
+
+Stop and ask me if faithful implementation requires changing a frozen scientific definition or creating a second source of truth.

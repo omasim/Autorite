@@ -1,0 +1,124 @@
+{
+  "updated_at": "2026-10-08",
+  "phase": "Preparation",
+  "cycle": {
+    "number": "01",
+    "title": "Foundations Under Test",
+    "status": "PLANNED",
+    "obligations": [
+      "RP002A package disposition",
+      "RP003 package disposition",
+      "RP004 package disposition",
+      "RP005A package disposition",
+      "DAM X pilot",
+      "Checkpoint A",
+      "Forward/backward research graph validation",
+      "Synthesis Review 1",
+      "Foundation Review 1",
+      "What Changed",
+      "What Remains Open",
+      "Transition Record / Cycle 2 decision",
+      "Close bundle and knowledge snapshot"
+    ],
+    "resolved_keys": []
+  },
+  "questions": [
+    [
+      "Q0",
+      "Continuation / Preservation",
+      "Which properties of states, paths or genealogies are required by specified continuation criteria?",
+      "ACTIVE"
+    ],
+    [
+      "Q1",
+      "Revision / Reflexivity",
+      "What follows when transformation rules, criteria or representations become objects of transformation?",
+      "OPEN"
+    ],
+    [
+      "Q2",
+      "Reachability",
+      "Which states and targets remain reachable under specified transformations, resources, policies and horizons?",
+      "ACTIVE"
+    ],
+    [
+      "Q3",
+      "Representation",
+      "Which distinctions must a representation preserve for specified inquiries or actions?",
+      "ACTIVE"
+    ],
+    [
+      "Q4",
+      "Realized History",
+      "Which distinctions in realized transformation structure must remain recoverable?",
+      "ACTIVE"
+    ],
+    [
+      "Q5",
+      "Relational Dependence",
+      "When does relational information add explanatory or functional value beyond local properties?",
+      "OPEN"
+    ]
+  ],
+  "packages": [
+    {
+      "id": "RP002A",
+      "title": "When history helps prediction",
+      "question": "In finite partially observed stochastic processes, when does recursively updated history recover predictive distinctions unavailable in current observation?",
+      "cases": "E0: present sufficient \u00b7 E1: history disambiguates \u00b7 E2: history is future-irrelevant",
+      "limit": "Does not establish universal or fundamental memory, or full-history retention.",
+      "source": "RP002A_PREREGISTRATION.md"
+    },
+    {
+      "id": "RP003",
+      "title": "From local to global preservation",
+      "question": "When do local continuation and preservation judgments support a global judgment?",
+      "cases": "Transitive chain \u00b7 monotonic drift \u00b7 out-and-back loop \u00b7 critical jump",
+      "limit": "Does not establish a metaphysical identity theory.",
+      "source": "RP003_PROTOCOL.md"
+    },
+    {
+      "id": "RP004",
+      "title": "Branching lineages",
+      "question": "Which distinctions are required for continuation claims under copying, branching and merging?",
+      "cases": "Linear succession \u00b7 copy \u00b7 symmetric fork \u00b7 independent duplicate \u00b7 merge",
+      "limit": "Current-state equivalence does not determine lineage relations. Human intuition is not ground truth.",
+      "source": "RP004_PROTOCOL.md"
+    },
+    {
+      "id": "RP005A",
+      "title": "Constraints and viable futures",
+      "question": "Can targeted restrictions steer horizon-limited decisions away from states with fewer viable future targets?",
+      "cases": "Unnecessary restriction \u00b7 correct protective restriction \u00b7 harmful over-restriction",
+      "limit": "Removing edges does not expand raw structural reachability. Any benefit is conditional.",
+      "source": "RP005A_PROTOCOL.md"
+    }
+  ],
+  "changes": [
+    [
+      "2026-10-08",
+      "RP002A prior-art investigation started",
+      "The first literature review and research-start workflow are documented. Experimental protocol choices and GitHub setup remain open; no experiments have been run."
+    ],
+    [
+      "2026-10-07",
+      "Both English sites are live",
+      "The knowledge site and open laboratory are publicly available at autorite.org and autorite.net, with verified HTTPS."
+    ],
+    [
+      "2026-10-07",
+      "Publish the process before running research",
+      "The knowledge and laboratory sites are being prepared before research execution. Both sites will be in English."
+    ],
+    [
+      "2026-10-07",
+      "Implementation contracts completed",
+      "Research records, Cycle obligations, closure and pre-execution readiness rules were specified."
+    ],
+    [
+      "2026-10-07",
+      "The updated baseline selected",
+      "The updated publishing architecture takes precedence. The older package remains historical source material."
+    ]
+  ]
+}

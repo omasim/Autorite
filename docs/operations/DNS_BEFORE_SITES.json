@@ -1,0 +1,108 @@
+[
+  {
+    "zone": {
+      "id": "84452c51316d98ac25ae5ad85734a5e7",
+      "name": "autorite.org"
+    },
+    "result": [
+      {
+        "id": "b749728ca45c36c6a29706d11c4528ff",
+        "name": "autorite.org",
+        "type": "CNAME",
+        "content": "7bfecfc0d9ada63c.vercel-dns-016.com",
+        "proxiable": true,
+        "proxied": false,
+        "ttl": 1,
+        "settings": {
+          "flatten_cname": false
+        },
+        "meta": {},
+        "comment": null,
+        "tags": [],
+        "created_on": "2026-05-30T12:20:55.908756Z",
+        "modified_on": "2026-05-30T12:20:55.908756Z"
+      },
+      {
+        "id": "f6d42d2baf4224f261f2f9c3bca32f1e",
+        "name": "www.autorite.org",
+        "type": "CNAME",
+        "content": "7bfecfc0d9ada63c.vercel-dns-016.com",
+        "proxiable": true,
+        "proxied": false,
+        "ttl": 1,
+        "settings": {
+          "flatten_cname": false
+        },
+        "meta": {},
+        "comment": null,
+        "tags": [],
+        "created_on": "2026-05-30T12:21:06.396318Z",
+        "modified_on": "2026-05-30T12:21:06.396318Z"
+      }
+    ],
+    "success": true,
+    "errors": [],
+    "messages": [],
+    "result_info": {
+      "page": 1,
+      "per_page": 100,
+      "count": 2,
+      "total_count": 2,
+      "total_pages": 1
+    },
+    "status": 200
+  },
+  {
+    "zone": {
+      "id": "d4ab85a3ff81f09cb84cdeeebc4a133e",
+      "name": "autorite.net"
+    },
+    "result": [
+      {
+        "id": "1db176efce8a167b189794af243fb25f",
+        "name": "autorite.net",
+        "type": "CNAME",
+        "content": "7bfecfc0d9ada63c.vercel-dns-016.com",
+        "proxiable": true,
+        "proxied": false,
+        "ttl": 1,
+        "settings": {
+          "flatten_cname": false
+        },
+        "meta": {},
+        "comment": null,
+        "tags": [],
+        "created_on": "2026-05-30T12:18:53.705118Z",
+        "modified_on": "2026-05-30T12:18:53.705118Z"
+      },
+      {
+        "id": "09e25f4d2e9b524cf46ffe007d986e6c",
+        "name": "www.autorite.net",
+        "type": "CNAME",
+        "content": "7bfecfc0d9ada63c.vercel-dns-016.com",
+        "proxiable": true,
+        "proxied": false,
+        "ttl": 1,
+        "settings": {
+          "flatten_cname": false
+        },
+        "meta": {},
+        "comment": null,
+        "tags": [],
+        "created_on": "2026-05-30T12:19:03.883968Z",
+        "modified_on": "2026-05-30T12:19:03.883968Z"
+      }
+    ],
+    "success": true,
+    "errors": [],
+    "messages": [],
+    "result_info": {
+      "page": 1,
+      "per_page": 100,
+      "count": 2,
+      "total_count": 2,
+      "total_pages": 1
+    },
+    "status": 200
+  }
+]

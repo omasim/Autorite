@@ -1,0 +1,350 @@
+[
+  {
+    "key": "zero-paper",
+    "path": "baseline/ZERO_PAPER.md",
+    "title": "Zero Paper",
+    "category": "Foundations",
+    "summary": "Start here for the research program\u2019s purpose, commitments and limits.",
+    "primary_site": "org",
+    "sites": [
+      "org"
+    ],
+    "label": "Baseline source",
+    "recommended": true
+  },
+  {
+    "key": "00-research-constitution",
+    "path": "baseline/00_RESEARCH_CONSTITUTION.md",
+    "title": "Research Constitution",
+    "category": "Foundations",
+    "summary": "The principles governing claims, evidence, scope and revision.",
+    "primary_site": "org",
+    "sites": [
+      "org"
+    ],
+    "label": "Baseline source",
+    "recommended": true
+  },
+  {
+    "key": "01-foundational-questions",
+    "path": "baseline/01_FOUNDATIONAL_QUESTIONS.md",
+    "title": "Foundational Questions",
+    "category": "Foundations",
+    "summary": "The six initial questions and their Cycle 1 focus.",
+    "primary_site": "org",
+    "sites": [
+      "org"
+    ],
+    "label": "Baseline source",
+    "recommended": false
+  },
+  {
+    "key": "02-problem-contracts",
+    "path": "baseline/02_PROBLEM_CONTRACTS.md",
+    "title": "Problem Contracts",
+    "category": "Foundations",
+    "summary": "What must be specified for preservation, representation and reachability problems.",
+    "primary_site": "org",
+    "sites": [
+      "org"
+    ],
+    "label": "Baseline source",
+    "recommended": false
+  },
+  {
+    "key": "03-formal-capability-contract",
+    "path": "baseline/03_FORMAL_CAPABILITY_CONTRACT.md",
+    "title": "Formal Capability Contract",
+    "category": "Foundations",
+    "summary": "How mathematical structures are selected by a problem\u2019s obligations.",
+    "primary_site": "org",
+    "sites": [
+      "org"
+    ],
+    "label": "Baseline source",
+    "recommended": false
+  },
+  {
+    "key": "04-domain-programs",
+    "path": "baseline/04_DOMAIN_PROGRAMS.md",
+    "title": "Domain Programs",
+    "category": "Foundations",
+    "summary": "Domain-specific workstreams and the limits of cross-domain transfer.",
+    "primary_site": "org",
+    "sites": [
+      "org"
+    ],
+    "label": "Baseline source",
+    "recommended": false
+  },
+  {
+    "key": "05-legacy-genealogy",
+    "path": "baseline/05_LEGACY_GENEALOGY.md",
+    "title": "Legacy Genealogy",
+    "category": "Archive & provenance",
+    "summary": "How earlier Autorite work enters the research record without privileged authority.",
+    "primary_site": "org",
+    "sites": [
+      "org"
+    ],
+    "label": "Baseline source",
+    "recommended": false
+  },
+  {
+    "key": "06-research-program",
+    "path": "baseline/06_RESEARCH_PROGRAM.md",
+    "title": "Research Program",
+    "category": "Cycle & governance",
+    "summary": "The Cycle 1 packages, checkpoint and exit requirements.",
+    "primary_site": "org",
+    "sites": [
+      "org"
+    ],
+    "label": "Baseline source",
+    "recommended": false
+  },
+  {
+    "key": "07-research-graph-spec",
+    "path": "baseline/07_RESEARCH_GRAPH_SPEC.md",
+    "title": "Research Graph Specification",
+    "category": "Methods & records",
+    "summary": "The graph\u2019s object types, relations and epistemic status vocabularies.",
+    "primary_site": "org",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Baseline source",
+    "recommended": false
+  },
+  {
+    "key": "cycle-01-manifest",
+    "path": "baseline/CYCLE_01_MANIFEST.md",
+    "title": "Cycle 01 Manifest",
+    "category": "Cycle & governance",
+    "summary": "Declared research commitments, non-goals and closure outputs.",
+    "primary_site": "org",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Baseline source",
+    "recommended": true
+  },
+  {
+    "key": "cycle-governance",
+    "path": "baseline/CYCLE_GOVERNANCE.md",
+    "title": "Cycle Governance \u2014 Baseline",
+    "category": "Cycle & governance",
+    "summary": "Finite Cycle lifecycles within an open-ended research program.",
+    "primary_site": "org",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Baseline source",
+    "recommended": false
+  },
+  {
+    "key": "rp002a-preregistration",
+    "path": "baseline/RP002A_PREREGISTRATION.md",
+    "title": "RP002A \u2014 History and Prediction",
+    "category": "Research protocols",
+    "summary": "The question, worlds, baselines and interpretation limits for testing history usefulness.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Protocol draft",
+    "recommended": false
+  },
+  {
+    "key": "rp003-protocol",
+    "path": "baseline/RP003_PROTOCOL.md",
+    "title": "RP003 \u2014 Local\u2013Global Preservation",
+    "category": "Research protocols",
+    "summary": "Controls and counterexamples for local and path-level preservation judgments.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Protocol draft",
+    "recommended": false
+  },
+  {
+    "key": "rp004-protocol",
+    "path": "baseline/RP004_PROTOCOL.md",
+    "title": "RP004 \u2014 Branching Lineages",
+    "category": "Research protocols",
+    "summary": "Copying, branching, duplication and merging across alternative lineage representations.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Protocol draft",
+    "recommended": false
+  },
+  {
+    "key": "rp005a-protocol",
+    "path": "baseline/RP005A_PROTOCOL.md",
+    "title": "RP005A \u2014 Constraints and Viable Futures",
+    "category": "Research protocols",
+    "summary": "Structural reachability and conditional benefits of targeted restrictions.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Protocol draft",
+    "recommended": false
+  },
+  {
+    "key": "damx-archaeology-template",
+    "path": "baseline/DAMX_ARCHAEOLOGY_TEMPLATE.md",
+    "title": "DAM X Archaeology Template",
+    "category": "Archive & provenance",
+    "summary": "A template for source-based archaeology; source documents are still required.",
+    "primary_site": "org",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Baseline source",
+    "recommended": false
+  },
+  {
+    "key": "publishing-and-domain-plan",
+    "path": "baseline/PUBLISHING_AND_DOMAIN_PLAN.md",
+    "title": "Publishing & Domain Plan",
+    "category": "Publishing & operations",
+    "summary": "The updated two-site architecture and its shared research record.",
+    "primary_site": "org",
+    "sites": [
+      "org"
+    ],
+    "label": "Baseline source",
+    "recommended": false
+  },
+  {
+    "key": "site-information-architecture",
+    "path": "baseline/SITE_INFORMATION_ARCHITECTURE.md",
+    "title": "Site Information Architecture",
+    "category": "Publishing & operations",
+    "summary": "The responsibilities, navigation and canonical URL split of the two sites.",
+    "primary_site": "org",
+    "sites": [
+      "org"
+    ],
+    "label": "Baseline source",
+    "recommended": false
+  },
+  {
+    "key": "github-operating-model",
+    "path": "baseline/GITHUB_OPERATING_MODEL.md",
+    "title": "GitHub Operating Model",
+    "category": "Publishing & operations",
+    "summary": "Versioning, research workflow and review conventions.",
+    "primary_site": "org",
+    "sites": [
+      "org"
+    ],
+    "label": "Baseline source",
+    "recommended": false
+  },
+  {
+    "key": "readme",
+    "path": "baseline/README.md",
+    "title": "Baseline Package Guide",
+    "category": "Foundations",
+    "summary": "An index of the baseline package and its freeze rule.",
+    "primary_site": "org",
+    "sites": [
+      "org"
+    ],
+    "label": "Baseline source",
+    "recommended": false
+  },
+  {
+    "key": "implementation-research-data-contract",
+    "path": "RESEARCH_DATA_CONTRACT.md",
+    "title": "Research Data Contract",
+    "category": "Methods & records",
+    "summary": "Implementation fields, references, graph validation and Cycle record rules.",
+    "primary_site": "net",
+    "sites": [
+      "net"
+    ],
+    "label": "Implementation note",
+    "recommended": false
+  },
+  {
+    "key": "implementation-cycle-governance",
+    "path": "CYCLE_GOVERNANCE.md",
+    "title": "Cycle Governance \u2014 Implementation",
+    "category": "Cycle & governance",
+    "summary": "Obligation weights, documented resolutions and the shared progress ring.",
+    "primary_site": "net",
+    "sites": [
+      "net"
+    ],
+    "label": "Implementation note",
+    "recommended": false
+  },
+  {
+    "key": "implementation-research-execution-readiness",
+    "path": "RESEARCH_EXECUTION_READINESS.md",
+    "title": "Pre-execution Readiness",
+    "category": "Research protocols",
+    "summary": "The details each package must complete before confirmatory research starts.",
+    "primary_site": "net",
+    "sites": [
+      "net"
+    ],
+    "label": "Implementation note",
+    "recommended": true
+  },
+  {
+    "key": "implementation-handoff-clarifications",
+    "path": "HANDOFF_CLARIFICATIONS.md",
+    "title": "Handoff Clarifications",
+    "category": "Publishing & operations",
+    "summary": "Recorded source selection and implementation choices without freeze approval.",
+    "primary_site": "net",
+    "sites": [
+      "net"
+    ],
+    "label": "Implementation note",
+    "recommended": false
+  },
+  {
+    "key": "research-start",
+    "path": "docs/research/RESEARCH_START.md",
+    "title": "Research start and publication workflow",
+    "category": "Research working records",
+    "summary": "Research has begun with prior-art investigation. Track the remaining repository, validation and experiment readiness work.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Working research record",
+    "recommended": false
+  },
+  {
+    "key": "rp002a-prior-art-review",
+    "path": "research/RP002A/PRIOR_ART_REVIEW.md",
+    "title": "RP002A initial prior-art review",
+    "category": "Research working records",
+    "summary": "Inspected predictive-state literature, preliminary overlap judgments and open operational protocol decisions. No experiments or novelty claims.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Working research record",
+    "recommended": false
+  }
+]

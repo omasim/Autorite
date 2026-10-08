@@ -1,0 +1,10 @@
+apps/
+output/
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+.env
+.env.*
+!.env.example
+*.tar.gz

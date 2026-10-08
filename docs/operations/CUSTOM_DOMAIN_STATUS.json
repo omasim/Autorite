@@ -1,0 +1,98 @@
+[
+  {
+    "id": "appgdom_6ac6269cddd481918a015e760f855fb8",
+    "project_id": "appgprj_6ac624791b8c819180b917fdc3a28cff",
+    "hostname": "autorite.org",
+    "worker_name": "site---6ac624791b8c819180b917fdc3a28cff",
+    "status": "active",
+    "provider_status": "active",
+    "ssl_status": "active",
+    "cname_target": "custom-domains.chatgpt.site.",
+    "apex_proxy_ipv4_targets": [
+      "162.159.143.30",
+      "172.66.3.26"
+    ],
+    "validation_records": [
+      {
+        "record_type": "TXT",
+        "name": "_openai-site-verification.autorite.org",
+        "value": "openai-site-verification=iCE477bdtDB8nqra7hZVE0vQJYmQbAk9Ep5OqJvBTsg"
+      }
+    ],
+    "last_error": null,
+    "created_at": "2026-10-07T11:01:48.866901+00:00",
+    "updated_at": "2026-10-07T11:07:16.287254+00:00"
+  },
+  {
+    "id": "appgdom_6ac62711b7b48191a225d21f7e300d3b",
+    "project_id": "appgprj_6ac624791b8c819180b917fdc3a28cff",
+    "hostname": "www.autorite.org",
+    "worker_name": "site---6ac624791b8c819180b917fdc3a28cff",
+    "status": "active",
+    "provider_status": "active",
+    "ssl_status": "active",
+    "cname_target": "custom-domains.chatgpt.site.",
+    "apex_proxy_ipv4_targets": [
+      "162.159.143.30",
+      "172.66.3.26"
+    ],
+    "validation_records": [
+      {
+        "record_type": "TXT",
+        "name": "_openai-site-verification.www.autorite.org",
+        "value": "openai-site-verification=EDFEGdoKqiVW0PCm2UXXUkvBGXIujmR_gv_lkIAMtEs"
+      }
+    ],
+    "last_error": null,
+    "created_at": "2026-10-07T11:03:45.718003+00:00",
+    "updated_at": "2026-10-07T11:07:46.847014+00:00"
+  },
+  {
+    "id": "appgdom_6ac626a42f308191afc3eb5d3ee2b9a3",
+    "project_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6",
+    "hostname": "autorite.net",
+    "worker_name": "site---6ac624809e388191b2b9b5ce4d7ee8b6",
+    "status": "active",
+    "provider_status": "active",
+    "ssl_status": "active",
+    "cname_target": "custom-domains.chatgpt.site.",
+    "apex_proxy_ipv4_targets": [
+      "162.159.143.30",
+      "172.66.3.26"
+    ],
+    "validation_records": [
+      {
+        "record_type": "TXT",
+        "name": "_openai-site-verification.autorite.net",
+        "value": "openai-site-verification=7BPJELrsjSteocbYZSctD8POdLTOsoUbvDIsVfPfi8Y"
+      }
+    ],
+    "last_error": null,
+    "created_at": "2026-10-07T11:01:56.184719+00:00",
+    "updated_at": "2026-10-07T11:07:32.572110+00:00"
+  },
+  {
+    "id": "appgdom_6ac6271a3c7c81918ef18f4f4591d960",
+    "project_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6",
+    "hostname": "www.autorite.net",
+    "worker_name": "site---6ac624809e388191b2b9b5ce4d7ee8b6",
+    "status": "active",
+    "provider_status": "active",
+    "ssl_status": "active",
+    "cname_target": "custom-domains.chatgpt.site.",
+    "apex_proxy_ipv4_targets": [
+      "162.159.143.30",
+      "172.66.3.26"
+    ],
+    "validation_records": [
+      {
+        "record_type": "TXT",
+        "name": "_openai-site-verification.www.autorite.net",
+        "value": "openai-site-verification=5GznjPpwDdvUNLrjCtTr0ZdJYOASYsvc1vtxoTUU7EA"
+      }
+    ],
+    "last_error": null,
+    "created_at": "2026-10-07T11:03:54.236692+00:00",
+    "updated_at": "2026-10-07T11:07:27.378402+00:00"
+  }
+]

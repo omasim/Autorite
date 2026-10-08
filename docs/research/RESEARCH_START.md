@@ -1,0 +1,31 @@
+# Research start — 2026-10-08
+
+The user requested that research begin after the public sites were ready, and that both websites and GitHub remain current. This authorizes preparation and investigation; it is not an audited baseline release or a completed experimental preregistration.
+
+## Work begun
+
+RP002A is the first workstream. Its initial prior-art review is recorded in `research/RP002A/PRIOR_ART_REVIEW.md`. No experiment, result, supported claim or resolved Cycle obligation is created by that review.
+
+## Current gaps
+
+- The workspace root is not a Git repository. The intended GitHub repository is awaiting identification; the two Sites repositories contain generated publication output only.
+- Baseline source preservation/checksum audit and explicit release approval remain incomplete.
+- The research-object schema validator, Cycle manifests and package records remain to be implemented.
+- RP002A's full collision assessment and operational protocol choices remain open.
+- DAM X still requires supplied source material.
+
+## Publication workflow
+
+GitHub will hold one canonical repository for source documents, protocols, code, immutable runs, evidence and decisions. Substantive changes follow issue/decision → branch → PR → checks → explicit review → merge. Sites are generated from the merged canonical state and published together. Generated Sites repositories do not become scientific authorities.
+
+Every meaningful research update should state what changed, its evidence and scope, whether it is exploratory or confirmatory, and which public pages are affected. A successful build cannot promote a scientific claim. Runs receive unique directories and preserved manifests/checksums; corrections never overwrite original runs.
+
+## Immediate sequence
+
+1. Identify/connect the GitHub repository and preserve the exact selected baseline.
+2. Implement canonical records, validation and CI; audit bootstrap before requesting a release approval.
+3. Complete RP002A's collision review and protocol supplement, including justified operational parameters.
+4. Freeze the approved confirmatory protocol before observing its outcomes.
+5. Execute, retain artifacts, review results and publish traceable updates to both sites.
+
+RP003 follows RP002A preparation. RP004/RP005A and DAM X retain the baseline ordering and dependencies. Cycle progress remains based on evidence-backed obligation resolutions, not the fact that work has started.

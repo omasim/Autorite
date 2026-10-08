@@ -67,6 +67,6 @@ for site in routes:
  shutil.copyfile(ROOT/'packages/content/document-library.js',ROOT/'apps'/site/'dist/document-library.js')
  (ROOT/'apps'/site/'dist/sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+href(site,p)+'</loc></url>' for p in routes[site])+'</urlset>')
  (ROOT/'apps'/site/'dist/robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+href(site,'/sitemap.xml')+'\n')
- state={'updated_at':data['updated_at'],'source_sha256':hashlib.sha256((ROOT/'canonical/site-state.json').read_bytes()).hexdigest(),'cycle':data['cycle'],'resolved_obligations':len(resolved),'completion':progress}
+ state={'updated_at':data['updated_at'],'source_sha256':hashlib.sha256(json.dumps({'publication':data,'records':records,'cycles':cycle_manifests},sort_keys=True,default=str).encode()).hexdigest(),'cycle':data['cycle'],'resolved_obligations':len(resolved),'completion':progress}
  (ROOT/'apps'/site/'dist/research-state.json').write_text(json.dumps(state,ensure_ascii=False,indent=2))
 print(json.dumps({'pages':{k:len(v) for k,v in routes.items()},'shared_source':'canonical/site-state.json'}))

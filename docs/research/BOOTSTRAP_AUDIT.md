@@ -1,6 +1,6 @@
 # Bootstrap audit and first-pilot approval proposal
 
-Date: 2026-10-08. Approval is pending. No baseline release tag or authorized pilot is created by this audit.
+Date: 2026-10-08. The user approved the proposed audited freeze and isolated pilot on 2026-10-08 by replying “devam” to the explicit approval request. Approval metadata and the baseline release tag are recorded separately; confirmatory execution remains unauthorized.
 
 ## Preserved baseline
 

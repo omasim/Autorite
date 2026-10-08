@@ -52,9 +52,11 @@ class Acceptance(unittest.TestCase):
   c=dict(learning_rate=.001,max_epochs=1,batch_episodes=2,gradient_norm_clip=1.,early_stopping_patience=1)
   with self.assertRaises(TimeoutError):e.train_model(e.RecursiveState(),[[0,1]],[[0,1]],c,1,time.monotonic()-1)
  def test_pilot_gate_before_artifact_creation(self):
-  import subprocess
+  spec=importlib.util.spec_from_file_location('pilot',ROOT/'scripts/rp002a-pilot.py');pilot=importlib.util.module_from_spec(spec);spec.loader.exec_module(pilot)
   path=ROOT/'research/RP002A/runs/unauthorized-acceptance-fixture'
   self.assertFalse(path.exists())
-  result=subprocess.run(['python3',str(ROOT/'scripts/rp002a-pilot.py'),'--execute','--run-id',path.name],cwd=ROOT,capture_output=True,text=True)
-  self.assertNotEqual(result.returncode,0);self.assertIn('not frozen/authorized',result.stderr);self.assertFalse(path.exists())
+  plan_path,plan,base=pilot.load_plan();plan=dict(plan,frozen=False,execution_authorized=False)
+  with self.assertRaisesRegex(PermissionError,'not frozen/authorized'):
+   pilot.execute(plan_path,plan,base,path.name)
+  self.assertFalse(path.exists())
 if __name__=='__main__':unittest.main()

@@ -346,5 +346,19 @@
     ],
     "label": "Working research record",
     "recommended": false
+  },
+  {
+    "key": "rp002a-protocol-draft",
+    "path": "research/RP002A/PROTOCOL_DRAFT.md",
+    "title": "RP002A operational protocol draft",
+    "category": "Research working records",
+    "summary": "Proposed finite worlds, prediction task, information-matched oracle and leakage controls. Parameters and confirmatory freeze remain pending.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Working protocol proposal",
+    "recommended": false
   }
 ]

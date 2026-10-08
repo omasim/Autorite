@@ -28,3 +28,5 @@
 Confirmatory protocol readiness remains pending. The isolated engineering pilot `pilot-20261008-001` is documented in `research/RP002A/PILOT_001_REPORT.md`; it is not confirmatory evidence or a scientific Claim. Does not establish universal or fundamental memory, or full-history retention.
 
 Literature overlap and confirmatory design are reviewed in `COLLISION_REVIEW.md` and `CONFIRMATORY_DESIGN_REVIEW.md`. They identify open precision/convergence gates; package status remains PLANNED for confirmatory research.
+
+`CONVERGENCE_PROTOCOL.md` and `CONVERGENCE_PLAN.json` propose a separately gated exploratory stage. Its runner is implemented, but the plan is unfrozen and execution approval is pending. No additional outcome is recorded.

@@ -444,5 +444,19 @@
     ],
     "label": "Working design review",
     "recommended": true
+  },
+  {
+    "key": "rp002a-convergence-plan",
+    "path": "research/RP002A/CONVERGENCE_PROTOCOL.md",
+    "title": "RP002A exploratory convergence plan",
+    "category": "Research working records",
+    "summary": "Separately gated convergence and replicate-variability proposal: 20 independent units, fresh assessment data and a 15-minute training deadline. Execution approval is pending.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Unfrozen exploratory proposal",
+    "recommended": true
   }
 ]

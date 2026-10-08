@@ -1,0 +1,12 @@
+{
+  "prepared_at": "2026-10-08",
+  "status": "PREPARED_NOT_DEPLOYED",
+  "reason": "Sites connector publication tools are unavailable in the current Codex turn. No successful deployment is claimed.",
+  "content": "RP002A separately gated convergence/replicate-variability proposal; execution pending",
+  "generated_shared_source_sha256": "fc387468c1370b8326af72a0166551882f8c14f3659a763319f02f0c2cb75265",
+  "sites": {
+    "org": "appgprj_6ac624791b8c819180b917fdc3a28cff",
+    "net": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6"
+  },
+  "resume": "Reopen existing Site checkouts, regenerate and validate from current canonical main, then use the Sites workflow and native save/deploy. Record only confirmed successful deployment IDs in SITE_DEPLOYMENTS.json and remove this pending marker."
+}

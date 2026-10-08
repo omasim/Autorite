@@ -360,5 +360,19 @@
     ],
     "label": "Working protocol proposal",
     "recommended": false
+  },
+  {
+    "key": "research-validation-readiness",
+    "path": "docs/research/VALIDATION_READINESS.md",
+    "title": "Research validation and execution readiness",
+    "category": "Research working records",
+    "summary": "Typed research records, Cycle manifest, evidence and lifecycle checks, test coverage and the remaining experiment gates.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Implementation readiness record",
+    "recommended": false
   }
 ]

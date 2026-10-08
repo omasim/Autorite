@@ -10,7 +10,7 @@ RP002A is the first workstream. Its initial prior-art review is recorded in `res
 
 - The canonical Git repository is [omasim/Autorite](https://github.com/omasim/Autorite). Its initial import contains research sources and publication generators; the two Sites repositories remain generated output.
 - The 20 selected baseline source files are preserved byte-for-byte in `baseline/v0.1/` with `baseline/SNAPSHOT.json`. A checksum check is implemented; audited release approval remains pending.
-- The research-object schema validator, Cycle manifests and package records remain to be implemented.
+- The research-object validator, Cycle 01 manifest and 15 typed records are implemented. Bootstrap audit and release approval remain pending.
 - RP002A's full collision assessment and operational protocol choices remain open.
 - DAM X still requires supplied source material.
 

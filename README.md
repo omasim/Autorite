@@ -9,7 +9,7 @@ Both sites are public and in English. Their www hostnames also work over HTTPS. 
 Start with `CODEX_MASTER_INSTRUCTIONS.md`, then `FIRST_CODEX_PROMPT.txt`.
 
 ## Research repository
-[omasim/Autorite](https://github.com/omasim/Autorite) holds the canonical source. Proposals use branches and PRs; CI verifies baseline checksums and both generated sites. Baseline release and confirmatory protocol approval remain pending.
+[omasim/Autorite](https://github.com/omasim/Autorite) holds the canonical source. Proposals use branches and PRs; CI verifies baseline checksums and both generated sites. The audited preserved baseline is approved and tagged `baseline-v0.1`. The first isolated engineering pilot completed; confirmatory protocol approval remains pending.
 
 ## Authoritative baseline source
 Use `baseline/` as the authoritative bootstrap source, as confirmed by the user on 2026-10-07. Its updated publishing and site architecture documents (v0.2) take precedence over the older copies in `autorite-2-baseline-v0.1/`.
@@ -31,3 +31,7 @@ This package contains:
 The handoff intentionally stops before RP002A execution and before DNS/secrets.
 
 Additional locked decisions: open-ended program / closable Cycles, mandatory Cycle publications, Horizon identity, and shared obligation-based Cycle Ring.
+
+## First exploratory pilot
+
+`research/RP002A/PILOT_001_REPORT.md` records the completed isolated engineering pilot and raw artifacts. No scientific Claim or Cycle obligation was resolved. Further runs require a separate reviewed plan; confirmatory preparation remains open.

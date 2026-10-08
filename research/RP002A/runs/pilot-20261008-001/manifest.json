@@ -1,0 +1,229 @@
+{
+  "configuration": {
+    "plan": {
+      "version": "pilot-0.1",
+      "frozen": true,
+      "execution_authorized": true,
+      "mode": "exploratory-pilot",
+      "base_configuration": "research/RP002A/CONFIG_PROPOSAL.json",
+      "train_episodes": 64,
+      "validation_episodes": 32,
+      "diagnostic_episodes": 32,
+      "episode_observations": 17,
+      "replicates": 1,
+      "max_epochs": 3,
+      "max_training_wall_seconds": 300,
+      "purpose": "Numerical stability, artifact/reproducibility plumbing and resource feasibility only",
+      "interpretation": "No primary hypotheses, equivalence declarations, novelty claims or power conclusions; pilot data will never enter confirmatory evidence"
+    },
+    "base": {
+      "version": "proposal-0.1",
+      "frozen": false,
+      "execution_authorized": false,
+      "purpose": "Reviewable configuration proposal; not a preregistration or an executed run",
+      "target": "next observation",
+      "horizon": 1,
+      "alphabet": [
+        "0",
+        "1",
+        "erasure"
+      ],
+      "worlds": {
+        "E0": {
+          "flip_probability": 0.1,
+          "erasure_probability": 0.0
+        },
+        "E1": {
+          "flip_probability": 0.1,
+          "erasure_probability": 0.5
+        },
+        "E2": {
+          "flip_probability": 0.5,
+          "erasure_probability": 0.5
+        }
+      },
+      "stationary_initial_probability_one": 0.5,
+      "episode_observations": 129,
+      "prediction_pairs_per_episode": 128,
+      "train_episodes": 4096,
+      "validation_episodes": 1024,
+      "test_episodes": 2048,
+      "replicates": 5,
+      "seed_derivation": "SHA256 of rp002a/proposal-0.1/world/replicate/split/purpose, first 64 bits as unsigned integer; no seed reuse across tuples",
+      "replicate_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "splits": [
+        "train",
+        "validation",
+        "test"
+      ],
+      "randomness_purposes": [
+        "data",
+        "initialization",
+        "batch_order",
+        "bootstrap"
+      ],
+      "B0": {
+        "model": "categorical conditional counts",
+        "laplace_alpha": 1.0
+      },
+      "B1": {
+        "model": "one hidden layer ReLU MLP",
+        "window": 8,
+        "input_features": "24 one-hot entries plus 8 padding-validity indicators",
+        "hidden_units": 16,
+        "parameter_count": 579
+      },
+      "B2": {
+        "model": "single GRU and categorical linear head",
+        "input_features": "three-way one-hot observation",
+        "state_dimension": 12,
+        "bias_convention": "two bias vectors per GRU gate",
+        "parameter_count": 651
+      },
+      "B3": {
+        "model": "exact Bayes filter conditional on observed history",
+        "privileged_realized_hidden_state": false
+      },
+      "optimization": {
+        "optimizer": "Adam",
+        "learning_rate": 0.001,
+        "batch_episodes": 32,
+        "max_epochs": 50,
+        "early_stopping_patience": 5,
+        "selection": "minimum validation episode-mean log loss",
+        "gradient_norm_clip": 1.0,
+        "recurrent_reset": "every episode",
+        "truncated_backpropagation": false
+      },
+      "primary_metric": "episode-mean natural-log loss, equally weighted across independent replicates",
+      "probability_clip": 1e-08,
+      "meaningful_effect_nats": 0.01,
+      "equivalence_margin_nats": 0.01,
+      "primary_comparisons": [
+        "E1:B1-B0",
+        "E1:B2-B0",
+        "E0:B1-B0",
+        "E0:B2-B0",
+        "E2:B1-B0",
+        "E2:B2-B0",
+        "E1:B2-B1"
+      ],
+      "interval_method": "paired hierarchical percentile bootstrap: resample replicate indices, then held-out episodes within selected replicate; retain pairing across models",
+      "bootstrap_resamples": 2000,
+      "familywise_alpha": 0.05,
+      "multiplicity": "Bonferroni over seven predeclared comparisons",
+      "decisions": "E1 benefit requires entire adjusted interval for alternative-minus-reference below -0.01; equivalence requires entire adjusted interval within [-0.01, 0.01]; otherwise indeterminate. No p-value-only equivalence claims.",
+      "secondary": [
+        "erasure-conditional log loss",
+        "visible-observation log loss",
+        "Brier score",
+        "ten fixed equal-width calibration bins",
+        "gap to information-matched B3"
+      ],
+      "resource_cap": {
+        "device": "CPU only",
+        "max_total_training_wall_hours": 4,
+        "threads": 2
+      },
+      "failures": "Retain every failed run; no discretionary retries, model substitution or seed replacement. A failed model in any replicate makes the planned complete-case comparison indeterminate until a separately versioned deviation is reviewed.",
+      "limitations": [
+        "Only one proposed parameter setting per world",
+        "Five replicates give limited uncertainty resolution",
+        "No power analysis completed",
+        "Model sizes are approximately matched, not identical",
+        "Hardware/environment lock and collision assessment remain pending"
+      ]
+    }
+  },
+  "seeds": {
+    "E0/train/data": 12211251601129489932,
+    "E0/validation/data": 8318356589915869345,
+    "E0/diagnostic/data": 13627446964655807878,
+    "E0/B1/initialization": 10595626054161437627,
+    "E0/B1/batch-order": 16029106909094905621,
+    "E0/B2/initialization": 6311106448324178696,
+    "E0/B2/batch-order": 17514235481744544531,
+    "E1/train/data": 9965984646150789953,
+    "E1/validation/data": 123789736451250334,
+    "E1/diagnostic/data": 784015049605990730,
+    "E1/B1/initialization": 3279285193171900322,
+    "E1/B1/batch-order": 10638371571825723230,
+    "E1/B2/initialization": 8534433449459780622,
+    "E1/B2/batch-order": 17588273112967637337,
+    "E2/train/data": 1116605626224057316,
+    "E2/validation/data": 7210554683083301265,
+    "E2/diagnostic/data": 7410491562107674201,
+    "E2/B1/initialization": 8185828640996474636,
+    "E2/B1/batch-order": 1847831649850423156,
+    "E2/B2/initialization": 11395450372690278070,
+    "E2/B2/batch-order": 14468505858434805173
+  },
+  "environment": {
+    "python": "3.9.6",
+    "platform": "macOS-26.3-arm64-arm-64bit",
+    "machine": "arm64",
+    "numpy": "2.0.2",
+    "torch": "2.8.0",
+    "source_commit": "3c97b72ad89b6abd8d380a4b01d7c04407bbc317",
+    "mode": "exploratory-pilot",
+    "pilot_plan_sha256": "014c640af181b08b24fe5d1065ed8a45cc48b3c2d59dda5efd631ac071e0edd7",
+    "base_configuration_sha256": "fdd50646ee1e5e6ae659091a0fc9e3e1b6ff47bea09b8f3e1471e8bac0cf34ee"
+  },
+  "outputs": {
+    "E0-B0-losses.npy": "b4dc973856b1e0b25de447e95d5383878edd61f1cf64180743e84a9262f8f62d",
+    "E0-B0-probabilities.npy": "b2fed10136f9af95fcd0edb32bf46ce064b9f830ee02f8a9bce988b165942a5e",
+    "E0-B0-table.npy": "9ae912a15e2b93b8356cea3d1be1c8cb739ed96dc57265a9cf4b034c3a8ebb67",
+    "E0-B1-losses.npy": "4da61b279f0730199c464c72bf67176b81e9235d5bdfbaf6a20e473e47da9654",
+    "E0-B1-probabilities.npy": "f748b50982e532445ce5c7b5d5da97b06c21eb682ee7cb64fc4d3c987659ab75",
+    "E0-B1-trace.json": "1412a21eef54da5ce5bf2555be8c1b1f1ff39fa3da4c8c9524954466051617bd",
+    "E0-B1.pt": "add760ddbabfd2ec22c641f656addee6f06f6e5fe9d86032b1b37baee1433085",
+    "E0-B2-losses.npy": "bf9224be9110b8bda07431b5933e2c6b2afc549f00ba196548ac974128d72d85",
+    "E0-B2-probabilities.npy": "a962e3c048e2af82ed240750e04829d8fc9fb087ff2d1d3fe6b795b58d3c66a3",
+    "E0-B2-trace.json": "2ec3c2417f441541275767356109ab67971bd45379fc4a2cddd5f7e601cba59a",
+    "E0-B2.pt": "b43f558e9fa4ba6095db8bf0eec5485607e927a8b7d93435b209a5dbd2698fa3",
+    "E0-B3-losses.npy": "c673bc0c0880e3b8e5bfa05f0a8efeb9e5b41e0ee5f34ef1e1912ed89a96540a",
+    "E0-B3-probabilities.npy": "418ef9d984540e9dcbc408ae04527872215895a1cc2d0710d9493bf7021417ea",
+    "E0-diagnostic.npy": "60550656f1a559c2090677aca9bd813c3957ba5cae1c649da9a0d87815fbf982",
+    "E0-train.npy": "7538f65a1ba59fc22a70c16b9e98f70d5b8d612c015f383237abfcb02ebfb6eb",
+    "E0-validation.npy": "400d27c36dd1ce1a51c364527fe83315ddfcf8927cef609916d47180bcad414e",
+    "E1-B0-losses.npy": "a80bf06ef72bce89f6ea69b47787ab6abd2f17bcd3ad8ba401ae439d79c09110",
+    "E1-B0-probabilities.npy": "d139937281b0f1b2fc0e7748c6b8a87fb36433891fb75f2a70bb7e67798a54b5",
+    "E1-B0-table.npy": "a8d579c5c967c7059db0cd80ee83d6189f6da8893ad406f1fca30de192928e0c",
+    "E1-B1-losses.npy": "ef72e904eccf706d0c30ca513bc79f4f871f8f2ac4a5ff86703fdae0c93404a2",
+    "E1-B1-probabilities.npy": "8d2107766bba178eafcf93c3095287ed4c1c387662a2888374229a8353306a74",
+    "E1-B1-trace.json": "3c332d6cbb80e01b9e71707935b6a1411056e673f7ee6396f9a3551cb6bb43df",
+    "E1-B1.pt": "0e1035a9a33aa1a68ce9ad3b8ab0336932b4a1dc6594e9db044c844556e720c0",
+    "E1-B2-losses.npy": "7438ebbcdbd9f589287bfd499ade12a0a6923d0005242a97f4bf9f20818b0458",
+    "E1-B2-probabilities.npy": "3ef44cddcdf0757b7884e92e81f73cc0015d91195c9ec14f8258a2de4046b895",
+    "E1-B2-trace.json": "7346c4c15c364ec524fec685a3101387df187021a9ffac4deb0f70cff363efbc",
+    "E1-B2.pt": "1028c5ae45a91f2d2cc95682f215ddfc86f8010cc84d350f9decfe29c22c2d7d",
+    "E1-B3-losses.npy": "e07583ee73b0b029c3b53c581541a6c11c0474548ff62030ad81022f7267e0e1",
+    "E1-B3-probabilities.npy": "6fe4c5019e5ad7375a4f02b2f215d8dfcbba5ab776a337f00505f576339cb98f",
+    "E1-diagnostic.npy": "2cbd5bc3437184e4d94c19b7cfddae1d2abafe7e611b62c43200e13f3744f8f7",
+    "E1-train.npy": "dd54abbc663ff783c0565d692fdbd8ca52d02b565d7eaf001f36d7d8df4b9d4f",
+    "E1-validation.npy": "fb3a7fcb0f87a27cd482eac871a2290c2d61ff1c8a6210af3cb6fc6526608381",
+    "E2-B0-losses.npy": "bdbdd1446c0c7ed6bbcac0a9c408983c28c7c3ec01311189534b5c0937bc17d9",
+    "E2-B0-probabilities.npy": "3166d885c81e55dc6bce8892d873266ebf3cc332148f4bd437d89f9145d402d7",
+    "E2-B0-table.npy": "f109a073321d5a1f565389e8b10c1f80896720b6b6140aa0c8032350dee4bf31",
+    "E2-B1-losses.npy": "d5f62774d0f9996d2940705158ea956d4d31c6cb04d3290b127ed5dca26ee56a",
+    "E2-B1-probabilities.npy": "698033c3422b41d52f0fa3761c63e3bbe2dbb6a0540e4bdf4b004e1f33018e4b",
+    "E2-B1-trace.json": "83d77d3d1396cce19b275db7234acf0725da5fe23d8132d482481ec0ebf006dc",
+    "E2-B1.pt": "56e163a620c85ef0656f56a569b8f0ec1ed840be4f099f4e9daba931d17afc29",
+    "E2-B2-losses.npy": "01e4897956f6f6cf8d49e6b9ebbbfc7353c1c47b22b176028432e7fd1d2b0acd",
+    "E2-B2-probabilities.npy": "980a534dff58af35879726aa472ca1a0cbb18090a803e4c31a6edcb0d8a67261",
+    "E2-B2-trace.json": "b256213832b37b950fc40a765f4680395fb5b718761940383d8b08f0489539c3",
+    "E2-B2.pt": "1cf73780e9600289ad1b2dacab1fd4df873c7313696cccb95f7bd9caea34946e",
+    "E2-B3-losses.npy": "d23fc25d75baf7f8b19e2b16b495c397548507ae95e2e5b0a1998e539e49e046",
+    "E2-B3-probabilities.npy": "6b6b42df4bf8e224619dca20da21ae104ed4a2666b85fc97a53d0e27ea41c23c",
+    "E2-diagnostic.npy": "b8db42ea412ef7ac0a7c015fa128fe6cb1887072907c80281bd33040e6321867",
+    "E2-train.npy": "2c20d740349955b32b84859ab56239819b6967c0f5fcee50aaf8fb866134ca73",
+    "E2-validation.npy": "1ff4d773284d06f20d58ec7e977a9b3d9715f620d1055acf0aebd66672e6f79f",
+    "diagnostics.json": "746d07662679fd32fe0a80a16b92556ce12ea5240d5a1c621261b6f056652d1b"
+  }
+}

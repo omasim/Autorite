@@ -1,0 +1,74 @@
+[
+  {
+    "world": "E0",
+    "model": "B0",
+    "diagnostic_mean_log_loss": 0.36000642750217715,
+    "interpretation": "Exploratory engineering diagnostic only"
+  },
+  {
+    "world": "E0",
+    "model": "B1",
+    "diagnostic_mean_log_loss": 1.151014804653907,
+    "interpretation": "Exploratory engineering diagnostic only"
+  },
+  {
+    "world": "E0",
+    "model": "B2",
+    "diagnostic_mean_log_loss": 0.9879356289837473,
+    "interpretation": "Exploratory engineering diagnostic only"
+  },
+  {
+    "world": "E0",
+    "model": "B3",
+    "diagnostic_mean_log_loss": 0.3585563165618047,
+    "interpretation": "Exploratory engineering diagnostic only"
+  },
+  {
+    "world": "E1",
+    "model": "B0",
+    "diagnostic_mean_log_loss": 0.9305045630763291,
+    "interpretation": "Exploratory engineering diagnostic only"
+  },
+  {
+    "world": "E1",
+    "model": "B1",
+    "diagnostic_mean_log_loss": 1.079470946544801,
+    "interpretation": "Exploratory engineering diagnostic only"
+  },
+  {
+    "world": "E1",
+    "model": "B2",
+    "diagnostic_mean_log_loss": 1.1643589699457004,
+    "interpretation": "Exploratory engineering diagnostic only"
+  },
+  {
+    "world": "E1",
+    "model": "B3",
+    "diagnostic_mean_log_loss": 0.8902541202494906,
+    "interpretation": "Exploratory engineering diagnostic only"
+  },
+  {
+    "world": "E2",
+    "model": "B0",
+    "diagnostic_mean_log_loss": 1.0574680164339605,
+    "interpretation": "Exploratory engineering diagnostic only"
+  },
+  {
+    "world": "E2",
+    "model": "B1",
+    "diagnostic_mean_log_loss": 1.09984447459487,
+    "interpretation": "Exploratory engineering diagnostic only"
+  },
+  {
+    "world": "E2",
+    "model": "B2",
+    "diagnostic_mean_log_loss": 1.0979894769103211,
+    "interpretation": "Exploratory engineering diagnostic only"
+  },
+  {
+    "world": "E2",
+    "model": "B3",
+    "diagnostic_mean_log_loss": 1.0559664078842916,
+    "interpretation": "Exploratory engineering diagnostic only"
+  }
+]

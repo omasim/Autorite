@@ -21,8 +21,12 @@ python3 scripts/check-sites.py
 
 ## Remaining execution gates
 
-Structural validation is implemented; a complete bootstrap audit/release approval is still pending. RP002A has a numerical configuration proposal, but its collision assessment, power/effect rationale, full collision/power review, approved reproducibility environment and pre-outcome freeze are incomplete. No experiment is run by a validator or a passing CI job.
+Structural validation is implemented; the audited bootstrap and baseline freeze were approved. RP002A has a numerical configuration proposal, but its collision assessment, power/effect rationale, full collision/power review, approved reproducibility environment and pre-outcome freeze are incomplete. No experiment is run by a validator or a passing CI job.
 
 ## Executable RP002A preparation
 
 The generator, reference, model and pilot harness now have engineering acceptance checks; the complete suite has 30 tests. The separate pilot proposal and execution gates are documented in `research/RP002A/EXECUTION_READINESS.md`. No research run has occurred.
+
+## First exploratory pilot
+
+`research/RP002A/PILOT_001_REPORT.md` records the completed isolated engineering pilot and raw artifacts. No scientific Claim or Cycle obligation was resolved. Further runs require a separate reviewed plan; confirmatory preparation remains open.

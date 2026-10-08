@@ -380,7 +380,7 @@
     "path": "research/RP002A/EXECUTION_READINESS.md",
     "title": "RP002A acceptance checks and isolated pilot plan",
     "category": "Research working records",
-    "summary": "Executable generators, information-matched reference and causal models pass software acceptance checks. An isolated exploratory pilot is proposed, with execution still gated.",
+    "summary": "Acceptance checks and the approved first engineering pilot; confirmatory execution remains pending.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -394,13 +394,13 @@
     "path": "docs/research/BOOTSTRAP_AUDIT.md",
     "title": "Bootstrap audit and first-pilot approval proposal",
     "category": "Research working records",
-    "summary": "Audit of preserved baseline, research core, execution harness and explicit limitations. Proposes approval of a bounded exploratory pilot; approval is pending.",
+    "summary": "Audited bootstrap limitations and approved baseline freeze. The single authorized engineering pilot is complete.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
-    "label": "Pending approval proposal",
+    "label": "Approved bootstrap audit",
     "recommended": false
   },
   {
@@ -415,6 +415,34 @@
       "net"
     ],
     "label": "Exploratory engineering report",
+    "recommended": true
+  },
+  {
+    "key": "rp002a-collision-review",
+    "path": "research/RP002A/COLLISION_REVIEW.md",
+    "title": "RP002A literature collision review",
+    "category": "Research working records",
+    "summary": "Scoped primary-source review of predictive states, recurrent filtering and finite-history benchmark overlap.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Working design review",
+    "recommended": true
+  },
+  {
+    "key": "rp002a-confirmatory-design",
+    "path": "research/RP002A/CONFIRMATORY_DESIGN_REVIEW.md",
+    "title": "RP002A confirmatory design review",
+    "category": "Research working records",
+    "summary": "Analytic information gaps and replicate-precision sensitivity; explains why the numerical proposal is not ready to freeze.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Working design review",
     "recommended": true
   }
 ]

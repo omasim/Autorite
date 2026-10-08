@@ -41,3 +41,7 @@ A latent-state oracle may have extra information unavailable to every learned mo
 ## Search provenance and limits
 
 Search date: 2026-10-08. Initial queries targeted predictive representations of state, partial observability and recurrent belief representations on academic and conference domains. This is a seed review, not an exhaustive systematic search. No claim of literature completeness or scientific support is made. Search snippets were used for discovery; the judgments above use inspected paper text or the identified abstract, with that boundary stated.
+
+## Follow-up review — 2026-10-08
+
+`COLLISION_REVIEW.md` expands this seed review with scoped primary-source inspection, including the close finite-history benchmark overlap. `CONFIRMATORY_DESIGN_REVIEW.md` records deterministic information-gap and precision calculations. These are working design records, not novelty clearance, model outcomes or new scientific Claims. The completed isolated engineering pilot remains separate.

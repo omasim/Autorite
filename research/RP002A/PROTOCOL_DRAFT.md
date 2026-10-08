@@ -1,6 +1,6 @@
 # RP002A — Operational protocol draft
 
-Version: working-0.1. Date: 2026-10-08. **Exploratory design proposal, not a frozen preregistration.** No model training or confirmatory outcomes have been observed. This supplement does not amend the selected baseline.
+Version: working-0.1. Date: 2026-10-08. **Exploratory design proposal, not a frozen preregistration.** One separately approved engineering pilot has been observed and is excluded from confirmation; no confirmatory outcomes have been observed. This supplement does not amend the selected baseline.
 
 ## Predictive query
 
@@ -89,3 +89,7 @@ A window-eight B1 with 16 hidden units has 579 parameters; a 12-state GRU B2 wit
 Seven primary contrasts use paired hierarchical bootstrap intervals with a Bonferroni-adjusted familywise error target. The bootstrap is a proposed approximation with only five independent replicates, not an exact coverage guarantee. Declaring indeterminate outcomes is preferable to silently treating uncertain nulls as equivalence. A separately declared pilot must assess numerical stability, resource feasibility and uncertainty design before this can become a frozen confirmatory protocol.
 
 Remaining review gates: full collision assessment; power and effect-threshold rationale; hardware/dependency lock; executable generator/model acceptance checks; bootstrap audit/approval; and an explicit pre-outcome freeze. The original checklist remains as the record of decisions being resolved; proposed values do not count as approved choices.
+
+## Post-pilot design review — 2026-10-08
+
+See `COLLISION_REVIEW.md` and `CONFIRMATORY_DESIGN_REVIEW.md`. The proposed five-replicate uncertainty design is not yet justified. The E1 ideal window-eight information gap is far below the proposed effect threshold, so a B1/B2 difference cannot establish recurrence necessity. The JSON proposal remains unfrozen; no additional research execution is authorized.

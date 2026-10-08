@@ -7,5 +7,5 @@ p=ROOT/'research/RP002A/CONFIG_PROPOSAL.json';result=d.planning(json.loads(p.rea
 text=json.dumps(result,indent=2)+'\n';dest=ROOT/'research/RP002A/design/ANALYTIC_REVIEW.json'
 a=argparse.ArgumentParser();a.add_argument('--check',action='store_true');args=a.parse_args()
 if args.check:
- assert dest.read_text()==text,'Design calculation snapshot differs';print('PASS: analytic design calculations reproduce; no samples or training.')
+ assert d.same_planning(json.loads(dest.read_text()),result),'Design calculation snapshot differs';print('PASS: analytic design calculations reproduce; no samples or training.')
 else:dest.write_text(text);print(dest)

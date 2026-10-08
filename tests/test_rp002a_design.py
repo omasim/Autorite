@@ -25,3 +25,9 @@ class Design(unittest.TestCase):
  def test_invalid_inputs_rejected(self):
   for args in [(.6,.5,1),(.1,-.1,1),(.1,.5,0),(.1,.5,1,0)]:
    with self.assertRaises(ValueError):d.ideal_loss(*args)
+
+ def test_snapshot_noise_and_real_changes(self):
+  original={'hash':'unchanged','values':[.039808554540753716]}
+  self.assertTrue(d.same_planning(original,{'hash':'unchanged','values':[.03980855454075372]}))
+  self.assertFalse(d.same_planning(original,{'hash':'changed','values':original['values']}))
+  self.assertFalse(d.same_planning(original,{'hash':'unchanged','values':[.039809]}))

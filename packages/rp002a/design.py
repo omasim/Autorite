@@ -25,3 +25,12 @@ def planning(config):
  for sd in [.01,.03,.05,.1]:
   for n in [5,10,20,30,50]:sensitivity.append(dict(assumed_replicate_sd=sd,replicates=n,normal_approx_interval_half_width=z*sd/math.sqrt(n)))
  return dict(mode='analytic-design-review',trained_models=False,sampled_data=False,prediction_pairs=pairs,window=window,ideal_losses=rows,normal_critical_value=z,precision_sensitivity=sensitivity,limitations=['Ideal distribution-aware references are not learned B0/B1/B2 performance','Standard deviations are assumptions, not pilot estimates','Normal intervals are optimistic planning approximations, not finite-sample guarantees','No scientific Claim promoted or execution authorized'])
+
+
+def same_planning(saved,current):
+ """Allow floating-point platform noise; require exact metadata and structure."""
+ if type(saved) is not type(current):return False
+ if isinstance(current,float):return math.isfinite(saved) and math.isfinite(current) and math.isclose(saved,current,rel_tol=1e-12,abs_tol=1e-14)
+ if isinstance(current,dict):return saved.keys()==current.keys() and all(same_planning(saved[k],current[k]) for k in current)
+ if isinstance(current,list):return len(saved)==len(current) and all(same_planning(a,b) for a,b in zip(saved,current))
+ return saved==current

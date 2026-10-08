@@ -8,6 +8,9 @@ Both sites are public and in English. Their www hostnames also work over HTTPS. 
 
 Start with `CODEX_MASTER_INSTRUCTIONS.md`, then `FIRST_CODEX_PROMPT.txt`.
 
+## Research repository
+[omasim/Autorite](https://github.com/omasim/Autorite) holds the canonical source. Proposals use branches and PRs; CI verifies baseline checksums and both generated sites. Baseline release and confirmatory protocol approval remain pending.
+
 ## Authoritative baseline source
 Use `baseline/` as the authoritative bootstrap source, as confirmed by the user on 2026-10-07. Its updated publishing and site architecture documents (v0.2) take precedence over the older copies in `autorite-2-baseline-v0.1/`.
 

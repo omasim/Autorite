@@ -4,12 +4,12 @@ The user requested that research begin after the public sites were ready, and th
 
 ## Work begun
 
-RP002A is the first workstream. Its initial prior-art review is recorded in `research/RP002A/PRIOR_ART_REVIEW.md`. No experiment, result, supported claim or resolved Cycle obligation is created by that review.
+RP002A is the first workstream. Its initial prior-art review is recorded in `research/RP002A/PRIOR_ART_REVIEW.md`; the proposed operational design is in `research/RP002A/PROTOCOL_DRAFT.md`. No experiment, result, supported claim or resolved Cycle obligation is created by that review.
 
 ## Current gaps
 
-- The workspace root is not a Git repository. The intended GitHub repository is awaiting identification; the two Sites repositories contain generated publication output only.
-- Baseline source preservation/checksum audit and explicit release approval remain incomplete.
+- The canonical Git repository is [omasim/Autorite](https://github.com/omasim/Autorite). Its initial import contains research sources and publication generators; the two Sites repositories remain generated output.
+- The 20 selected baseline source files are preserved byte-for-byte in `baseline/v0.1/` with `baseline/SNAPSHOT.json`. A checksum check is implemented; audited release approval remains pending.
 - The research-object schema validator, Cycle manifests and package records remain to be implemented.
 - RP002A's full collision assessment and operational protocol choices remain open.
 - DAM X still requires supplied source material.
@@ -22,7 +22,7 @@ Every meaningful research update should state what changed, its evidence and sco
 
 ## Immediate sequence
 
-1. Identify/connect the GitHub repository and preserve the exact selected baseline.
+1. Keep the connected GitHub repository and preserved baseline under version control.
 2. Implement canonical records, validation and CI; audit bootstrap before requesting a release approval.
 3. Complete RP002A's collision review and protocol supplement, including justified operational parameters.
 4. Freeze the approved confirmatory protocol before observing its outcomes.

@@ -97,6 +97,11 @@
   "changes": [
     [
       "2026-10-08",
+      "Validated research core and proposed experiment configuration",
+      "Typed research records and the 13-obligation Cycle manifest now validate before site generation. RP002A has a numerical configuration proposal; it remains unfrozen and no experiments have run."
+    ],
+    [
+      "2026-10-08",
       "Canonical GitHub repository and RP002A design",
       "The source repository is omasim/Autorite. Baseline source bytes are preserved and checked; a proposed operational protocol is available. No experiments have been run and release approval remains pending."
     ],

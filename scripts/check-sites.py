@@ -41,5 +41,7 @@ for site in ('org','net'):
    checks+=1
 state=[json.loads((ROOT/'apps'/s/'dist/research-state.json').read_text()) for s in ('org','net')]
 assert state[0]==state[1],'Site state diverged'
-assert state[0]['completion']==0 and state[0]['cycle']['status']=='PLANNED'
+manifest=json.loads((ROOT/'cycles/cycle-01/manifest.json').read_text())
+expected=sum(o['weight'] for o in manifest['obligations'] if o['resolved'])/sum(o['weight'] for o in manifest['obligations'])
+assert state[0]['completion']==expected and state[0]['cycle']['status']==manifest['status']
 print(f'PASS: {pages} English pages; {checks} asset, source and page links; identical canonical Cycle state.')

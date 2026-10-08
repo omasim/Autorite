@@ -1,0 +1,134 @@
+{
+  "schema_version": "0.1",
+  "cycle_number": 1,
+  "title": "Foundations Under Test",
+  "status": "PLANNED",
+  "package_refs": [
+    "RP-002A",
+    "RP-003",
+    "RP-004",
+    "RP-005A"
+  ],
+  "obligations": [
+    {
+      "key": "rp002a",
+      "description": "RP002A package disposition",
+      "weight": 1,
+      "resolved": false,
+      "resolution": null,
+      "evidence_refs": [],
+      "decision_ref": null
+    },
+    {
+      "key": "rp003",
+      "description": "RP003 package disposition",
+      "weight": 1,
+      "resolved": false,
+      "resolution": null,
+      "evidence_refs": [],
+      "decision_ref": null
+    },
+    {
+      "key": "rp004",
+      "description": "RP004 package disposition",
+      "weight": 1,
+      "resolved": false,
+      "resolution": null,
+      "evidence_refs": [],
+      "decision_ref": null
+    },
+    {
+      "key": "rp005a",
+      "description": "RP005A package disposition",
+      "weight": 1,
+      "resolved": false,
+      "resolution": null,
+      "evidence_refs": [],
+      "decision_ref": null
+    },
+    {
+      "key": "damx",
+      "description": "DAM X pilot",
+      "weight": 1,
+      "resolved": false,
+      "resolution": null,
+      "evidence_refs": [],
+      "decision_ref": null
+    },
+    {
+      "key": "checkpoint-a",
+      "description": "Checkpoint A",
+      "weight": 1,
+      "resolved": false,
+      "resolution": null,
+      "evidence_refs": [],
+      "decision_ref": null
+    },
+    {
+      "key": "graph-review",
+      "description": "Forward/backward research graph validation",
+      "weight": 1,
+      "resolved": false,
+      "resolution": null,
+      "evidence_refs": [],
+      "decision_ref": null
+    },
+    {
+      "key": "synthesis",
+      "description": "Synthesis Review 1",
+      "weight": 1,
+      "resolved": false,
+      "resolution": null,
+      "evidence_refs": [],
+      "decision_ref": null
+    },
+    {
+      "key": "foundation",
+      "description": "Foundation Review 1",
+      "weight": 1,
+      "resolved": false,
+      "resolution": null,
+      "evidence_refs": [],
+      "decision_ref": null
+    },
+    {
+      "key": "what-changed",
+      "description": "What Changed",
+      "weight": 1,
+      "resolved": false,
+      "resolution": null,
+      "evidence_refs": [],
+      "decision_ref": null
+    },
+    {
+      "key": "what-open",
+      "description": "What Remains Open",
+      "weight": 1,
+      "resolved": false,
+      "resolution": null,
+      "evidence_refs": [],
+      "decision_ref": null
+    },
+    {
+      "key": "transition",
+      "description": "Transition Record / Cycle 2 decision",
+      "weight": 1,
+      "resolved": false,
+      "resolution": null,
+      "evidence_refs": [],
+      "decision_ref": null
+    },
+    {
+      "key": "close-bundle",
+      "description": "Close bundle and knowledge snapshot",
+      "weight": 1,
+      "resolved": false,
+      "resolution": null,
+      "evidence_refs": [],
+      "decision_ref": null
+    }
+  ],
+  "close_decision_ref": null,
+  "snapshot_ref": null,
+  "publication_refs": []
+}

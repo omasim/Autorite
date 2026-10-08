@@ -77,3 +77,15 @@ E1 benefits support only the declared generators, queries, models and budgets. E
 ## Provenance
 
 Baseline: `baseline/RP002A_PREREGISTRATION.md`; implementation gates: `RESEARCH_EXECUTION_READINESS.md`; literature overlap: `research/RP002A/PRIOR_ART_REVIEW.md`. All construction and analysis choices above are explicitly proposed operational choices.
+
+## Reviewable numerical configuration proposal — 2026-10-08
+
+`research/RP002A/CONFIG_PROPOSAL.json` now makes the open numerical choices concrete for review. It remains explicitly unfrozen and execution is not authorized. It proposes p=0.1 with q=0/0.5 for E0/E1 and p=0.5, q=0.5 for E2. These choices provide a simple persistent-versus-independent contrast; they are not exhaustive coverage of partially observed processes.
+
+Each independent episode provides 128 prediction pairs. Proposed training/validation/test sizes are 4096/1024/2048 episodes, with five independent replicates per world. The seed schedule is deterministically derived from explicit world/replicate/split/purpose tuples. These are resource-bounded starting proposals, not a completed statistical power argument.
+
+A window-eight B1 with 16 hidden units has 579 parameters; a 12-state GRU B2 with separate input/recurrent gate biases and a categorical head has 651. Report that difference and the distinct optimization burden. B0 is a simple smoothed categorical count model. The proposed effect/equivalence threshold is 0.01 nats per prediction and needs a sensitivity/power rationale before confirmation.
+
+Seven primary contrasts use paired hierarchical bootstrap intervals with a Bonferroni-adjusted familywise error target. The bootstrap is a proposed approximation with only five independent replicates, not an exact coverage guarantee. Declaring indeterminate outcomes is preferable to silently treating uncertain nulls as equivalence. A separately declared pilot must assess numerical stability, resource feasibility and uncertainty design before this can become a frozen confirmatory protocol.
+
+Remaining review gates: full collision assessment; power and effect-threshold rationale; hardware/dependency lock; executable generator/model acceptance checks; bootstrap audit/approval; and an explicit pre-outcome freeze. The original checklist remains as the record of decisions being resolved; proposed values do not count as approved choices.

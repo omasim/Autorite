@@ -59,4 +59,6 @@ Cycles are governance manifests under `cycles/cycle-NN/`, using the lifecycle al
 Run metadata and review/publication artifacts are repository files referenced by records, not new graph types. Each run has a unique repository-relative directory, an immutable configuration/seed/environment manifest, and checksums for outputs. Corrections create a new run directory. Invalidation is recorded in a Decision/Result record rather than editing original run artifacts.
 
 ### Validation boundary
+The implementation uses optional `proof_artifact_refs` on Claim records and a nonempty `## Justification` body section for SUPPORTED/PROVED claims. Run directories contain `manifest.json` with nonempty `configuration`, `seeds`, `environment` and `outputs` (relative output path to SHA-256). Once a run manifest enters Git, its complete directory is compared with that first committed snapshot; corrections use a new directory. These serialization choices add no scientific types or statuses.
+
 Validate schema, unique IDs/aliases, all graph/file references, status compatibility, relation endpoints, supersession chains, Result/Test package agreement, claim limitations/support, run artifact checksums, and Cycle lifecycle gates. Both site projections consume the same validated records. Scientific review remains explicit and is never inferred from a successful build.

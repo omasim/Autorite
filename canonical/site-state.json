@@ -97,6 +97,11 @@
   "changes": [
     [
       "2026-10-08",
+      "Executable RP002A harness and isolated pilot proposal",
+      "Generators, reference filtering, model causality, episode resets and seed schedules pass software checks. Thirty tests pass; no research pilot or confirmatory run has been executed."
+    ],
+    [
+      "2026-10-08",
       "Validated research core and proposed experiment configuration",
       "Typed research records and the 13-obligation Cycle manifest now validate before site generation. RP002A has a numerical configuration proposal; it remains unfrozen and no experiments have run."
     ],

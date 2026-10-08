@@ -374,5 +374,33 @@
     ],
     "label": "Implementation readiness record",
     "recommended": false
+  },
+  {
+    "key": "rp002a-execution-readiness",
+    "path": "research/RP002A/EXECUTION_READINESS.md",
+    "title": "RP002A acceptance checks and isolated pilot plan",
+    "category": "Research working records",
+    "summary": "Executable generators, information-matched reference and causal models pass software acceptance checks. An isolated exploratory pilot is proposed, with execution still gated.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Engineering acceptance record",
+    "recommended": false
+  },
+  {
+    "key": "bootstrap-audit",
+    "path": "docs/research/BOOTSTRAP_AUDIT.md",
+    "title": "Bootstrap audit and first-pilot approval proposal",
+    "category": "Research working records",
+    "summary": "Audit of preserved baseline, research core, execution harness and explicit limitations. Proposes approval of a bounded exploratory pilot; approval is pending.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Pending approval proposal",
+    "recommended": false
   }
 ]

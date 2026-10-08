@@ -1,0 +1,16 @@
+{
+  "version": "pilot-proposal-0.1",
+  "frozen": false,
+  "execution_authorized": false,
+  "mode": "exploratory-pilot",
+  "base_configuration": "research/RP002A/CONFIG_PROPOSAL.json",
+  "train_episodes": 64,
+  "validation_episodes": 32,
+  "diagnostic_episodes": 32,
+  "episode_observations": 17,
+  "replicates": 1,
+  "max_epochs": 3,
+  "max_training_wall_seconds": 300,
+  "purpose": "Numerical stability, artifact/reproducibility plumbing and resource feasibility only",
+  "interpretation": "No primary hypotheses, equivalence declarations, novelty claims or power conclusions; pilot data will never enter confirmatory evidence"
+}

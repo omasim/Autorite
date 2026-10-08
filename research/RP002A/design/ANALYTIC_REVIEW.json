@@ -1,0 +1,143 @@
+{
+  "mode": "analytic-design-review",
+  "trained_models": false,
+  "sampled_data": false,
+  "prediction_pairs": 128,
+  "window": 8,
+  "ideal_losses": [
+    {
+      "world": "E0",
+      "current_observation_ideal": 0.3250829733914482,
+      "window_ideal": 0.325082973391448,
+      "observed_history_ideal": 0.325082973391448,
+      "current_to_history_gap": 2.220446049250313e-16,
+      "window_to_history_gap": 0
+    },
+    {
+      "world": "E1",
+      "current_observation_ideal": 0.9477047190477936,
+      "window_ideal": 0.9079082751922392,
+      "observed_history_ideal": 0.9078961645070399,
+      "current_to_history_gap": 0.039808554540753716,
+      "window_to_history_gap": 1.21106851992403e-05
+    },
+    {
+      "world": "E2",
+      "current_observation_ideal": 1.0397207708399179,
+      "window_ideal": 1.0397207708399199,
+      "observed_history_ideal": 1.0397207708399199,
+      "current_to_history_gap": 0,
+      "window_to_history_gap": 0
+    }
+  ],
+  "normal_critical_value": 2.6901095271588664,
+  "precision_sensitivity": [
+    {
+      "assumed_replicate_sd": 0.01,
+      "replicates": 5,
+      "normal_approx_interval_half_width": 0.012030535539294084
+    },
+    {
+      "assumed_replicate_sd": 0.01,
+      "replicates": 10,
+      "normal_approx_interval_half_width": 0.008506873261140606
+    },
+    {
+      "assumed_replicate_sd": 0.01,
+      "replicates": 20,
+      "normal_approx_interval_half_width": 0.006015267769647042
+    },
+    {
+      "assumed_replicate_sd": 0.01,
+      "replicates": 30,
+      "normal_approx_interval_half_width": 0.004911445567281558
+    },
+    {
+      "assumed_replicate_sd": 0.01,
+      "replicates": 50,
+      "normal_approx_interval_half_width": 0.0038043893775771428
+    },
+    {
+      "assumed_replicate_sd": 0.03,
+      "replicates": 5,
+      "normal_approx_interval_half_width": 0.03609160661788225
+    },
+    {
+      "assumed_replicate_sd": 0.03,
+      "replicates": 10,
+      "normal_approx_interval_half_width": 0.025520619783421815
+    },
+    {
+      "assumed_replicate_sd": 0.03,
+      "replicates": 20,
+      "normal_approx_interval_half_width": 0.018045803308941125
+    },
+    {
+      "assumed_replicate_sd": 0.03,
+      "replicates": 30,
+      "normal_approx_interval_half_width": 0.014734336701844673
+    },
+    {
+      "assumed_replicate_sd": 0.03,
+      "replicates": 50,
+      "normal_approx_interval_half_width": 0.011413168132731428
+    },
+    {
+      "assumed_replicate_sd": 0.05,
+      "replicates": 5,
+      "normal_approx_interval_half_width": 0.06015267769647042
+    },
+    {
+      "assumed_replicate_sd": 0.05,
+      "replicates": 10,
+      "normal_approx_interval_half_width": 0.04253436630570303
+    },
+    {
+      "assumed_replicate_sd": 0.05,
+      "replicates": 20,
+      "normal_approx_interval_half_width": 0.03007633884823521
+    },
+    {
+      "assumed_replicate_sd": 0.05,
+      "replicates": 30,
+      "normal_approx_interval_half_width": 0.02455722783640779
+    },
+    {
+      "assumed_replicate_sd": 0.05,
+      "replicates": 50,
+      "normal_approx_interval_half_width": 0.019021946887885714
+    },
+    {
+      "assumed_replicate_sd": 0.1,
+      "replicates": 5,
+      "normal_approx_interval_half_width": 0.12030535539294084
+    },
+    {
+      "assumed_replicate_sd": 0.1,
+      "replicates": 10,
+      "normal_approx_interval_half_width": 0.08506873261140606
+    },
+    {
+      "assumed_replicate_sd": 0.1,
+      "replicates": 20,
+      "normal_approx_interval_half_width": 0.06015267769647042
+    },
+    {
+      "assumed_replicate_sd": 0.1,
+      "replicates": 30,
+      "normal_approx_interval_half_width": 0.04911445567281558
+    },
+    {
+      "assumed_replicate_sd": 0.1,
+      "replicates": 50,
+      "normal_approx_interval_half_width": 0.03804389377577143
+    }
+  ],
+  "limitations": [
+    "Ideal distribution-aware references are not learned B0/B1/B2 performance",
+    "Standard deviations are assumptions, not pilot estimates",
+    "Normal intervals are optimistic planning approximations, not finite-sample guarantees",
+    "No scientific Claim promoted or execution authorized"
+  ],
+  "configuration_sha256": "fdd50646ee1e5e6ae659091a0fc9e3e1b6ff47bea09b8f3e1471e8bac0cf34ee"
+}

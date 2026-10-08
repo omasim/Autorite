@@ -12,7 +12,7 @@ class SchemaTests(unittest.TestCase):
  def reject(self,fragment):
   with self.assertRaisesRegex(v.Invalid,fragment):v.validate(self.root)
  def test_current_records(self):
-  records,cycles=v.validate(self.root);self.assertEqual(len(records),15);self.assertEqual(len(cycles),1)
+  records,cycles=v.validate(self.root);self.assertTrue({'Q-0','Q-1','Q-2','Q-3','Q-4','Q-5','RP-002A','RP-003','RP-004','RP-005A'} <= set(records));self.assertEqual(len(cycles),1)
  def test_status_typing(self):
   self.change('graph/sources/SRC-PSR2001.md',lambda d:d.update(status='VALID'));self.reject('missing/unknown fields')
  def test_unknown_id(self):

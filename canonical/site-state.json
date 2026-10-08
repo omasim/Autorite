@@ -97,6 +97,11 @@
   "changes": [
     [
       "2026-10-08",
+      "Literature overlap and confirmatory design reviewed",
+      "The finite-history benchmark overlap is documented. Deterministic design calculations show that the ideal window-eight gap is very small; five training replicates lack a power justification. No new model runs, scientific Claim promotions or Cycle resolutions."
+    ],
+    [
+      "2026-10-08",
       "Baseline frozen; first engineering pilot completed",
       "The audited bootstrap and bounded pilot were approved. Baseline v0.1 is tagged; the RP002A pilot completed with finite outputs and verified artifacts. No scientific claim or Cycle obligation was resolved."
     ],

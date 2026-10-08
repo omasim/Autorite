@@ -9,8 +9,8 @@ RP002A is the first workstream. Its initial prior-art review is recorded in `res
 ## Current gaps
 
 - The canonical Git repository is [omasim/Autorite](https://github.com/omasim/Autorite). Its initial import contains research sources and publication generators; the two Sites repositories remain generated output.
-- The 20 selected baseline source files are preserved byte-for-byte in `baseline/v0.1/` with `baseline/SNAPSHOT.json`. A checksum check is implemented; audited release approval remains pending.
-- The research-object validator, Cycle 01 manifest and 15 typed records are implemented. Bootstrap audit and release approval remain pending.
+- The 20 selected baseline source files are preserved byte-for-byte in `baseline/v0.1/` with `baseline/SNAPSHOT.json`. A checksum check is implemented; the audited release was approved and tagged `baseline-v0.1`.
+- The research-object validator, Cycle 01 manifest and 15 typed records are implemented. Bootstrap audit and release approval are recorded in `docs/research/BOOTSTRAP_APPROVAL.json`.
 - RP002A's full collision assessment and operational protocol choices remain open.
 - DAM X still requires supplied source material.
 
@@ -29,3 +29,7 @@ Every meaningful research update should state what changed, its evidence and sco
 5. Execute, retain artifacts, review results and publish traceable updates to both sites.
 
 RP003 follows RP002A preparation. RP004/RP005A and DAM X retain the baseline ordering and dependencies. Cycle progress remains based on evidence-backed obligation resolutions, not the fact that work has started.
+
+## First exploratory pilot
+
+`research/RP002A/PILOT_001_REPORT.md` records the completed isolated engineering pilot and raw artifacts. No scientific Claim or Cycle obligation was resolved. Further runs require a separate reviewed plan; confirmatory preparation remains open.

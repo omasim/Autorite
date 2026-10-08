@@ -402,5 +402,19 @@
     ],
     "label": "Pending approval proposal",
     "recommended": false
+  },
+  {
+    "key": "rp002a-pilot-001",
+    "path": "research/RP002A/PILOT_001_REPORT.md",
+    "title": "First RP002A exploratory pilot",
+    "category": "Research preparation",
+    "summary": "Completed engineering pilot: execution checks, raw artifacts and descriptive losses; no confirmatory conclusions.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Exploratory engineering report",
+    "recommended": true
   }
 ]

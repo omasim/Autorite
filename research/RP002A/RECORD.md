@@ -25,4 +25,4 @@
 }
 ---
 
-Protocol readiness remains pending. No experiment or result is recorded. Does not establish universal or fundamental memory, or full-history retention.
+Confirmatory protocol readiness remains pending. The isolated engineering pilot `pilot-20261008-001` is documented in `research/RP002A/PILOT_001_REPORT.md`; it is not confirmatory evidence or a scientific Claim. Does not establish universal or fundamental memory, or full-history retention.

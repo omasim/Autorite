@@ -1,0 +1,14 @@
+[
+  {
+    "epoch": 1,
+    "validation_log_loss": 1.0814307928085327
+  },
+  {
+    "epoch": 2,
+    "validation_log_loss": 1.0775201320648193
+  },
+  {
+    "epoch": 3,
+    "validation_log_loss": 1.073806881904602
+  }
+]

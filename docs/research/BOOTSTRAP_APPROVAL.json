@@ -1,0 +1,9 @@
+{
+  "approved": true,
+  "approved_at": "2026-10-08",
+  "approval_evidence": "User replied devam to the explicit audited baseline freeze and 300-second exploratory pilot approval request in this Codex conversation.",
+  "scope": "Audited bootstrap with named deviations; baseline-v0.1 preserved snapshot freeze; one isolated exploratory pilot only. No confirmatory study authorization.",
+  "baseline_manifest_sha256": "83ad444dfce437140bf6b453d0b305d4ea5415deb3af9dff62abcd9e45d6d14d",
+  "pilot_plan_sha256": "014c640af181b08b24fe5d1065ed8a45cc48b3c2d59dda5efd631ac071e0edd7",
+  "source_commit": "4c4b0bc7086106e82b2dc04720d2282b3d386143"
+}

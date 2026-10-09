@@ -42,3 +42,7 @@ The generator, reference, model and pilot harness now have engineering acceptanc
 ## Target-size feasibility disposition — 2026-10-09
 
 The separately approved pilot `budget-transfer-20261009-001` completed once: three units, six fits, 348.175 seconds, about 251.42 MiB lifetime peak process resident memory. No predeclared warning was triggered; this is not convergence proof. One training replicate per world supplies no variance or inferential conclusion. The full review is `research/RP002A/BUDGET_TRANSFER_REPORT.md`. Prior warnings remain on record; confirmation is PLANNED and Cycle 01 remains 0/13. No further execution is authorized.
+
+## Uncertainty design follow-up — 2026-10-09
+
+`research/RP002A/UNCERTAINTY_DESIGN_REVIEW.md` audits the current nested resampling variance and extreme-tail bootstrap resolution, with deterministic precision/resource sensitivity. Target-size variance, analysis coverage and substantive margins remain open. No final sample count or interval is chosen; no new training, Claim or Cycle resolution. The historical numerical proposal remains unchanged.

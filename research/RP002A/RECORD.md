@@ -34,3 +34,7 @@ Literature overlap and confirmatory design are reviewed in `COLLISION_REVIEW.md`
 `CONVERGENCE_002_PROTOCOL.md` and `CONVERGENCE_002_PLAN.json` prepare a separate longer-budget exploratory proposal with fresh seeds. It was separately approved and completed once; `CONVERGENCE_002_REPORT.md` records its verified outputs and remaining 12 near-cap warnings. No further execution is authorized.
 
 `BUDGET_WARNING_REVIEW.md` replays recorded validation traces and reference losses without new observations or training. `BUDGET_TRANSFER_PROTOCOL.md` proposes a separate six-fit feasibility pilot at the intended confirmation data sizes. It was separately frozen, authorized and completed once; `BUDGET_TRANSFER_REPORT.md` records the audited target-size pilot. The prior convergence disposition and confirmatory package status remain unchanged.
+
+## Uncertainty design follow-up — 2026-10-09
+
+`research/RP002A/UNCERTAINTY_DESIGN_REVIEW.md` audits the current nested resampling variance and extreme-tail bootstrap resolution, with deterministic precision/resource sensitivity. Target-size variance, analysis coverage and substantive margins remain open. No final sample count or interval is chosen; no new training, Claim or Cycle resolution. The historical numerical proposal remains unchanged.

@@ -58,4 +58,16 @@ class SchemaTests(unittest.TestCase):
   subprocess.run(['git','-c','user.name=Validator fixture','-c','user.email=fixture@example.invalid','commit','-qm','Fixture only'],cwd=self.root,check=True,capture_output=True)
   v.validate(self.root)
   p=run/'manifest.json';d=json.loads(p.read_text());d['seeds']=[999];p.write_text(json.dumps(d));self.reject('immutable run changed')
+ def pipeline_evidence_fixture(self):
+  import hashlib
+  self.evidence_fixture();run=self.root/'research/RP002A/runs/synthetic';old=json.loads((run/'manifest.json').read_text())
+  for name in ['summary.json','replicates.json']:(run/name).write_text('{}\n')
+  outputs={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in run.iterdir() if p.name!='manifest.json'}
+  m=dict(stage='confirmation',run_id='synthetic',source_commit='0'*40,approval_path='fixture',approval_sha256='0'*64,plan_path='fixture',plan_sha256='0'*64,plan={'frozen':True,'execution_authorized':True,'run_id':'synthetic'},base={'fixture':True},seeds=old['seeds'],environment=old['environment'],elapsed_wall_seconds=1.,peak_process_resident_memory={'bytes':1},outputs=outputs)
+  (run/'manifest.json').write_text(json.dumps(m));return run
+ def test_structured_confirmation_evidence(self):
+  self.pipeline_evidence_fixture();v.validate(self.root)
+ def test_failed_confirmation_cannot_be_valid_evidence(self):
+  run=self.pipeline_evidence_fixture();(run/'failure.txt').write_text('synthetic failure');self.reject('incomplete confirmation evidence')
+
 if __name__=='__main__':unittest.main()

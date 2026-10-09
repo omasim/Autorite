@@ -1,0 +1,19 @@
+{
+  "selected_n": 20,
+  "maximum_observed_sd": 0.00045057109128948436,
+  "upper_sd": 0.0018054427007440797,
+  "upper_sd_factor": 4.0070096276640905,
+  "precision_target": 0.005,
+  "assumptions": "Normal replicate differences; conservative assumed-SD planning, not guaranteed power",
+  "precision_target_met_under_assumptions": true,
+  "planning_widths": {
+    "20": 0.002433256327690985,
+    "30": 0.0019081947116808635,
+    "50": 0.0014337887198283407
+  },
+  "eligible_counts": [
+    20,
+    30,
+    50
+  ]
+}

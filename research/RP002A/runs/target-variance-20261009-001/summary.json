@@ -1,0 +1,94 @@
+{
+  "mode": "variance",
+  "training_replicates_per_world": 5,
+  "units": 15,
+  "learned_fits": 30,
+  "contrasts": [
+    {
+      "contrast": "E1:B1-B0",
+      "n": 5,
+      "mean": -0.039426787149381214,
+      "sample_sd": 0.00033408170829116787,
+      "minimum": -0.039816921393238336,
+      "maximum": -0.03889236366209248,
+      "leave_one_out_sd_range": [
+        0.00017265743690099232,
+        0.00038525305849151155
+      ]
+    },
+    {
+      "contrast": "E1:B2-B0",
+      "n": 5,
+      "mean": -0.040034166043520905,
+      "sample_sd": 0.00045057109128948436,
+      "minimum": -0.04061398359183843,
+      "maximum": -0.03938649412324635,
+      "leave_one_out_sd_range": [
+        0.0003096818732360854,
+        0.0005201941065573878
+      ]
+    },
+    {
+      "contrast": "E0:B1-B0",
+      "n": 5,
+      "mean": 5.847036384206694e-05,
+      "sample_sd": 2.4284030161127485e-05,
+      "minimum": 2.565157343165092e-05,
+      "maximum": 9.397820319650974e-05,
+      "leave_one_out_sd_range": [
+        1.615392794276418e-05,
+        2.8036785909021466e-05
+      ]
+    },
+    {
+      "contrast": "E0:B2-B0",
+      "n": 5,
+      "mean": 2.7389249343390266e-05,
+      "sample_sd": 2.3342728775195462e-05,
+      "minimum": 8.605008841255923e-06,
+      "maximum": 6.803173822583775e-05,
+      "leave_one_out_sd_range": [
+        6.185118389853693e-06,
+        2.6800777041441344e-05
+      ]
+    },
+    {
+      "contrast": "E2:B1-B0",
+      "n": 5,
+      "mean": 0.00010383852943731675,
+      "sample_sd": 4.307288604422568e-05,
+      "minimum": 6.867449765945999e-05,
+      "maximum": 0.0001735227983168386,
+      "leave_one_out_sd_range": [
+        2.1222805242816306e-05,
+        4.944339806480151e-05
+      ]
+    },
+    {
+      "contrast": "E2:B2-B0",
+      "n": 5,
+      "mean": 2.931466799749316e-05,
+      "sample_sd": 2.2351498358432683e-05,
+      "minimum": 8.28037197808662e-06,
+      "maximum": 5.695581031783803e-05,
+      "leave_one_out_sd_range": [
+        1.8648654817449306e-05,
+        2.534050813371286e-05
+      ]
+    },
+    {
+      "contrast": "E1:B2-B1",
+      "n": 5,
+      "mean": -0.0006073788941396874,
+      "sample_sd": 0.00014913520294663758,
+      "minimum": -0.0007970621986000959,
+      "maximum": -0.00045512315678675197,
+      "leave_one_out_sd_range": [
+        0.00012109299462666983,
+        0.000169619817344109
+      ]
+    }
+  ],
+  "trace_warnings": [],
+  "interpretation": "Fixed-budget algorithm comparison; trace warnings limit optimization claims, not the definition of this algorithm. Conditional normal-theory intervals are not distribution-free; no universal history or recurrence-necessity claim."
+}

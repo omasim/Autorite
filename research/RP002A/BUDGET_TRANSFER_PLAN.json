@@ -1,7 +1,7 @@
 {
   "version": "budget-transfer-proposal-0.1",
-  "frozen": false,
-  "execution_authorized": false,
+  "frozen": true,
+  "execution_authorized": true,
   "mode": "exploratory-budget-transfer",
   "run_id": "budget-transfer-20261009-001",
   "base_configuration": "research/RP002A/CONFIG_PROPOSAL.json",

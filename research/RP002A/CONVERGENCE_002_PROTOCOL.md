@@ -39,12 +39,20 @@ Assessment summaries use one independently trained replicate mean per unit: mode
 
 Derive the 140 seeds from the new opaque namespace with the existing SHA-256 function. Verify distinctness within this stage and disjointness from executed pilot/stage seeds and the declared confirmatory schedule before any execution. Hash separation is not a proof of probabilistic independence.
 
-`python3 scripts/check-convergence-proposal.py` validates the configuration hash, bounded change set and seed separation without training, generating observations or creating a run directory. CI runs the same check. The existing `scripts/rp002a-convergence.py` still addresses stage 001; it is **not** an execution entry point for stage 002. The new proposal deliberately remains unauthorized.
+`python3 scripts/check-convergence-proposal.py` validates the configuration hash, bounded change set and seed separation without training, generating observations or creating a run directory. CI runs the same check. The stage-specific entry point is now prepared: `python3 scripts/rp002a-convergence.py --stage 2` prints the plan without creating data. Adding `--execute --run-id convergence-20261009-002` refuses before creating artifacts while the plan remains unfrozen/unauthorized. The default entry point still addresses stage 001.
 
-Before execution, implement and review a separately gated stage-002 entry point and artifact auditor, including the secondary five-epoch diagnostic. Bind approval to the frozen plan hash, unchanged baseline hash, fixed run ID and exact reviewed source commit. Stage-001 and bootstrap approvals cannot authorize this stage. Review the implementation and immutable preservation checks before requesting that one-run approval.
+The stage-002 entry point, stage-specific artifact auditor and secondary five-epoch diagnostic are implemented and pass software checks. Bind approval to the frozen plan hash, unchanged baseline hash, fixed run ID and exact reviewed source commit. Stage-001 and bootstrap approvals cannot authorize this stage. Review the implementation and immutable preservation checks before requesting that one-run approval.
 
 ## Failure and later decisions
 
 One attempt only after separate approval. Preserve partial datasets, traces/checkpoints when available, failure traceback and manifest; no retries, replacement seeds, extra fits or automatic extension. An incomplete stage has no complete across-replicate aggregate.
 
 Review actual runtime, validation warnings and replicate variability before any further proposal. If the new budget is still binding, record that result and prepare a separately reviewed deviation rather than extending this run. Even an unflagged result leaves the 4096-training-episode confirmatory setting unvalidated: this stage holds the smaller data size fixed to isolate the budget question. Confirmatory optimization, variance assumptions, margins, sample counts and analysis remain separate design obligations. Cycle 01 stays PLANNED at 0/13.
+
+## Execution preparation review — 2026-10-09
+
+The two stages resolve distinct plan and approval paths. Stage 002 requires `docs/research/CONVERGENCE_002_APPROVAL.json`; the earlier record does not open this gate. Approval binds the exact on-disk plan, baseline and reviewed source; a substituted payload, dirty checkout, changed source or wrong environment is rejected. The fixed run directory cannot be overwritten.
+
+The auditor replays seeds, observed data, B0/B3 and saved learned checkpoints without training. It checks primary and secondary trace diagnostics, stop reasons, replicate-level summaries and immutable Git bytes. Stage-001 output format is preserved and its 322 recorded outputs still replay successfully. Fifty software tests pass; authorization tests use synthetic fixtures and create no research outcomes.
+
+The numerical proposal is unchanged: 20 units, 40 learned fits, at most 300 epochs each, patience 20 and a cooperative 1800-second stage allowance. The proposed CPU environment has not changed. The plan and baseline hashes must be captured when the separately approved one-run scope is frozen. No stage-002 approval record or run exists yet.

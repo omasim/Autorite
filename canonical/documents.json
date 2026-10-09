@@ -478,7 +478,7 @@
     "path": "research/RP002A/CONVERGENCE_002_PROTOCOL.md",
     "title": "RP002A longer-budget convergence proposal",
     "category": "Methods & protocols",
-    "summary": "A fresh-seed, 300-epoch exploratory proposal addressing the earlier binding epoch cap. Not frozen or executed.",
+    "summary": "A fresh-seed, 300-epoch exploratory proposal with a tested, separately gated runner and auditor. Not frozen or executed.",
     "primary_site": "net",
     "sites": [
       "org",

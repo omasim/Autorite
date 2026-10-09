@@ -500,5 +500,33 @@
     ],
     "label": "Exploratory convergence report",
     "recommended": true
+  },
+  {
+    "key": "rp002a-budget-warning-review",
+    "path": "research/RP002A/BUDGET_WARNING_REVIEW.md",
+    "title": "RP002A remaining budget-warning review",
+    "category": "Methods & protocols",
+    "summary": "Validation-only review of the 12 remaining cap warnings; earlier disposition unchanged.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Post-outcome planning review",
+    "recommended": true
+  },
+  {
+    "key": "rp002a-budget-transfer-plan",
+    "path": "research/RP002A/BUDGET_TRANSFER_PROTOCOL.md",
+    "title": "RP002A target-data-size feasibility proposal",
+    "category": "Methods & protocols",
+    "summary": "Six fresh learned-model fits proposed at the intended 4096-training-episode data size. No variance estimate or execution authorized.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Unfrozen feasibility proposal",
+    "recommended": true
   }
 ]

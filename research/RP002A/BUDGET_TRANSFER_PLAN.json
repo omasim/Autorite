@@ -1,0 +1,38 @@
+{
+  "version": "budget-transfer-proposal-0.1",
+  "frozen": false,
+  "execution_authorized": false,
+  "mode": "exploratory-budget-transfer",
+  "run_id": "budget-transfer-20261009-001",
+  "base_configuration": "research/RP002A/CONFIG_PROPOSAL.json",
+  "base_configuration_sha256": "fdd50646ee1e5e6ae659091a0fc9e3e1b6ff47bea09b8f3e1471e8bac0cf34ee",
+  "world_replicates": {
+    "E0": 1,
+    "E1": 1,
+    "E2": 1
+  },
+  "train_episodes": 4096,
+  "validation_episodes": 1024,
+  "assessment_episodes": 2048,
+  "episode_observations": 129,
+  "max_epochs": 300,
+  "early_stopping_patience": 20,
+  "threads": 2,
+  "max_training_wall_seconds": 3600,
+  "near_cap_last_epochs": 30,
+  "late_trace_epochs": 20,
+  "late_improvement_threshold_nats": 0.001,
+  "environment": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "torch": "2.8.0",
+    "platform": "darwin",
+    "machine": "arm64",
+    "device": "CPU"
+  },
+  "selection": "Minimum validation loss checkpoint; assessment read only after selection",
+  "order": "world lexicographic, B1 then B2",
+  "purpose": "Check runtime and validation-trace behavior at the proposed confirmatory data sizes; not variance estimation or confirmation",
+  "failure_policy": "One attempt after separate approval; preserve partial failure; no retry, extension or completed-stage aggregate on failure",
+  "interpretation": "Single replicate per world: no sample SD, inferential interval, power claim, equivalence decision, Claim promotion or Cycle resolution"
+}

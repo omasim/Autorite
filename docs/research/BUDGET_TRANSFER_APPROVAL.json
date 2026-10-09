@@ -1,0 +1,10 @@
+{
+  "approved": true,
+  "approved_at": "2026-10-09T18:46:40.386983+00:00",
+  "approval_evidence": "User replied devam edelim to the explicit request to freeze and execute one six-fit target-data-size pilot with a 300-epoch cap and 3600-second stage allowance after its tested runner and auditor were published.",
+  "scope": "One exploratory budget-transfer feasibility pilot only: three units, six fits, fresh seeds; no retry, extension, variance inference, confirmation, Claim promotion or Cycle resolution.",
+  "run_id": "budget-transfer-20261009-001",
+  "plan_sha256": "e0e55a02902b350cbab04f23f558ce69bad3fa82ef5eb98ef51ed2c0ee65174e",
+  "baseline_manifest_sha256": "83ad444dfce437140bf6b453d0b305d4ea5415deb3af9dff62abcd9e45d6d14d",
+  "source_commit": "cd0bc4c751517bf84998a406d3ed233609577196"
+}

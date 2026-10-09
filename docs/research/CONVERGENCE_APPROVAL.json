@@ -1,0 +1,10 @@
+{
+  "approved": true,
+  "approved_at": "2026-10-09T13:36:10.162134+00:00",
+  "approval_evidence": "User replied devam to the explicit request to freeze and execute the proposed 20-unit, 40-fit stage with a 900-second CPU budget.",
+  "scope": "One exploratory convergence stage only; no confirmatory execution or scientific Claim promotion.",
+  "run_id": "convergence-20261008-001",
+  "plan_sha256": "1dfdabfbf39d2890bd7853b2018b1e8e9765460d13052606a8d4ea2cda18bdc4",
+  "baseline_manifest_sha256": "83ad444dfce437140bf6b453d0b305d4ea5415deb3af9dff62abcd9e45d6d14d",
+  "source_commit": "4767987b6733bbdeeca9cc0926dc4bd11de64cc9"
+}

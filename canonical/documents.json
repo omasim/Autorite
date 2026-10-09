@@ -476,15 +476,29 @@
   {
     "key": "rp002a-convergence-002-plan",
     "path": "research/RP002A/CONVERGENCE_002_PROTOCOL.md",
-    "title": "RP002A longer-budget convergence proposal",
+    "title": "RP002A longer-budget convergence protocol",
     "category": "Methods & protocols",
-    "summary": "A fresh-seed, 300-epoch exploratory proposal with a tested, separately gated runner and auditor. Not frozen or executed.",
+    "summary": "The separately approved 300-epoch exploratory protocol completed once; its pre-outcome declarations remain visible.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
-    "label": "Unfrozen exploratory proposal",
+    "label": "Frozen exploratory protocol",
+    "recommended": true
+  },
+  {
+    "key": "rp002a-convergence-002",
+    "path": "research/RP002A/CONVERGENCE_002_REPORT.md",
+    "title": "RP002A longer-budget convergence review",
+    "category": "Methods & protocols",
+    "summary": "All 40 fits completed in about 6 minutes 24 seconds. Twelve near-cap warnings remain; no confirmatory decisions.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Exploratory convergence report",
     "recommended": true
   }
 ]

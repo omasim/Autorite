@@ -1,6 +1,6 @@
 # RP002A exploratory convergence and replicate-variability stage
 
-Version: convergence-proposal-0.1. Date: 2026-10-08. **Proposed, unfrozen and execution not authorized.** This is a separately reviewable follow-up to the first engineering pilot, not confirmation. No new model outcomes have been observed.
+Version: convergence-proposal-0.1. Date: 2026-10-08. **Approved and frozen for the one completed stage.** This is a separately reviewable follow-up to the first engineering pilot, not confirmation. The stage completed on 2026-10-09; see `CONVERGENCE_001_REPORT.md`. The declarations below preserve the pre-outcome plan.
 
 ## Purpose and limits
 
@@ -66,3 +66,7 @@ Current software fixtures cover the authorization boundary, one-run ID, independ
 ## Concrete approval scope
 
 Approve only this one separately declared exploratory stage with the fixed scope above. Do not approve a confirmatory study, baseline amendment, novelty claim, new hypothesis or Cycle resolution. After the stage, review actual convergence flags, replicate variability and runtime before proposing a separate confirmatory freeze.
+
+## Recorded disposition — 2026-10-09
+
+The separately approved stage completed once. Approval is in `docs/research/CONVERGENCE_APPROVAL.json`; the review is in `CONVERGENCE_001_REPORT.md`. No additional execution is authorized.

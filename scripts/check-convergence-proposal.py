@@ -12,13 +12,13 @@ def check():
     plan = json.loads(path.read_text())
     base = json.loads(c.base_path(plan).read_text())
     c.validate_plan(plan, base)
-    if plan['frozen'] is not False or plan['execution_authorized'] is not False:
-        raise ValueError('This checker reviews an unfrozen, unauthorized proposal only')
-    if (ROOT / 'research/RP002A/runs' / plan['run_id']).exists():
+    if any(type(plan[k]) is not bool for k in ['frozen','execution_authorized']) or plan['frozen'] != plan['execution_authorized']:
+        raise ValueError('Freeze and execution flags must agree')
+    if not plan['execution_authorized'] and (ROOT / 'research/RP002A/runs' / plan['run_id']).exists():
         raise ValueError('Proposal must have no run artifacts')
     prior = json.loads((ROOT / 'research/RP002A/CONVERGENCE_PLAN.json').read_text())
-    changed = {k for k in plan if plan[k] != prior.get(k)}
-    allowed = {'version', 'frozen', 'execution_authorized', 'run_id', 'max_epochs',
+    changed = {k for k in plan if k not in {'frozen', 'execution_authorized'} and plan[k] != prior.get(k)}
+    allowed = {'version', 'run_id', 'max_epochs',
                'early_stopping_patience', 'max_training_wall_seconds',
                'near_cap_last_epochs', 'late_trace_epochs', 'purpose', 'failure_policy'}
     if set(plan) != set(prior) or changed != allowed:
@@ -26,7 +26,8 @@ def check():
     seeds = c.schedule(plan)
     used = set(c.schedule(prior).values())
     for manifest in (ROOT / 'research/RP002A/runs').glob('*/manifest.json'):
-        used.update(json.loads(manifest.read_text())['seeds'].values())
+        if manifest.parent.name != plan['run_id']:
+            used.update(json.loads(manifest.read_text())['seeds'].values())
     for world in base['worlds']:
         for r in range(base['replicates']):
             for split in base['splits']:
@@ -36,7 +37,7 @@ def check():
         raise ValueError('New proposal seed collides with a declared or executed stage')
     return {'mode': 'plan-only', 'plan_sha256': c.digest(path),
             'seed_count': len(seeds), 'run_created': False,
-            'execution_authorized': False, 'plan': plan}
+            'execution_authorized': plan['execution_authorized'], 'plan': plan}
 
 if __name__ == '__main__':
     print(json.dumps(check(), indent=2))

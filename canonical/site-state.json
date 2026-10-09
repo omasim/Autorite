@@ -97,6 +97,11 @@
   "changes": [
     [
       "2026-10-09",
+      "Stage-002 execution preparation verified",
+      "The longer-budget entry point and artifact audit are ready. Fifty software tests pass and previous outputs replay. The separate one-run approval gate remains closed; no new research training."
+    ],
+    [
+      "2026-10-09",
       "Longer-budget convergence proposal prepared",
       "A separate 300-epoch, 20-epoch-patience plan keeps models and data sizes fixed with 140 fresh seeds. Proposal checks pass; no new training or confirmatory evidence."
     ],

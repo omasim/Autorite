@@ -19,15 +19,16 @@ def audit(run):
   first=history[-1];tree=subprocess.check_output(['git','ls-tree','-r','--name-only',first,'--',prefix],cwd=ROOT,text=True).splitlines()
   assert set(tree)=={str(p.relative_to(ROOT)) for p in run.iterdir() if p.is_file()},'Immutable run file set changed'
   for path in tree:assert (ROOT/path).read_bytes()==subprocess.check_output(['git','show',first+':'+path],cwd=ROOT),'Immutable run changed'
- source=m['environment']['source_commit'];saved_plan=subprocess.check_output(['git','show',source+':research/RP002A/CONVERGENCE_PLAN.json'],cwd=ROOT)
+ plan_relative,approval_relative=c.stage_paths(plan)
+ source=m['environment']['source_commit'];saved_plan=subprocess.check_output(['git','show',source+':'+plan_relative],cwd=ROOT)
  saved_base=subprocess.check_output(['git','show',source+':'+plan['base_configuration']],cwd=ROOT)
- approved=json.loads(subprocess.check_output(['git','show',source+':docs/research/CONVERGENCE_APPROVAL.json'],cwd=ROOT))
+ approved=json.loads(subprocess.check_output(['git','show',source+':'+approval_relative],cwd=ROOT))
  assert plan['frozen'] is True and plan['execution_authorized'] is True and approved['approved'] is True
  assert approved['run_id']==plan['run_id'] and approved['plan_sha256']==m['environment']['plan_sha256']
  assert approved['baseline_manifest_sha256']==hashlib.sha256(subprocess.check_output(['git','show',source+':baseline/SNAPSHOT.json'],cwd=ROOT)).hexdigest()
  anchor=approved['source_commit'];subprocess.check_call(['git','merge-base','--is-ancestor',anchor,source],cwd=ROOT)
  changed=subprocess.check_output(['git','diff','--name-only',anchor,source],cwd=ROOT,text=True).splitlines()
- assert not set(changed)-{'docs/research/CONVERGENCE_APPROVAL.json'},'Unapproved source changes' 
+ assert not set(changed)-{approval_relative},'Unapproved source changes'
  assert hashlib.sha256(saved_plan).hexdigest()==m['environment']['plan_sha256'] and json.loads(saved_plan)==plan
  assert hashlib.sha256(saved_base).hexdigest()==m['environment']['base_configuration_sha256']==plan['base_configuration_sha256'] and json.loads(saved_base)==base
  if (run/'failure.txt').exists():

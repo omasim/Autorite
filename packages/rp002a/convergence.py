@@ -11,8 +11,18 @@ def base_path(plan):
  if not path.is_relative_to(ROOT.resolve()) or not path.is_file():raise ValueError('Invalid base configuration path')
  return path
 
-def load_plan():
- path=ROOT/'research/RP002A/CONVERGENCE_PLAN.json';plan=json.loads(path.read_text());base=json.loads(base_path(plan).read_text());validate_plan(plan,base);return path,plan,base
+STAGES = {
+ 1: ('convergence-proposal-0.1', 'research/RP002A/CONVERGENCE_PLAN.json', 'docs/research/CONVERGENCE_APPROVAL.json'),
+ 2: ('convergence-long-budget-proposal-0.1', 'research/RP002A/CONVERGENCE_002_PLAN.json', 'docs/research/CONVERGENCE_002_APPROVAL.json'),
+}
+def stage_paths(plan):
+ for version,path,approval in STAGES.values():
+  if plan['version']==version:return path,approval
+ raise PermissionError('Unknown reviewed convergence stage')
+
+def load_plan(stage=1):
+ if stage not in STAGES:raise ValueError('Unknown convergence stage')
+ path=ROOT/STAGES[stage][1];plan=json.loads(path.read_text());base=json.loads(base_path(plan).read_text());validate_plan(plan,base);return path,plan,base
 
 def validate_plan(plan,base):
  if plan['mode']!='exploratory-convergence' or not plan['version'] or not plan['run_id'] or not all(c.isalnum() or c in '-_' for c in plan['run_id']):raise ValueError('Invalid stage identity')
@@ -35,13 +45,15 @@ def schedule(plan):
 
 def authorization(path,plan):
  if plan.get('frozen') is not True or plan.get('execution_authorized') is not True:raise PermissionError('Convergence stage not frozen/authorized; no run created.')
- approval=ROOT/'docs/research/CONVERGENCE_APPROVAL.json'
+ plan_relative,approval_relative=stage_paths(plan)
+ approval=ROOT/approval_relative
  if not approval.is_file():raise PermissionError('Separate convergence approval is missing; no run created.')
+ if path.resolve()!=(ROOT/plan_relative).resolve() or json.loads(path.read_text())!=plan:raise PermissionError('Plan differs from declared stage file')
  d=json.loads(approval.read_text());head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip();source=d.get('source_commit','')
  if d.get('approved') is not True or d.get('run_id')!=plan['run_id'] or d.get('plan_sha256')!=digest(path) or d.get('baseline_manifest_sha256')!=digest(ROOT/'baseline/SNAPSHOT.json') or len(source)!=40:raise PermissionError('Approval differs from exact stage/baseline/source')
  if subprocess.run(['git','merge-base','--is-ancestor',source,head],cwd=ROOT,capture_output=True).returncode:raise PermissionError('Approved source is not in current history')
  changed=subprocess.check_output(['git','diff','--name-only',source,head],cwd=ROOT,text=True).splitlines()
- if set(changed)-{'docs/research/CONVERGENCE_APPROVAL.json'}:raise PermissionError('Source changed after approval')
+ if set(changed)-{approval_relative}:raise PermissionError('Source changed after approval')
  if subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True).strip():raise PermissionError('Execution requires clean checkout')
  actual={'python':platform.python_version(),'numpy':np.__version__,'torch':torch.__version__.split('+')[0],'platform':sys.platform,'machine':platform.machine(),'device':'CPU'}
  if actual!=plan['environment']:raise PermissionError('Actual environment differs from declared stage environment')
@@ -58,7 +70,13 @@ def trace_summary(trace,plan):
  if len(values)<1 or not np.isfinite(values).all() or [t['epoch'] for t in trace]!=list(range(1,len(trace)+1)) or len(values)>plan['max_epochs']:raise ValueError('Invalid training trace')
  best=int(values.argmin())+1;late=values[-plan['late_trace_epochs']:];improvement=float(late[0]-late[-1])
  capped=len(values)==plan['max_epochs'];near_cap=capped and best>plan['max_epochs']-plan['near_cap_last_epochs']
- return {'epochs_completed':len(values),'best_epoch':best,'best_validation_log_loss':float(values.min()),'final_validation_log_loss':float(values[-1]),'reached_epoch_cap':capped,'best_in_final_cap_window':near_cap,'late_window_epochs':len(late),'late_validation_improvement_nats':improvement,'late_improvement_flag':len(late)==plan['late_trace_epochs'] and improvement>plan['late_improvement_threshold_nats'],'interpretation':'Descriptive trace flags; not a convergence proof'}
+ summary={'epochs_completed':len(values),'best_epoch':best,'best_validation_log_loss':float(values.min()),'final_validation_log_loss':float(values[-1]),'reached_epoch_cap':capped,'best_in_final_cap_window':near_cap,'late_window_epochs':len(late),'late_validation_improvement_nats':improvement,'late_improvement_flag':len(late)==plan['late_trace_epochs'] and improvement>plan['late_improvement_threshold_nats'],'interpretation':'Descriptive trace flags; not a convergence proof'}
+ if plan['version']==STAGES[2][0]:
+  secondary=values[-5:];delta=float(secondary[0]-secondary[-1])
+  stopped=not capped and len(values)-best>=plan['early_stopping_patience']
+  if not capped and not stopped:raise ValueError('Trace ended before cap or declared early stopping')
+  summary.update(stop_reason='epoch_cap' if capped else 'early_stopping_patience',secondary_last_five={'window_epochs':len(secondary),'validation_improvement_nats':delta,'threshold_nats':0.001,'improvement_flag':len(secondary)==5 and delta>0.001})
+ return summary
 
 def summarize(rows,plan,base):
  expected={(w,r,m) for w,n in plan['world_replicates'].items() for r in range(n) for m in ['B0','B1','B2','B3']}

@@ -1,0 +1,11 @@
+{
+  "approved": true,
+  "approved_at": "2026-10-09T20:15:10.701364+00:00",
+  "approval_evidence": "User explicitly instructed: 1,2, 3 ve 4 yap. Step 4 authorizes the confirmatory experiment following calibration, variance assessment and protocol freeze under the reviewed SD-only selection rule.",
+  "stage": "confirmation",
+  "run_id": "confirmatory-20261009-001",
+  "scope": "One fixed confirmatory attempt: 20 fresh replicates per world, 60 units, 120 fits, cap 300, patience 20, two CPU threads, 14400-second allowance; seven predeclared decisions and complete secondary metrics. No retry, extension, seed replacement or post-outcome method selection.",
+  "plan_sha256": "a84c08db5b7891aac7eb6be5bc8f00e7980904441dec516df438f089a4acc7c9",
+  "baseline_manifest_sha256": "83ad444dfce437140bf6b453d0b305d4ea5415deb3af9dff62abcd9e45d6d14d",
+  "source_commit": "0f39dd26fdb8e578b4a943d2b5c6d9b5eaddad00"
+}

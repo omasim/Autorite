@@ -1,0 +1,11 @@
+{
+  "approved": true,
+  "approved_at": "2026-10-09T19:32:11.994866+00:00",
+  "approval_evidence": "User explicitly instructed: 1,2, 3 ve 4 yap. This includes predeclared synthetic analysis calibration.",
+  "stage": "calibration",
+  "run_id": "calibration-20261009-001",
+  "scope": "One fixed synthetic calibration attempt; no extension or retries; later stages require separately bound records under the same explicit user authorization.",
+  "plan_sha256": "b3bd602411fd0f7269cd6b48b25d123423f6f9f849a37bb3ae5e389b20d1fd2a",
+  "baseline_manifest_sha256": "83ad444dfce437140bf6b453d0b305d4ea5415deb3af9dff62abcd9e45d6d14d",
+  "source_commit": "2b6e488309264e5a092b67c7cd4214d91f56a9b1"
+}

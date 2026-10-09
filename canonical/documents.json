@@ -542,5 +542,19 @@
     ],
     "label": "Exploratory feasibility report",
     "recommended": true
+  },
+  {
+    "key": "rp002a-uncertainty-design",
+    "path": "research/RP002A/UNCERTAINTY_DESIGN_REVIEW.md",
+    "title": "RP002A uncertainty and replicate-count review",
+    "category": "Methods & protocols",
+    "summary": "Deterministic audit of nested resampling, bootstrap tail resolution, assumed precision and resource sensitivity. No final count or interval selected.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Statistical planning review",
+    "recommended": true
   }
 ]

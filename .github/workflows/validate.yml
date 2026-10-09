@@ -23,6 +23,7 @@ jobs:
       - run: python scripts/rp002a-budget-diagnostics.py
       - run: python scripts/check-budget-transfer-plan.py
       - run: python scripts/rp002a-design-review.py --check
+      - run: python scripts/rp002a-uncertainty-review.py --check
       - run: python -m unittest discover -s tests
       - run: python scripts/build-sites.py
       - run: python scripts/check-sites.py

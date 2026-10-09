@@ -97,6 +97,11 @@
   "changes": [
     [
       "2026-10-09",
+      "Uncertainty design and replicate-count sensitivity reviewed",
+      "An exact resampling-variance audit identifies an added within-episode term. Bootstrap tail resolution, assumed precision and runtime sensitivity are reproducible; no new samples, fits or final statistical design."
+    ],
+    [
+      "2026-10-09",
       "Target-data-size feasibility pilot completed and audited",
       "Three units and six fits completed in 5 minutes 48 seconds, with about 251 MiB lifetime peak process memory and no declared warning. All 50 outputs replay; n=1 per world supports no variance or confirmatory decision."
     ],

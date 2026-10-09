@@ -54,3 +54,7 @@ Prepare a separately reviewed exploratory convergence/variance plan with fresh s
 Then choose confirmatory replicate count using explicit variance assumptions and sensitivity or a separately validated analysis-calibration procedure. Check whether the fixed CPU budget can accommodate the resulting training workload. Fix environment/hardware, full analysis outputs, calibration bins, failure handling and all secondary measures; not all are implemented in the current pilot runner. Confirmatory evaluation must use a separate runner and untouched seed namespace, with exact pre-outcome approval metadata.
 
 No hypothesis family, baseline scientific definition, pilot output or Cycle resolution is amended here. The numerical proposal is preserved as a historical proposal; this review explains why it is not ready to freeze.
+
+## Uncertainty design follow-up — 2026-10-09
+
+`research/RP002A/UNCERTAINTY_DESIGN_REVIEW.md` audits the current nested resampling variance and extreme-tail bootstrap resolution, with deterministic precision/resource sensitivity. Target-size variance, analysis coverage and substantive margins remain open. No final sample count or interval is chosen; no new training, Claim or Cycle resolution. The historical numerical proposal remains unchanged.

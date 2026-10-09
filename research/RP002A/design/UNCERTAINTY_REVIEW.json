@@ -1,0 +1,204 @@
+{
+  "mode": "deterministic-uncertainty-design-review",
+  "sampled_data": false,
+  "trained_models": false,
+  "family_size": 7,
+  "familywise_alpha": 0.05,
+  "normal_critical_value": 2.6901095271588664,
+  "assumed_precision": [
+    {
+      "assumed_sd_of_replicate_means": 0.001,
+      "target_half_width": 0.005,
+      "known_sd_normal_minimum_n": 2
+    },
+    {
+      "assumed_sd_of_replicate_means": 0.001,
+      "target_half_width": 0.01,
+      "known_sd_normal_minimum_n": 2
+    },
+    {
+      "assumed_sd_of_replicate_means": 0.003,
+      "target_half_width": 0.005,
+      "known_sd_normal_minimum_n": 3
+    },
+    {
+      "assumed_sd_of_replicate_means": 0.003,
+      "target_half_width": 0.01,
+      "known_sd_normal_minimum_n": 2
+    },
+    {
+      "assumed_sd_of_replicate_means": 0.01,
+      "target_half_width": 0.005,
+      "known_sd_normal_minimum_n": 29
+    },
+    {
+      "assumed_sd_of_replicate_means": 0.01,
+      "target_half_width": 0.01,
+      "known_sd_normal_minimum_n": 8
+    },
+    {
+      "assumed_sd_of_replicate_means": 0.03,
+      "target_half_width": 0.005,
+      "known_sd_normal_minimum_n": 261
+    },
+    {
+      "assumed_sd_of_replicate_means": 0.03,
+      "target_half_width": 0.01,
+      "known_sd_normal_minimum_n": 66
+    }
+  ],
+  "bootstrap_tail_resolution": [
+    {
+      "resamples": 2000,
+      "tail_probability": 0.0035714285714285718,
+      "expected_tail_count": 7.142857142857143,
+      "tail_count_sd": 2.667835628140443,
+      "relative_tail_count_sd": 0.373496987939662
+    },
+    {
+      "resamples": 10000,
+      "tail_probability": 0.0035714285714285718,
+      "expected_tail_count": 35.714285714285715,
+      "tail_count_sd": 5.96546181731788,
+      "relative_tail_count_sd": 0.16703293088490065
+    },
+    {
+      "resamples": 50000,
+      "tail_probability": 0.0035714285714285718,
+      "expected_tail_count": 178.57142857142858,
+      "tail_count_sd": 13.339178140702213,
+      "relative_tail_count_sd": 0.07469939758793238
+    }
+  ],
+  "random_effects_variance_illustrations": [
+    {
+      "replicates": 5,
+      "within_episode_fraction": 0,
+      "expected_whole_cluster_variance_over_true_mean_variance": 0.8,
+      "expected_nested_variance_over_true_mean_variance": 0.8
+    },
+    {
+      "replicates": 5,
+      "within_episode_fraction": 0.5,
+      "expected_whole_cluster_variance_over_true_mean_variance": 0.8,
+      "expected_nested_variance_over_true_mean_variance": 1.299755859375
+    },
+    {
+      "replicates": 5,
+      "within_episode_fraction": 1,
+      "expected_whole_cluster_variance_over_true_mean_variance": 0.8,
+      "expected_nested_variance_over_true_mean_variance": 1.79951171875
+    },
+    {
+      "replicates": 10,
+      "within_episode_fraction": 0,
+      "expected_whole_cluster_variance_over_true_mean_variance": 0.9,
+      "expected_nested_variance_over_true_mean_variance": 0.9
+    },
+    {
+      "replicates": 10,
+      "within_episode_fraction": 0.5,
+      "expected_whole_cluster_variance_over_true_mean_variance": 0.9,
+      "expected_nested_variance_over_true_mean_variance": 1.399755859375
+    },
+    {
+      "replicates": 10,
+      "within_episode_fraction": 1,
+      "expected_whole_cluster_variance_over_true_mean_variance": 0.9,
+      "expected_nested_variance_over_true_mean_variance": 1.89951171875
+    },
+    {
+      "replicates": 20,
+      "within_episode_fraction": 0,
+      "expected_whole_cluster_variance_over_true_mean_variance": 0.95,
+      "expected_nested_variance_over_true_mean_variance": 0.95
+    },
+    {
+      "replicates": 20,
+      "within_episode_fraction": 0.5,
+      "expected_whole_cluster_variance_over_true_mean_variance": 0.95,
+      "expected_nested_variance_over_true_mean_variance": 1.449755859375
+    },
+    {
+      "replicates": 20,
+      "within_episode_fraction": 1,
+      "expected_whole_cluster_variance_over_true_mean_variance": 0.95,
+      "expected_nested_variance_over_true_mean_variance": 1.94951171875
+    },
+    {
+      "replicates": 30,
+      "within_episode_fraction": 0,
+      "expected_whole_cluster_variance_over_true_mean_variance": 0.9666666666666667,
+      "expected_nested_variance_over_true_mean_variance": 0.9666666666666667
+    },
+    {
+      "replicates": 30,
+      "within_episode_fraction": 0.5,
+      "expected_whole_cluster_variance_over_true_mean_variance": 0.9666666666666667,
+      "expected_nested_variance_over_true_mean_variance": 1.4664225260416668
+    },
+    {
+      "replicates": 30,
+      "within_episode_fraction": 1,
+      "expected_whole_cluster_variance_over_true_mean_variance": 0.9666666666666667,
+      "expected_nested_variance_over_true_mean_variance": 1.9661783854166668
+    },
+    {
+      "replicates": 50,
+      "within_episode_fraction": 0,
+      "expected_whole_cluster_variance_over_true_mean_variance": 0.98,
+      "expected_nested_variance_over_true_mean_variance": 0.98
+    },
+    {
+      "replicates": 50,
+      "within_episode_fraction": 0.5,
+      "expected_whole_cluster_variance_over_true_mean_variance": 0.98,
+      "expected_nested_variance_over_true_mean_variance": 1.479755859375
+    },
+    {
+      "replicates": 50,
+      "within_episode_fraction": 1,
+      "expected_whole_cluster_variance_over_true_mean_variance": 0.98,
+      "expected_nested_variance_over_true_mean_variance": 1.97951171875
+    }
+  ],
+  "runtime_sensitivity": [
+    {
+      "replicates_per_world": 5,
+      "pilot_linear_seconds": 1740.8737256250001,
+      "twofold_seconds": 3481.7474512500003,
+      "fourfold_seconds": 6963.4949025000005
+    },
+    {
+      "replicates_per_world": 10,
+      "pilot_linear_seconds": 3481.7474512500003,
+      "twofold_seconds": 6963.4949025000005,
+      "fourfold_seconds": 13926.989805000001
+    },
+    {
+      "replicates_per_world": 20,
+      "pilot_linear_seconds": 6963.4949025000005,
+      "twofold_seconds": 13926.989805000001,
+      "fourfold_seconds": 27853.979610000002
+    },
+    {
+      "replicates_per_world": 30,
+      "pilot_linear_seconds": 10445.24235375,
+      "twofold_seconds": 20890.4847075,
+      "fourfold_seconds": 41780.969415
+    },
+    {
+      "replicates_per_world": 50,
+      "pilot_linear_seconds": 17408.737256250002,
+      "twofold_seconds": 34817.474512500004,
+      "fourfold_seconds": 69634.94902500001
+    }
+  ],
+  "selected_replicate_count": null,
+  "selected_interval_method": null,
+  "execution_authorized": false,
+  "inputs_sha256": {
+    "research/RP002A/CONFIG_PROPOSAL.json": "fdd50646ee1e5e6ae659091a0fc9e3e1b6ff47bea09b8f3e1471e8bac0cf34ee",
+    "research/RP002A/runs/budget-transfer-20261009-001/manifest.json": "78ae8dfe2b50544ccfe1838a4d3d47a75f0393a3bf536800f09f7a4de9cb1d77"
+  }
+}

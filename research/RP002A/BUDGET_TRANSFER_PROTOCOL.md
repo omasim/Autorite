@@ -1,6 +1,6 @@
-# RP002A target-data-size feasibility pilot proposal
+# RP002A target-data-size feasibility pilot protocol
 
-Date: 2026-10-09. Version/seed namespace: `budget-transfer-proposal-0.1`. **Unfrozen, unauthorized and unexecuted.** Numerical specification: `BUDGET_TRANSFER_PLAN.json`. Proposed run ID: `budget-transfer-20261009-001`.
+Date: 2026-10-09. Version/seed namespace: `budget-transfer-proposal-0.1`. **Frozen, separately authorized and completed once.** Numerical specification: `BUDGET_TRANSFER_PLAN.json`. Run ID: `budget-transfer-20261009-001`.
 
 ## Purpose
 
@@ -52,6 +52,10 @@ The manifest records lifetime peak resident memory of the running process, inclu
 
 `scripts/check-convergence.py` now audits this pilot mode alongside the immutable earlier stages: source/approval/plan binding, file hashes and sets, observed-data replay, reference and saved learned-checkpoint predictions, trace flags/stop reasons, no-variance summaries and recorded memory-unit conversion. It performs no optimization. Memory conversion can be checked, but a past peak-memory measurement cannot be recreated by prediction replay.
 
-Fifty-seven software tests pass, including the single-replicate/no-variance contract, incompatible-mode rejection, authorization separation, memory-unit normalization and synthetic partial-failure preservation. Existing stage-001/002 outputs still replay. The numerical plan is unchanged, remains unfrozen/unauthorized, and no feasibility-pilot observations or fits have been generated.
+Fifty-seven software tests pass, including the single-replicate/no-variance contract, incompatible-mode rejection, authorization separation, memory-unit normalization and synthetic partial-failure preservation. Existing stage-001/002 outputs still replay. At the preparation review, the numerical plan was unchanged and unfrozen/unauthorized; no feasibility-pilot observations or fits had been generated.
 
 Concrete one-run scope for later approval: three independent units, six learned fits, 4096/1024/2048 episodes per unit, cap 300 epochs and patience 20, two CPU threads and a cooperative 3600-second allowance. No retries, discretionary extension, confirmation, Claim promotion or Cycle resolution.
+
+## Completed disposition — 2026-10-09
+
+The separately bound one-run approval was recorded and the frozen pilot completed in 348.175 seconds. All six fits stopped by patience with no predeclared warning. Fifty outputs and saved predictions replay. See `BUDGET_TRANSFER_REPORT.md` for runtime, lifetime peak memory and single-replicate diagnostics. No further execution, inferential conclusion, Claim or Cycle resolution is authorized. All predeclared rules above remain unchanged.

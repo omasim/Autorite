@@ -518,15 +518,29 @@
   {
     "key": "rp002a-budget-transfer-plan",
     "path": "research/RP002A/BUDGET_TRANSFER_PROTOCOL.md",
-    "title": "RP002A target-data-size feasibility proposal",
+    "title": "RP002A frozen target-data-size feasibility protocol",
     "category": "Methods & protocols",
-    "summary": "Six fresh fits proposed at target data sizes, with a tested one-run gate and no-variance auditor. Still unfrozen and unexecuted.",
+    "summary": "The separately approved six-fit pilot completed once; predeclared scope and warning rules are preserved.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
-    "label": "Unfrozen feasibility proposal",
+    "label": "Frozen feasibility protocol",
+    "recommended": true
+  },
+  {
+    "key": "rp002a-budget-transfer-001",
+    "path": "research/RP002A/BUDGET_TRANSFER_REPORT.md",
+    "title": "RP002A target-data-size feasibility review",
+    "category": "Research reports",
+    "summary": "Six fits at intended data sizes completed in 5 minutes 48 seconds with no declared warning. Single-replicate diagnostics only.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Exploratory feasibility report",
     "recommended": true
   }
 ]

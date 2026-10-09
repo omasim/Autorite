@@ -25,7 +25,7 @@ class StageTwo(unittest.TestCase):
    path=Path(tmp)/c.STAGES[2][1];path.parent.mkdir(parents=True);path.write_text(json.dumps(self.plan))
    approval=Path(tmp)/c.STAGES[2][2];approval.parent.mkdir(parents=True);approval.write_text('{"approved":true}')
    with self.assertRaisesRegex(PermissionError,'Plan differs'):
-    c.authorization(path,dict(self.plan,frozen=True,execution_authorized=True))
+    c.authorization(path,dict(self.plan,frozen=True,execution_authorized=True,max_epochs=self.plan['max_epochs']+1))
  def test_stage_specific_windows_and_stop_reason(self):
   d=c.trace_summary(self.trace([1-i*.002 for i in range(300)]),self.plan)
   self.assertTrue(d['best_in_final_cap_window']);self.assertTrue(d['late_improvement_flag'])

@@ -74,6 +74,10 @@ def check_plan():
  for f in (ROOT/'research/RP002A/runs').glob('*/manifest.json'):
   if f.parent.name not in [plan['variance']['run_id'],plan['confirmation_rule']['run_id']]:used.update(json.loads(f.read_text()).get('seeds',{}).values())
  v=set(p.seeds(plan['variance']['version'],5,base).values());confirm=set(p.seeds(plan['confirmation_rule']['version'],50,base).values());assert not v&confirm and not used&(v|confirm)
+ if p.CONFIRM.exists():
+  config=json.loads(p.CONFIRM.read_text());cal_s=json.loads((ROOT/'research/RP002A/runs'/plan['calibration']['run_id']/'summary.json').read_text());var_s=json.loads((ROOT/'research/RP002A/runs'/plan['variance']['run_id']/'summary.json').read_text());selected=inf.select_count([x['sample_sd'] for x in var_s['contrasts']],cal_s['eligible_counts'],plan)
+  assert config['replicates']==selected['selected_n'] and config['training']==plan['training'] and config['inflation']==2 and config['margin']==.01 and config['decision_kinds']==plan['confirmation_rule']['decision_kinds'] and config['max_wall_seconds']==14400
+  for relative,h in config['dependency_sha256'].items():assert p.digest(ROOT/relative)==h
  print('PASS: fixed pipeline budgets, fresh variance/confirmation namespaces; no execution')
 if __name__=='__main__':
  check_plan()

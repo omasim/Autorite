@@ -97,6 +97,11 @@
   "changes": [
     [
       "2026-10-09",
+      "Remaining budget warnings reviewed; target-size pilot proposed",
+      "A replayable validation-only diagnostic leaves all 12 prior warnings unresolved. A fresh six-fit feasibility pilot at the intended data sizes is proposed; no new observations or training."
+    ],
+    [
+      "2026-10-09",
       "Longer-budget exploratory stage completed and audited",
       "The separately approved 40 fits completed in about 6 minutes 24 seconds. All 322 outputs and saved predictions replay. Twelve near-cap warnings remain; no scientific Claims or Cycle resolutions."
     ],

@@ -32,3 +32,5 @@ Literature overlap and confirmatory design are reviewed in `COLLISION_REVIEW.md`
 `CONVERGENCE_PROTOCOL.md` and `CONVERGENCE_PLAN.json` propose a separately gated exploratory stage. The separately approved stage completed once; `CONVERGENCE_001_REPORT.md` records its exploratory outcomes and unresolved convergence flags. No additional run is authorized.
 
 `CONVERGENCE_002_PROTOCOL.md` and `CONVERGENCE_002_PLAN.json` prepare a separate longer-budget exploratory proposal with fresh seeds. It was separately approved and completed once; `CONVERGENCE_002_REPORT.md` records its verified outputs and remaining 12 near-cap warnings. No further execution is authorized.
+
+`BUDGET_WARNING_REVIEW.md` replays recorded validation traces and reference losses without new observations or training. `BUDGET_TRANSFER_PROTOCOL.md` proposes a separate six-fit feasibility pilot at the intended confirmation data sizes. It remains unfrozen and unauthorized; the prior convergence disposition and confirmatory package status remain unchanged.

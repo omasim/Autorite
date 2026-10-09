@@ -97,6 +97,11 @@
   "changes": [
     [
       "2026-10-09",
+      "Target-data-size pilot execution preparation verified",
+      "The separately gated six-fit pilot and no-variance artifact audit are implemented. Fifty-seven software tests pass; prior outputs replay. No new research training or pilot approval."
+    ],
+    [
+      "2026-10-09",
       "Remaining budget warnings reviewed; target-size pilot proposed",
       "A replayable validation-only diagnostic leaves all 12 prior warnings unresolved. A fresh six-fit feasibility pilot at the intended data sizes is proposed; no new observations or training."
     ],

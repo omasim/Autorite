@@ -520,7 +520,7 @@
     "path": "research/RP002A/BUDGET_TRANSFER_PROTOCOL.md",
     "title": "RP002A target-data-size feasibility proposal",
     "category": "Methods & protocols",
-    "summary": "Six fresh learned-model fits proposed at the intended 4096-training-episode data size. No variance estimate or execution authorized.",
+    "summary": "Six fresh fits proposed at target data sizes, with a tested one-run gate and no-variance auditor. Still unfrozen and unexecuted.",
     "primary_site": "net",
     "sites": [
       "org",

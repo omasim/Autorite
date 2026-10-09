@@ -36,8 +36,22 @@ A successful pilot means only that all three units completed within this declare
 
 ## Execution and failure boundary
 
-`python3 scripts/check-budget-transfer-plan.py` checks the proposal and seeds without creating observations or training. The existing convergence runner does not authorize this different mode or a single-replicate summary. Implement and review a separate one-run gate and auditor, including the no-SD output contract and memory-unit recording, before requesting approval to freeze and execute. Neither bootstrap nor stage-001/002 approval can authorize this pilot.
+`python3 scripts/check-budget-transfer-plan.py` checks the proposal and seeds without creating observations or training. The pilot entry point is now implemented: `python3 scripts/rp002a-convergence.py --stage 3` prints the plan only. `--execute --run-id budget-transfer-20261009-001` rejects execution before creating artifacts until its separately bound approval exists and the plan is frozen. The stage selector preserves the old default and previous artifact formats. Neither bootstrap nor stage-001/002 approval can authorize this pilot.
 
 Bind any later approval to the exact frozen plan and unchanged baseline hashes, reviewed source commit, fixed run ID and pinned environment. Execute only from clean reviewed source. Preserve completed/partial files, traceback and manifest on failure or timeout; an incomplete stage has no complete-stage aggregate. Never replace seeds, retry, add fits or extend epochs/time without a separately reviewed future scope. Existing run directories remain immutable.
 
 The broader confirmation design still needs an optimization rationale, variance assumptions, substantive margins, sample counts, calibrated uncertainty and a complete analysis implementation. Cycle 01 remains PLANNED at 0/13; no scientific status changes with this proposal.
+
+## Execution preparation review — 2026-10-09
+
+The pilot requires its own `docs/research/BUDGET_TRANSFER_APPROVAL.json`, bound to the frozen plan hash, unchanged baseline hash, exact reviewed source commit and fixed run ID. Earlier bootstrap and convergence approvals cannot open this gate. Altered plan payloads, changed source, dirty checkouts, wrong environments and overwriting an existing run are rejected.
+
+A complete pilot summary contains 12 world/model assessment records and seven paired single-replicate contrasts, with n=1 explicit and no SD, leave-one-out SD, inferential interval or decision. An incomplete or duplicated set of records, or a nonfinite loss, is rejected. Failure preservation includes completed data, traceback and manifest without a complete summary.
+
+The manifest records lifetime peak resident memory of the running process, including imports and all fits. It retains the raw `RUSAGE_SELF.ru_maxrss` value, platform unit and normalized bytes. This is not incremental allocation, per-model memory or an operating-system memory limit. The current [Apple kernel manual](https://github.com/apple/darwin-xnu/blob/main/bsd/man/man2/getrusage.2) specifies bytes; the [Linux manual](https://www.man7.org/linux/man-pages/man2/getrusage.2.html) specifies KiB. Unknown unit conventions are rejected rather than guessed.
+
+`scripts/check-convergence.py` now audits this pilot mode alongside the immutable earlier stages: source/approval/plan binding, file hashes and sets, observed-data replay, reference and saved learned-checkpoint predictions, trace flags/stop reasons, no-variance summaries and recorded memory-unit conversion. It performs no optimization. Memory conversion can be checked, but a past peak-memory measurement cannot be recreated by prediction replay.
+
+Fifty-seven software tests pass, including the single-replicate/no-variance contract, incompatible-mode rejection, authorization separation, memory-unit normalization and synthetic partial-failure preservation. Existing stage-001/002 outputs still replay. The numerical plan is unchanged, remains unfrozen/unauthorized, and no feasibility-pilot observations or fits have been generated.
+
+Concrete one-run scope for later approval: three independent units, six learned fits, 4096/1024/2048 episodes per unit, cap 300 epochs and patience 20, two CPU threads and a cooperative 3600-second allowance. No retries, discretionary extension, confirmation, Claim promotion or Cycle resolution.

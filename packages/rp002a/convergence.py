@@ -1,6 +1,6 @@
 """A separately gated exploratory stage; importing creates no outcomes."""
 from pathlib import Path
-import hashlib,importlib.util,json,platform,subprocess,sys,time,traceback
+import hashlib,importlib.util,json,platform,resource,subprocess,sys,time,traceback
 import numpy as np
 import torch
 ROOT=Path(__file__).resolve().parents[2]
@@ -14,6 +14,7 @@ def base_path(plan):
 STAGES = {
  1: ('convergence-proposal-0.1', 'research/RP002A/CONVERGENCE_PLAN.json', 'docs/research/CONVERGENCE_APPROVAL.json'),
  2: ('convergence-long-budget-proposal-0.1', 'research/RP002A/CONVERGENCE_002_PLAN.json', 'docs/research/CONVERGENCE_002_APPROVAL.json'),
+ 3: ('budget-transfer-proposal-0.1', 'research/RP002A/BUDGET_TRANSFER_PLAN.json', 'docs/research/BUDGET_TRANSFER_APPROVAL.json'),
 }
 def stage_paths(plan):
  for version,path,approval in STAGES.values():
@@ -24,9 +25,20 @@ def load_plan(stage=1):
  if stage not in STAGES:raise ValueError('Unknown convergence stage')
  path=ROOT/STAGES[stage][1];plan=json.loads(path.read_text());base=json.loads(base_path(plan).read_text());validate_plan(plan,base);return path,plan,base
 
+def is_transfer(plan):
+ return plan['version']==STAGES[3][0] and plan['mode']=='exploratory-budget-transfer'
+
+def peak_memory():
+ if sys.platform not in {'darwin','linux'}:raise ValueError('Unknown resident-memory units')
+ raw=int(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
+ factor=1 if sys.platform=='darwin' else 1024
+ return {'metric':'RUSAGE_SELF.ru_maxrss','scope':'Lifetime peak of this process, including imports and all fits; not incremental allocations',
+         'platform':sys.platform,'raw_value':raw,'raw_unit':'bytes' if factor==1 else 'KiB','bytes':raw*factor}
+
 def validate_plan(plan,base):
- if plan['mode']!='exploratory-convergence' or not plan['version'] or not plan['run_id'] or not all(c.isalnum() or c in '-_' for c in plan['run_id']):raise ValueError('Invalid stage identity')
- if set(plan['world_replicates'])!=set(base['worlds']) or any(type(n) is not int or n<3 for n in plan['world_replicates'].values()):raise ValueError('Replicates must be declared for each world')
+ transfer=is_transfer(plan)
+ if (plan['mode']!='exploratory-convergence' and not transfer) or (plan['version']==STAGES[3][0] and not transfer) or not plan['version'] or not plan['run_id'] or not all(c.isalnum() or c in '-_' for c in plan['run_id']):raise ValueError('Invalid stage identity')
+ if set(plan['world_replicates'])!=set(base['worlds']) or any(type(n) is not int or (n!=1 if transfer else n<3) for n in plan['world_replicates'].values()):raise ValueError('Replicates must be declared for each world')
  for key in ['train_episodes','validation_episodes','assessment_episodes','episode_observations','max_epochs','early_stopping_patience','threads','max_training_wall_seconds','near_cap_last_epochs','late_trace_epochs']:
   if type(plan[key]) is not int or plan[key]<1:raise ValueError('Invalid positive budget: '+key)
  if plan['episode_observations']<2 or plan['max_epochs']<plan['late_trace_epochs'] or plan['late_trace_epochs']<2 or plan['near_cap_last_epochs']>plan['max_epochs']:raise ValueError('Invalid convergence window')
@@ -71,7 +83,7 @@ def trace_summary(trace,plan):
  best=int(values.argmin())+1;late=values[-plan['late_trace_epochs']:];improvement=float(late[0]-late[-1])
  capped=len(values)==plan['max_epochs'];near_cap=capped and best>plan['max_epochs']-plan['near_cap_last_epochs']
  summary={'epochs_completed':len(values),'best_epoch':best,'best_validation_log_loss':float(values.min()),'final_validation_log_loss':float(values[-1]),'reached_epoch_cap':capped,'best_in_final_cap_window':near_cap,'late_window_epochs':len(late),'late_validation_improvement_nats':improvement,'late_improvement_flag':len(late)==plan['late_trace_epochs'] and improvement>plan['late_improvement_threshold_nats'],'interpretation':'Descriptive trace flags; not a convergence proof'}
- if plan['version']==STAGES[2][0]:
+ if plan['version'] in {STAGES[2][0],STAGES[3][0]}:
   secondary=values[-5:];delta=float(secondary[0]-secondary[-1])
   stopped=not capped and len(values)-best>=plan['early_stopping_patience']
   if not capped and not stopped:raise ValueError('Trace ended before cap or declared early stopping')
@@ -83,6 +95,17 @@ def summarize(rows,plan,base):
  keys=[(r['world'],r['replicate'],r['model']) for r in rows]
  if len(keys)!=len(set(keys)) or set(keys)!=expected:raise ValueError('Incomplete or duplicated replicate records')
  by={(r['world'],r['replicate'],r['model']):r for r in rows};models=[];contrasts=[]
+ if is_transfer(plan):
+  if any(n!=1 for n in plan['world_replicates'].values()):raise ValueError('Feasibility pilot has one replicate per world')
+  if not all(np.isfinite(r['assessment_episode_mean_log_loss']) for r in rows):raise ValueError('Nonfinite pilot loss')
+  for w in sorted(plan['world_replicates']):
+   for m in ['B0','B1','B2','B3']:models.append({'world':w,'model':m,'n':1,'episode_mean_log_loss':by[w,0,m]['assessment_episode_mean_log_loss']})
+  for label in base['primary_comparisons']:
+   w,pair=label.split(':');a,b=pair.split('-')
+   contrasts.append({'contrast':label,'n':1,'paired_difference':by[w,0,a]['assessment_episode_mean_log_loss']-by[w,0,b]['assessment_episode_mean_log_loss']})
+  return {'mode':plan['mode'],'unit':'One training replicate per world; episodes/timepoints are not training replicates',
+          'model_assessment':models,'paired_contrasts':contrasts,
+          'interpretation':'Feasibility diagnostics only; no replicate SD, inferential interval, power, hypothesis or equivalence decision'}
  for w,n in sorted(plan['world_replicates'].items()):
   for m in ['B0','B1','B2','B3']:models.append({'world':w,'model':m,**sample_stats([by[w,r,m]['assessment_episode_mean_log_loss'] for r in range(n)])})
  for c in base['primary_comparisons']:
@@ -126,6 +149,7 @@ def execute(path,plan,base,run_id):
   (dest/'failure.txt').write_text(traceback.format_exc());raise
  finally:
   environment={'python':platform.python_version(),'platform':platform.platform(),'machine':platform.machine(),'numpy':np.__version__,'torch':torch.__version__,'source_commit':head,'mode':plan['mode'],'plan_sha256':digest(path),'base_configuration_sha256':digest(base_path(plan)),'elapsed_wall_seconds':time.monotonic()-started}
+  if is_transfer(plan):environment['peak_process_resident_memory']=peak_memory()
   manifest={'configuration':{'plan':plan,'base':base},'seeds':seeds,'environment':environment,'outputs':{p.name:digest(p) for p in sorted(dest.iterdir()) if p.is_file()}}
   (dest/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
  return dest

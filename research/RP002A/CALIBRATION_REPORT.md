@@ -41,7 +41,7 @@ Each cell has only 100 independent trials and 2,000 bootstrap draws over eight s
 | 50 | standardized-t5 | 0 | 0.88 | 0.88 |
 | 50 | standardized-t5 | 1 | 0.96 | 1.00 |
 
-The complete summaries retain false benefit/equivalence boundary rates, center-equivalence rates and widths; no favorable cells are discarded. Nested variance inflation and small-n percentile undercoverage have different causes. Adding inner resampling is not a general solution to percentile tails or skew. There is no claim that these benchmark frequencies are precise estimates of nominal .95 coverage.
+The Student-t summaries retain actual false benefit/equivalence boundary rates, center-equivalence rates and widths; no favorable cells are discarded. Bootstrap benchmark lower-endpoint violations are conservative boundary diagnostics, not full two-sided equivalence decisions, because the opposite endpoint condition is not imposed in that benchmark. Nested variance inflation and small-n percentile undercoverage have different causes. Adding inner resampling is not a general solution to percentile tails or skew. There is no claim that these benchmark frequencies are precise estimates of nominal .95 coverage.
 
 ## Provenance and reproduction
 

@@ -1,0 +1,1042 @@
+[
+  {
+    "world": "E0",
+    "replicate": 0,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.3208657189559361,
+    "trace_summary": null
+  },
+  {
+    "world": "E0",
+    "replicate": 0,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.33283573036362896,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.33421966433525085,
+      "final_validation_log_loss": 0.33421966433525085,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.003490447998046875,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 1.4800894590000002
+    }
+  },
+  {
+    "world": "E0",
+    "replicate": 0,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.3394917081874212,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.34067302942276,
+      "final_validation_log_loss": 0.34067302942276,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.005043685436248779,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 4.214020334000001
+    }
+  },
+  {
+    "world": "E0",
+    "replicate": 0,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.3207378759606808,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 0,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.9505901609676615,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 0,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.924719279118541,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.924194872379303,
+      "final_validation_log_loss": 0.924194872379303,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0012436509132385254,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.43239737499999986
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 0,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.9222363022885818,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9207185506820679,
+      "final_validation_log_loss": 0.9207185506820679,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0021327733993530273,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 4.543891
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 0,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.9118029445388409,
+    "trace_summary": null
+  },
+  {
+    "world": "E2",
+    "replicate": 0,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 1.0412110054439636,
+    "trace_summary": null
+  },
+  {
+    "world": "E2",
+    "replicate": 0,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 1.0417791269287893,
+    "trace_summary": {
+      "epochs_completed": 30,
+      "best_epoch": 25,
+      "best_validation_log_loss": 1.0430490970611572,
+      "final_validation_log_loss": 1.0430525541305542,
+      "reached_epoch_cap": false,
+      "best_in_final_cap_window": false,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": -3.4570693969726562e-06,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.2641288329999991
+    }
+  },
+  {
+    "world": "E2",
+    "replicate": 0,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 1.0413563211229189,
+    "trace_summary": {
+      "epochs_completed": 34,
+      "best_epoch": 29,
+      "best_validation_log_loss": 1.0420302152633667,
+      "final_validation_log_loss": 1.0420458316802979,
+      "reached_epoch_cap": false,
+      "best_in_final_cap_window": false,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 1.2040138244628906e-05,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 2.556641417
+    }
+  },
+  {
+    "world": "E2",
+    "replicate": 0,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 1.0411591866198884,
+    "trace_summary": null
+  },
+  {
+    "world": "E0",
+    "replicate": 1,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.3230987149110347,
+    "trace_summary": null
+  },
+  {
+    "world": "E0",
+    "replicate": 1,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.33043852664256307,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.3309599459171295,
+      "final_validation_log_loss": 0.3309599459171295,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.002648860216140747,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.49332712499999865
+    }
+  },
+  {
+    "world": "E0",
+    "replicate": 1,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.34261242733338926,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.3429504632949829,
+      "final_validation_log_loss": 0.3429504632949829,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.004855602979660034,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 3.7013138750000003
+    }
+  },
+  {
+    "world": "E0",
+    "replicate": 1,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.3230177110323798,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 1,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.9477573957037694,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 1,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.9189916931602081,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9273166656494141,
+      "final_validation_log_loss": 0.9273166656494141,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0010870099067687988,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.49541745800000214
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 1,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.9126522240726226,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9207062125205994,
+      "final_validation_log_loss": 0.9207062125205994,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0012645125389099121,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 3.6851836670000004
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 1,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.9064033631880757,
+    "trace_summary": null
+  },
+  {
+    "world": "E2",
+    "replicate": 1,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 1.0395623860288894,
+    "trace_summary": null
+  },
+  {
+    "world": "E2",
+    "replicate": 1,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 1.0409293102515578,
+    "trace_summary": {
+      "epochs_completed": 40,
+      "best_epoch": 35,
+      "best_validation_log_loss": 1.0429737567901611,
+      "final_validation_log_loss": 1.0429781675338745,
+      "reached_epoch_cap": false,
+      "best_in_final_cap_window": false,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 2.9802322387695312e-06,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.34432420799999974
+    }
+  },
+  {
+    "world": "E2",
+    "replicate": 1,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 1.0400023933943305,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 1.0423003435134888,
+      "final_validation_log_loss": 1.0423003435134888,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 2.1576881408691406e-05,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 3.831926916999997
+    }
+  },
+  {
+    "world": "E2",
+    "replicate": 1,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 1.0394669327610995,
+    "trace_summary": null
+  },
+  {
+    "world": "E0",
+    "replicate": 2,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.3269466488957309,
+    "trace_summary": null
+  },
+  {
+    "world": "E0",
+    "replicate": 2,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.33576613273900324,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.34087443351745605,
+      "final_validation_log_loss": 0.34087443351745605,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0023286938667297363,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.4419191249999983
+    }
+  },
+  {
+    "world": "E0",
+    "replicate": 2,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.3464281594972919,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.35064831376075745,
+      "final_validation_log_loss": 0.35064831376075745,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0051753222942352295,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 3.798876708999998
+    }
+  },
+  {
+    "world": "E0",
+    "replicate": 2,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.3269068414488074,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 2,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.9481273569635862,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 2,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.9205302126625482,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9209195375442505,
+      "final_validation_log_loss": 0.9209195375442505,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0009715557098388672,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.429362832999999
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 2,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.9165082555224917,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9179289937019348,
+      "final_validation_log_loss": 0.9179289937019348,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0015807747840881348,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 3.644496750000002
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 2,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.9069951214688861,
+    "trace_summary": null
+  },
+  {
+    "world": "E2",
+    "replicate": 2,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 1.0420573800544761,
+    "trace_summary": null
+  },
+  {
+    "world": "E2",
+    "replicate": 2,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 1.0425174049024015,
+    "trace_summary": {
+      "epochs_completed": 33,
+      "best_epoch": 28,
+      "best_validation_log_loss": 1.039094090461731,
+      "final_validation_log_loss": 1.0391850471496582,
+      "reached_epoch_cap": false,
+      "best_in_final_cap_window": false,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": -4.184246063232422e-05,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.30474420799999535
+    }
+  },
+  {
+    "world": "E2",
+    "replicate": 2,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 1.0420991064882366,
+    "trace_summary": {
+      "epochs_completed": 38,
+      "best_epoch": 33,
+      "best_validation_log_loss": 1.0391019582748413,
+      "final_validation_log_loss": 1.0391045808792114,
+      "reached_epoch_cap": false,
+      "best_in_final_cap_window": false,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 7.748603820800781e-06,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 2.8422187910000005
+    }
+  },
+  {
+    "world": "E2",
+    "replicate": 2,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 1.0419207008563434,
+    "trace_summary": null
+  },
+  {
+    "world": "E0",
+    "replicate": 3,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.3264532572770111,
+    "trace_summary": null
+  },
+  {
+    "world": "E0",
+    "replicate": 3,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.3338178461823601,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.332273930311203,
+      "final_validation_log_loss": 0.332273930311203,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.002064257860183716,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.4562161670000009
+    }
+  },
+  {
+    "world": "E0",
+    "replicate": 3,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.3531644264684816,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.3512517809867859,
+      "final_validation_log_loss": 0.3512517809867859,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.007031559944152832,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 3.7440780420000053
+    }
+  },
+  {
+    "world": "E0",
+    "replicate": 3,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.3263704096672312,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 3,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.9428006671730493,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 3,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.9170050447957018,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9266021251678467,
+      "final_validation_log_loss": 0.9266021251678467,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.001163184642791748,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.45318724999999915
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 3,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.9150333576905321,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9238012433052063,
+      "final_validation_log_loss": 0.9238012433052063,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.001385807991027832,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 3.7014537920000024
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 3,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.9034069873485864,
+    "trace_summary": null
+  },
+  {
+    "world": "E2",
+    "replicate": 3,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 1.039583247483118,
+    "trace_summary": null
+  },
+  {
+    "world": "E2",
+    "replicate": 3,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 1.0405660461341344,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 1.0420762300491333,
+      "final_validation_log_loss": 1.0420762300491333,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 1.633167266845703e-05,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.4273189170000009
+    }
+  },
+  {
+    "world": "E2",
+    "replicate": 3,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 1.0395968568798342,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 1.041655421257019,
+      "final_validation_log_loss": 1.041655421257019,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 4.410743713378906e-06,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 3.886271999999998
+    }
+  },
+  {
+    "world": "E2",
+    "replicate": 3,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 1.0395092391075693,
+    "trace_summary": null
+  },
+  {
+    "world": "E0",
+    "replicate": 4,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.3116434679236269,
+    "trace_summary": null
+  },
+  {
+    "world": "E0",
+    "replicate": 4,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.31832590722373655,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.3431013226509094,
+      "final_validation_log_loss": 0.3431013226509094,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0020758211612701416,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.4369948339999965
+    }
+  },
+  {
+    "world": "E0",
+    "replicate": 4,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.3288181884469762,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.35329288244247437,
+      "final_validation_log_loss": 0.35329288244247437,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.00403827428817749,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 3.7814342499999967
+    }
+  },
+  {
+    "world": "E0",
+    "replicate": 4,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.31148442772849094,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 4,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.9477443305467657,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 4,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.9221444244999537,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9229581356048584,
+      "final_validation_log_loss": 0.9229581356048584,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0011376142501831055,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.42090145899999953
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 4,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.9182252600869428,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9189572334289551,
+      "final_validation_log_loss": 0.9189572334289551,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0015155673027038574,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 3.7481307500000014
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 4,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.9080433640774976,
+    "trace_summary": null
+  },
+  {
+    "world": "E2",
+    "replicate": 4,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 1.0400933541197488,
+    "trace_summary": null
+  },
+  {
+    "world": "E2",
+    "replicate": 4,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 1.040921335696473,
+    "trace_summary": {
+      "epochs_completed": 36,
+      "best_epoch": 31,
+      "best_validation_log_loss": 1.037719488143921,
+      "final_validation_log_loss": 1.0377273559570312,
+      "reached_epoch_cap": false,
+      "best_in_final_cap_window": false,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 3.337860107421875e-05,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.30470337500000255
+    }
+  },
+  {
+    "world": "E2",
+    "replicate": 4,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 1.0401679260499654,
+    "trace_summary": {
+      "epochs_completed": 43,
+      "best_epoch": 38,
+      "best_validation_log_loss": 1.0367732048034668,
+      "final_validation_log_loss": 1.0368105173110962,
+      "reached_epoch_cap": false,
+      "best_in_final_cap_window": false,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": -1.0371208190917969e-05,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 3.0302558329999982
+    }
+  },
+  {
+    "world": "E2",
+    "replicate": 4,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 1.0399323025722667,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 5,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.9489194791890905,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 5,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.9218953429426265,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 49,
+      "best_validation_log_loss": 0.9221252799034119,
+      "final_validation_log_loss": 0.9221606850624084,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0006211996078491211,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.4212002910000052
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 5,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.9209158425394048,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9218346476554871,
+      "final_validation_log_loss": 0.9218346476554871,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.00201416015625,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 3.5305063750000016
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 5,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.9075243611888981,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 6,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.9488547849328662,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 6,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.9243704430226027,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9254385828971863,
+      "final_validation_log_loss": 0.9254385828971863,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0008805394172668457,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.4432537500000109
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 6,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.9242513822314553,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9245806932449341,
+      "final_validation_log_loss": 0.9245806932449341,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.001468956470489502,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 3.426531916000002
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 6,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.9123300079911839,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 7,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.9487820574533925,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 7,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.9230331641214344,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9240265488624573,
+      "final_validation_log_loss": 0.9240265488624573,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0010234713554382324,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.4347487910000041
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 7,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.9235828442293303,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9254739284515381,
+      "final_validation_log_loss": 0.9254739284515381,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0020957589149475098,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 3.436260207999993
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 7,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.9112696539456865,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 8,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.9469918329200822,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 8,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.9221682833957703,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9221194386482239,
+      "final_validation_log_loss": 0.9221194386482239,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0006731152534484863,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.4201121669999992
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 8,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.9226292391141839,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9236917495727539,
+      "final_validation_log_loss": 0.9236917495727539,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.001902461051940918,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 3.694090750000001
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 8,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.908025694144986,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 9,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.946263164832235,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 9,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.9194151853825763,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.919237494468689,
+      "final_validation_log_loss": 0.919237494468689,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.001354217529296875,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 0.4253294580000073
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 9,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.9148734894670272,
+    "trace_summary": {
+      "epochs_completed": 50,
+      "best_epoch": 50,
+      "best_validation_log_loss": 0.9153997302055359,
+      "final_validation_log_loss": 0.9153997302055359,
+      "reached_epoch_cap": true,
+      "best_in_final_cap_window": true,
+      "late_window_epochs": 5,
+      "late_validation_improvement_nats": 0.0014907121658325195,
+      "late_improvement_flag": true,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "fit_wall_seconds": 3.7176261249999953
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 9,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.9042260308349762,
+    "trace_summary": null
+  }
+]

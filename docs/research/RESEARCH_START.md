@@ -33,3 +33,7 @@ RP003 follows RP002A preparation. RP004/RP005A and DAM X retain the baseline ord
 ## First exploratory pilot
 
 `research/RP002A/PILOT_001_REPORT.md` records the completed isolated engineering pilot and raw artifacts. No scientific Claim or Cycle obligation was resolved. Further runs require a separate reviewed plan; confirmatory preparation remains open.
+
+## Convergence-stage disposition — 2026-10-09
+
+`research/RP002A/CONVERGENCE_001_REPORT.md` documents the separately approved 20-unit exploratory stage. All 40 fits completed and artifact/checkpoint replay passed; many fits still improved near the 50-epoch cap. Settled optimization and confirmatory readiness are not established. No additional run or scientific Claim promotion is authorized.

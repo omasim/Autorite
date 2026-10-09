@@ -31,4 +31,4 @@ Literature overlap and confirmatory design are reviewed in `COLLISION_REVIEW.md`
 
 `CONVERGENCE_PROTOCOL.md` and `CONVERGENCE_PLAN.json` propose a separately gated exploratory stage. The separately approved stage completed once; `CONVERGENCE_001_REPORT.md` records its exploratory outcomes and unresolved convergence flags. No additional run is authorized.
 
-`CONVERGENCE_002_PROTOCOL.md` and `CONVERGENCE_002_PLAN.json` prepare a separate longer-budget exploratory proposal with fresh seeds. It remains unfrozen and unauthorized; no additional data or model fits have been created.
+`CONVERGENCE_002_PROTOCOL.md` and `CONVERGENCE_002_PLAN.json` prepare a separate longer-budget exploratory proposal with fresh seeds. It was separately approved and completed once; `CONVERGENCE_002_REPORT.md` records its verified outputs and remaining 12 near-cap warnings. No further execution is authorized.

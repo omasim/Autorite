@@ -1,6 +1,6 @@
 # RP002A longer-budget convergence proposal
 
-Date: 2026-10-09. Version/seed namespace: `convergence-long-budget-proposal-0.1`. **Unfrozen proposal; no execution authorized or performed.** Numerical specification: `CONVERGENCE_002_PLAN.json`.
+Date: 2026-10-09. Version/seed namespace: `convergence-long-budget-proposal-0.1`. **Approved, frozen and completed once.** The declarations below retain the pre-outcome proposal. See `CONVERGENCE_002_REPORT.md` for the 2026-10-09 disposition. Numerical specification: `CONVERGENCE_002_PLAN.json`.
 
 ## Reason for a separate stage
 
@@ -55,4 +55,8 @@ The two stages resolve distinct plan and approval paths. Stage 002 requires `doc
 
 The auditor replays seeds, observed data, B0/B3 and saved learned checkpoints without training. It checks primary and secondary trace diagnostics, stop reasons, replicate-level summaries and immutable Git bytes. Stage-001 output format is preserved and its 322 recorded outputs still replay successfully. Fifty software tests pass; authorization tests use synthetic fixtures and create no research outcomes.
 
-The numerical proposal is unchanged: 20 units, 40 learned fits, at most 300 epochs each, patience 20 and a cooperative 1800-second stage allowance. The proposed CPU environment has not changed. The plan and baseline hashes must be captured when the separately approved one-run scope is frozen. No stage-002 approval record or run exists yet.
+The numerical proposal is unchanged: 20 units, 40 learned fits, at most 300 epochs each, patience 20 and a cooperative 1800-second stage allowance. The proposed CPU environment has not changed. The plan and baseline hashes must be captured when the separately approved one-run scope is frozen. At this preparation review, no stage-002 approval record or run existed.
+
+## Recorded disposition — 2026-10-09
+
+The separately approved run completed once in 383.749 seconds. `docs/research/CONVERGENCE_002_APPROVAL.json` records approval; `CONVERGENCE_002_REPORT.md` reports audited outcomes. Twelve fits retain near-cap warnings, so optimization remains unresolved. No further run is authorized.

@@ -1,0 +1,110 @@
+[
+  {
+    "epoch": 1,
+    "validation_log_loss": 1.0440173149108887
+  },
+  {
+    "epoch": 2,
+    "validation_log_loss": 1.0408220291137695
+  },
+  {
+    "epoch": 3,
+    "validation_log_loss": 1.0403566360473633
+  },
+  {
+    "epoch": 4,
+    "validation_log_loss": 1.040450096130371
+  },
+  {
+    "epoch": 5,
+    "validation_log_loss": 1.0403190851211548
+  },
+  {
+    "epoch": 6,
+    "validation_log_loss": 1.0402112007141113
+  },
+  {
+    "epoch": 7,
+    "validation_log_loss": 1.0401966571807861
+  },
+  {
+    "epoch": 8,
+    "validation_log_loss": 1.040208339691162
+  },
+  {
+    "epoch": 9,
+    "validation_log_loss": 1.0402019023895264
+  },
+  {
+    "epoch": 10,
+    "validation_log_loss": 1.0402122735977173
+  },
+  {
+    "epoch": 11,
+    "validation_log_loss": 1.040261149406433
+  },
+  {
+    "epoch": 12,
+    "validation_log_loss": 1.0402374267578125
+  },
+  {
+    "epoch": 13,
+    "validation_log_loss": 1.0402439832687378
+  },
+  {
+    "epoch": 14,
+    "validation_log_loss": 1.040266990661621
+  },
+  {
+    "epoch": 15,
+    "validation_log_loss": 1.040273904800415
+  },
+  {
+    "epoch": 16,
+    "validation_log_loss": 1.040292501449585
+  },
+  {
+    "epoch": 17,
+    "validation_log_loss": 1.0403151512145996
+  },
+  {
+    "epoch": 18,
+    "validation_log_loss": 1.0403145551681519
+  },
+  {
+    "epoch": 19,
+    "validation_log_loss": 1.0403187274932861
+  },
+  {
+    "epoch": 20,
+    "validation_log_loss": 1.0403386354446411
+  },
+  {
+    "epoch": 21,
+    "validation_log_loss": 1.0403313636779785
+  },
+  {
+    "epoch": 22,
+    "validation_log_loss": 1.0403499603271484
+  },
+  {
+    "epoch": 23,
+    "validation_log_loss": 1.0403482913970947
+  },
+  {
+    "epoch": 24,
+    "validation_log_loss": 1.0403412580490112
+  },
+  {
+    "epoch": 25,
+    "validation_log_loss": 1.040345549583435
+  },
+  {
+    "epoch": 26,
+    "validation_log_loss": 1.0403550863265991
+  },
+  {
+    "epoch": 27,
+    "validation_log_loss": 1.040378212928772
+  }
+]

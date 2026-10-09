@@ -37,3 +37,7 @@ RP003 follows RP002A preparation. RP004/RP005A and DAM X retain the baseline ord
 ## Convergence-stage disposition — 2026-10-09
 
 `research/RP002A/CONVERGENCE_001_REPORT.md` documents the separately approved 20-unit exploratory stage. All 40 fits completed and artifact/checkpoint replay passed; many fits still improved near the 50-epoch cap. Settled optimization and confirmatory readiness are not established. No additional run or scientific Claim promotion is authorized.
+
+## Longer-budget disposition — 2026-10-09
+
+`research/RP002A/CONVERGENCE_002_REPORT.md` records the separately approved fresh-seed stage: 40 fits completed in 383.749 seconds and 322 outputs replay successfully. Twelve near-cap warnings remain despite no late-improvement flags; settled optimization is not established. No further execution or confirmatory Claim promotion is authorized.

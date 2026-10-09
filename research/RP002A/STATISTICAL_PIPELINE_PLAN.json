@@ -1,0 +1,103 @@
+{
+  "version": "statistical-pipeline-1.0",
+  "frozen": true,
+  "execution_authorized": true,
+  "base_configuration": "research/RP002A/CONFIG_PROPOSAL.json",
+  "base_configuration_sha256": "fdd50646ee1e5e6ae659091a0fc9e3e1b6ff47bea09b8f3e1471e8bac0cf34ee",
+  "environment": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "torch": "2.8.0",
+    "scipy": "1.13.1",
+    "platform": "darwin",
+    "machine": "arm64",
+    "device": "CPU"
+  },
+  "calibration": {
+    "run_id": "calibration-20261009-001",
+    "version": "calibration-1.0",
+    "candidate_n": [
+      5,
+      10,
+      20,
+      30,
+      50
+    ],
+    "laws": [
+      "normal",
+      "centered-gamma2",
+      "standardized-t5"
+    ],
+    "correlations": [
+      0,
+      0.5
+    ],
+    "within_mean_variance_fractions": [
+      0,
+      0.5,
+      1
+    ],
+    "trials": 20000,
+    "inflation": 2.0,
+    "family": 7,
+    "alpha": 0.05,
+    "max_wall_seconds": 900,
+    "benchmark_trials": 100,
+    "benchmark_resamples": 2000,
+    "benchmark_n": [
+      5,
+      20,
+      50
+    ],
+    "benchmark_episodes": 8,
+    "benchmark_fractions": [
+      0,
+      1
+    ],
+    "eligibility": "For n>=20, simultaneous Clopper-Pearson upper failure bound <=.05 in every predeclared Student-t cell; no candidate selected by bootstrap benchmark"
+  },
+  "variance": {
+    "run_id": "target-variance-20261009-001",
+    "version": "target-variance-1.0",
+    "replicates": 5,
+    "max_wall_seconds": 5400
+  },
+  "training": {
+    "train_episodes": 4096,
+    "validation_episodes": 1024,
+    "assessment_episodes": 2048,
+    "episode_observations": 129,
+    "max_epochs": 300,
+    "early_stopping_patience": 20,
+    "threads": 2,
+    "near_cap_last_epochs": 30,
+    "late_trace_epochs": 20,
+    "late_improvement_threshold_nats": 0.001
+  },
+  "confirmation_rule": {
+    "candidate_counts": [
+      20,
+      30,
+      50
+    ],
+    "target_half_width": 0.005,
+    "inflation": 2.0,
+    "variance_upper_sd": "chi-square normal-theory 95% simultaneous seven-contrast upper SD bound from fresh five-replicate variance stage",
+    "max_wall_seconds": 14400,
+    "run_id": "confirmatory-20261009-001",
+    "version": "confirmation-1.0",
+    "margin": 0.01,
+    "decision_kinds": [
+      "benefit",
+      "benefit",
+      "equivalence",
+      "equivalence",
+      "equivalence",
+      "equivalence",
+      "benefit"
+    ],
+    "failure_policy": "One attempt per stage; preserve all partial files; incomplete confirmation has no complete-stage decisions; no extension or seed replacement",
+    "interpretation": "Fixed-budget algorithm benchmark only; no optimization optimality or recurrence necessity claim; no automatic Claim/Cycle promotion"
+  },
+  "approval_evidence": "User explicitly requested steps 1, 2, 3 and 4: synthetic calibration, variance assessment, protocol freeze and confirmatory execution."
+}

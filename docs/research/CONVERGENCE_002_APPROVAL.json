@@ -1,0 +1,10 @@
+{
+  "approved": true,
+  "approved_at": "2026-10-09T15:22:17.447638+00:00",
+  "approval_evidence": "User replied devam edelim to the explicit one-run request after the stage-two runner and audit were published: 20 units, 40 fits, maximum 300 epochs and 1800-second stage allowance.",
+  "scope": "One longer-budget exploratory convergence run only; no retries, extension, confirmatory execution, Claim promotion or Cycle resolution.",
+  "run_id": "convergence-20261009-002",
+  "plan_sha256": "5c378bdd091bcf336abf5f02cd22989294557564c7320f2c9801262d0dc8ad2b",
+  "baseline_manifest_sha256": "83ad444dfce437140bf6b453d0b305d4ea5415deb3af9dff62abcd9e45d6d14d",
+  "source_commit": "871dba8f43d068dcad0527ee69733465ae0f88df"
+}

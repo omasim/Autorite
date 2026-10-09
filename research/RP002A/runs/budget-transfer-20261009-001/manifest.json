@@ -1,0 +1,261 @@
+{
+  "configuration": {
+    "plan": {
+      "version": "budget-transfer-proposal-0.1",
+      "frozen": true,
+      "execution_authorized": true,
+      "mode": "exploratory-budget-transfer",
+      "run_id": "budget-transfer-20261009-001",
+      "base_configuration": "research/RP002A/CONFIG_PROPOSAL.json",
+      "base_configuration_sha256": "fdd50646ee1e5e6ae659091a0fc9e3e1b6ff47bea09b8f3e1471e8bac0cf34ee",
+      "world_replicates": {
+        "E0": 1,
+        "E1": 1,
+        "E2": 1
+      },
+      "train_episodes": 4096,
+      "validation_episodes": 1024,
+      "assessment_episodes": 2048,
+      "episode_observations": 129,
+      "max_epochs": 300,
+      "early_stopping_patience": 20,
+      "threads": 2,
+      "max_training_wall_seconds": 3600,
+      "near_cap_last_epochs": 30,
+      "late_trace_epochs": 20,
+      "late_improvement_threshold_nats": 0.001,
+      "environment": {
+        "python": "3.9.6",
+        "numpy": "2.0.2",
+        "torch": "2.8.0",
+        "platform": "darwin",
+        "machine": "arm64",
+        "device": "CPU"
+      },
+      "selection": "Minimum validation loss checkpoint; assessment read only after selection",
+      "order": "world lexicographic, B1 then B2",
+      "purpose": "Check runtime and validation-trace behavior at the proposed confirmatory data sizes; not variance estimation or confirmation",
+      "failure_policy": "One attempt after separate approval; preserve partial failure; no retry, extension or completed-stage aggregate on failure",
+      "interpretation": "Single replicate per world: no sample SD, inferential interval, power claim, equivalence decision, Claim promotion or Cycle resolution"
+    },
+    "base": {
+      "version": "proposal-0.1",
+      "frozen": false,
+      "execution_authorized": false,
+      "purpose": "Reviewable configuration proposal; not a preregistration or an executed run",
+      "target": "next observation",
+      "horizon": 1,
+      "alphabet": [
+        "0",
+        "1",
+        "erasure"
+      ],
+      "worlds": {
+        "E0": {
+          "flip_probability": 0.1,
+          "erasure_probability": 0.0
+        },
+        "E1": {
+          "flip_probability": 0.1,
+          "erasure_probability": 0.5
+        },
+        "E2": {
+          "flip_probability": 0.5,
+          "erasure_probability": 0.5
+        }
+      },
+      "stationary_initial_probability_one": 0.5,
+      "episode_observations": 129,
+      "prediction_pairs_per_episode": 128,
+      "train_episodes": 4096,
+      "validation_episodes": 1024,
+      "test_episodes": 2048,
+      "replicates": 5,
+      "seed_derivation": "SHA256 of rp002a/proposal-0.1/world/replicate/split/purpose, first 64 bits as unsigned integer; no seed reuse across tuples",
+      "replicate_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "splits": [
+        "train",
+        "validation",
+        "test"
+      ],
+      "randomness_purposes": [
+        "data",
+        "initialization",
+        "batch_order",
+        "bootstrap"
+      ],
+      "B0": {
+        "model": "categorical conditional counts",
+        "laplace_alpha": 1.0
+      },
+      "B1": {
+        "model": "one hidden layer ReLU MLP",
+        "window": 8,
+        "input_features": "24 one-hot entries plus 8 padding-validity indicators",
+        "hidden_units": 16,
+        "parameter_count": 579
+      },
+      "B2": {
+        "model": "single GRU and categorical linear head",
+        "input_features": "three-way one-hot observation",
+        "state_dimension": 12,
+        "bias_convention": "two bias vectors per GRU gate",
+        "parameter_count": 651
+      },
+      "B3": {
+        "model": "exact Bayes filter conditional on observed history",
+        "privileged_realized_hidden_state": false
+      },
+      "optimization": {
+        "optimizer": "Adam",
+        "learning_rate": 0.001,
+        "batch_episodes": 32,
+        "max_epochs": 50,
+        "early_stopping_patience": 5,
+        "selection": "minimum validation episode-mean log loss",
+        "gradient_norm_clip": 1.0,
+        "recurrent_reset": "every episode",
+        "truncated_backpropagation": false
+      },
+      "primary_metric": "episode-mean natural-log loss, equally weighted across independent replicates",
+      "probability_clip": 1e-08,
+      "meaningful_effect_nats": 0.01,
+      "equivalence_margin_nats": 0.01,
+      "primary_comparisons": [
+        "E1:B1-B0",
+        "E1:B2-B0",
+        "E0:B1-B0",
+        "E0:B2-B0",
+        "E2:B1-B0",
+        "E2:B2-B0",
+        "E1:B2-B1"
+      ],
+      "interval_method": "paired hierarchical percentile bootstrap: resample replicate indices, then held-out episodes within selected replicate; retain pairing across models",
+      "bootstrap_resamples": 2000,
+      "familywise_alpha": 0.05,
+      "multiplicity": "Bonferroni over seven predeclared comparisons",
+      "decisions": "E1 benefit requires entire adjusted interval for alternative-minus-reference below -0.01; equivalence requires entire adjusted interval within [-0.01, 0.01]; otherwise indeterminate. No p-value-only equivalence claims.",
+      "secondary": [
+        "erasure-conditional log loss",
+        "visible-observation log loss",
+        "Brier score",
+        "ten fixed equal-width calibration bins",
+        "gap to information-matched B3"
+      ],
+      "resource_cap": {
+        "device": "CPU only",
+        "max_total_training_wall_hours": 4,
+        "threads": 2
+      },
+      "failures": "Retain every failed run; no discretionary retries, model substitution or seed replacement. A failed model in any replicate makes the planned complete-case comparison indeterminate until a separately versioned deviation is reviewed.",
+      "limitations": [
+        "Only one proposed parameter setting per world",
+        "Five replicates give limited uncertainty resolution",
+        "No power analysis completed",
+        "Model sizes are approximately matched, not identical",
+        "Hardware/environment lock and collision assessment remain pending"
+      ]
+    }
+  },
+  "seeds": {
+    "E0/0/train/data": 7522539590260523537,
+    "E0/0/validation/data": 18355881069063399775,
+    "E0/0/assessment/data": 874282536828370375,
+    "E0/0/B1/initialization": 4501995930062558054,
+    "E0/0/B1/batch-order": 17631771456856739235,
+    "E0/0/B2/initialization": 621530616431982715,
+    "E0/0/B2/batch-order": 17687954003205285253,
+    "E1/0/train/data": 12192315896971652589,
+    "E1/0/validation/data": 6296340804745247104,
+    "E1/0/assessment/data": 9554430194646042243,
+    "E1/0/B1/initialization": 13022276818207028334,
+    "E1/0/B1/batch-order": 6678214996442492969,
+    "E1/0/B2/initialization": 17167038829324538340,
+    "E1/0/B2/batch-order": 12780754787944684926,
+    "E2/0/train/data": 2127501117983562378,
+    "E2/0/validation/data": 12191457310593490579,
+    "E2/0/assessment/data": 5290248086992029661,
+    "E2/0/B1/initialization": 916296676799751822,
+    "E2/0/B1/batch-order": 59485085981321139,
+    "E2/0/B2/initialization": 8298295168592435695,
+    "E2/0/B2/batch-order": 13599801718427461593
+  },
+  "environment": {
+    "python": "3.9.6",
+    "platform": "macOS-26.3-arm64-arm-64bit",
+    "machine": "arm64",
+    "numpy": "2.0.2",
+    "torch": "2.8.0",
+    "source_commit": "ea5cd5188681cefd94a83b40afa8d32bc71f1f8d",
+    "mode": "exploratory-budget-transfer",
+    "plan_sha256": "e0e55a02902b350cbab04f23f558ce69bad3fa82ef5eb98ef51ed2c0ee65174e",
+    "base_configuration_sha256": "fdd50646ee1e5e6ae659091a0fc9e3e1b6ff47bea09b8f3e1471e8bac0cf34ee",
+    "elapsed_wall_seconds": 348.174745125,
+    "peak_process_resident_memory": {
+      "metric": "RUSAGE_SELF.ru_maxrss",
+      "scope": "Lifetime peak of this process, including imports and all fits; not incremental allocations",
+      "platform": "darwin",
+      "raw_value": 263634944,
+      "raw_unit": "bytes",
+      "bytes": 263634944
+    }
+  },
+  "outputs": {
+    "E0-r00-B0-losses.npy": "bcf86b370f975c95326a444802351b10ea593ffafcc39fa232417dcb0f7a8d59",
+    "E0-r00-B0-probabilities.npy": "33859870964396589e8d0d0f3ca65182c931d070cb95d73326c19f0b573c4ca7",
+    "E0-r00-B0-table.npy": "9ac860e12e5fa9d4055f8cd7aaf5f9394cae1ba122ac3332faaea13839ef800e",
+    "E0-r00-B1-losses.npy": "43ea8857138a9ef7026b186c3a8b8bdd2c411dbbd8b440045408578eb96df356",
+    "E0-r00-B1-probabilities.npy": "4fb2036e36570153b2f9c8517c995957f65c90bbfa49801f6d58d8c5c9db173b",
+    "E0-r00-B1-trace.json": "0251fe03ea45423e23da8cd6a53443979b077eaf65932dc281a1652094ca7b7d",
+    "E0-r00-B1.pt": "206351f71ce3ccc7691e0afd9e31382e77440bf7f9dc7a41a082359f3fc6a5d6",
+    "E0-r00-B2-losses.npy": "626bc3591d17c4b9b43fa5e5c6056f05efefa237c36f60838c3ba551d38ee0f9",
+    "E0-r00-B2-probabilities.npy": "ece18717d083ed1d41f9ee47b1fe7e81ed25a52f14d47f288bcf1d66fbe078db",
+    "E0-r00-B2-trace.json": "023f7f8de09d65a14be028882b1b89a4ab9ccd3efef4a81d3f398b9a5affcb0c",
+    "E0-r00-B2.pt": "599d4cddfeca27559e8577c4766d359000aae99f43db054f4ae9966ea0bb7e2c",
+    "E0-r00-B3-losses.npy": "df64336e0c14612cd3e21261cd841207420d4022d4ed143f7662a6367434274e",
+    "E0-r00-B3-probabilities.npy": "9c7aa7b77100d595990a1eb7b5c2f7be0dd08462b8efa209ea467166c4c200fd",
+    "E0-r00-assessment.npy": "42b03584bd8fd306fbf9f07da1dfdc995c2a173965c6cb1adfbf241602cf3541",
+    "E0-r00-train.npy": "5ad7b83ae2e14526181bdffd475077e1efeafaa6a98f7bab209b5b47aadf2193",
+    "E0-r00-validation.npy": "731438a2a83d6c876dec1c381fd1e92e503bade90b5ed2c923e295bca474893c",
+    "E1-r00-B0-losses.npy": "60e7be6ea50968e7c8264fa7d63d74f4d58a3015d41feae16da31e78eded6522",
+    "E1-r00-B0-probabilities.npy": "a95ed097223f2a4a8c6b4f18213c0119dc2f0fa39f1c80f1f55f29664b6c1bd6",
+    "E1-r00-B0-table.npy": "57c0fbb8d9a58a9fead0fea6a8ef3414caf1d784fb58421d6a487a1f8ce6f6d1",
+    "E1-r00-B1-losses.npy": "3a1f23d80e6c5ab2544ba5e304175533a9388eb0a4a1fe8749335c43e3a362c9",
+    "E1-r00-B1-probabilities.npy": "d76454638ecd7d60435f10c2db355448cc9577ec21008b5ae6383b12f8ea882c",
+    "E1-r00-B1-trace.json": "d300c19c0b140a0cc9423a359533444b212455150a555a0a508fb681a7505f42",
+    "E1-r00-B1.pt": "9573abdd9cfbda675273b760d62d91e66f67ebebe6417cc47635e12c864631d5",
+    "E1-r00-B2-losses.npy": "d1bf434e4a955f7d6c9abe3b702a98ec8363784584684cd7253e94a5cefd9003",
+    "E1-r00-B2-probabilities.npy": "84867b00d8ba458064c4ed0e1003a0cb3e5cc7cde71a5cac65a9a1dcf57d1c7b",
+    "E1-r00-B2-trace.json": "ae61155219ce93421d07a26e07e09d5311a36860a82ea219fb7fc7b430db56e0",
+    "E1-r00-B2.pt": "0908c2b76e8eb873a082152241a6e51842424d0f5cb1e4ba4ca75205a3e934ca",
+    "E1-r00-B3-losses.npy": "dc559682b58ab3d9257ccb1cfa6b438c39c2c2f16360c3addf121bb6f36abbaa",
+    "E1-r00-B3-probabilities.npy": "522c2bfbb29d65750c491fedcdf5a6469bfda7d80b5d6db4043de153534ead33",
+    "E1-r00-assessment.npy": "3ec436c030d0607ae9ec78b400d9987189f562e8caf8a1011c131273e62b2ec2",
+    "E1-r00-train.npy": "49b2de67243e406d6c9324a6575b8a961809b8159fec927e2045c2b651862255",
+    "E1-r00-validation.npy": "c99c631714a5f7665694b0d851eb470fe348dc70ced06199fdedd11240d68a3b",
+    "E2-r00-B0-losses.npy": "255c05e87cdd2e4b4410b3bd6cf827efa1c2e8f60a5028650159c26a6b7ccc5c",
+    "E2-r00-B0-probabilities.npy": "302e27febb7afa159db4076e19efb507c6ed1fb2dd2bfde18900da4acb28eaf2",
+    "E2-r00-B0-table.npy": "c194b7ef0666734ec4652bf4ed6dc008d1bb04d5a65b8763276bfa163755d7f5",
+    "E2-r00-B1-losses.npy": "80139cef83f4a7aecdf0f339c9f3dca1f01e76c2a1bdfe260887f71d22421f50",
+    "E2-r00-B1-probabilities.npy": "1b653620ce346db6ec7475d30404f5ec572cf98d5cc39d68d1cf41f64dd73b59",
+    "E2-r00-B1-trace.json": "8875ab6e971c08f53c6697d26007364fa8d60a87a336b9055513067f2e42b824",
+    "E2-r00-B1.pt": "edb541c2aa7f95b0391d40bafb1c3e09ba273180b29036ee4a800c2111a11543",
+    "E2-r00-B2-losses.npy": "394c385ec21a9d27f33fae87f79fdaa9f352a5d2b722c3649352e6ef26fe25af",
+    "E2-r00-B2-probabilities.npy": "f7047a58fea3cfc82e1d4b0d01a65ea23cb1c75e8b993d2d2f8c6264ab78e171",
+    "E2-r00-B2-trace.json": "fd297ca5cbce87e4d0fc6a8e8a90845ec6aaef9d074006d12ec3855bfa6a7e72",
+    "E2-r00-B2.pt": "4a9670f73bab4cdcd0bd0dd8f538a6348f91873216f6b529af96e8d69b199641",
+    "E2-r00-B3-losses.npy": "60972089cbe630e0e3d65626ffb9236a501a0f19956a1e657e9f27e092216b42",
+    "E2-r00-B3-probabilities.npy": "9c3b3b5821757d28e1ab3b06318720faa77820a1cdc83bb1a8d95bb5a2a90618",
+    "E2-r00-assessment.npy": "a7fd9e24f0f9c67f14c2c7a2ca4ee0a2778a4a52aeade668feeefd6a20394661",
+    "E2-r00-train.npy": "ecd62cf02fdf9cf3fa6ae5fb7e30fbc6e676f8f3c4d69c9d75b0772256624cdf",
+    "E2-r00-validation.npy": "363829e503d59b92aa975c5ce44f3a481c64d84cb4759e96e24744c8d4d0329d",
+    "replicates.json": "abc790190055fe68ad93e7bb6fcad7c77fe7b4a13b7c9a774a83ebce299e5b5d",
+    "summary.json": "7f3a1f8eee51844780e4c09cd55b93590712d7d424c9d8da76227c605e22cd4b"
+  }
+}

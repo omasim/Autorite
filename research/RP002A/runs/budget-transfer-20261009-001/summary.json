@@ -1,0 +1,116 @@
+{
+  "mode": "exploratory-budget-transfer",
+  "unit": "One training replicate per world; episodes/timepoints are not training replicates",
+  "model_assessment": [
+    {
+      "world": "E0",
+      "model": "B0",
+      "n": 1,
+      "episode_mean_log_loss": 0.3262962165978198
+    },
+    {
+      "world": "E0",
+      "model": "B1",
+      "n": 1,
+      "episode_mean_log_loss": 0.32633385845636387
+    },
+    {
+      "world": "E0",
+      "model": "B2",
+      "n": 1,
+      "episode_mean_log_loss": 0.32631229168765663
+    },
+    {
+      "world": "E0",
+      "model": "B3",
+      "n": 1,
+      "episode_mean_log_loss": 0.32629497394794704
+    },
+    {
+      "world": "E1",
+      "model": "B0",
+      "n": 1,
+      "episode_mean_log_loss": 0.9471089021467294
+    },
+    {
+      "world": "E1",
+      "model": "B1",
+      "n": 1,
+      "episode_mean_log_loss": 0.907665489382629
+    },
+    {
+      "world": "E1",
+      "model": "B2",
+      "n": 1,
+      "episode_mean_log_loss": 0.9071846500510519
+    },
+    {
+      "world": "E1",
+      "model": "B3",
+      "n": 1,
+      "episode_mean_log_loss": 0.9070871880114807
+    },
+    {
+      "world": "E2",
+      "model": "B0",
+      "n": 1,
+      "episode_mean_log_loss": 1.03796611408309
+    },
+    {
+      "world": "E2",
+      "model": "B1",
+      "n": 1,
+      "episode_mean_log_loss": 1.0380622860994195
+    },
+    {
+      "world": "E2",
+      "model": "B2",
+      "n": 1,
+      "episode_mean_log_loss": 1.0379954247901368
+    },
+    {
+      "world": "E2",
+      "model": "B3",
+      "n": 1,
+      "episode_mean_log_loss": 1.037946548434844
+    }
+  ],
+  "paired_contrasts": [
+    {
+      "contrast": "E1:B1-B0",
+      "n": 1,
+      "paired_difference": -0.03944341276410035
+    },
+    {
+      "contrast": "E1:B2-B0",
+      "n": 1,
+      "paired_difference": -0.039924252095677515
+    },
+    {
+      "contrast": "E0:B1-B0",
+      "n": 1,
+      "paired_difference": 3.7641858544046336e-05
+    },
+    {
+      "contrast": "E0:B2-B0",
+      "n": 1,
+      "paired_difference": 1.6075089836808942e-05
+    },
+    {
+      "contrast": "E2:B1-B0",
+      "n": 1,
+      "paired_difference": 9.617201632949879e-05
+    },
+    {
+      "contrast": "E2:B2-B0",
+      "n": 1,
+      "paired_difference": 2.93107070468146e-05
+    },
+    {
+      "contrast": "E1:B2-B1",
+      "n": 1,
+      "paired_difference": -0.0004808393315771653
+    }
+  ],
+  "interpretation": "Feasibility diagnostics only; no replicate SD, inferential interval, power, hypothesis or equivalence decision"
+}

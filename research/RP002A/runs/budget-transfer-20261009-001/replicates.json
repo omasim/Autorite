@@ -1,0 +1,200 @@
+[
+  {
+    "world": "E0",
+    "replicate": 0,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.3262962165978198,
+    "trace_summary": null
+  },
+  {
+    "world": "E0",
+    "replicate": 0,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.32633385845636387,
+    "trace_summary": {
+      "epochs_completed": 75,
+      "best_epoch": 55,
+      "best_validation_log_loss": 0.3243580162525177,
+      "final_validation_log_loss": 0.32444941997528076,
+      "reached_epoch_cap": false,
+      "best_in_final_cap_window": false,
+      "late_window_epochs": 20,
+      "late_validation_improvement_nats": 0.0001442432403564453,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "stop_reason": "early_stopping_patience",
+      "secondary_last_five": {
+        "window_epochs": 5,
+        "validation_improvement_nats": 4.723668098449707e-05,
+        "threshold_nats": 0.001,
+        "improvement_flag": false
+      },
+      "fit_wall_seconds": 10.365199792
+    }
+  },
+  {
+    "world": "E0",
+    "replicate": 0,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.32631229168765663,
+    "trace_summary": {
+      "epochs_completed": 116,
+      "best_epoch": 96,
+      "best_validation_log_loss": 0.32434457540512085,
+      "final_validation_log_loss": 0.3243512511253357,
+      "reached_epoch_cap": false,
+      "best_in_final_cap_window": false,
+      "late_window_epochs": 20,
+      "late_validation_improvement_nats": -6.67572021484375e-06,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "stop_reason": "early_stopping_patience",
+      "secondary_last_five": {
+        "window_epochs": 5,
+        "validation_improvement_nats": -5.543231964111328e-06,
+        "threshold_nats": 0.001,
+        "improvement_flag": false
+      },
+      "fit_wall_seconds": 135.535424417
+    }
+  },
+  {
+    "world": "E0",
+    "replicate": 0,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.32629497394794704,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 0,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 0.9471089021467294,
+    "trace_summary": null
+  },
+  {
+    "world": "E1",
+    "replicate": 0,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 0.907665489382629,
+    "trace_summary": {
+      "epochs_completed": 164,
+      "best_epoch": 144,
+      "best_validation_log_loss": 0.9078571200370789,
+      "final_validation_log_loss": 0.908178985118866,
+      "reached_epoch_cap": false,
+      "best_in_final_cap_window": false,
+      "late_window_epochs": 20,
+      "late_validation_improvement_nats": -2.390146255493164e-05,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "stop_reason": "early_stopping_patience",
+      "secondary_last_five": {
+        "window_epochs": 5,
+        "validation_improvement_nats": -0.00013703107833862305,
+        "threshold_nats": 0.001,
+        "improvement_flag": false
+      },
+      "fit_wall_seconds": 21.909115874999998
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 0,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 0.9071846500510519,
+    "trace_summary": {
+      "epochs_completed": 107,
+      "best_epoch": 87,
+      "best_validation_log_loss": 0.9074108600616455,
+      "final_validation_log_loss": 0.9074423909187317,
+      "reached_epoch_cap": false,
+      "best_in_final_cap_window": false,
+      "late_window_epochs": 20,
+      "late_validation_improvement_nats": 5.805492401123047e-05,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "stop_reason": "early_stopping_patience",
+      "secondary_last_five": {
+        "window_epochs": 5,
+        "validation_improvement_nats": -1.3709068298339844e-06,
+        "threshold_nats": 0.001,
+        "improvement_flag": false
+      },
+      "fit_wall_seconds": 128.30887454100002
+    }
+  },
+  {
+    "world": "E1",
+    "replicate": 0,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 0.9070871880114807,
+    "trace_summary": null
+  },
+  {
+    "world": "E2",
+    "replicate": 0,
+    "model": "B0",
+    "assessment_episode_mean_log_loss": 1.03796611408309,
+    "trace_summary": null
+  },
+  {
+    "world": "E2",
+    "replicate": 0,
+    "model": "B1",
+    "assessment_episode_mean_log_loss": 1.0380622860994195,
+    "trace_summary": {
+      "epochs_completed": 29,
+      "best_epoch": 9,
+      "best_validation_log_loss": 1.0393966436386108,
+      "final_validation_log_loss": 1.0395104885101318,
+      "reached_epoch_cap": false,
+      "best_in_final_cap_window": false,
+      "late_window_epochs": 20,
+      "late_validation_improvement_nats": -9.799003601074219e-05,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "stop_reason": "early_stopping_patience",
+      "secondary_last_five": {
+        "window_epochs": 5,
+        "validation_improvement_nats": -4.9591064453125e-05,
+        "threshold_nats": 0.001,
+        "improvement_flag": false
+      },
+      "fit_wall_seconds": 3.8575015409999764
+    }
+  },
+  {
+    "world": "E2",
+    "replicate": 0,
+    "model": "B2",
+    "assessment_episode_mean_log_loss": 1.0379954247901368,
+    "trace_summary": {
+      "epochs_completed": 39,
+      "best_epoch": 19,
+      "best_validation_log_loss": 1.0392345190048218,
+      "final_validation_log_loss": 1.0392520427703857,
+      "reached_epoch_cap": false,
+      "best_in_final_cap_window": false,
+      "late_window_epochs": 20,
+      "late_validation_improvement_nats": 1.4066696166992188e-05,
+      "late_improvement_flag": false,
+      "interpretation": "Descriptive trace flags; not a convergence proof",
+      "stop_reason": "early_stopping_patience",
+      "secondary_last_five": {
+        "window_epochs": 5,
+        "validation_improvement_nats": -5.125999450683594e-06,
+        "threshold_nats": 0.001,
+        "improvement_flag": false
+      },
+      "fit_wall_seconds": 46.69767570900001
+    }
+  },
+  {
+    "world": "E2",
+    "replicate": 0,
+    "model": "B3",
+    "assessment_episode_mean_log_loss": 1.037946548434844,
+    "trace_summary": null
+  }
+]

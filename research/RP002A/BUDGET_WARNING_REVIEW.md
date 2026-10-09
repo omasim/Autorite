@@ -30,3 +30,7 @@ Do not reopen this run or retroactively remove its 12 warnings. The next useful 
 `BUDGET_TRANSFER_PROTOCOL.md` and `BUDGET_TRANSFER_PLAN.json` propose one fresh replicate in each world, six learned-model fits total, at 4096/1024/2048 training/validation/assessment episodes. The pilot is for runtime and trace behavior only. One replicate per world provides no between-training variance estimate, power justification or scientific decision. The proposal remains unfrozen and unauthorized; its runner and artifact audit are now implemented and tested; a separate one-run approval is still required before execution.
 
 After that separately reviewed feasibility step, revisit optimization and statistical calibration rather than copying a favorable exploratory SD into confirmation. The baseline and numerical confirmation proposal remain unchanged; no Claim or Cycle obligation is resolved.
+
+## Target-size feasibility disposition — 2026-10-09
+
+The separately approved pilot `budget-transfer-20261009-001` completed once: three units, six fits, 348.175 seconds, about 251.42 MiB lifetime peak process resident memory. No predeclared warning was triggered; this is not convergence proof. One training replicate per world supplies no variance or inferential conclusion. The full review is `research/RP002A/BUDGET_TRANSFER_REPORT.md`. Prior warnings remain on record; confirmation is PLANNED and Cycle 01 remains 0/13. No further execution is authorized.

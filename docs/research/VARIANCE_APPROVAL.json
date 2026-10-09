@@ -1,0 +1,11 @@
+{
+  "approved": true,
+  "approved_at": "2026-10-09T19:41:35.565020+00:00",
+  "approval_evidence": "User explicitly instructed: 1,2, 3 ve 4 yap. Step 2 includes fresh target-size variance assessment under the frozen five-replicate-per-world scope.",
+  "stage": "variance",
+  "run_id": "target-variance-20261009-001",
+  "scope": "One fixed target-size variance attempt: 15 units, 30 fits, cap 300, patience 20, two CPU threads, 5400-second allowance; no retry, extension or model/margin tuning.",
+  "plan_sha256": "b3bd602411fd0f7269cd6b48b25d123423f6f9f849a37bb3ae5e389b20d1fd2a",
+  "baseline_manifest_sha256": "83ad444dfce437140bf6b453d0b305d4ea5415deb3af9dff62abcd9e45d6d14d",
+  "source_commit": "a03409e772a8872ee216b6d3ad347496af618006"
+}

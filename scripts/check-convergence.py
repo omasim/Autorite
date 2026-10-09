@@ -1,4 +1,4 @@
-"""Audit immutable convergence artifacts without training or hypothesis decisions."""
+"""Audit immutable exploratory artifacts without training or hypothesis decisions."""
 from pathlib import Path
 import hashlib,importlib.util,json,subprocess
 import numpy as np
@@ -9,7 +9,7 @@ def module(name,path):
 c=module('convergence','packages/rp002a/convergence.py');design=module('design','packages/rp002a/design.py')
 def audit(run):
  m=json.loads((run/'manifest.json').read_text());plan=m['configuration']['plan'];base=m['configuration']['base']
- assert set(m)=={'configuration','seeds','environment','outputs'} and m['environment']['mode']=='exploratory-convergence'
+ assert set(m)=={'configuration','seeds','environment','outputs'} and m['environment']['mode']==plan['mode'] and plan['mode'] in {'exploratory-convergence','exploratory-budget-transfer'}
  assert run.name==plan['run_id'] and m['seeds']==c.schedule(plan)
  assert set(m['outputs'])=={p.name for p in run.iterdir() if p.is_file() and p.name!='manifest.json'}
  for name,h in m['outputs'].items():
@@ -31,6 +31,11 @@ def audit(run):
  assert not set(changed)-{approval_relative},'Unapproved source changes'
  assert hashlib.sha256(saved_plan).hexdigest()==m['environment']['plan_sha256'] and json.loads(saved_plan)==plan
  assert hashlib.sha256(saved_base).hexdigest()==m['environment']['base_configuration_sha256']==plan['base_configuration_sha256'] and json.loads(saved_base)==base
+ if c.is_transfer(plan):
+  memory=m['environment']['peak_process_resident_memory'];assert memory['metric']=='RUSAGE_SELF.ru_maxrss'
+  assert memory['platform']==plan['environment']['platform'] and type(memory['raw_value']) is int and memory['raw_value']>0
+  factor=1 if memory['platform']=='darwin' else 1024
+  assert memory['raw_unit']==('bytes' if factor==1 else 'KiB') and memory['bytes']==memory['raw_value']*factor
  if (run/'failure.txt').exists():
   assert not (run/'summary.json').exists();print(f'PASS: {run.name}: immutable partial failure; no aggregate inference');return
  rows=json.loads((run/'replicates.json').read_text());assert design.same_planning(json.loads((run/'summary.json').read_text()),c.summarize(rows,plan,base))
@@ -57,6 +62,6 @@ def audit(run):
      np.testing.assert_allclose(p,c.e.probabilities(model,assessment[:,:-1]),rtol=1e-5,atol=1e-6)
  print(f'PASS: {run.name}: {len(m["outputs"])} immutable hashes, seeds/data/reference/checkpoint replay and replicate-level summaries; no training.')
 if __name__=='__main__':
- runs=sorted((ROOT/'research/RP002A/runs').glob('convergence-*'))
+ runs=sorted(p for p in (ROOT/'research/RP002A/runs').iterdir() if p.is_dir() and p.name.startswith(('convergence-','budget-transfer-')))
  for run in runs:audit(run)
  if not runs:print('PASS: no convergence runs yet; no outcomes created by validation.')

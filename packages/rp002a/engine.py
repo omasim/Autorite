@@ -103,7 +103,7 @@ def losses(probabilities,targets,clip=1e-8):
  return -np.log(np.maximum(true,clip))
 
 
-def train_model(model,train,validation,optimizer_config,batch_seed,deadline):
+def train_model(model,train,validation,optimizer_config,batch_seed,deadline,budget_check=None):
  """Training primitive; caller must enforce authorization/freeze and artifact policy."""
  train=observations(train);validation=observations(validation)
  if min(train.shape[1],validation.shape[1])<2:raise ValueError('Insufficient prediction pairs')
@@ -113,7 +113,7 @@ def train_model(model,train,validation,optimizer_config,batch_seed,deadline):
   model.train()
   indices=order.permutation(len(train))
   for offset in range(0,len(indices),optimizer_config['batch_episodes']):
-   if time.monotonic()>=deadline:raise TimeoutError('Declared training wall-time budget exhausted')
+   if time.monotonic()>=deadline or (budget_check is not None and budget_check()):raise TimeoutError('Declared training wall-time budget exhausted')
    b=torch.as_tensor(train[indices[offset:offset+optimizer_config['batch_episodes']]],dtype=torch.long)
    optimizer.zero_grad();logits=model(b[:,:-1]);loss=nn.functional.cross_entropy(logits.reshape(-1,3),b[:,1:].reshape(-1))
    if not torch.isfinite(loss):raise FloatingPointError('Nonfinite training loss')
@@ -121,7 +121,7 @@ def train_model(model,train,validation,optimizer_config,batch_seed,deadline):
   model.eval()
   with torch.no_grad():
    b=torch.as_tensor(validation,dtype=torch.long);value=float(nn.functional.cross_entropy(model(b[:,:-1]).reshape(-1,3),b[:,1:].reshape(-1)))
-  if time.monotonic()>=deadline:raise TimeoutError('Declared training wall-time budget exhausted')
+  if time.monotonic()>=deadline or (budget_check is not None and budget_check()):raise TimeoutError('Declared training wall-time budget exhausted')
   if not np.isfinite(value):raise FloatingPointError('Nonfinite validation loss')
   trace.append({'epoch':epoch+1,'validation_log_loss':value})
   if value<best:

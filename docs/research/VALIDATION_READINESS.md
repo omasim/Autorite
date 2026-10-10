@@ -1,5 +1,11 @@
 # Research record validation — 2026-10-08
 
+## Current pipeline disposition — 2026-10-10
+
+The first three authorized steps completed: fixed synthetic calibration, fresh target-size variance assessment and a pre-outcome freeze selecting 20 confirmation replicates per world. The one confirmation attempt is **INCOMPLETE**, stopped after a wall-time/host-suspension clock incident. It preserves 36/60 complete independent units and 73 saved fit traces; no seven-comparison decisions or VALID Result exist. See `research/RP002A/CONFIRMATORY_001_REPORT.md` and `research/RP002A/confirmation/INTERRUPTION_REVIEW.json`.
+
+All completed-unit artifacts replay without new training. The timer guard is repaired for future separately authorized work. No retry/extension or partial-outcome inference is authorized. RP002A and Cycle 01 are ACTIVE; 0/13 obligations are resolved. Earlier dated dispositions below describe their original stages and preserve their historical scope.
+
 The canonical research core now contains six Questions, four PLANNED ResearchPackages, three existing Decision indexes and two Source records. Cycle 01 is represented by one manifest with 13 equal-weight, unresolved obligations. There are no Claims, Tests or Results in the live research graph.
 
 The validator checks schema keys, type/status compatibility, unique IDs and aliases, dates, graph/file references, relation endpoints and supersession cycles. Supported/proved claim projections require justification and valid evidence or proof artifacts. Result/Test package agreement, output checksums and committed run immutability are checked. Cycle closure requires the full ring, final close bundle, active close Decision and an existing Git snapshot; publication requires publication references.

@@ -1,5 +1,11 @@
 # Autorite 2.0 — Codex Handoff v1
 
+## Current pipeline disposition — 2026-10-10
+
+The first three authorized steps completed: fixed synthetic calibration, fresh target-size variance assessment and a pre-outcome freeze selecting 20 confirmation replicates per world. The one confirmation attempt is **INCOMPLETE**, stopped after a wall-time/host-suspension clock incident. It preserves 36/60 complete independent units and 73 saved fit traces; no seven-comparison decisions or VALID Result exist. See `research/RP002A/CONFIRMATORY_001_REPORT.md` and `research/RP002A/confirmation/INTERRUPTION_REVIEW.json`.
+
+All completed-unit artifacts replay without new training. The timer guard is repaired for future separately authorized work. No retry/extension or partial-outcome inference is authorized. RP002A and Cycle 01 are ACTIVE; 0/13 obligations are resolved. Earlier dated dispositions below describe their original stages and preserve their historical scope.
+
 ## Published sites
 - [Knowledge & Publication](https://autorite.org)
 - [Open Laboratory](https://autorite.net)
@@ -9,7 +15,7 @@ Both sites are public and in English. Their www hostnames also work over HTTPS. 
 Start with `CODEX_MASTER_INSTRUCTIONS.md`, then `FIRST_CODEX_PROMPT.txt`.
 
 ## Research repository
-[omasim/Autorite](https://github.com/omasim/Autorite) holds the canonical source. Proposals use branches and PRs; CI verifies baseline checksums and both generated sites. The audited preserved baseline is approved and tagged `baseline-v0.1`. The first isolated engineering pilot completed; confirmatory protocol approval remains pending.
+[omasim/Autorite](https://github.com/omasim/Autorite) holds the canonical source. Proposals use branches and PRs; CI verifies baseline checksums and both generated sites. The audited preserved baseline is approved and tagged `baseline-v0.1`. Calibration and fresh variance assessment completed, and the confirmation design was frozen. The first confirmation attempt is incomplete after a clock incident; its partial artifacts are preserved without decisions.
 
 ## Authoritative baseline source
 Use `baseline/` as the authoritative bootstrap source, as confirmed by the user on 2026-10-07. Its updated publishing and site architecture documents (v0.2) take precedence over the older copies in `autorite-2-baseline-v0.1/`.

@@ -22,8 +22,13 @@ def audit(run):
  assert not set(subprocess.check_output(['git','diff','--name-only',a['source_commit'],source],cwd=ROOT,text=True).splitlines())-{m['approval_path']}
  assert hashlib.sha256(subprocess.check_output(['git','show',source+':'+plan['base_configuration']],cwd=ROOT)).hexdigest()==plan['base_configuration_sha256']
  mem=m['peak_process_resident_memory'];assert mem['bytes']==mem['raw_value']*(1 if mem['platform']=='darwin' else 1024)
- if (run/'failure.txt').exists():assert not (run/'summary.json').exists();print('PASS partial:',run.name);return
- summary=json.loads((run/'summary.json').read_text())
+ failed=(run/'failure.txt').exists()
+ if failed:assert not (run/'summary.json').exists()
+ if (run/'timing.json').exists():
+  timing=json.loads((run/'timing.json').read_text());assert timing['elapsed_wall_seconds']==m['elapsed_wall_seconds'] and timing['allowance_seconds']>0
+  if not failed:assert max(timing['elapsed_wall_seconds'],timing['elapsed_monotonic_seconds'])<timing['allowance_seconds']
+ if failed and stage=='calibration':print('PASS partial calibration hashes/provenance:',run.name);return
+ summary=None if failed else json.loads((run/'summary.json').read_text())
  if stage=='calibration':
   cfg=plan['calibration'];count=len(summary['student_t']);assert count==90
   for i,row in enumerate(summary['student_t']):
@@ -45,14 +50,34 @@ def audit(run):
   expected=[n for n in [20,30,50] if all(x['eligible_cell'] for x in summary['student_t'] if x['n']==n)];assert summary['eligible_counts']==expected
  else:
   n=plan['variance']['replicates'] if stage=='variance' else plan['replicates'];spec=plan['variance'] if stage=='variance' else plan;training=plan['training'];assert m['seeds']==p.seeds(spec['version'],n,base)
-  rows=json.loads((run/'replicates.json').read_text());expected=p.summarize(rows,n,base,stage,plan.get('inflation',2),plan.get('margin',.01),plan.get('decision_kinds'))
-  assert compare(summary,expected)
+  rows=json.loads((run/'replicates.json').read_text()) if (run/'replicates.json').exists() else []
+  keys=[(x['world'],x['replicate'],x['model']) for x in rows]
+  ordered=[(w,r,model) for w in sorted(base['worlds']) for r in range(n) for model in ['B0','B1','B2','B3']]
+  assert keys==ordered[:len(keys)] and len(keys)%4==0
+  completed={(w,r) for w,r,model in keys}
+  if failed:assert len(completed)<=3*n
+  else:
+   expected=p.summarize(rows,n,base,stage,plan.get('inflation',2),plan.get('margin',.01),plan.get('decision_kinds'));assert compare(summary,expected)
+  if (run/'progress.json').exists():assert json.loads((run/'progress.json').read_text())=={'completed_units':len(completed),'total_units':3*n}
   torch.set_num_threads(training['threads'])
   for world,law in base['worlds'].items():
    for r in range(n):
-    stem=f'{world}-r{r:02d}';data=np.load(run/f'{stem}-datasets.npz',allow_pickle=False);arrays=np.load(run/f'{stem}-assessment.npz',allow_pickle=False);metrics=json.loads((run/f'{stem}-secondary.json').read_text())
+    stem=f'{world}-r{r:02d}'
+    if not (run/f'{stem}-datasets.npz').exists():
+     assert failed and (world,r) not in completed;continue
+    data=np.load(run/f'{stem}-datasets.npz',allow_pickle=False)
     for split in ['train','validation','assessment']:np.testing.assert_array_equal(data[split],p.e.generate(law['flip_probability'],law['erasure_probability'],training[split+'_episodes'],training['episode_observations'],m['seeds'][f'{world}/{r}/{split}/data']))
     table=p.e.fit_b0(data['train'],base['B0']['laplace_alpha']);np.testing.assert_array_equal(table,np.load(run/f'{stem}-B0-table.npy',allow_pickle=False))
+    if (world,r) not in completed:
+     assert failed and not (run/f'{stem}-assessment.npz').exists() and not (run/f'{stem}-secondary.json').exists()
+     for model in ['B1','B2']:
+      trace_path=run/f'{stem}-{model}-trace.json';weight_path=run/f'{stem}-{model}.pt';assert trace_path.exists()==weight_path.exists()
+      if trace_path.exists():
+       p.trace_summary(json.loads(trace_path.read_text()),training)
+       model_obj=p.e.FiniteHistory(base['B1']['window'],base['B1']['hidden_units']) if model=='B1' else p.e.RecursiveState(base['B2']['state_dimension'])
+       state=torch.load(weight_path,map_location='cpu',weights_only=True);model_obj.load_state_dict(state);assert all(torch.isfinite(v).all() for v in state.values())
+     continue
+    arrays=np.load(run/f'{stem}-assessment.npz',allow_pickle=False);metrics=json.loads((run/f'{stem}-secondary.json').read_text())
     for model in ['B0','B1','B2','B3']:
      prob=arrays[model+'-probabilities'];loss=arrays[model+'-losses'];np.testing.assert_allclose(loss,p.e.losses(prob,data['assessment'][:,1:],base['probability_clip']),atol=1e-12)
      row=next(x for x in rows if (x['world'],x['replicate'],x['model'])==(world,r,model));assert np.isclose(row['assessment_episode_mean_log_loss'],loss.mean(),atol=1e-12)
@@ -63,7 +88,7 @@ def audit(run):
       model_obj=p.e.FiniteHistory(base['B1']['window'],base['B1']['hidden_units']) if model=='B1' else p.e.RecursiveState(base['B2']['state_dimension']);model_obj.load_state_dict(torch.load(run/f'{stem}-{model}.pt',map_location='cpu',weights_only=True));pred=p.e.probabilities(model_obj,data['assessment'][:,:-1])
      np.testing.assert_allclose(prob,pred,rtol=1e-5,atol=1e-6)
      sec=inf.secondary(prob,data['assessment'][:,1:],data['assessment'][:,:-1],base['probability_clip']);sec['gap_to_B3']=float((loss-arrays['B3-losses']).mean());assert compare(metrics[model],sec)
- print('PASS:',run.name,len(m['outputs']),'hashes and analysis/checkpoint replay; no training')
+ print('PASS:',run.name,len(m['outputs']),'hashes;',str(len(completed))+' completed units replayed; partial, no aggregate decisions' if failed else 'analysis/checkpoint replay; no training')
 def compare(a,b):
  import importlib.util
  spec=importlib.util.spec_from_file_location('design',ROOT/'packages/rp002a/design.py');d=importlib.util.module_from_spec(spec);spec.loader.exec_module(d);return d.same_planning(a,b)

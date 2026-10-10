@@ -1,5 +1,7 @@
 # RP002A confirmatory design review
 
+Follow-up (2026-10-10): this earlier planning review is historical. Calibration, target-size variance and pre-outcome freeze completed. The first confirmation attempt is incomplete after a wall-time incident, with no confirmatory decisions. See `CONFIRMATORY_001_REPORT.md`; the historical numerical proposal is unchanged.
+
 Date: 2026-10-08. Planning review only. No new samples, model training, confirmatory outcomes or scientific Claim promotions. `CONFIG_PROPOSAL.json` remains unfrozen and unauthorized; the approved pilot and its raw artifacts are unchanged.
 
 ## What the declared generator can distinguish

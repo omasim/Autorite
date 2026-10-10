@@ -1,0 +1,20 @@
+{
+  "run_id": "confirmatory-20261009-001",
+  "status": "INCOMPLETE",
+  "execution_source": "b2ee2548b8c6206b807af9de311b01c180b9ce29",
+  "launched_utc_observation": "2026-10-09 20:20:23 UTC",
+  "observed_utc_before_stop": "2026-10-10 07:11:46 UTC",
+  "observed_utc_after_exit": "2026-10-10 09:08:55 UTC",
+  "observation_limit": "These are external clock observations around tool calls, not instrumented process start/stop timestamps. They establish that more than four hours of civil time elapsed; exact suspension duration and exact signal-delivery time are not recorded.",
+  "stop_action": "SIGINT to the identified confirmation process; KeyboardInterrupt preserved by the runner",
+  "stop_reason": "Predeclared four-hour wall-time allowance exceeded across a host-suspension/clock-discrepancy incident. The original macOS monotonic guard did not enforce elapsed civil time.",
+  "recorded_monotonic_seconds": 5099.2543705,
+  "recorded_timing_limit": "Original manifest key elapsed_wall_seconds actually used time.monotonic; it must not be read as suspension-inclusive wall duration. The immutable manifest is retained without correction.",
+  "completed_units": 36,
+  "saved_fit_traces": 73,
+  "raw_outputs": 295,
+  "raw_manifest_sha256": "d4106db6cfab999ad5e5e27a0b666c91d480e2b12c4c3625bf7f4ea8dfdd83d6",
+  "confirmatory_decisions": null,
+  "retry_authorized": false,
+  "monotonic_clock_implementation_observed_after_exit": "mach_absolute_time()"
+}

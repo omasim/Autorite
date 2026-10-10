@@ -4,11 +4,16 @@ from urllib.parse import urlsplit,unquote
 import json
 ROOT=Path(__file__).resolve().parents[1]
 class Links(HTMLParser):
- def __init__(self): super().__init__();self.links=[];self.lang=None;self.ids=set();self.rings=[];self.arcs=[]
+ def __init__(self): super().__init__();self.links=[];self.lang=None;self.ids=set();self.rings=[];self.arcs=[];self.track_geometry=[];self.progress_geometry=[];self.graphic=None
  def handle_starttag(self,tag,attrs):
   a=dict(attrs)
   if tag=='html':self.lang=a.get('lang')
   if 'cycle-ring' in a.get('class','').split():self.rings.append(a.get('aria-label'))
+  if tag=='svg':self.graphic=a.get('class')
+  if tag=='circle':
+   geometry=(self.graphic,tuple(a.get(k) for k in ('cx','cy','r','stroke-width')))
+   if 'cycle-track' in a.get('class','').split():self.track_geometry.append(geometry)
+   if 'cycle-progress' in a.get('class','').split():self.progress_geometry.append(geometry)
   if tag=='circle' and a.get('pathlength')=='100':self.arcs.append(a.get('stroke-dasharray'))
   if 'id' in a:self.ids.add(a['id'])
   for key in ('href','src'):
@@ -53,6 +58,9 @@ for site,path in [('org','index.html'),('net','index.html'),('net','cycle/01/ind
  parser=Links();parser.feed((ROOT/'apps'/site/'dist'/path).read_text())
  assert parser.rings==[label],(site,path,'Accessible ring disagrees with manifest')
  assert parser.arcs==[f'{expected*100} 100'],(site,path,'Rendered ring disagrees with manifest')
+ assert len(parser.track_geometry)==len(parser.progress_geometry)==1,(site,path,'Ring layers missing')
+ assert parser.track_geometry==parser.progress_geometry,(site,path,'Track and progress geometry differ')
+ assert parser.track_geometry[0][0]=='cycle-graphic',(site,path,'Ring layers must share an SVG')
 cycle_html=(ROOT/'apps/net/dist/cycle/01/index.html').read_text()
 assert f'{count} resolved · {total-count} open obligations' in cycle_html
 assert cycle_html.count('Open · no resolution on record')==total-count,'Obligation list has stale open labels'

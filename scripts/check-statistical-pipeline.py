@@ -103,6 +103,17 @@ def check_plan():
   config=json.loads(p.CONFIRM.read_text());cal_s=json.loads((ROOT/'research/RP002A/runs'/plan['calibration']['run_id']/'summary.json').read_text());var_s=json.loads((ROOT/'research/RP002A/runs'/plan['variance']['run_id']/'summary.json').read_text());selected=inf.select_count([x['sample_sd'] for x in var_s['contrasts']],cal_s['eligible_counts'],plan)
   assert config['replicates']==selected['selected_n'] and config['training']==plan['training'] and config['inflation']==2 and config['margin']==.01 and config['decision_kinds']==plan['confirmation_rule']['decision_kinds'] and config['max_wall_seconds']==14400
   for relative,h in config['dependency_sha256'].items():assert p.digest(ROOT/relative)==h
+  for path in sorted((ROOT/'research/RP002A').glob('CONFIRMATORY_*_CONFIG.json')):
+   _,fresh,_=p.load('confirmation',path)
+   identity={'version','run_id','approval_path','dependency_sha256'}
+   assert {k:v for k,v in fresh.items() if k not in identity}=={k:v for k,v in config.items() if k not in identity}
+   assert fresh['version']!=config['version'] and fresh['run_id']!=config['run_id']
+   assert fresh['approval_path']==f"docs/research/CONFIRMATION_{path.stem.split('_')[1]}_APPROVAL.json"
+   for relative,h in fresh['dependency_sha256'].items():assert p.digest(ROOT/relative)==h
+   prior=set()
+   for f in (ROOT/'research/RP002A/runs').glob('*/manifest.json'):
+    if f.parent.name!=fresh['run_id']:prior.update(json.loads(f.read_text()).get('seeds',{}).values())
+   assert not prior&set(p.seeds(fresh['version'],fresh['replicates'],base).values())
  print('PASS: fixed pipeline budgets, fresh variance/confirmation namespaces; no execution')
 if __name__=='__main__':
  check_plan()

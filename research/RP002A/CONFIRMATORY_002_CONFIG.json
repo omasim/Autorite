@@ -1,0 +1,54 @@
+{
+  "version": "confirmation-2.0",
+  "run_id": "confirmatory-20261010-002",
+  "frozen": true,
+  "execution_authorized": true,
+  "base_configuration": "research/RP002A/CONFIG_PROPOSAL.json",
+  "base_configuration_sha256": "fdd50646ee1e5e6ae659091a0fc9e3e1b6ff47bea09b8f3e1471e8bac0cf34ee",
+  "environment": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "torch": "2.8.0",
+    "scipy": "1.13.1",
+    "platform": "darwin",
+    "machine": "arm64",
+    "device": "CPU"
+  },
+  "replicates": 20,
+  "training": {
+    "train_episodes": 4096,
+    "validation_episodes": 1024,
+    "assessment_episodes": 2048,
+    "episode_observations": 129,
+    "max_epochs": 300,
+    "early_stopping_patience": 20,
+    "threads": 2,
+    "near_cap_last_epochs": 30,
+    "late_trace_epochs": 20,
+    "late_improvement_threshold_nats": 0.001
+  },
+  "inflation": 2.0,
+  "margin": 0.01,
+  "decision_kinds": [
+    "benefit",
+    "benefit",
+    "equivalence",
+    "equivalence",
+    "equivalence",
+    "equivalence",
+    "benefit"
+  ],
+  "max_wall_seconds": 14400,
+  "interval_method": "twofold-inflated replicate-mean Student-t Bonferroni, familywise alpha=.05, seven primary contrasts",
+  "scope": "Fixed-budget passive finite-process algorithm benchmark; conditional normal-theory inference, no recurrence-necessity or universal-history claim",
+  "dependency_sha256": {
+    "research/RP002A/STATISTICAL_PIPELINE_PLAN.json": "b3bd602411fd0f7269cd6b48b25d123423f6f9f849a37bb3ae5e389b20d1fd2a",
+    "research/RP002A/runs/calibration-20261009-001/manifest.json": "8f121239a0f020184f80299d54bf881851fde1808f9d6da6da612b36905db63b",
+    "research/RP002A/runs/calibration-20261009-001/summary.json": "59e412338bbbbeaaee63f39035f7e7b5b4ece272aab1d8fedf5c7fb2ea5dccf1",
+    "research/RP002A/runs/target-variance-20261009-001/manifest.json": "667f4d9c97ba0904a4e0f08dcd64ecb8097137e2ba8502da306643102e35d1fc",
+    "research/RP002A/runs/target-variance-20261009-001/summary.json": "da9370818204344e4e18c043a28cf340740e4f8278bef7d7bad08cb6e4e80433",
+    "research/RP002A/CONFIRMATORY_SELECTION.json": "6c390a86e40041a7c9e3ed54313f7613fc499c1d6a05645c0e5a1d07e16200a5",
+    "research/RP002A/CONFIRMATORY_CONFIG.json": "a84c08db5b7891aac7eb6be5bc8f00e7980904441dec516df438f089a4acc7c9"
+  },
+  "approval_path": "docs/research/CONFIRMATION_002_APPROVAL.json"
+}

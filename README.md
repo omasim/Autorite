@@ -1,6 +1,10 @@
 # Autorite 2.0 — Codex Handoff v1
 
-## Current pipeline disposition — 2026-10-10
+## Current package disposition - 2026-10-10
+
+RP002A is CLOSED for its defined Cycle 01 commitment after the explicit internal [package review](research/RP002A/PACKAGE_REVIEW.md) and [Decision D-0004](docs/decisions/DECISION-0004_RP002A_DISPOSITION.md). All seven frozen outcomes are preserved, including the indeterminate recurrent comparison. Cycle 01 remains ACTIVE with 1/13 obligations resolved (7.7%). Q-3 and Q-4 remain ACTIVE; no broad Claim, new execution or whole-Cycle closure is asserted. Next: RP003 protocol preparation.
+
+## Historical pipeline disposition - 2026-10-10
 
 The separately authorized second confirmation `confirmatory-20261010-002` completed: **60 units, 120 learned fits, 20 replicates per world**. All 484 output hashes and data/checkpoint/analysis replay passed. Seven frozen conditional decisions: **two benefit, four equivalent, one indeterminate**; no predeclared trace warning. Test TST-RP002A002 has audited Result R-RP002A002 (VALID). See `research/RP002A/CONFIRMATORY_002_REPORT.md` and the preserved timing/host review.
 

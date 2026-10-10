@@ -8,13 +8,24 @@
   "updated_at": "2026-10-10",
   "source_refs": [
     "baseline/v0.1/RP002A_PREREGISTRATION.md",
-    "RESEARCH_EXECUTION_READINESS.md"
+    "RESEARCH_EXECUTION_READINESS.md",
+    "research/RP002A/PACKAGE_REVIEW.md",
+    "docs/decisions/DECISION-0004_RP002A_DISPOSITION.md"
   ],
-  "relations": [],
+  "relations": [
+    {
+      "relation": "informs",
+      "target": "Q-3"
+    },
+    {
+      "relation": "informs",
+      "target": "Q-4"
+    }
+  ],
   "aliases": [
     "RP002A"
   ],
-  "status": "ACTIVE",
+  "status": "CLOSED",
   "question_refs": [
     "Q-3",
     "Q-4"
@@ -25,7 +36,12 @@
 }
 ---
 
-## Current pipeline disposition — 2026-10-10
+## Package disposition - 2026-10-10
+
+RP-002A is CLOSED for this Cycle 01 finite fixed-budget commitment under D-0004. The completed benchmark and explicit internal review are documented in `PACKAGE_REVIEW.md`. Its two benefit, four equivalent and one indeterminate decisions keep their frozen rules and scope; no broad Claim, universal memory, recurrent necessity or external review is asserted. This study informs Q-3 and Q-4 through its scoped predictive distinctions; both questions remain ACTIVE. The `rp002a` disposition is completed, 1/13 obligations resolved. Cycle 01 remains ACTIVE. No further execution is authorized. Earlier dated dispositions below retain their historical statuses.
+
+
+## Pipeline disposition before package review - 2026-10-10
 
 The separately authorized second confirmation `confirmatory-20261010-002` completed: **60 units, 120 learned fits, 20 replicates per world**. All 484 output hashes and data/checkpoint/analysis replay passed. Seven frozen conditional decisions: **two benefit, four equivalent, one indeterminate**; no predeclared trace warning. Test TST-RP002A002 has audited Result R-RP002A002 (VALID). See `research/RP002A/CONFIRMATORY_002_REPORT.md` and the preserved timing/host review.
 

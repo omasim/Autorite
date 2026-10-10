@@ -654,5 +654,33 @@
     ],
     "label": "Audited confirmation report",
     "recommended": true
+  },
+  {
+    "key": "rp002a-package-review",
+    "path": "research/RP002A/PACKAGE_REVIEW.md",
+    "title": "RP002A package interpretation and disposition review",
+    "category": "Research packages",
+    "summary": "Explicit internal review of all seven frozen outcomes, assumptions and completed finite commitment. Broader questions remain open.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Post-outcome review",
+    "recommended": true
+  },
+  {
+    "key": "rp002a-package-decision",
+    "path": "docs/decisions/DECISION-0004_RP002A_DISPOSITION.md",
+    "title": "Decision 0004 - RP002A package disposition",
+    "category": "Research packages",
+    "summary": "Close only the scoped RP002A commitment and record the first of 13 Cycle obligations as completed.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Active governance decision",
+    "recommended": false
   }
 ]

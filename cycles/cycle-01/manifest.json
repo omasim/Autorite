@@ -14,10 +14,15 @@
       "key": "rp002a",
       "description": "RP002A package disposition",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "completed",
+      "evidence_refs": [
+        "research/RP002A/PACKAGE_REVIEW.md",
+        "research/RP002A/CONFIRMATORY_002_REPORT.md",
+        "research/RP002A/confirmation-002/result/RECORD.md",
+        "docs/decisions/DECISION-0004_RP002A_DISPOSITION.md"
+      ],
+      "decision_ref": "D-0004"
     },
     {
       "key": "rp003",

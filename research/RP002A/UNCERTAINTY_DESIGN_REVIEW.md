@@ -1,5 +1,7 @@
 # RP002A uncertainty and replicate-count design review
 
+Follow-up (2026-10-10): this earlier planning review is historical. Calibration, target-size variance and pre-outcome freeze completed. The first confirmation attempt is incomplete after a wall-time incident, with no confirmatory decisions. See `CONFIRMATORY_001_REPORT.md`; the historical numerical proposal is unchanged.
+
 Date: 2026-10-09. **Deterministic planning review only.** No new generator observations, model training, Monte Carlo simulations, resampling of archived assessment data or scientific decisions. Existing configuration and all run bytes remain unchanged.
 
 ## Disposition

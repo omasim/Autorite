@@ -1,5 +1,11 @@
 # Research start — 2026-10-08
 
+## Current pipeline disposition — 2026-10-10
+
+The first three authorized steps completed: fixed synthetic calibration, fresh target-size variance assessment and a pre-outcome freeze selecting 20 confirmation replicates per world. The one confirmation attempt is **INCOMPLETE**, stopped after a wall-time/host-suspension clock incident. It preserves 36/60 complete independent units and 73 saved fit traces; no seven-comparison decisions or VALID Result exist. See `research/RP002A/CONFIRMATORY_001_REPORT.md` and `research/RP002A/confirmation/INTERRUPTION_REVIEW.json`.
+
+All completed-unit artifacts replay without new training. The timer guard is repaired for future separately authorized work. No retry/extension or partial-outcome inference is authorized. RP002A and Cycle 01 are ACTIVE; 0/13 obligations are resolved. Earlier dated dispositions below describe their original stages and preserve their historical scope.
+
 The user requested that research begin after the public sites were ready, and that both websites and GitHub remain current. This authorizes preparation and investigation; it is not an audited baseline release or a completed experimental preregistration.
 
 ## Work begun

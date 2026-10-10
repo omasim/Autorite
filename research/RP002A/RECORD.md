@@ -5,7 +5,7 @@
   "type": "ResearchPackage",
   "title": "When history helps prediction",
   "created_at": "2026-10-08",
-  "updated_at": "2026-10-09",
+  "updated_at": "2026-10-10",
   "source_refs": [
     "baseline/v0.1/RP002A_PREREGISTRATION.md",
     "RESEARCH_EXECUTION_READINESS.md"
@@ -25,7 +25,12 @@
 }
 ---
 
-Current protocol: `CONFIRMATORY_PROTOCOL.md`, frozen for the one authorized benchmark. Earlier readiness dispositions below are historical; their outputs and warnings remain preserved.
+## Current pipeline disposition — 2026-10-10
+
+The first three authorized steps completed: fixed synthetic calibration, fresh target-size variance assessment and a pre-outcome freeze selecting 20 confirmation replicates per world. The one confirmation attempt is **INCOMPLETE**, stopped after a wall-time/host-suspension clock incident. It preserves 36/60 complete independent units and 73 saved fit traces; no seven-comparison decisions or VALID Result exist. See `research/RP002A/CONFIRMATORY_001_REPORT.md` and `research/RP002A/confirmation/INTERRUPTION_REVIEW.json`.
+
+All completed-unit artifacts replay without new training. The timer guard is repaired for future separately authorized work. No retry/extension or partial-outcome inference is authorized. RP002A and Cycle 01 are ACTIVE; 0/13 obligations are resolved. Earlier dated dispositions below describe their original stages and preserve their historical scope.
+
 
 
 Confirmatory protocol readiness remains pending. The isolated engineering pilot `pilot-20261008-001` is documented in `research/RP002A/PILOT_001_REPORT.md`; it is not confirmatory evidence or a scientific Claim. Does not establish universal or fundamental memory, or full-history retention.

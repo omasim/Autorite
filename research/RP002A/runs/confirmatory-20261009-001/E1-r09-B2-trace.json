@@ -1,0 +1,218 @@
+[
+  {
+    "epoch": 1,
+    "validation_log_loss": 0.9676156044006348
+  },
+  {
+    "epoch": 2,
+    "validation_log_loss": 0.926374077796936
+  },
+  {
+    "epoch": 3,
+    "validation_log_loss": 0.9184712767601013
+  },
+  {
+    "epoch": 4,
+    "validation_log_loss": 0.9137858152389526
+  },
+  {
+    "epoch": 5,
+    "validation_log_loss": 0.9106903672218323
+  },
+  {
+    "epoch": 6,
+    "validation_log_loss": 0.9090728163719177
+  },
+  {
+    "epoch": 7,
+    "validation_log_loss": 0.908376932144165
+  },
+  {
+    "epoch": 8,
+    "validation_log_loss": 0.9080359935760498
+  },
+  {
+    "epoch": 9,
+    "validation_log_loss": 0.9078576564788818
+  },
+  {
+    "epoch": 10,
+    "validation_log_loss": 0.9078326225280762
+  },
+  {
+    "epoch": 11,
+    "validation_log_loss": 0.9076469540596008
+  },
+  {
+    "epoch": 12,
+    "validation_log_loss": 0.9077973365783691
+  },
+  {
+    "epoch": 13,
+    "validation_log_loss": 0.9076073169708252
+  },
+  {
+    "epoch": 14,
+    "validation_log_loss": 0.9075613021850586
+  },
+  {
+    "epoch": 15,
+    "validation_log_loss": 0.907609760761261
+  },
+  {
+    "epoch": 16,
+    "validation_log_loss": 0.9074640274047852
+  },
+  {
+    "epoch": 17,
+    "validation_log_loss": 0.9074620604515076
+  },
+  {
+    "epoch": 18,
+    "validation_log_loss": 0.9075135588645935
+  },
+  {
+    "epoch": 19,
+    "validation_log_loss": 0.9075772762298584
+  },
+  {
+    "epoch": 20,
+    "validation_log_loss": 0.9074543714523315
+  },
+  {
+    "epoch": 21,
+    "validation_log_loss": 0.907377302646637
+  },
+  {
+    "epoch": 22,
+    "validation_log_loss": 0.9073811173439026
+  },
+  {
+    "epoch": 23,
+    "validation_log_loss": 0.9074093103408813
+  },
+  {
+    "epoch": 24,
+    "validation_log_loss": 0.9073872566223145
+  },
+  {
+    "epoch": 25,
+    "validation_log_loss": 0.9073573350906372
+  },
+  {
+    "epoch": 26,
+    "validation_log_loss": 0.9074316620826721
+  },
+  {
+    "epoch": 27,
+    "validation_log_loss": 0.9074019193649292
+  },
+  {
+    "epoch": 28,
+    "validation_log_loss": 0.907355785369873
+  },
+  {
+    "epoch": 29,
+    "validation_log_loss": 0.9073456525802612
+  },
+  {
+    "epoch": 30,
+    "validation_log_loss": 0.9072796702384949
+  },
+  {
+    "epoch": 31,
+    "validation_log_loss": 0.9072939157485962
+  },
+  {
+    "epoch": 32,
+    "validation_log_loss": 0.9073479175567627
+  },
+  {
+    "epoch": 33,
+    "validation_log_loss": 0.9072604179382324
+  },
+  {
+    "epoch": 34,
+    "validation_log_loss": 0.9072542190551758
+  },
+  {
+    "epoch": 35,
+    "validation_log_loss": 0.90732342004776
+  },
+  {
+    "epoch": 36,
+    "validation_log_loss": 0.9073581695556641
+  },
+  {
+    "epoch": 37,
+    "validation_log_loss": 0.9072551131248474
+  },
+  {
+    "epoch": 38,
+    "validation_log_loss": 0.9073003530502319
+  },
+  {
+    "epoch": 39,
+    "validation_log_loss": 0.907364010810852
+  },
+  {
+    "epoch": 40,
+    "validation_log_loss": 0.9072991013526917
+  },
+  {
+    "epoch": 41,
+    "validation_log_loss": 0.9072958827018738
+  },
+  {
+    "epoch": 42,
+    "validation_log_loss": 0.9073312878608704
+  },
+  {
+    "epoch": 43,
+    "validation_log_loss": 0.907274603843689
+  },
+  {
+    "epoch": 44,
+    "validation_log_loss": 0.9072608947753906
+  },
+  {
+    "epoch": 45,
+    "validation_log_loss": 0.9072918891906738
+  },
+  {
+    "epoch": 46,
+    "validation_log_loss": 0.9073357582092285
+  },
+  {
+    "epoch": 47,
+    "validation_log_loss": 0.9072737693786621
+  },
+  {
+    "epoch": 48,
+    "validation_log_loss": 0.907278835773468
+  },
+  {
+    "epoch": 49,
+    "validation_log_loss": 0.9074419736862183
+  },
+  {
+    "epoch": 50,
+    "validation_log_loss": 0.9075257182121277
+  },
+  {
+    "epoch": 51,
+    "validation_log_loss": 0.9073405861854553
+  },
+  {
+    "epoch": 52,
+    "validation_log_loss": 0.9073477983474731
+  },
+  {
+    "epoch": 53,
+    "validation_log_loss": 0.9074305891990662
+  },
+  {
+    "epoch": 54,
+    "validation_log_loss": 0.9072569608688354
+  }
+]

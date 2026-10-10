@@ -415,7 +415,7 @@
       "net"
     ],
     "label": "Exploratory engineering report",
-    "recommended": true
+    "recommended": false
   },
   {
     "key": "rp002a-collision-review",
@@ -436,14 +436,14 @@
     "path": "research/RP002A/CONFIRMATORY_DESIGN_REVIEW.md",
     "title": "RP002A confirmatory design review",
     "category": "Research working records",
-    "summary": "Analytic information gaps and replicate-precision sensitivity; explains why the numerical proposal is not ready to freeze.",
+    "summary": "Historical planning review; followed by completed calibration/variance, a frozen design and an incomplete confirmation attempt.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
-    "label": "Working design review",
-    "recommended": true
+    "label": "Historical design review",
+    "recommended": false
   },
   {
     "key": "rp002a-convergence-plan",
@@ -457,7 +457,7 @@
       "net"
     ],
     "label": "Frozen exploratory protocol",
-    "recommended": true
+    "recommended": false
   },
   {
     "key": "rp002a-convergence-001",
@@ -471,7 +471,7 @@
       "net"
     ],
     "label": "Exploratory stage review",
-    "recommended": true
+    "recommended": false
   },
   {
     "key": "rp002a-convergence-002-plan",
@@ -485,7 +485,7 @@
       "net"
     ],
     "label": "Frozen exploratory protocol",
-    "recommended": true
+    "recommended": false
   },
   {
     "key": "rp002a-convergence-002",
@@ -499,7 +499,7 @@
       "net"
     ],
     "label": "Exploratory convergence report",
-    "recommended": true
+    "recommended": false
   },
   {
     "key": "rp002a-budget-warning-review",
@@ -513,7 +513,7 @@
       "net"
     ],
     "label": "Post-outcome planning review",
-    "recommended": true
+    "recommended": false
   },
   {
     "key": "rp002a-budget-transfer-plan",
@@ -527,7 +527,7 @@
       "net"
     ],
     "label": "Frozen feasibility protocol",
-    "recommended": true
+    "recommended": false
   },
   {
     "key": "rp002a-budget-transfer-001",
@@ -541,20 +541,90 @@
       "net"
     ],
     "label": "Exploratory feasibility report",
-    "recommended": true
+    "recommended": false
   },
   {
     "key": "rp002a-uncertainty-design",
     "path": "research/RP002A/UNCERTAINTY_DESIGN_REVIEW.md",
     "title": "RP002A uncertainty and replicate-count review",
     "category": "Methods & protocols",
-    "summary": "Deterministic audit of nested resampling, bootstrap tail resolution, assumed precision and resource sensitivity. No final count or interval selected.",
+    "summary": "Historical planning review; followed by completed calibration/variance, a frozen design and an incomplete confirmation attempt.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
-    "label": "Statistical planning review",
+    "label": "Historical design review",
+    "recommended": false
+  },
+  {
+    "key": "rp002a-statistical-pipeline",
+    "path": "research/RP002A/STATISTICAL_PIPELINE_PROTOCOL.md",
+    "title": "RP002A frozen statistical pipeline",
+    "category": "Methods & protocols",
+    "summary": "Pre-outcome calibration, fresh variance selection, exact interval/margin rules and one-attempt gates.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Frozen statistical protocol",
+    "recommended": false
+  },
+  {
+    "key": "rp002a-calibration-001",
+    "path": "research/RP002A/CALIBRATION_REPORT.md",
+    "title": "RP002A synthetic statistical calibration",
+    "category": "Research reports",
+    "summary": "All 90 fixed cells and 1.8 million trials completed; counts 20,30,50 qualified under the simulation gate.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Synthetic calibration report",
+    "recommended": false
+  },
+  {
+    "key": "rp002a-target-variance-001",
+    "path": "research/RP002A/TARGET_VARIANCE_REPORT.md",
+    "title": "RP002A target-size variance review",
+    "category": "Research reports",
+    "summary": "Five fresh replicates per world; only their SDs feed the fixed rule selecting 20 confirmation replicates per world.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Exploratory variance report",
+    "recommended": false
+  },
+  {
+    "key": "rp002a-confirmatory-protocol",
+    "path": "research/RP002A/CONFIRMATORY_PROTOCOL.md",
+    "title": "RP002A first frozen confirmatory protocol",
+    "category": "Methods & protocols",
+    "summary": "Pre-outcome design: 20 replicates per world, fixed-budget algorithms, seven conditional intervals and .01-nat margins. The one attempt is incomplete.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Frozen confirmatory protocol",
+    "recommended": true
+  },
+  {
+    "key": "rp002a-confirmatory-001",
+    "path": "research/RP002A/CONFIRMATORY_001_REPORT.md",
+    "title": "RP002A incomplete confirmation review",
+    "category": "Research reports",
+    "summary": "36/60 complete units and 73 saved fit traces preserved after a wall-time clock incident. No confirmatory decisions or retry.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Incomplete attempt report",
     "recommended": true
   }
 ]

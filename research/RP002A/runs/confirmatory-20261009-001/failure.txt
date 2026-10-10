@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/omerasimozturk/Code/Autorite/packages/rp002a/pipeline.py", line 107, in execute
+    else:train_stage(dest,p,base,stage,deadline)
+  File "/Users/omerasimozturk/Code/Autorite/packages/rp002a/pipeline.py", line 73, in train_stage
+    started=time.monotonic();trace=e.train_model(model,data['train'],data['validation'],opt,s[f'{w}/{r}/{model_name}/batch-order'],deadline)
+  File "/Users/omerasimozturk/Code/Autorite/packages/rp002a/engine.py", line 120, in train_model
+    loss.backward();nn.utils.clip_grad_norm_(model.parameters(),optimizer_config['gradient_norm_clip']);optimizer.step()
+  File "/Users/omerasimozturk/Library/Python/3.9/lib/python/site-packages/torch/_tensor.py", line 647, in backward
+    torch.autograd.backward(
+  File "/Users/omerasimozturk/Library/Python/3.9/lib/python/site-packages/torch/autograd/__init__.py", line 354, in backward
+    _engine_run_backward(
+  File "/Users/omerasimozturk/Library/Python/3.9/lib/python/site-packages/torch/autograd/graph.py", line 829, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

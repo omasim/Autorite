@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "cycle_number": 1,
   "title": "Foundations Under Test",
-  "status": "PLANNED",
+  "status": "ACTIVE",
   "package_refs": [
     "RP-002A",
     "RP-003",

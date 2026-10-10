@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-09",
-  "phase": "Exploratory preparation",
+  "updated_at": "2026-10-10",
+  "phase": "Incomplete confirmation review",
   "cycle": {
     "number": "01",
     "title": "Foundations Under Test",
-    "status": "PLANNED",
+    "status": "ACTIVE",
     "obligations": [
       "RP002A package disposition",
       "RP003 package disposition",
@@ -95,6 +95,26 @@
     }
   ],
   "changes": [
+    [
+      "2026-10-10",
+      "First confirmation attempt interrupted; partial artifacts preserved",
+      "A wall-time/host-suspension clock incident stopped the one attempt. 36/60 complete units and 73 saved fit traces are preserved and audited. No aggregate decisions, VALID Result or retry. The timer guard is repaired."
+    ],
+    [
+      "2026-10-09",
+      "Confirmatory count and analysis frozen before outcomes",
+      "The calibrated eligible counts and fresh SD-only selection chose 20 replicates per world. Models, training budget, seven intervals, .01-nat margins and one four-hour attempt were fixed before confirmation."
+    ],
+    [
+      "2026-10-09",
+      "Fresh target-size variance stage completed",
+      "Five independent replicates per world and 30 learned fits completed and replayed. Only their SDs informed the frozen count rule; means remain descriptive."
+    ],
+    [
+      "2026-10-09",
+      "Fixed synthetic statistical calibration completed",
+      "All 90 fixed cells and 1.8 million trials completed. Counts 20,30,50 qualified under the declared simulation gate; simulated coverage does not guarantee actual-loss coverage."
+    ],
     [
       "2026-10-09",
       "Uncertainty design and replicate-count sensitivity reviewed",

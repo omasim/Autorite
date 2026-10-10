@@ -10,7 +10,7 @@ def noise(rng,law,shape):
  if law=='centered-gamma2':return (rng.gamma(2,size=shape)-2)/np.sqrt(2)
  if law=='standardized-t5':return rng.standard_t(5,size=shape)*np.sqrt(3/5)
  raise ValueError('Unknown synthetic law')
-def execute(plan,dest,deadline):
+def execute(plan,dest,deadline,budget_check=None):
  c=plan['calibration'];rows=[];seeds={};all_trials=[]
  count=len(c['candidate_n'])*len(c['laws'])*len(c['correlations'])*len(c['within_mean_variance_fractions'])
  for n in c['candidate_n']:
@@ -19,7 +19,7 @@ def execute(plan,dest,deadline):
     for fraction in c['within_mean_variance_fractions']:
      label=f'{n}/{law}/{rho}/{fraction}';seeds[label]=seed(label);rng=np.random.default_rng(seeds[label]);flags=[];widths=[];means_saved=[];sds_saved=[]
      for start in range(0,c['trials'],500):
-      if time.monotonic()>deadline:raise TimeoutError('Calibration allowance exhausted')
+      if time.monotonic()>deadline or (budget_check is not None and budget_check()):raise TimeoutError('Calibration allowance exhausted')
       size=min(500,c['trials']-start);shape=(size,n,7)
       cluster=np.sqrt(rho)*noise(rng,law,(size,n,1))+np.sqrt(1-rho)*noise(rng,law,shape)
       episode=rng.normal(size=shape)
@@ -40,7 +40,7 @@ def execute(plan,dest,deadline):
    for fraction in c['benchmark_fractions']:
     label=f'benchmark/{n}/{law}/{fraction}';seeds[label]=seed(label);rng=np.random.default_rng(seeds[label]);results=[]
     for trial in range(c['benchmark_trials']):
-     if time.monotonic()>deadline:raise TimeoutError('Calibration benchmark allowance exhausted')
+     if time.monotonic()>deadline or (budget_check is not None and budget_check()):raise TimeoutError('Calibration benchmark allowance exhausted')
      # Eight episodes are an explicit computational stress fixture, not 2048.
      m=c['benchmark_episodes'];cluster=noise(rng,law,(n,1,7));episode=rng.normal(size=(n,m,7))
      a=np.sqrt(1-fraction)*cluster+np.sqrt(fraction*m)*episode

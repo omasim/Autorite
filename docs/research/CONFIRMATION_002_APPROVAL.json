@@ -1,0 +1,11 @@
+{
+  "approved": true,
+  "approved_at": "2026-10-10T09:48:43.936713+00:00",
+  "approval_evidence": "Fresh user instruction on 2026-10-10: “Şimdi 4. adımı tekrar dene”. This explicitly authorizes a separately frozen second technical attempt following the incomplete first attempt.",
+  "stage": "confirmation",
+  "run_id": "confirmatory-20261010-002",
+  "scope": "One fresh fixed attempt: 20 replicates per world, 60 units, 120 fits, cap 300, patience 20, two CPU threads, 14400 seconds by both wall and monotonic guards; temporary caffeinate idle-sleep assertion. Unchanged seven predeclared decisions and secondary metrics. No pooling/reuse of first-attempt observations, further retry, extension, seed replacement or post-outcome method selection.",
+  "plan_sha256": "4b3fa9f9e77983057c71fdd83ff08cc0218bac7c63fd993370ea7fb56a8f0942",
+  "baseline_manifest_sha256": "83ad444dfce437140bf6b453d0b305d4ea5415deb3af9dff62abcd9e45d6d14d",
+  "source_commit": "e9e3e6329483846c7d5b1c9af9af7c8c0c6a9287"
+}

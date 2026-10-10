@@ -4,10 +4,12 @@ from urllib.parse import urlsplit,unquote
 import json
 ROOT=Path(__file__).resolve().parents[1]
 class Links(HTMLParser):
- def __init__(self): super().__init__();self.links=[];self.lang=None;self.ids=set()
+ def __init__(self): super().__init__();self.links=[];self.lang=None;self.ids=set();self.rings=[];self.arcs=[]
  def handle_starttag(self,tag,attrs):
   a=dict(attrs)
   if tag=='html':self.lang=a.get('lang')
+  if 'cycle-ring' in a.get('class','').split():self.rings.append(a.get('aria-label'))
+  if tag=='circle' and a.get('pathlength')=='100':self.arcs.append(a.get('stroke-dasharray'))
   if 'id' in a:self.ids.add(a['id'])
   for key in ('href','src'):
    if key in a:self.links.append(a[key])
@@ -44,4 +46,18 @@ assert state[0]==state[1],'Site state diverged'
 manifest=json.loads((ROOT/'cycles/cycle-01/manifest.json').read_text())
 expected=sum(o['weight'] for o in manifest['obligations'] if o['resolved'])/sum(o['weight'] for o in manifest['obligations'])
 assert state[0]['completion']==expected and state[0]['cycle']['status']==manifest['status']
+# Check the published visual/accessible ring, not only its JSON source.
+count=sum(o['resolved'] for o in manifest['obligations']);total=len(manifest['obligations'])
+label=f"Cycle {manifest['cycle_number']:02d}: {manifest['status']}, {count} / {total} obligations resolved ({expected*100:.1f}%)."
+for site,path in [('org','index.html'),('net','index.html'),('net','cycle/01/index.html')]:
+ parser=Links();parser.feed((ROOT/'apps'/site/'dist'/path).read_text())
+ assert parser.rings==[label],(site,path,'Accessible ring disagrees with manifest')
+ assert parser.arcs==[f'{expected*100} 100'],(site,path,'Rendered ring disagrees with manifest')
+cycle_html=(ROOT/'apps/net/dist/cycle/01/index.html').read_text()
+assert f'{count} resolved · {total-count} open obligations' in cycle_html
+assert cycle_html.count('Open · no resolution on record')==total-count,'Obligation list has stale open labels'
+for obligation in manifest['obligations']:
+ if obligation['resolved']:
+  for ref in obligation['evidence_refs']:
+   assert 'https://github.com/omasim/Autorite/blob/main/'+ref in cycle_html,'Resolved obligation evidence is missing'
 print(f'PASS: {pages} English pages; {checks} asset, source and page links; identical canonical Cycle state.')

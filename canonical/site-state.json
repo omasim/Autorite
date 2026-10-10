@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-10-10",
-  "phase": "Audited fixed-budget confirmation",
+  "phase": "RP002A package reviewed and completed",
   "cycle": {
     "number": "01",
     "title": "Foundations Under Test",
@@ -20,7 +20,9 @@
       "Transition Record / Cycle 2 decision",
       "Close bundle and knowledge snapshot"
     ],
-    "resolved_keys": []
+    "resolved_keys": [
+      0
+    ]
   },
   "questions": [
     [
@@ -95,6 +97,11 @@
     }
   ],
   "changes": [
+    [
+      "2026-10-10",
+      "RP002A package reviewed and completed",
+      "D-0004 accepts the scoped finite commitment after an explicit internal review. All seven frozen outcomes remain unchanged, including the indeterminate recurrent comparison. RP002A is CLOSED; Cycle 01 stays ACTIVE with 1/13 obligations resolved. Q-3 and Q-4 remain ACTIVE. Next: RP003 protocol preparation; no new execution."
+    ],
     [
       "2026-10-10",
       "Second confirmation completed and independently replayed",

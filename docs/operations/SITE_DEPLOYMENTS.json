@@ -4,12 +4,12 @@
   "sites": {
     "org": {
       "project_id": "appgprj_6ac624791b8c819180b917fdc3a28cff",
-      "version_id": "appgprj_6ac624791b8c819180b917fdc3a28cff~appgver_416045f0d34c8191aa6690a81679d691",
-      "deployment_id": "appgdep_6aca3e515ab88191a3c4a93736bb9942",
+      "version_id": "appgprj_6ac624791b8c819180b917fdc3a28cff~appgver_ffed01394a9c81918c4ff483d2c15507",
+      "deployment_id": "appgdep_6aca439fcc8c81919acbe53f1938c338",
       "url": "https://autorite.org",
       "sites_url": "https://autorite-knowledge.omerasim.chatgpt.site",
       "access_mode": "public",
-      "commit_sha": "bac095118eab0002c470947f18566ffd7f8e89ce",
+      "commit_sha": "a447a2f47d3069ac5884dce6b8d13503382ffbd8",
       "custom_domain": "autorite.org",
       "custom_domain_id": "appgdom_6ac6269cddd481918a015e760f855fb8",
       "domain_status": "active",
@@ -19,12 +19,12 @@
     },
     "net": {
       "project_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6",
-      "version_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6~appgver_77211aae04d481919369bd97bc98b6a0",
-      "deployment_id": "appgdep_6aca3e68c644819192b9bea2b2a1c5ef",
+      "version_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6~appgver_4cf7e935dcb88191a3c411bbd93a560a",
+      "deployment_id": "appgdep_6aca43b40f208191b017234a7343fda3",
       "url": "https://autorite.net",
       "sites_url": "https://autorite-laboratory.omerasim.chatgpt.site",
       "access_mode": "public",
-      "commit_sha": "c766a93f2b5b0492368ebd3bf635c34af875c04f",
+      "commit_sha": "bd54eaa03daa64b62a09048c76ddf96c1af3e053",
       "custom_domain": "autorite.net",
       "custom_domain_id": "appgdom_6ac626a42f308191afc3eb5d3ee2b9a3",
       "domain_status": "active",
@@ -34,5 +34,5 @@
     }
   },
   "canonical_repository": "https://github.com/omasim/Autorite",
-  "canonical_source_commit": "ce55c4bdad5bee4c620544b4791e62bbbfd52432"
+  "canonical_source_commit": "c570e60b00a2db3d2c9447727873d961addb079e"
 }

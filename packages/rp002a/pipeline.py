@@ -11,14 +11,17 @@ spec=importlib.util.spec_from_file_location('convergence',ROOT/'packages/rp002a/
 PLAN=ROOT/'research/RP002A/STATISTICAL_PIPELINE_PLAN.json'
 CONFIRM=ROOT/'research/RP002A/CONFIRMATORY_CONFIG.json'
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
-def load(stage):
- path=CONFIRM if stage=='confirmation' else PLAN
+def load(stage,confirmation_config=None):
+ if confirmation_config is not None and stage!='confirmation':raise ValueError('Custom configuration is confirmation-only')
+ path=(ROOT/confirmation_config).resolve() if confirmation_config is not None else (CONFIRM if stage=='confirmation' else PLAN)
+ if ROOT not in path.parents:raise ValueError('Configuration must be inside the research repository')
  p=json.loads(path.read_text());base=json.loads((ROOT/p['base_configuration']).read_text())
  if p['base_configuration_sha256']!=digest(ROOT/p['base_configuration']):raise ValueError('Base proposal changed')
  return path,p,base
 
 def authorization(stage,path,plan):
- approval=ROOT/f'docs/research/{stage.upper()}_APPROVAL.json'
+ approval=(ROOT/plan.get('approval_path',f'docs/research/{stage.upper()}_APPROVAL.json')).resolve()
+ if approval.parent!=ROOT/'docs/research' or approval.suffix!='.json':raise PermissionError('Approval must be a repository research JSON record')
  if not approval.is_file() or plan.get('frozen') is not True or plan.get('execution_authorized') is not True:raise PermissionError('Separately bound stage approval missing')
  a=json.loads(approval.read_text());head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip();anchor=a['source_commit']
  if not a['approved'] or a['stage']!=stage or a['plan_sha256']!=digest(path) or a['baseline_manifest_sha256']!=digest(ROOT/'baseline/SNAPSHOT.json'):raise PermissionError('Approval binding differs')
@@ -87,9 +90,9 @@ def train_stage(dest,plan,base,stage,deadline,budget_check=None):
  (dest/'summary.json').write_text(json.dumps(summarize(rows,n,base,stage,inflation=plan.get('inflation',2),margin=plan.get('margin',.01),kinds=kinds),indent=2)+'\n')
  return s
 
-def execute(stage):
+def execute(stage,confirmation_config=None):
  if stage not in ['calibration','variance','confirmation']:raise ValueError('Unknown stage')
- path,p,base=load(stage);head,approval,a=authorization(stage,path,p)
+ path,p,base=load(stage,confirmation_config);head,approval,a=authorization(stage,path,p)
  spec=p if stage=='confirmation' else p[stage];run_id=spec['run_id']
  if a['run_id']!=run_id:raise PermissionError('Wrong one-run authorization')
  if stage=='variance':

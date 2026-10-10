@@ -20,12 +20,17 @@
     "Q-4"
   ],
   "scope": "Finite, discrete, stochastic, partially observed, passive; stationary within episodes; no agent actions or self-modification.",
-  "protocol_ref": "research/RP002A/CONFIRMATORY_PROTOCOL.md",
+  "protocol_ref": "research/RP002A/CONFIRMATORY_002_PROTOCOL.md",
   "cycle_ref": "cycles/cycle-01/manifest.json"
 }
 ---
 
 ## Current pipeline disposition — 2026-10-10
+
+The user freshly authorized a separate second confirmation attempt: `confirmatory-20261010-002`, Test TST-RP002A002. `CONFIRMATORY_002_PROTOCOL.md` preserves the same inferential design with fresh seeds, a repaired dual-clock stop rule and a temporary idle-sleep assertion. Exact source/config/baseline approval must be committed before launch. The first attempt and its historical disposition below remain unchanged. RP002A and Cycle 01 remain ACTIVE, 0/13 obligations resolved.
+
+
+## First attempt disposition — 2026-10-10
 
 The first three authorized steps completed: fixed synthetic calibration, fresh target-size variance assessment and a pre-outcome freeze selecting 20 confirmation replicates per world. The one confirmation attempt is **INCOMPLETE**, stopped after a wall-time/host-suspension clock incident. It preserves 36/60 complete independent units and 73 saved fit traces; no seven-comparison decisions or VALID Result exist. See `research/RP002A/CONFIRMATORY_001_REPORT.md` and `research/RP002A/confirmation/INTERRUPTION_REVIEW.json`.
 

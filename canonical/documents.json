@@ -611,20 +611,48 @@
       "net"
     ],
     "label": "Frozen confirmatory protocol",
-    "recommended": true
+    "recommended": false
   },
   {
     "key": "rp002a-confirmatory-001",
     "path": "research/RP002A/CONFIRMATORY_001_REPORT.md",
     "title": "RP002A incomplete confirmation review",
     "category": "Research reports",
-    "summary": "36/60 complete units and 73 saved fit traces preserved after a wall-time clock incident. No confirmatory decisions or retry.",
+    "summary": "36/60 units and 73 saved traces preserved after the first attempt's clock incident. No full-family decisions; the separate second attempt is documented independently.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
     "label": "Incomplete attempt report",
+    "recommended": false
+  },
+  {
+    "key": "rp002a-confirmatory-002-protocol",
+    "path": "research/RP002A/CONFIRMATORY_002_PROTOCOL_PUBLICATION.md",
+    "title": "RP002A second frozen confirmatory protocol",
+    "category": "Methods & protocols",
+    "summary": "Freshly authorized technical retry with unchanged inferential design, new seeds, a dual-clock four-hour stop rule and temporary idle-sleep prevention.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Frozen second-attempt protocol",
+    "recommended": true
+  },
+  {
+    "key": "rp002a-confirmatory-002",
+    "path": "research/RP002A/CONFIRMATORY_002_REPORT.md",
+    "title": "RP002A audited fixed-budget confirmation",
+    "category": "Research reports",
+    "summary": "60 units and 120 fits completed; seven conditional decisions: two benefit, four equivalent, one indeterminate. All 484 outputs replay; first incomplete attempt preserved separately.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Audited confirmation report",
     "recommended": true
   }
 ]

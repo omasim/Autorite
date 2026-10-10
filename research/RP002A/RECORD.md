@@ -27,8 +27,9 @@
 
 ## Current pipeline disposition — 2026-10-10
 
-The user freshly authorized a separate second confirmation attempt: `confirmatory-20261010-002`, Test TST-RP002A002. `CONFIRMATORY_002_PROTOCOL.md` preserves the same inferential design with fresh seeds, a repaired dual-clock stop rule and a temporary idle-sleep assertion. Exact source/config/baseline approval must be committed before launch. The first attempt and its historical disposition below remain unchanged. RP002A and Cycle 01 remain ACTIVE, 0/13 obligations resolved.
+The separately authorized second confirmation `confirmatory-20261010-002` completed: **60 units, 120 learned fits, 20 replicates per world**. All 484 output hashes and data/checkpoint/analysis replay passed. Seven frozen conditional decisions: **two benefit, four equivalent, one indeterminate**; no predeclared trace warning. Test TST-RP002A002 has audited Result R-RP002A002 (VALID). See `research/RP002A/CONFIRMATORY_002_REPORT.md` and the preserved timing/host review.
 
+Civil elapsed time was 12297.895 seconds (3h 24m 58s), including lid-triggered host sleep; monotonic elapsed was 6426.015 seconds. Both stayed below the 14400-second allowance. The first attempt remains INCOMPLETE and unchanged. No samples/checkpoints or primary results were pooled; no further run is authorized. These decisions concern the fixed algorithms and generator settings under independence/normal-theory assumptions and fixture-specific .01-nat margins. No recurrence necessity, broad Claim or Cycle closure follows. RP002A and Cycle 01 remain ACTIVE; 0/13 obligations resolved.
 
 ## First attempt disposition — 2026-10-10
 

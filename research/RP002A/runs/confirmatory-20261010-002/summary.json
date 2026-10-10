@@ -1,0 +1,164 @@
+{
+  "mode": "confirmation",
+  "training_replicates_per_world": 20,
+  "units": 60,
+  "learned_fits": 120,
+  "contrasts": [
+    {
+      "contrast": "E1:B1-B0",
+      "n": 20,
+      "mean": -0.03921614704129229,
+      "sample_sd": 0.00039997020082060676,
+      "minimum": -0.04012552910854594,
+      "maximum": -0.03832149217819791,
+      "leave_one_out_sd_range": [
+        0.0003471348029810019,
+        0.0004109181163619522
+      ],
+      "critical": 6.027249220544268,
+      "half_width": 0.0005390533976145998,
+      "interval": [
+        -0.03975520043890689,
+        -0.03867709364367769
+      ],
+      "method": "twofold-inflated replicate-mean Student-t Bonferroni",
+      "assumptions": "Independent replicate means; normal-theory interval with stress simulation, not distribution-free validity",
+      "decision_kind": "benefit",
+      "decision": "benefit"
+    },
+    {
+      "contrast": "E1:B2-B0",
+      "n": 20,
+      "mean": -0.03992693829317606,
+      "sample_sd": 0.00040336561964154303,
+      "minimum": -0.040848247756153255,
+      "maximum": -0.0389462504585838,
+      "leave_one_out_sd_range": [
+        0.0003398533720804106,
+        0.00041441427759254573
+      ],
+      "critical": 6.027249220544268,
+      "half_width": 0.000543629518655605,
+      "interval": [
+        -0.04047056781183167,
+        -0.039383308774520454
+      ],
+      "method": "twofold-inflated replicate-mean Student-t Bonferroni",
+      "assumptions": "Independent replicate means; normal-theory interval with stress simulation, not distribution-free validity",
+      "decision_kind": "benefit",
+      "decision": "benefit"
+    },
+    {
+      "contrast": "E0:B1-B0",
+      "n": 20,
+      "mean": 4.584119803343334e-05,
+      "sample_sd": 3.112243237005584e-05,
+      "minimum": 5.2564475319649695e-06,
+      "maximum": 0.00010612548159005808,
+      "leave_one_out_sd_range": [
+        2.845858772865411e-05,
+        3.1974648325760816e-05
+      ],
+      "critical": 6.027249220544268,
+      "half_width": 4.19447570761248e-05,
+      "interval": [
+        3.896440957308541e-06,
+        8.778595510955813e-05
+      ],
+      "method": "twofold-inflated replicate-mean Student-t Bonferroni",
+      "assumptions": "Independent replicate means; normal-theory interval with stress simulation, not distribution-free validity",
+      "decision_kind": "equivalence",
+      "decision": "equivalent"
+    },
+    {
+      "contrast": "E0:B2-B0",
+      "n": 20,
+      "mean": 2.1099084493583776e-05,
+      "sample_sd": 2.2655600389525282e-05,
+      "minimum": -1.1269803466829043e-05,
+      "maximum": 8.345304497359152e-05,
+      "leave_one_out_sd_range": [
+        1.773195408514016e-05,
+        2.3275750785852667e-05
+      ],
+      "critical": 6.027249220544268,
+      "half_width": 3.0533720611975785e-05,
+      "interval": [
+        -9.434636118392009e-06,
+        5.163280510555956e-05
+      ],
+      "method": "twofold-inflated replicate-mean Student-t Bonferroni",
+      "assumptions": "Independent replicate means; normal-theory interval with stress simulation, not distribution-free validity",
+      "decision_kind": "equivalence",
+      "decision": "equivalent"
+    },
+    {
+      "contrast": "E2:B1-B0",
+      "n": 20,
+      "mean": 0.00011341870991641301,
+      "sample_sd": 3.0304155915775465e-05,
+      "minimum": 6.647527131975473e-05,
+      "maximum": 0.00019098155559560404,
+      "leave_one_out_sd_range": [
+        2.485051877657712e-05,
+        3.113451181341474e-05
+      ],
+      "critical": 6.027249220544268,
+      "half_width": 4.0841938161208425e-05,
+      "interval": [
+        7.257677175520459e-05,
+        0.00015426064807762144
+      ],
+      "method": "twofold-inflated replicate-mean Student-t Bonferroni",
+      "assumptions": "Independent replicate means; normal-theory interval with stress simulation, not distribution-free validity",
+      "decision_kind": "equivalence",
+      "decision": "equivalent"
+    },
+    {
+      "contrast": "E2:B2-B0",
+      "n": 20,
+      "mean": 2.8149301534174943e-05,
+      "sample_sd": 2.1223051103686604e-05,
+      "minimum": -6.374524177177321e-06,
+      "maximum": 7.235636537727963e-05,
+      "leave_one_out_sd_range": [
+        1.9004121695094634e-05,
+        2.1801067975224767e-05
+      ],
+      "critical": 6.027249220544268,
+      "half_width": 2.860302537968756e-05,
+      "interval": [
+        -4.537238455126163e-07,
+        5.6752326913862505e-05
+      ],
+      "method": "twofold-inflated replicate-mean Student-t Bonferroni",
+      "assumptions": "Independent replicate means; normal-theory interval with stress simulation, not distribution-free validity",
+      "decision_kind": "equivalence",
+      "decision": "equivalent"
+    },
+    {
+      "contrast": "E1:B2-B1",
+      "n": 20,
+      "mean": -0.0007107912518837745,
+      "sample_sd": 0.00010571334935752,
+      "minimum": -0.0009678011071642123,
+      "maximum": -0.0005395771585999798,
+      "leave_one_out_sd_range": [
+        8.906936651651757e-05,
+        0.00010859318888639961
+      ],
+      "critical": 6.027249220544268,
+      "half_width": 0.00014247346434178256,
+      "interval": [
+        -0.000853264716225557,
+        -0.000568317787541992
+      ],
+      "method": "twofold-inflated replicate-mean Student-t Bonferroni",
+      "assumptions": "Independent replicate means; normal-theory interval with stress simulation, not distribution-free validity",
+      "decision_kind": "benefit",
+      "decision": "indeterminate"
+    }
+  ],
+  "trace_warnings": [],
+  "interpretation": "Fixed-budget algorithm comparison; trace warnings limit optimization claims, not the definition of this algorithm. Conditional normal-theory intervals are not distribution-free; no universal history or recurrence-necessity claim."
+}

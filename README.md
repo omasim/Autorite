@@ -2,9 +2,9 @@
 
 ## Current pipeline disposition — 2026-10-10
 
-The first three authorized steps completed: fixed synthetic calibration, fresh target-size variance assessment and a pre-outcome freeze selecting 20 confirmation replicates per world. The one confirmation attempt is **INCOMPLETE**, stopped after a wall-time/host-suspension clock incident. It preserves 36/60 complete independent units and 73 saved fit traces; no seven-comparison decisions or VALID Result exist. See `research/RP002A/CONFIRMATORY_001_REPORT.md` and `research/RP002A/confirmation/INTERRUPTION_REVIEW.json`.
+The separately authorized second confirmation `confirmatory-20261010-002` completed: **60 units, 120 learned fits, 20 replicates per world**. All 484 output hashes and data/checkpoint/analysis replay passed. Seven frozen conditional decisions: **two benefit, four equivalent, one indeterminate**; no predeclared trace warning. Test TST-RP002A002 has audited Result R-RP002A002 (VALID). See `research/RP002A/CONFIRMATORY_002_REPORT.md` and the preserved timing/host review.
 
-All completed-unit artifacts replay without new training. The timer guard is repaired for future separately authorized work. No retry/extension or partial-outcome inference is authorized. RP002A and Cycle 01 are ACTIVE; 0/13 obligations are resolved. Earlier dated dispositions below describe their original stages and preserve their historical scope.
+Civil elapsed time was 12297.895 seconds (3h 24m 58s), including lid-triggered host sleep; monotonic elapsed was 6426.015 seconds. Both stayed below the 14400-second allowance. The first attempt remains INCOMPLETE and unchanged. No samples/checkpoints or primary results were pooled; no further run is authorized. These decisions concern the fixed algorithms and generator settings under independence/normal-theory assumptions and fixture-specific .01-nat margins. No recurrence necessity, broad Claim or Cycle closure follows. RP002A and Cycle 01 remain ACTIVE; 0/13 obligations resolved.
 
 ## Published sites
 - [Knowledge & Publication](https://autorite.org)
@@ -15,7 +15,7 @@ Both sites are public and in English. Their www hostnames also work over HTTPS. 
 Start with `CODEX_MASTER_INSTRUCTIONS.md`, then `FIRST_CODEX_PROMPT.txt`.
 
 ## Research repository
-[omasim/Autorite](https://github.com/omasim/Autorite) holds the canonical source. Proposals use branches and PRs; CI verifies baseline checksums and both generated sites. The audited preserved baseline is approved and tagged `baseline-v0.1`. Calibration and fresh variance assessment completed, and the confirmation design was frozen. The first confirmation attempt is incomplete after a clock incident; its partial artifacts are preserved without decisions.
+[omasim/Autorite](https://github.com/omasim/Autorite) holds the canonical source. Proposals use branches and PRs; CI verifies baseline checksums and both generated sites. The audited preserved baseline is approved and tagged `baseline-v0.1`. Calibration, fresh variance selection and the separately authorized second confirmation completed. Its 60 units and seven conditional decisions are audited; the first incomplete attempt remains preserved.
 
 ## Authoritative baseline source
 Use `baseline/` as the authoritative bootstrap source, as confirmed by the user on 2026-10-07. Its updated publishing and site architecture documents (v0.2) take precedence over the older copies in `autorite-2-baseline-v0.1/`.

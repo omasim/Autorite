@@ -1,15 +1,15 @@
 {
-  "published_at": "2026-10-09",
+  "published_at": "2026-10-10",
   "language": "en",
   "sites": {
     "org": {
       "project_id": "appgprj_6ac624791b8c819180b917fdc3a28cff",
-      "version_id": "appgprj_6ac624791b8c819180b917fdc3a28cff~appgver_bcaadf069bf481919077be2a02d6de29",
-      "deployment_id": "appgdep_6ac93c8039bc81919ddfe54022f856f2",
+      "version_id": "appgprj_6ac624791b8c819180b917fdc3a28cff~appgver_a3abb048bb788191937e2d01182c3941",
+      "deployment_id": "appgdep_6aca045f265481918b5d1a5d1d9bd714",
       "url": "https://autorite.org",
       "sites_url": "https://autorite-knowledge.omerasim.chatgpt.site",
       "access_mode": "public",
-      "commit_sha": "778d0760d275ceb2a025b145fc6c6741cd8cdff8",
+      "commit_sha": "0c9474ff9f47caa4d189023f0b1de0a1f6448fe5",
       "custom_domain": "autorite.org",
       "custom_domain_id": "appgdom_6ac6269cddd481918a015e760f855fb8",
       "domain_status": "active",
@@ -19,12 +19,12 @@
     },
     "net": {
       "project_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6",
-      "version_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6~appgver_35538e9268808191b99b0595474e83a3",
-      "deployment_id": "appgdep_6ac93c9833bc8191b26a74ced29383ab",
+      "version_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6~appgver_b2f9288629a48191afb8c23337c47d9b",
+      "deployment_id": "appgdep_6aca0493af34819184505bae3467fbb5",
       "url": "https://autorite.net",
       "sites_url": "https://autorite-laboratory.omerasim.chatgpt.site",
       "access_mode": "public",
-      "commit_sha": "3b20d509533ba07286f8ef3dfd8aa1921cc69a3f",
+      "commit_sha": "eacdc044354a450c9c98b1dd12b28798748c6c4f",
       "custom_domain": "autorite.net",
       "custom_domain_id": "appgdom_6ac626a42f308191afc3eb5d3ee2b9a3",
       "domain_status": "active",
@@ -34,5 +34,5 @@
     }
   },
   "canonical_repository": "https://github.com/omasim/Autorite",
-  "canonical_source_commit": "6727b1bed2bd0a368bfbd498f0936659e6a714ad"
+  "canonical_source_commit": "c453ca35181d75736d4e85b376efe639cdb5db45"
 }

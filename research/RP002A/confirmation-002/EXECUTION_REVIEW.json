@@ -1,0 +1,122 @@
+{
+  "run_id": "confirmatory-20261010-002",
+  "status": "COMPLETE",
+  "source_commit": "a8739ca4521c1bc90aad221938f7c2575721a3bf",
+  "timing": {
+    "started_at_utc": "2026-10-10T09:50:58.876384+00:00",
+    "finished_at_utc": "2026-10-10T13:15:56.770902+00:00",
+    "elapsed_wall_seconds": 12297.89451789856,
+    "elapsed_monotonic_seconds": 6426.014784416,
+    "allowance_seconds": 14400,
+    "policy": "Expire when either wall or monotonic elapsed time reaches the allowance; forward wall-clock jumps stop conservatively and backward jumps cannot extend monotonic allowance."
+  },
+  "temporary_sleep_assertion": "caffeinate -i observed active before sleep and after wake; ends with experiment utility",
+  "host_sleep_evidence": {
+    "timezone": "Europe/Istanbul",
+    "source": "read-only pmset -g log",
+    "events": [
+      {
+        "local_timestamp": "2026-10-10 12:57:07 +0300",
+        "event": "sleep",
+        "reason": "'Clamshell Sleep'"
+      },
+      {
+        "local_timestamp": "2026-10-10 13:01:25 +0300",
+        "event": "wake",
+        "reason": "smc.sysState.Wake(0x70070000) wifibt SMC.OutboxNotEmpty/"
+      },
+      {
+        "local_timestamp": "2026-10-10 13:01:31 +0300",
+        "event": "sleep",
+        "reason": "'Maintenance Sleep'"
+      },
+      {
+        "local_timestamp": "2026-10-10 13:09:24 +0300",
+        "event": "wake",
+        "reason": "smc.sysState.Wake(0x70070000) wifibt SMC.OutboxNotEmpty/"
+      },
+      {
+        "local_timestamp": "2026-10-10 13:10:00 +0300",
+        "event": "sleep",
+        "reason": "'Maintenance Sleep'"
+      },
+      {
+        "local_timestamp": "2026-10-10 13:18:11 +0300",
+        "event": "wake",
+        "reason": "smc.sysState.Wake(0x70070000) wifibt SMC.OutboxNotEmpty/"
+      },
+      {
+        "local_timestamp": "2026-10-10 13:18:16 +0300",
+        "event": "sleep",
+        "reason": "'Maintenance Sleep'"
+      },
+      {
+        "local_timestamp": "2026-10-10 13:34:17 +0300",
+        "event": "wake",
+        "reason": "NUB.SPMI0.SW3.IRQ nub-spmi0.0x02 rtc/SleepService"
+      },
+      {
+        "local_timestamp": "2026-10-10 13:34:19 +0300",
+        "event": "sleep",
+        "reason": "'Sleep Service Back to Sleep'"
+      },
+      {
+        "local_timestamp": "2026-10-10 13:51:32 +0300",
+        "event": "wake",
+        "reason": "NUB.SPMI0.SW3.IRQ nub-spmi0.0x02 rtc/SleepService"
+      },
+      {
+        "local_timestamp": "2026-10-10 13:51:35 +0300",
+        "event": "sleep",
+        "reason": "'Sleep Service Back to Sleep'"
+      },
+      {
+        "local_timestamp": "2026-10-10 14:08:50 +0300",
+        "event": "wake",
+        "reason": "NUB.SPMI0.SW3.IRQ nub-spmi0.0x02 rtc/SleepService"
+      },
+      {
+        "local_timestamp": "2026-10-10 14:08:53 +0300",
+        "event": "sleep",
+        "reason": "'Sleep Service Back to Sleep'"
+      },
+      {
+        "local_timestamp": "2026-10-10 14:23:12 +0300",
+        "event": "wake",
+        "reason": "smc.sysState.Wake(0x70070000) wifibt SMC.OutboxNotEmpty/"
+      },
+      {
+        "local_timestamp": "2026-10-10 14:23:25 +0300",
+        "event": "sleep",
+        "reason": "'Maintenance Sleep'"
+      },
+      {
+        "local_timestamp": "2026-10-10 14:36:30 +0300",
+        "event": "wake",
+        "reason": "smc.sysState.Wake(0x70070000) wifibt SMC.OutboxNotEmpty/"
+      },
+      {
+        "local_timestamp": "2026-10-10 14:36:43 +0300",
+        "event": "wake",
+        "reason": "UserActivity Assertion"
+      }
+    ]
+  },
+  "clock_observations": [
+    {
+      "local_utc": "2026-10-10T11:37:29.751627+00:00",
+      "external_utc": "2026-10-10 10:10:01 UTC",
+      "completed_units": 2
+    },
+    {
+      "local_utc": "2026-10-10T11:38:01.983811+00:00",
+      "external_utc": "2026-10-10 11:37:43 UTC",
+      "completed_units": 3,
+      "temporary_idle_sleep_assertion": "observed active"
+    }
+  ],
+  "clock_observation_limit": "Sequential tool observations are not synchronized timestamp pairs; differences between reads are not evidence of clock disagreement. Host log records Clamshell Sleep and later wake.",
+  "audit": "All 484 output hashes, provenance, regenerated data, saved checkpoints, predictions/losses, secondary metrics, trace summaries and seven frozen decisions replayed without training.",
+  "prior_attempt": "INCOMPLETE; unchanged, no pooling or reused seed/data/checkpoint",
+  "further_execution_authorized": false
+}

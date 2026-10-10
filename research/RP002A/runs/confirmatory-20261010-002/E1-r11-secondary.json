@@ -1,0 +1,434 @@
+{
+  "B0": {
+    "brier_score": 0.5850778658157549,
+    "clipped_target_fraction": 0.0,
+    "unclipped_log_loss": 0.9481888817507451,
+    "conditioned": {
+      "erasure_current": {
+        "timepoints": 131347,
+        "log_loss": 1.0393149310102376
+      },
+      "visible_current": {
+        "timepoints": 130797,
+        "log_loss": 0.8566796484190439
+      }
+    },
+    "calibration_bins": [
+      {
+        "bin": 0,
+        "lower": 0.0,
+        "upper": 0.1,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 1,
+        "lower": 0.1,
+        "upper": 0.2,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 2,
+        "lower": 0.2,
+        "upper": 0.3,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 3,
+        "lower": 0.3,
+        "upper": 0.4,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 4,
+        "lower": 0.4,
+        "upper": 0.5,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 5,
+        "lower": 0.5,
+        "upper": 0.6,
+        "includes_one": false,
+        "timepoints": 262144,
+        "mean_confidence": 0.5005275703829303,
+        "accuracy": 0.5009193420410156
+      },
+      {
+        "bin": 6,
+        "lower": 0.6,
+        "upper": 0.7,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 7,
+        "lower": 0.7,
+        "upper": 0.8,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 8,
+        "lower": 0.8,
+        "upper": 0.9,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 9,
+        "lower": 0.9,
+        "upper": 1.0,
+        "includes_one": true,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      }
+    ],
+    "gap_to_B3": 0.040039850895198986
+  },
+  "B1": {
+    "brier_score": 0.5668021966959766,
+    "clipped_target_fraction": 0.0,
+    "unclipped_log_loss": 0.9088730941465298,
+    "conditioned": {
+      "erasure_current": {
+        "timepoints": 131347,
+        "log_loss": 0.9603697229616037
+      },
+      "visible_current": {
+        "timepoints": 130797,
+        "log_loss": 0.8571599225525827
+      }
+    },
+    "calibration_bins": [
+      {
+        "bin": 0,
+        "lower": 0.0,
+        "upper": 0.1,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 1,
+        "lower": 0.1,
+        "upper": 0.2,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 2,
+        "lower": 0.2,
+        "upper": 0.3,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 3,
+        "lower": 0.3,
+        "upper": 0.4,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 4,
+        "lower": 0.4,
+        "upper": 0.5,
+        "includes_one": false,
+        "timepoints": 170377,
+        "mean_confidence": 0.49143137327325154,
+        "accuracy": 0.5002142307940626
+      },
+      {
+        "bin": 5,
+        "lower": 0.5,
+        "upper": 0.6,
+        "includes_one": false,
+        "timepoints": 91767,
+        "mean_confidence": 0.5076046991565467,
+        "accuracy": 0.5008336330053287
+      },
+      {
+        "bin": 6,
+        "lower": 0.6,
+        "upper": 0.7,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 7,
+        "lower": 0.7,
+        "upper": 0.8,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 8,
+        "lower": 0.8,
+        "upper": 0.9,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 9,
+        "lower": 0.9,
+        "upper": 1.0,
+        "includes_one": true,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      }
+    ],
+    "gap_to_B3": 0.000724063290983537
+  },
+  "B2": {
+    "brier_score": 0.5664104321187654,
+    "clipped_target_fraction": 0.0,
+    "unclipped_log_loss": 0.908204285212707,
+    "conditioned": {
+      "erasure_current": {
+        "timepoints": 131347,
+        "log_loss": 0.959491577230892
+      },
+      "visible_current": {
+        "timepoints": 130797,
+        "log_loss": 0.8567013306746626
+      }
+    },
+    "calibration_bins": [
+      {
+        "bin": 0,
+        "lower": 0.0,
+        "upper": 0.1,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 1,
+        "lower": 0.1,
+        "upper": 0.2,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 2,
+        "lower": 0.2,
+        "upper": 0.3,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 3,
+        "lower": 0.3,
+        "upper": 0.4,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 4,
+        "lower": 0.4,
+        "upper": 0.5,
+        "includes_one": false,
+        "timepoints": 176170,
+        "mean_confidence": 0.49601590982825705,
+        "accuracy": 0.5017029006073679
+      },
+      {
+        "bin": 5,
+        "lower": 0.5,
+        "upper": 0.6,
+        "includes_one": false,
+        "timepoints": 85974,
+        "mean_confidence": 0.5021537435292716,
+        "accuracy": 0.49943006025077347
+      },
+      {
+        "bin": 6,
+        "lower": 0.6,
+        "upper": 0.7,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 7,
+        "lower": 0.7,
+        "upper": 0.8,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 8,
+        "lower": 0.8,
+        "upper": 0.9,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 9,
+        "lower": 0.9,
+        "upper": 1.0,
+        "includes_one": true,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      }
+    ],
+    "gap_to_B3": 5.5254357160607225e-05
+  },
+  "B3": {
+    "brier_score": 0.5663766193119556,
+    "clipped_target_fraction": 0.0,
+    "unclipped_log_loss": 0.9081490308555464,
+    "conditioned": {
+      "erasure_current": {
+        "timepoints": 131347,
+        "log_loss": 0.9593983654595393
+      },
+      "visible_current": {
+        "timepoints": 130797,
+        "log_loss": 0.856684193342219
+      }
+    },
+    "calibration_bins": [
+      {
+        "bin": 0,
+        "lower": 0.0,
+        "upper": 0.1,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 1,
+        "lower": 0.1,
+        "upper": 0.2,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 2,
+        "lower": 0.2,
+        "upper": 0.3,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 3,
+        "lower": 0.3,
+        "upper": 0.4,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 4,
+        "lower": 0.4,
+        "upper": 0.5,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 5,
+        "lower": 0.5,
+        "upper": 0.6,
+        "includes_one": false,
+        "timepoints": 262144,
+        "mean_confidence": 0.5,
+        "accuracy": 0.5009193420410156
+      },
+      {
+        "bin": 6,
+        "lower": 0.6,
+        "upper": 0.7,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 7,
+        "lower": 0.7,
+        "upper": 0.8,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 8,
+        "lower": 0.8,
+        "upper": 0.9,
+        "includes_one": false,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "bin": 9,
+        "lower": 0.9,
+        "upper": 1.0,
+        "includes_one": true,
+        "timepoints": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      }
+    ],
+    "gap_to_B3": 0.0
+  }
+}

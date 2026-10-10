@@ -1,0 +1,8 @@
+{
+  "started_at_utc": "2026-10-10T09:50:58.876384+00:00",
+  "finished_at_utc": "2026-10-10T13:15:56.770902+00:00",
+  "elapsed_wall_seconds": 12297.89451789856,
+  "elapsed_monotonic_seconds": 6426.014784416,
+  "allowance_seconds": 14400,
+  "policy": "Expire when either wall or monotonic elapsed time reaches the allowance; forward wall-clock jumps stop conservatively and backward jumps cannot extend monotonic allowance."
+}

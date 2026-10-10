@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-10-10",
-  "phase": "Incomplete confirmation review",
+  "phase": "Audited fixed-budget confirmation",
   "cycle": {
     "number": "01",
     "title": "Foundations Under Test",
@@ -97,8 +97,13 @@
   "changes": [
     [
       "2026-10-10",
+      "Second confirmation completed and independently replayed",
+      "The freshly authorized technical retry completed all 60 units and 120 fits. Seven frozen conditional decisions: two benefit, four equivalent, one indeterminate. 484 hashes and saved-checkpoint/analysis replay passed; no trace warnings. First incomplete attempt remains preserved. No broad Claim or Cycle closure."
+    ],
+    [
+      "2026-10-10",
       "First confirmation attempt interrupted; partial artifacts preserved",
-      "A wall-time/host-suspension clock incident stopped the one attempt. 36/60 complete units and 73 saved fit traces are preserved and audited. No aggregate decisions, VALID Result or retry. The timer guard is repaired."
+      "A wall-time/host-suspension clock incident stopped the one attempt. 36/60 complete units and 73 saved fit traces are preserved and audited. No aggregate decisions or VALID Result for that attempt. A separate retry was later freshly authorized. The timer guard is repaired."
     ],
     [
       "2026-10-09",

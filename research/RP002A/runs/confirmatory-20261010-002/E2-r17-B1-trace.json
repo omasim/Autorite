@@ -1,0 +1,158 @@
+[
+  {
+    "epoch": 1,
+    "validation_log_loss": 1.0413910150527954
+  },
+  {
+    "epoch": 2,
+    "validation_log_loss": 1.040259838104248
+  },
+  {
+    "epoch": 3,
+    "validation_log_loss": 1.0399606227874756
+  },
+  {
+    "epoch": 4,
+    "validation_log_loss": 1.0399137735366821
+  },
+  {
+    "epoch": 5,
+    "validation_log_loss": 1.0398634672164917
+  },
+  {
+    "epoch": 6,
+    "validation_log_loss": 1.0398460626602173
+  },
+  {
+    "epoch": 7,
+    "validation_log_loss": 1.0398423671722412
+  },
+  {
+    "epoch": 8,
+    "validation_log_loss": 1.0398308038711548
+  },
+  {
+    "epoch": 9,
+    "validation_log_loss": 1.0398118495941162
+  },
+  {
+    "epoch": 10,
+    "validation_log_loss": 1.0398449897766113
+  },
+  {
+    "epoch": 11,
+    "validation_log_loss": 1.039831519126892
+  },
+  {
+    "epoch": 12,
+    "validation_log_loss": 1.0398459434509277
+  },
+  {
+    "epoch": 13,
+    "validation_log_loss": 1.0400792360305786
+  },
+  {
+    "epoch": 14,
+    "validation_log_loss": 1.0398532152175903
+  },
+  {
+    "epoch": 15,
+    "validation_log_loss": 1.0398088693618774
+  },
+  {
+    "epoch": 16,
+    "validation_log_loss": 1.0398420095443726
+  },
+  {
+    "epoch": 17,
+    "validation_log_loss": 1.0398157835006714
+  },
+  {
+    "epoch": 18,
+    "validation_log_loss": 1.0398297309875488
+  },
+  {
+    "epoch": 19,
+    "validation_log_loss": 1.0398026704788208
+  },
+  {
+    "epoch": 20,
+    "validation_log_loss": 1.0398969650268555
+  },
+  {
+    "epoch": 21,
+    "validation_log_loss": 1.0398666858673096
+  },
+  {
+    "epoch": 22,
+    "validation_log_loss": 1.0398130416870117
+  },
+  {
+    "epoch": 23,
+    "validation_log_loss": 1.0399266481399536
+  },
+  {
+    "epoch": 24,
+    "validation_log_loss": 1.0398380756378174
+  },
+  {
+    "epoch": 25,
+    "validation_log_loss": 1.0398527383804321
+  },
+  {
+    "epoch": 26,
+    "validation_log_loss": 1.0398685932159424
+  },
+  {
+    "epoch": 27,
+    "validation_log_loss": 1.0398696660995483
+  },
+  {
+    "epoch": 28,
+    "validation_log_loss": 1.0399389266967773
+  },
+  {
+    "epoch": 29,
+    "validation_log_loss": 1.039864182472229
+  },
+  {
+    "epoch": 30,
+    "validation_log_loss": 1.039869785308838
+  },
+  {
+    "epoch": 31,
+    "validation_log_loss": 1.039870262145996
+  },
+  {
+    "epoch": 32,
+    "validation_log_loss": 1.039957880973816
+  },
+  {
+    "epoch": 33,
+    "validation_log_loss": 1.0398858785629272
+  },
+  {
+    "epoch": 34,
+    "validation_log_loss": 1.039874792098999
+  },
+  {
+    "epoch": 35,
+    "validation_log_loss": 1.0398595333099365
+  },
+  {
+    "epoch": 36,
+    "validation_log_loss": 1.039913296699524
+  },
+  {
+    "epoch": 37,
+    "validation_log_loss": 1.0399065017700195
+  },
+  {
+    "epoch": 38,
+    "validation_log_loss": 1.039898157119751
+  },
+  {
+    "epoch": 39,
+    "validation_log_loss": 1.0400009155273438
+  }
+]

@@ -28,10 +28,15 @@
       "key": "rp003",
       "description": "RP003 package disposition",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "completed",
+      "evidence_refs": [
+        "research/RP003/RP003_PACKAGE_REVIEW.md",
+        "research/RP003/AUDIT_001_REPORT.md",
+        "research/RP003/audit-001/result/RECORD.md",
+        "docs/decisions/DECISION-0005_RP003_DISPOSITION.md"
+      ],
+      "decision_ref": "D-0005"
     },
     {
       "key": "rp004",

@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-10-11",
-  "phase": "RP003 package reviewed and completed",
+  "phase": "RP004 branching lineage protocol prepared",
   "cycle": {
     "number": "01",
     "title": "Foundations Under Test",
@@ -98,6 +98,11 @@
     }
   ],
   "changes": [
+    [
+      "2026-10-11",
+      "RP004 branching lineage protocol prepared",
+      "Six disclosed constructions, six query families and R0\u2013R3 encodings are defined. Known-answer controls and three information-loss witnesses are calibrated; an independent recorded audit remains next. RP004 stays PLANNED, with no new Test, Result or Cycle resolution. Cycle 01 remains ACTIVE at 2/13 (15.4%)."
+    ],
     [
       "2026-10-11",
       "RP003 package reviewed and completed",

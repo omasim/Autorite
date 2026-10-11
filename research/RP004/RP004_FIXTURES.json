@@ -1,0 +1,1146 @@
+{
+  "version": "0.1",
+  "cases": [
+    {
+      "id": "G0",
+      "events": [
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "a",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "continue",
+          "parents": [
+            "a"
+          ],
+          "outputs": [
+            {
+              "id": "b",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "continue",
+          "parents": [
+            "b"
+          ],
+          "outputs": [
+            {
+              "id": "c",
+              "state": "A"
+            }
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "query": {
+            "kind": "same_state",
+            "args": [
+              "a",
+              "b"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": true,
+            "R1": true,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "ancestor",
+            "args": [
+              "a",
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": true,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "ancestor",
+            "args": [
+              "b",
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": true,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "shared_root",
+            "args": [
+              "b",
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": true,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "parents",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": [
+            "b"
+          ],
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": [
+              "b"
+            ],
+            "R3": [
+              "b"
+            ]
+          }
+        },
+        {
+          "query": {
+            "kind": "birth_kind",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": "continue",
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": null,
+            "R3": "continue"
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "a"
+            ]
+          },
+          "expected": false,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": null,
+            "R3": false
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "b"
+            ]
+          },
+          "expected": false,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": null,
+            "R3": false
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": true,
+            "R3": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "G1",
+      "events": [
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "a",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "copy",
+          "parents": [
+            "a"
+          ],
+          "outputs": [
+            {
+              "id": "b",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "copy",
+          "parents": [
+            "a"
+          ],
+          "outputs": [
+            {
+              "id": "c",
+              "state": "A"
+            }
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "query": {
+            "kind": "same_state",
+            "args": [
+              "a",
+              "b"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": true,
+            "R1": true,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "ancestor",
+            "args": [
+              "a",
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": true,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "ancestor",
+            "args": [
+              "b",
+              "c"
+            ]
+          },
+          "expected": false,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": false,
+            "R3": false
+          }
+        },
+        {
+          "query": {
+            "kind": "shared_root",
+            "args": [
+              "b",
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": true,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "parents",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": [
+            "a"
+          ],
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": [
+              "a"
+            ],
+            "R3": [
+              "a"
+            ]
+          }
+        },
+        {
+          "query": {
+            "kind": "birth_kind",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": "copy",
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": null,
+            "R3": "copy"
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "a"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": null,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "b"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": true,
+            "R3": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "events": [
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "a",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "fork",
+          "parents": [
+            "a"
+          ],
+          "outputs": [
+            {
+              "id": "b",
+              "state": "A"
+            },
+            {
+              "id": "c",
+              "state": "A"
+            }
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "query": {
+            "kind": "same_state",
+            "args": [
+              "a",
+              "b"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": true,
+            "R1": true,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "ancestor",
+            "args": [
+              "a",
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": true,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "ancestor",
+            "args": [
+              "b",
+              "c"
+            ]
+          },
+          "expected": false,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": false,
+            "R3": false
+          }
+        },
+        {
+          "query": {
+            "kind": "shared_root",
+            "args": [
+              "b",
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": true,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "parents",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": [
+            "a"
+          ],
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": [
+              "a"
+            ],
+            "R3": [
+              "a"
+            ]
+          }
+        },
+        {
+          "query": {
+            "kind": "birth_kind",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": "fork",
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": null,
+            "R3": "fork"
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "a"
+            ]
+          },
+          "expected": false,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": null,
+            "R3": false
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "b"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": true,
+            "R3": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "events": [
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "a",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "b",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "c",
+              "state": "A"
+            }
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "query": {
+            "kind": "same_state",
+            "args": [
+              "a",
+              "b"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": true,
+            "R1": true,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "ancestor",
+            "args": [
+              "a",
+              "c"
+            ]
+          },
+          "expected": false,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": false,
+            "R3": false
+          }
+        },
+        {
+          "query": {
+            "kind": "ancestor",
+            "args": [
+              "b",
+              "c"
+            ]
+          },
+          "expected": false,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": false,
+            "R3": false
+          }
+        },
+        {
+          "query": {
+            "kind": "shared_root",
+            "args": [
+              "b",
+              "c"
+            ]
+          },
+          "expected": false,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": false,
+            "R3": false
+          }
+        },
+        {
+          "query": {
+            "kind": "parents",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": [],
+          "answers": {
+            "R0": null,
+            "R1": [],
+            "R2": [],
+            "R3": []
+          }
+        },
+        {
+          "query": {
+            "kind": "birth_kind",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": "root",
+          "answers": {
+            "R0": null,
+            "R1": "root",
+            "R2": "root",
+            "R3": "root"
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "a"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "b"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": true,
+            "R3": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "events": [
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "a",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "b",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "merge",
+          "parents": [
+            "a",
+            "b"
+          ],
+          "outputs": [
+            {
+              "id": "c",
+              "state": "A"
+            }
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "query": {
+            "kind": "same_state",
+            "args": [
+              "a",
+              "b"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": true,
+            "R1": true,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "ancestor",
+            "args": [
+              "a",
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": true,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "ancestor",
+            "args": [
+              "b",
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "shared_root",
+            "args": [
+              "b",
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "parents",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": [
+            "a",
+            "b"
+          ],
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": [
+              "a",
+              "b"
+            ],
+            "R3": [
+              "a",
+              "b"
+            ]
+          }
+        },
+        {
+          "query": {
+            "kind": "birth_kind",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": "merge",
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": null,
+            "R3": "merge"
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "a"
+            ]
+          },
+          "expected": false,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": null,
+            "R3": false
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "b"
+            ]
+          },
+          "expected": false,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": null,
+            "R3": false
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": true,
+            "R3": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "C4",
+      "events": [
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "a",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "b",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "continue",
+          "parents": [
+            "a"
+          ],
+          "outputs": [
+            {
+              "id": "c",
+              "state": "A"
+            }
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "query": {
+            "kind": "same_state",
+            "args": [
+              "a",
+              "b"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": true,
+            "R1": true,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "ancestor",
+            "args": [
+              "a",
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": true,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "ancestor",
+            "args": [
+              "b",
+              "c"
+            ]
+          },
+          "expected": false,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": false,
+            "R3": false
+          }
+        },
+        {
+          "query": {
+            "kind": "shared_root",
+            "args": [
+              "b",
+              "c"
+            ]
+          },
+          "expected": false,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": false,
+            "R3": false
+          }
+        },
+        {
+          "query": {
+            "kind": "parents",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": [
+            "a"
+          ],
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": [
+              "a"
+            ],
+            "R3": [
+              "a"
+            ]
+          }
+        },
+        {
+          "query": {
+            "kind": "birth_kind",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": "continue",
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": null,
+            "R3": "continue"
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "a"
+            ]
+          },
+          "expected": false,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": null,
+            "R3": false
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "b"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": true,
+            "R3": true
+          }
+        },
+        {
+          "query": {
+            "kind": "alive",
+            "args": [
+              "c"
+            ]
+          },
+          "expected": true,
+          "answers": {
+            "R0": null,
+            "R1": null,
+            "R2": true,
+            "R3": true
+          }
+        }
+      ]
+    }
+  ],
+  "collision_controls": [
+    {
+      "representation": "R0",
+      "cases": [
+        "G0",
+        "G3"
+      ],
+      "query": {
+        "kind": "ancestor",
+        "args": [
+          "a",
+          "c"
+        ]
+      }
+    },
+    {
+      "representation": "R1",
+      "cases": [
+        "G4",
+        "C4"
+      ],
+      "query": {
+        "kind": "ancestor",
+        "args": [
+          "b",
+          "c"
+        ]
+      }
+    },
+    {
+      "representation": "R2",
+      "cases": [
+        "G1",
+        "G2"
+      ],
+      "query": {
+        "kind": "alive",
+        "args": [
+          "a"
+        ]
+      }
+    }
+  ]
+}

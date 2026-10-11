@@ -27,6 +27,7 @@ jobs:
       - run: python scripts/check-statistical-pipeline.py
       - run: python scripts/check-rp003-preparation.py
       - run: python scripts/check-rp003-audit.py
+      - run: python scripts/check-rp004-preparation.py
       - run: python -m unittest discover -s tests
       - run: python scripts/build-sites.py
       - run: python scripts/check-sites.py

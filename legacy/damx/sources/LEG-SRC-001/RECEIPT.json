@@ -1,0 +1,20 @@
+{
+  "source_id": "SRC-DAMXREPORT2026",
+  "received_at": "2026-10-12",
+  "document_path": "legacy/damx/sources/LEG-SRC-001/Autorite_Sistem_Analiz_Raporu.docx",
+  "sha256": "85a7b3752d8f37130dd97e3c0a172a5e340046fd9b6d571832ef61bcccd3a688",
+  "size_bytes": 49733,
+  "transcript_path": "legacy/damx/sources/LEG-SRC-001/TRANSCRIPT.json",
+  "transcript_sha256": "f4feb81c3f7261ab1dc3c5f406d6e5b1a83627d7645d448e8b85046ea890fbab",
+  "classification": "secondary analysis/report; primary DAM/DAM X materials referenced but not supplied",
+  "document_claimed_analysis_date": "2026-08-10",
+  "document_claimed_creator": "Autorite / Codex analizi",
+  "metadata_date_caveat": "OOXML created/modified values are 2013-12-23 defaults and do not verify authorship or historical version dates.",
+  "provenance": "User supplied this exact DOCX in the current source-location discussion; no independently authenticated author/version history.",
+  "render_review": "Nine pages rendered with bundled LibreOffice and inspected; relevant source locations on pages 3, 4, 6 and 9.",
+  "primary_source_status": "NOT_SUPPLIED",
+  "equation_count": 0,
+  "embedded_image_count": 0,
+  "tracked_change_count": 0,
+  "comment_count": 0
+}

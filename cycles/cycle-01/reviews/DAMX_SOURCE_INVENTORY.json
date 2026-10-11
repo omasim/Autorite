@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1",
+  "review_date": "2026-10-12",
+  "source_commit": "700fc27f5f2637df89450e82f47879ff32e823cc",
+  "scope": "Pre-receipt canonical tracked repository at source_commit only; the user subsequently supplied SRC-DAMX-REPORT2026 during this review. No claim about material elsewhere.",
+  "method": "Inspect tracked legacy directory and DAM X/genealogy path candidates, and inspect their contents and recorded source gate. Template/genealogy mirrors are not historical source units.",
+  "files": [
+    {
+      "path": "legacy/damx/README.md",
+      "role": "source dependency record",
+      "sha256": "88c42911e51ece25cd6813313759628b98d22976c871505debd9f88f8fb76848"
+    },
+    {
+      "path": "baseline/v0.1/DAMX_ARCHAEOLOGY_TEMPLATE.md",
+      "role": "archaeology template",
+      "sha256": "853ef4ff07b55e36bb2b17384d9a30cfa184339bcf2d1d91d89dbc0a6e22d233"
+    },
+    {
+      "path": "baseline/v0.1/05_LEGACY_GENEALOGY.md",
+      "role": "legacy policy",
+      "sha256": "8949d2af2060f00eca9e6ca6e88f36cd7d39706177cdbdee788d412845c4a0c0"
+    },
+    {
+      "path": "baseline/DAMX_ARCHAEOLOGY_TEMPLATE.md",
+      "role": "archaeology template",
+      "sha256": "853ef4ff07b55e36bb2b17384d9a30cfa184339bcf2d1d91d89dbc0a6e22d233"
+    },
+    {
+      "path": "baseline/05_LEGACY_GENEALOGY.md",
+      "role": "legacy policy",
+      "sha256": "8949d2af2060f00eca9e6ca6e88f36cd7d39706177cdbdee788d412845c4a0c0"
+    },
+    {
+      "path": "autorite-2-baseline-v0.1/DAMX_ARCHAEOLOGY_TEMPLATE.md",
+      "role": "archaeology template",
+      "sha256": "853ef4ff07b55e36bb2b17384d9a30cfa184339bcf2d1d91d89dbc0a6e22d233"
+    },
+    {
+      "path": "autorite-2-baseline-v0.1/05_LEGACY_GENEALOGY.md",
+      "role": "legacy policy",
+      "sha256": "8949d2af2060f00eca9e6ca6e88f36cd7d39706177cdbdee788d412845c4a0c0"
+    }
+  ],
+  "tracked_legacy_files": [
+    "legacy/damx/README.md"
+  ],
+  "supplied_historical_source_units": [],
+  "gate": "UNMET_AT_PRE_RECEIPT_CUTOFF",
+  "disposition": "Historical pre-receipt inventory only; final D-0011 accepts the report-scoped pilot as completed, not validly_blocked.",
+  "reopening_condition": "For original-model reconstruction, supply primary DAM/DAM X versions and provenance; this inventory does not override the later report receipt."
+}

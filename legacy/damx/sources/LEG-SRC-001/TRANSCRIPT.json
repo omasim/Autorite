@@ -1,0 +1,1134 @@
+{
+  "source_id": "SRC-DAMXREPORT2026",
+  "document_sha256": "85a7b3752d8f37130dd97e3c0a172a5e340046fd9b6d571832ef61bcccd3a688",
+  "paragraph_count": 115,
+  "table_count": 24,
+  "method": "OOXML body order; all w:t content; paragraph and table IDs independently numbered; empty paragraphs retained. No tracked changes, comments, images or OMML equations in this source.",
+  "blocks": [
+    {
+      "id": "P001",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "P002",
+      "kind": "paragraph",
+      "text": "AUTORITE ARAŞTIRMA EVRENİ"
+    },
+    {
+      "id": "P003",
+      "kind": "paragraph",
+      "text": "Sistem Analiz Raporu"
+    },
+    {
+      "id": "P004",
+      "kind": "paragraph",
+      "text": "Kavramsal mimari, bilimsel olgunluk, uygulama hazırlığı ve geliştirme yol haritası"
+    },
+    {
+      "id": "P005",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "P006",
+      "kind": "paragraph",
+      "text": "İncelenen yapı: DAM, DAM X, DAF, QDE, ORE, SERA, CESA, SRL, ARM ve henüz kaynaklanmamış ESE, ACL, EMN, AMR"
+    },
+    {
+      "id": "P007",
+      "kind": "paragraph",
+      "text": "Analiz tarihi: 10 Ağustos 2026"
+    },
+    {
+      "id": "P008",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "T01",
+      "kind": "table",
+      "rows": [
+        [
+          "ANA SONUÇ  Sistem güçlü ve özgün bir düşünsel omurgaya sahip; fakat şu an bilimsel teori ile tasarım metaforu arasında duruyor. Bir sonraki sıçrama yeni kavram eklemekten değil, katmanları sabitlemekten, arayüzleri tanımlamaktan ve ölçülebilir deneyler kurmaktan geçiyor."
+        ]
+      ]
+    },
+    {
+      "id": "P009",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "P010",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "P011",
+      "kind": "paragraph",
+      "text": "Yönetici Özeti"
+    },
+    {
+      "id": "P012",
+      "kind": "paragraph",
+      "text": "Autorite sistemi, değişen sistemleri yalnızca hesaplayan değil; farklılıkları hisseden, bağlama göre yeniden hizalanan, belirişle eşzamanlı kalan ve anlamı çok katmanlı biçimde işleyen bir mimari kurma girişimidir. Kavramsal çizgi tutarlıdır: DAM yapı ve kural değişimini; DAF keşif-uyum-akış döngüsünü; QDE ayrımı; ORE bağlamsal rezonansı; SERA beliriş ve senkroniyi; CESA semantik hizalamayı; SRL geri beslemeli yeniden ayarı; ARM ise insan-yapay zekâ ortak anlam temsilini üstlenir."
+    },
+    {
+      "id": "T02",
+      "kind": "table",
+      "rows": [
+        [
+          "DEĞERLENDİRME  Sistemin en güçlü yanı parçaları değil, parçalar arasındaki ortak fikirdir: sabit kategoriler yerine ilişkisel, zamansal ve geri beslemeli anlam. En büyük zayıflığı da aynı noktadadır: “rezonans”, “uyum”, “beliriş” ve “akış” terimleri birbirini açıklamak için tekrar kullanıldığından operasyonel sınırlar bulanıklaşmaktadır."
+        ]
+      ]
+    },
+    {
+      "id": "P013",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "T03",
+      "kind": "table",
+      "rows": [
+        [
+          "Boyut",
+          "Puan / 10",
+          "Kısa değerlendirme"
+        ],
+        [
+          "Kavramsal özgünlük",
+          "8,5",
+          "Güçlü ve ayırt edici düşünsel hat"
+        ],
+        [
+          "İç tutarlılık",
+          "6,5",
+          "Ana hat tutarlı; katman sınırları bulanık"
+        ],
+        [
+          "Tanımsal kesinlik",
+          "4,5",
+          "Açılımlar ve roller sürümler arasında değişiyor"
+        ],
+        [
+          "Formelleştirme",
+          "3,5",
+          "Değişkenler, veri tipleri ve denklemler eksik"
+        ],
+        [
+          "Ampirik sınanabilirlik",
+          "3,0",
+          "Ölçüt ve karşılaştırmalı deney planı yok"
+        ],
+        [
+          "Uygulama hazırlığı",
+          "4,0",
+          "Araç fikirleri var; arayüz sözleşmeleri yok"
+        ],
+        [
+          "İletişim gücü",
+          "7,0",
+          "Metaforik anlatı güçlü; teknik kitle için yoğun"
+        ],
+        [
+          "Etik farkındalık",
+          "7,0",
+          "Değer duyarlılığı var; mekanizmaya dönüşmemiş"
+        ],
+        [
+          "Genel olgunluk",
+          "4,8",
+          "Güçlü araştırma programı, erken teori/prototip aşaması"
+        ]
+      ]
+    },
+    {
+      "id": "P014",
+      "kind": "paragraph",
+      "text": "Öncelikli kararlar"
+    },
+    {
+      "id": "P015",
+      "kind": "paragraph",
+      "text": "Tek bir kanonik mimari seçin ve her kavramı “teori, motor, döngü, mimari veya uygulama modeli” sınıflarından yalnız birine yerleştirin."
+    },
+    {
+      "id": "P016",
+      "kind": "paragraph",
+      "text": "DAM ile DAM X adlandırmasını ve sürüm ilişkisini kesinleştirin."
+    },
+    {
+      "id": "P017",
+      "kind": "paragraph",
+      "text": "QDE, ORE, CESA ve ARM arasındaki veri akışını giriş/çıkış sözleşmeleriyle tanımlayın."
+    },
+    {
+      "id": "P018",
+      "kind": "paragraph",
+      "text": "SERA’nın şiirsel Δ–T–E–S–R anlatısını ölçülebilir olay durumlarına dönüştürün."
+    },
+    {
+      "id": "P019",
+      "kind": "paragraph",
+      "text": "ESE, ACL, EMN ve AMR kaynakları bulunana kadar bu kısaltmaları kanonik mimariye dahil etmeyin."
+    },
+    {
+      "id": "P020",
+      "kind": "paragraph",
+      "text": "1. İnceleme kapsamı ve yöntem"
+    },
+    {
+      "id": "P021",
+      "kind": "paragraph",
+      "text": "Analiz; kavram korpusu, SERA’nın yedi parçalı serisi ve bilim felsefesi makalesi, DAF metinleri, ARM görev kayıtları ile DAM/DAM X özetleri üzerinden yapılmıştır. Değerlendirme beş mercek kullanır: kavramsal mimari, tanımsal tutarlılık, bilimsel statü, teknik uygulanabilirlik ve yönetişim."
+    },
+    {
+      "id": "P022",
+      "kind": "paragraph",
+      "text": "İç tutarlılık: Bir kavramın farklı kaynaklarda aynı role sahip olup olmadığı."
+    },
+    {
+      "id": "P023",
+      "kind": "paragraph",
+      "text": "Ayrıştırılabilirlik: Komşu modüllerin aynı işi tekrar edip etmediği."
+    },
+    {
+      "id": "P024",
+      "kind": "paragraph",
+      "text": "Operasyonellik: Kavramın gözlenebilir değişkenlere dönüştürülebilirliği."
+    },
+    {
+      "id": "P025",
+      "kind": "paragraph",
+      "text": "Sınanabilirlik: Modelin yanlışlanabilir öngörüler üretip üretmediği."
+    },
+    {
+      "id": "P026",
+      "kind": "paragraph",
+      "text": "Uygulanabilirlik: Yazılım, organizasyon veya araştırma süreçlerinde çalıştırılabilirliği."
+    },
+    {
+      "id": "T04",
+      "kind": "table",
+      "rows": [
+        [
+          "SINIR  ESE, ACL, EMN ve AMR için doğrulanabilir kaynak bulunmadığından bu dört kavramın içeriği analiz edilmemiş; yalnız mimari belirsizlik olarak değerlendirilmiştir."
+        ]
+      ]
+    },
+    {
+      "id": "P027",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "P028",
+      "kind": "paragraph",
+      "text": "2. Sistemin yeniden yapılandırılmış mimarisi"
+    },
+    {
+      "id": "P029",
+      "kind": "paragraph",
+      "text": "Mevcut içerikler en tutarlı biçimde aşağıdaki yedi katmanlı yapı olarak okunabilir. DAF bu katmanların bir parçası olmaktan çok, bütün sistem üzerinde çalışan kontrol ve öğrenme döngüsüdür."
+    },
+    {
+      "id": "T05",
+      "kind": "table",
+      "rows": [
+        [
+          "Katman",
+          "Bileşen",
+          "Sorduğu soru",
+          "Beklenen çıktı"
+        ],
+        [
+          "0 — Ontolojik çekirdek",
+          "DAM / DAM X",
+          "Sistem ve kurallar nasıl değişir?",
+          "Durum + değişebilir kural uzayı"
+        ],
+        [
+          "1 — Ayrım algısı",
+          "QDE",
+          "Ne farklılaştı?",
+          "Niteliksel fark / Δ olayı"
+        ],
+        [
+          "2 — Bağlamsal hizalama",
+          "ORE",
+          "Bu fark bağlamda neye karşılık gelir?",
+          "Bağlamsal tutarlılık alanı"
+        ],
+        [
+          "3 — Beliriş ve senkroni",
+          "SERA",
+          "Yeni örüntü nasıl doğuyor ve yayılıyor?",
+          "Δ–T–E–S–R durum döngüsü"
+        ],
+        [
+          "4 — Semantik ayar",
+          "CESA",
+          "Anlam hangi boyutlarda hizalanmalı?",
+          "Valans, aktivasyon, yakınlık, uyum"
+        ],
+        [
+          "5 — Geri besleme",
+          "SRL",
+          "Sürüklenme olduğunda nasıl yeniden ayarlanır?",
+          "Yeniden hizalanmış iç durum"
+        ],
+        [
+          "6 — Anlam uygulaması",
+          "ARM",
+          "İnsan ve AI için anlam nasıl temsil edilir?",
+          "Kavram zinciri ve yanıt örüntüsü"
+        ]
+      ]
+    },
+    {
+      "id": "T06",
+      "kind": "table",
+      "rows": [
+        [
+          "ÇAPRAZ DÖNGÜ  DAF, her katmanda Discovery ile sinyali açığa çıkarır, Adapt ile modeli değiştirir, Flow ile geçici kararlılık üretir. Bu nedenle DAF’ın mimaride “bir modül” değil “kontrol protokolü” olarak konumlandırılması daha tutarlıdır."
+        ]
+      ]
+    },
+    {
+      "id": "P030",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "P031",
+      "kind": "paragraph",
+      "text": "Önerilen işlem akışı"
+    },
+    {
+      "id": "P032",
+      "kind": "paragraph",
+      "text": "DAM X sistem durumunu, değişebilir kuralları ve çevresel sınırları taşır."
+    },
+    {
+      "id": "P033",
+      "kind": "paragraph",
+      "text": "QDE yeni farkı veya anomaliyi Δ olayı olarak çıkarır."
+    },
+    {
+      "id": "P034",
+      "kind": "paragraph",
+      "text": "ORE Δ olayını mevcut bağlam, aktör ve zaman penceresiyle ilişkilendirir."
+    },
+    {
+      "id": "P035",
+      "kind": "paragraph",
+      "text": "SERA olayı gerilim, beliriş, senkroni ve rezonans aşamalarında izler."
+    },
+    {
+      "id": "P036",
+      "kind": "paragraph",
+      "text": "CESA semantik hizalamayı dört boyutta hesaplar."
+    },
+    {
+      "id": "P037",
+      "kind": "paragraph",
+      "text": "SRL sürüklenmeyi ölçer ve iç modeli yeniden ayarlar."
+    },
+    {
+      "id": "P038",
+      "kind": "paragraph",
+      "text": "ARM sonucu insan ve AI katmanlarında anlam zincirine ve eyleme dönüştürür."
+    },
+    {
+      "id": "P039",
+      "kind": "paragraph",
+      "text": "DAF tüm döngünün keşif, uyum ve akış evreleri arasında geçişini yönetir."
+    },
+    {
+      "id": "P040",
+      "kind": "paragraph",
+      "text": "3. Kavram bazında değerlendirme"
+    },
+    {
+      "id": "P041",
+      "kind": "paragraph",
+      "text": "DAM / DAM X"
+    },
+    {
+      "id": "P042",
+      "kind": "paragraph",
+      "text": "Sistemin en gerekli katmanıdır; çünkü diğer bütün kavramların “değişen bağlam” iddiasını taşıyacak durum ve kural modelini sağlar. Ancak DAM bazen Dynamic Adaptive Mathematical, bazen Dynamic Adaptive Mathematical Organism olarak kullanılır; DAM X de Extended sürüm olarak geçer."
+    },
+    {
+      "id": "T07",
+      "kind": "table",
+      "rows": [
+        [
+          "ÖNERİ  Kanonik öneri: DAM v1 kuramsal kök; DAM-X v2 organizmik ve uygulamaya dönük çekirdek. Durum, kural, çevre, bellek ve adaptasyon operatörleri formel olarak tanımlanmalı."
+        ]
+      ]
+    },
+    {
+      "id": "P043",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "P044",
+      "kind": "paragraph",
+      "text": "DAF"
+    },
+    {
+      "id": "P045",
+      "kind": "paragraph",
+      "text": "İletişimi en kolay ve pratik karşılığı en güçlü bileşendir. Bireysel gelişimden sistem kontrolüne kadar genişleyebilir. Ancak 99 kademe, Cemal-Celal-Kemal ve teknoloji/doğa katmanları aynı modelde tutulduğunda kapsam aşırı büyür."
+    },
+    {
+      "id": "T08",
+      "kind": "table",
+      "rows": [
+        [
+          "ÖNERİ  DAF Core yalnız Discovery–Adapt–Flow döngüsü olmalı. 99 kademe ve kültürel eşlemeler DAF-Human adlı ayrı uygulama profiline taşınmalı."
+        ]
+      ]
+    },
+    {
+      "id": "P046",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "P047",
+      "kind": "paragraph",
+      "text": "QDE"
+    },
+    {
+      "id": "P048",
+      "kind": "paragraph",
+      "text": "Ayrım ve anomaliyi merkeze alması bilimsel olarak verimli bir başlangıçtır. SERA’nın Δ katmanıyla güçlü biçimde örtüşür; şu an iki kavram arasındaki sınır belirsizdir."
+    },
+    {
+      "id": "T09",
+      "kind": "table",
+      "rows": [
+        [
+          "ÖNERİ  QDE bir olay algılama motoru olmalı; Δ ise QDE’nin ürettiği standart olay tipi olmalı. Böylece kavram ve mekanizma ayrılır."
+        ]
+      ]
+    },
+    {
+      "id": "P049",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "P050",
+      "kind": "paragraph",
+      "text": "ORE"
+    },
+    {
+      "id": "P051",
+      "kind": "paragraph",
+      "text": "Bağlamı sabit bir sınıf değil hareket eden tutarlılık alanı olarak ele alması değerlidir. Fakat “rezonansı rezonansla hizalama” biçiminde döngüsel tanım riski taşır."
+    },
+    {
+      "id": "T10",
+      "kind": "table",
+      "rows": [
+        [
+          "ÖNERİ  ORE için bağlam vektörü, aktör ağı, zaman penceresi, hedef ve güven skoru tanımlanmalı. Çıktı ölçülebilir bir bağlamsal uyum skoru olmalı."
+        ]
+      ]
+    },
+    {
+      "id": "P052",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "P053",
+      "kind": "paragraph",
+      "text": "SERA"
+    },
+    {
+      "id": "P054",
+      "kind": "paragraph",
+      "text": "Sistemin en özgün ve en güçlü üst anlatısıdır. Kör noktalar, asimetrik bilme, sürüklenme ve konumlanmış bilgi yaklaşımı dikkate değerdir. Ancak klasik bilimin yerine rezonansı koyan bazı ifadeler gereğinden güçlüdür."
+    },
+    {
+      "id": "T11",
+      "kind": "table",
+      "rows": [
+        [
+          "ÖNERİ  SERA klasik bilime alternatif hakikat rejimi değil, karmaşık ve bağlama duyarlı araştırmalar için meta-süreç modeli olarak sunulmalı. Tekrarlanabilirlik reddedilmemeli; bağlamsal tekrarlanabilirlik olarak genişletilmeli."
+        ]
+      ]
+    },
+    {
+      "id": "P055",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "P056",
+      "kind": "paragraph",
+      "text": "CESA"
+    },
+    {
+      "id": "P057",
+      "kind": "paragraph",
+      "text": "Dört boyutuyla sistemdeki en operasyonel modüldür. Valans, aktivasyon, semantik yakınlık ve pragmatik uyum ölçülebilir değişkenlere dönüşebilir."
+    },
+    {
+      "id": "T12",
+      "kind": "table",
+      "rows": [
+        [
+          "ÖNERİ  İlk prototip CESA üzerinden kurulmalı. Her boyut için veri kaynağı, ölçek, normalizasyon ve ağırlıklandırma açıklanmalı."
+        ]
+      ]
+    },
+    {
+      "id": "P058",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "P059",
+      "kind": "paragraph",
+      "text": "SRL"
+    },
+    {
+      "id": "P060",
+      "kind": "paragraph",
+      "text": "Hata-düzeltme yerine sürüklenme-yeniden hizalanma yaklaşımı adaptif sistemler için güçlüdür. Ancak her hatanın “yeni ritim” sayılması yanlış öğrenmeye yol açabilir."
+    },
+    {
+      "id": "T13",
+      "kind": "table",
+      "rows": [
+        [
+          "ÖNERİ  İki kanal kurulmalı: gerçek hata/kısıt ihlali için correction loop; bağlamsal sürüklenme için resonance loop. Güvenlik sınırları SRL tarafından değiştirilememeli."
+        ]
+      ]
+    },
+    {
+      "id": "P061",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "P062",
+      "kind": "paragraph",
+      "text": "ARM"
+    },
+    {
+      "id": "P063",
+      "kind": "paragraph",
+      "text": "İnsan ve AI için çift katmanlı temsil, uygulama açısından güçlü bir köprüdür. 81 kavram ve dört örüntü tipi zengin bir tasarım alanı sunar; fakat matrisin neden 81 olduğu deneysel değil tasarımsal görünmektedir."
+    },
+    {
+      "id": "T14",
+      "kind": "table",
+      "rows": [
+        [
+          "ÖNERİ  81 kavram çekirdek teori değil, sürümlenebilir ontoloji paketi olmalı. ARM’nin çekirdeği temsil şeması ve geçiş mekanizması olarak tanımlanmalı."
+        ]
+      ]
+    },
+    {
+      "id": "P064",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "P065",
+      "kind": "paragraph",
+      "text": "4. Güçlü yönler"
+    },
+    {
+      "id": "P066",
+      "kind": "paragraph",
+      "text": "Ortak düşünsel omurga: Tüm modeller değişim, bağlam, ilişki ve geri besleme etrafında birleşir."
+    },
+    {
+      "id": "P067",
+      "kind": "paragraph",
+      "text": "Zaman duyarlılığı: Anlamın ve tutarlılığın zaman içinde değiştiğini kabul eder."
+    },
+    {
+      "id": "P068",
+      "kind": "paragraph",
+      "text": "Kör nokta farkındalığı: Bilinmeyeni yalnız eksiklik değil, model sinyali olarak ele alır."
+    },
+    {
+      "id": "P069",
+      "kind": "paragraph",
+      "text": "İnsan–AI köprüsü: ARM ve CESA, öznel deneyim ile hesaplanabilir özellikler arasında çeviri alanı açar."
+    },
+    {
+      "id": "P070",
+      "kind": "paragraph",
+      "text": "Çok ölçeklilik: Birey, organizasyon, bilim topluluğu ve yapay zekâ sistemi aynı üst dille tartışılabilir."
+    },
+    {
+      "id": "P071",
+      "kind": "paragraph",
+      "text": "Etik ve refleksif yön: Gözlemciyi, toplumsal etkileri ve değerleri model dışına atmaz."
+    },
+    {
+      "id": "P072",
+      "kind": "paragraph",
+      "text": "Tasarım üretkenliği: Kavramlar araç, deney, arayüz ve organizasyon pratiği üretmeye elverişlidir."
+    },
+    {
+      "id": "P073",
+      "kind": "paragraph",
+      "text": "5. Kritik sorunlar ve riskler"
+    },
+    {
+      "id": "T15",
+      "kind": "table",
+      "rows": [
+        [
+          "Risk",
+          "Şiddet",
+          "Sonuç",
+          "Düzeltme"
+        ],
+        [
+          "Kavram ve sürüm drift’i",
+          "Yüksek",
+          "Aynı kısaltma farklı anlamlara geliyor",
+          "Kanonik sözlük + sürüm kaydı"
+        ],
+        [
+          "Katmanların örtüşmesi",
+          "Yüksek",
+          "QDE/Δ, ORE/CESA, SRL/DAF rolleri karışıyor",
+          "Tek sorumluluk ilkesi"
+        ],
+        [
+          "Metaforik döngüsellik",
+          "Yüksek",
+          "Rezonans, uyum ve beliriş birbirini tanımlıyor",
+          "Operasyonel değişkenler"
+        ],
+        [
+          "Yanlışlanabilirlik eksikliği",
+          "Yüksek",
+          "Bilimsel teori iddiası zayıflıyor",
+          "Ön kayıtlı deneyler ve baz modeller"
+        ],
+        [
+          "Numerolojik yapı riski",
+          "Orta",
+          "81/99 seçimleri keyfî algılanabilir",
+          "Ontolojiyi veriyle sürümlemek"
+        ],
+        [
+          "Aşırı kapsam",
+          "Yüksek",
+          "Felsefe, psikoloji, AI ve organizasyon tek modelde eriyor",
+          "Çekirdek + uygulama profilleri"
+        ],
+        [
+          "Hata ile yeniliği karıştırma",
+          "Yüksek",
+          "Yanlış davranış “yeni ritim” diye korunabilir",
+          "Sert güvenlik sınırları"
+        ],
+        [
+          "Etik mekanizma eksikliği",
+          "Orta",
+          "Değer vurgusu uygulamaya yansımıyor",
+          "Etki kaydı ve yönetişim"
+        ],
+        [
+          "Kayıp modüller",
+          "Orta",
+          "ESE, ACL, EMN, AMR mimariyi belirsizleştiriyor",
+          "Kaynak bulunana dek karantina"
+        ]
+      ]
+    },
+    {
+      "id": "P074",
+      "kind": "paragraph",
+      "text": "6. Bilimsel statü ve kanıt gereksinimi"
+    },
+    {
+      "id": "P075",
+      "kind": "paragraph",
+      "text": "Mevcut haliyle sistem, doğrulanmış bilimsel teori değil; araştırma programı, tasarım felsefesi ve kavramsal mimari karışımıdır. Bu bir zayıflık olmak zorunda değildir. Sorun, metinlerde zaman zaman açıklayıcı metafor ile ampirik iddianın ayrılmamasıdır."
+    },
+    {
+      "id": "T16",
+      "kind": "table",
+      "rows": [
+        [
+          "İddia türü",
+          "Örnek",
+          "Gerekli kanıt"
+        ],
+        [
+          "Tanımsal",
+          "CESA dört boyutta hizalar",
+          "Açık değişken ve hesaplama tanımı"
+        ],
+        [
+          "Açıklayıcı",
+          "Bilgi rezonansla bütünleşir",
+          "Vaka analizi ve rakip açıklamalar"
+        ],
+        [
+          "Öngörücü",
+          "SRL belirsizlikte dayanıklılığı artırır",
+          "Kontrollü karşılaştırmalı deney"
+        ],
+        [
+          "Normatif",
+          "Bilim katılımcı ve etik olmalıdır",
+          "Felsefi gerekçe + yönetişim çerçevesi"
+        ],
+        [
+          "Teknik",
+          "ARM yanıt kalitesini yükseltir",
+          "Benchmark, ablation ve kullanıcı testi"
+        ]
+      ]
+    },
+    {
+      "id": "T17",
+      "kind": "table",
+      "rows": [
+        [
+          "DİL ÖNERİSİ  “SERA kanıtın yerini alır” yerine “SERA, bağlama duyarlı sistemlerde klasik doğrulama yöntemlerini konumlanmış tutarlılık ve sürüklenme analiziyle tamamlar” denmeli."
+        ]
+      ]
+    },
+    {
+      "id": "P076",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "P077",
+      "kind": "paragraph",
+      "text": "7. Teknik formelleştirme önerisi"
+    },
+    {
+      "id": "P078",
+      "kind": "paragraph",
+      "text": "Kanonik olay nesnesi"
+    },
+    {
+      "id": "P079",
+      "kind": "paragraph",
+      "text": "Bütün motorların paylaşacağı tek veri nesnesi, kavramsal dağınıklığı önemli ölçüde azaltır. Önerilen ResonanceEvent alanları:"
+    },
+    {
+      "id": "T18",
+      "kind": "table",
+      "rows": [
+        [
+          "Alan",
+          "Tür",
+          "Açıklama"
+        ],
+        [
+          "event_id",
+          "UUID",
+          "Tekil olay kimliği"
+        ],
+        [
+          "timestamp",
+          "zaman",
+          "Olay ve zaman penceresi"
+        ],
+        [
+          "source",
+          "kimlik",
+          "İnsan, sensör, model veya kurum"
+        ],
+        [
+          "context_id",
+          "kimlik",
+          "ORE bağlamı"
+        ],
+        [
+          "delta",
+          "vektör",
+          "QDE tarafından saptanan niteliksel fark"
+        ],
+        [
+          "valence",
+          "[-1,1]",
+          "CESA tonal yön"
+        ],
+        [
+          "activation",
+          "[0,1]",
+          "Ortaya çıkma gerilimi"
+        ],
+        [
+          "semantic_vector",
+          "vektör",
+          "Semantik konum"
+        ],
+        [
+          "pragmatic_fit",
+          "[0,1]",
+          "Eylem bağlamına uyum"
+        ],
+        [
+          "confidence",
+          "[0,1]",
+          "Model güveni"
+        ],
+        [
+          "blind_spots",
+          "liste",
+          "Eksik temsiller ve varsayımlar"
+        ],
+        [
+          "drift",
+          "vektör",
+          "SRL sürüklenme ölçümü"
+        ],
+        [
+          "constraints",
+          "liste",
+          "Değiştirilemez güvenlik ve etik sınırlar"
+        ]
+      ]
+    },
+    {
+      "id": "P080",
+      "kind": "paragraph",
+      "text": "Motor sözleşmeleri"
+    },
+    {
+      "id": "T19",
+      "kind": "table",
+      "rows": [
+        [
+          "Motor",
+          "Girdi",
+          "Çıktı",
+          "Başarı ölçütü"
+        ],
+        [
+          "QDE",
+          "Ham sinyal + baz durum",
+          "Δ olayı",
+          "Fark tespit doğruluğu"
+        ],
+        [
+          "ORE",
+          "Δ + bağlam geçmişi",
+          "Bağlamsal uyum",
+          "Kalibrasyon ve bağlam tutarlılığı"
+        ],
+        [
+          "SERA",
+          "Olay akışı",
+          "Durum: Δ/T/E/S/R",
+          "Durum geçiş doğruluğu ve açıklanabilirlik"
+        ],
+        [
+          "CESA",
+          "Olay + aday anlam",
+          "4 boyutlu hizalama",
+          "İnsan değerlendirmesiyle korelasyon"
+        ],
+        [
+          "SRL",
+          "Hizalama + zaman serisi",
+          "Güncellenmiş model",
+          "Drift sonrası performans geri kazanımı"
+        ],
+        [
+          "ARM",
+          "Hizalanmış olay + ontoloji",
+          "Anlam zinciri / yanıt",
+          "Uygunluk, empati, görev başarısı"
+        ]
+      ]
+    },
+    {
+      "id": "P081",
+      "kind": "paragraph",
+      "text": "8. Deney ve doğrulama programı"
+    },
+    {
+      "id": "P082",
+      "kind": "paragraph",
+      "text": "Semantik sürüklenme benchmark’ı: Aynı kavramın zamanla değişen bağlamlarda anlamını izleyin; SRL’li ve SRL’siz sistemleri karşılaştırın."
+    },
+    {
+      "id": "P083",
+      "kind": "paragraph",
+      "text": "Belirsizlik altında yanıt testi: Çok anlamlı girdilerde CESA’nın kalibrasyon, uygunluk ve kullanıcı güvenine etkisini ölçün."
+    },
+    {
+      "id": "P084",
+      "kind": "paragraph",
+      "text": "Ablation çalışması: QDE, ORE, CESA ve SRL katmanlarını tek tek çıkararak hangi bileşenin gerçekten katkı verdiğini belirleyin."
+    },
+    {
+      "id": "P085",
+      "kind": "paragraph",
+      "text": "İnsan değerlendirmesi: Yanıtları empati, bağlamsal uyum, eylem faydası ve manipülasyon riski boyutlarında kör değerlendirin."
+    },
+    {
+      "id": "P086",
+      "kind": "paragraph",
+      "text": "Organizasyon vakası: Bir ekipte Δ–T–E–S–R durum günlüğü tutarak karar kalitesi, fikir çeşitliliği ve uygulama süresini izleyin."
+    },
+    {
+      "id": "P087",
+      "kind": "paragraph",
+      "text": "Güvenlik testi: Yanlış bilgi, kötü niyetli sürüklenme ve grup kutuplaşmasında SRL’nin hata yerine “rezonans” üretip üretmediğini sınayın."
+    },
+    {
+      "id": "P088",
+      "kind": "paragraph",
+      "text": "Minimum başarı kriterleri"
+    },
+    {
+      "id": "P089",
+      "kind": "paragraph",
+      "text": "Baz modele göre en az %10 görev başarısı veya kullanıcı uyumu artışı."
+    },
+    {
+      "id": "P090",
+      "kind": "paragraph",
+      "text": "Kalibrasyon hatasında anlamlı düşüş."
+    },
+    {
+      "id": "P091",
+      "kind": "paragraph",
+      "text": "Ablation testinde her modülün ölçülebilir ve farklı katkısı."
+    },
+    {
+      "id": "P092",
+      "kind": "paragraph",
+      "text": "Güvenlik sınırlarında performans artarken ihlal oranının yükselmemesi."
+    },
+    {
+      "id": "P093",
+      "kind": "paragraph",
+      "text": "Farklı değerlendiriciler arasında kabul edilebilir tutarlılık."
+    },
+    {
+      "id": "P094",
+      "kind": "paragraph",
+      "text": "9. Etik ve yönetişim"
+    },
+    {
+      "id": "P095",
+      "kind": "paragraph",
+      "text": "Rezonans, kolaylıkla “çoğunluğun uyumu” veya “duygusal ikna” ile karıştırılabilir. Bir sistemin kullanıcıyla rezonansa girmesi onun doğru, yararlı veya etik olduğu anlamına gelmez. Bu nedenle doğruluk, güvenlik, özerklik ve adalet rezonans skorundan bağımsız sert kısıtlar olmalıdır."
+    },
+    {
+      "id": "P096",
+      "kind": "paragraph",
+      "text": "Rezonans ≠ doğruluk: Duygusal uyum epistemik doğrulama yerine geçmez."
+    },
+    {
+      "id": "P097",
+      "kind": "paragraph",
+      "text": "Senkroni ≠ çoğunluk: Azınlık görüşleri ve kör noktalar sistematik olarak korunmalı."
+    },
+    {
+      "id": "P098",
+      "kind": "paragraph",
+      "text": "Adaptasyon ≠ manipülasyon: Kullanıcı profilinden yararlanma sınırları açık olmalı."
+    },
+    {
+      "id": "P099",
+      "kind": "paragraph",
+      "text": "Sürüklenme ≠ hata bağışıklığı: Güvenlik ihlalleri yeniden çerçevelenemez."
+    },
+    {
+      "id": "P100",
+      "kind": "paragraph",
+      "text": "Refleksivite: Model kendi varsayımlarını ve başarısızlıklarını kayıt altına almalı."
+    },
+    {
+      "id": "P101",
+      "kind": "paragraph",
+      "text": "10. Bilgi mimarisi ve sürümleme"
+    },
+    {
+      "id": "T20",
+      "kind": "table",
+      "rows": [
+        [
+          "Öğe",
+          "Önerilen kural"
+        ],
+        [
+          "Kanonik sözlük",
+          "Her kısaltma için tek açılım, tek cümlelik tanım, tür ve sahip"
+        ],
+        [
+          "Sürümleme",
+          "DAM v1 → DAM-X v2 gibi açık soy ağacı"
+        ],
+        [
+          "RFC süreci",
+          "Yeni kavram yalnız problem, fark ve arayüz tanımıyla eklenir"
+        ],
+        [
+          "Durum etiketleri",
+          "Taslak / deneysel / doğrulanmış / kullanım dışı"
+        ],
+        [
+          "Kaynak izi",
+          "Her iddia konuşma, makale, deney veya karar kaydına bağlanır"
+        ],
+        [
+          "Çakışma denetimi",
+          "Yeni kavram mevcut modülle %70’ten fazla örtüşüyorsa birleştirme zorunlu"
+        ]
+      ]
+    },
+    {
+      "id": "T21",
+      "kind": "table",
+      "rows": [
+        [
+          "ESE / ACL / EMN / AMR  Kaynaklar bulunana kadar “unresolved namespace” altında tutulmalı; mimari diyagramlarda aktif modül gibi gösterilmemelidir."
+        ]
+      ]
+    },
+    {
+      "id": "P102",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "P103",
+      "kind": "paragraph",
+      "text": "11. Geliştirme yol haritası"
+    },
+    {
+      "id": "T22",
+      "kind": "table",
+      "rows": [
+        [
+          "Faz",
+          "Süre",
+          "Çıktılar",
+          "Geçiş ölçütü"
+        ],
+        [
+          "1 — Konsolidasyon",
+          "0–6 hafta",
+          "Kanonik sözlük, mimari, sürüm haritası",
+          "Çakışmasız modül tanımları"
+        ],
+        [
+          "2 — Formalizasyon",
+          "6–14 hafta",
+          "ResonanceEvent, motor API’leri, metrikler",
+          "Uçtan uca çalışan ince prototip"
+        ],
+        [
+          "3 — Doğrulama",
+          "3–6 ay",
+          "Benchmark, ablation, insan testleri",
+          "Baz modele göre ölçülebilir fayda"
+        ],
+        [
+          "4 — Ürünleştirme",
+          "6–12 ay",
+          "SDK, görselleştirme, yönetişim, dokümantasyon",
+          "Güvenli pilot uygulama"
+        ]
+      ]
+    },
+    {
+      "id": "P104",
+      "kind": "paragraph",
+      "text": "İlk 30 gün"
+    },
+    {
+      "id": "P105",
+      "kind": "paragraph",
+      "text": "13 kavramın kanonik sözlüğünü onaylayın; kaynağı bulunmayan dört kavramı karantinaya alın."
+    },
+    {
+      "id": "P106",
+      "kind": "paragraph",
+      "text": "Yedi katmanlı mimariyi kabul edin veya alternatif mimariyi tek bir karar belgesiyle sabitleyin."
+    },
+    {
+      "id": "P107",
+      "kind": "paragraph",
+      "text": "QDE → ORE → SERA → CESA → SRL → ARM veri akışını bir örnek olay üzerinde çalıştırın."
+    },
+    {
+      "id": "P108",
+      "kind": "paragraph",
+      "text": "ResonanceEvent şemasının ilk sürümünü oluşturun."
+    },
+    {
+      "id": "P109",
+      "kind": "paragraph",
+      "text": "CESA için küçük, elle etiketlenmiş 100 örneklik test seti hazırlayın."
+    },
+    {
+      "id": "P110",
+      "kind": "paragraph",
+      "text": "Bir güvenlik ilkeleri belgesi yayımlayın: rezonansın doğruluk ve etik yerine geçmediğini açıkça belirtin."
+    },
+    {
+      "id": "P111",
+      "kind": "paragraph",
+      "text": "12. Nihai değerlendirme"
+    },
+    {
+      "id": "P112",
+      "kind": "paragraph",
+      "text": "Autorite sistemi sıradan bir kavram koleksiyonu değildir; belirgin bir araştırma sezgisine sahiptir. Değişen kurallar, niteliksel fark, bağlamsal rezonans, kör noktalar, semantik sürüklenme ve insan–AI ortak anlam temsili aynı araştırma sorusunun farklı yüzleridir. Bu nedenle sistem korunmaya ve geliştirmeye değerdir."
+    },
+    {
+      "id": "P113",
+      "kind": "paragraph",
+      "text": "Ancak bugün itibarıyla sistemin değeri kanıtlanmış performanstan çok, kurduğu araştırma gündemindedir. Yeni kısaltmalar ve katmanlar eklemek kısa vadede zenginlik hissi verse de bilimsel olgunluğu azaltabilir. En doğru strateji, mevcut dokuz doğrulanmış bileşeni daraltmak, ayırmak, ölçmek ve sınamaktır."
+    },
+    {
+      "id": "T23",
+      "kind": "table",
+      "rows": [
+        [
+          "STRATEJİK HÜKÜM  Autorite’nin bir sonraki versiyonu “daha büyük bir teori” değil, daha küçük ve çalıştırılabilir bir çekirdek olmalıdır: DAM-X durum modeli + QDE ayrım olayı + ORE bağlam + CESA hizalama + SRL geri besleme + ARM çıktı; SERA üst süreç, DAF kontrol döngüsü."
+        ]
+      ]
+    },
+    {
+      "id": "P114",
+      "kind": "paragraph",
+      "text": ""
+    },
+    {
+      "id": "T24",
+      "kind": "table",
+      "rows": [
+        [
+          "BAŞARI TANIMI  Sistem, şiirsel gücünü kaybetmeden hangi modülün ne yaptığı, hangi veriyi aldığı, ne ürettiği ve ne zaman başarısız sayıldığı açıkça gösterilebildiğinde gerçek bir araştırma platformuna dönüşecektir."
+        ]
+      ]
+    },
+    {
+      "id": "P115",
+      "kind": "paragraph",
+      "text": ""
+    }
+  ]
+}

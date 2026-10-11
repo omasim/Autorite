@@ -1130,5 +1130,75 @@
     ],
     "label": "Active governance decision",
     "recommended": false
+  },
+  {
+    "key": "cycle01-damx-disposition",
+    "path": "cycles/cycle-01/reviews/DAMX_SOURCE_GATE.md",
+    "title": "Cycle 01 DAM X source gate and pilot disposition",
+    "category": "Research packages",
+    "summary": "A report arrived before release: accept ten report-faithful units as a completed secondary-source pilot, with original-model and survival limits explicit.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Dated governance review",
+    "recommended": true
+  },
+  {
+    "key": "cycle01-transition",
+    "path": "cycles/cycle-01/reviews/TRANSITION_RECORD.md",
+    "title": "Cycle 01 Transition Record",
+    "category": "Research packages",
+    "summary": "Select bounded query-relative lineage field-ablation preparation; disclose known reused fixtures, class-relative minimality and explicit entry/resource/pre-execution gates. Cycle 02 not opened.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Dated governance review",
+    "recommended": true
+  },
+  {
+    "key": "cycle01-transition-decision",
+    "path": "docs/decisions/DECISION-0011_LEGACY_DISPOSITION_AND_TRANSITION.md",
+    "title": "Decision 0011 - DAM X report pilot and transition",
+    "category": "Research packages",
+    "summary": "Accept report-scoped pilot and transition. No scientific validation or architecture inheritance; Cycle ACTIVE at 12/13 (92.3%), close bundle open.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Active governance decision",
+    "recommended": false
+  },
+  {
+    "key": "damx-report-pilot",
+    "path": "legacy/damx/PILOT_001_REVIEW.md",
+    "title": "DAM X report-scoped archaeology pilot",
+    "category": "Research packages",
+    "summary": "Ten exact source units, L0\u2013L3 decomposition and explicit uncertainty; two S4/one S5 candidates provisional, seven unresolved. No original-model validation.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Source-backed legacy pilot",
+    "recommended": true
+  },
+  {
+    "key": "damx-report-source",
+    "path": "legacy/damx/sources/LEG-SRC-001/SOURCE_RECEIPT.md",
+    "title": "DAM X supplied report source receipt",
+    "category": "Research packages",
+    "summary": "Original DOCX hash, complete Turkish transcript, nine-page inspection and provenance caveats. Secondary analysis, not original DAM X evidence.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Supplied secondary source",
+    "recommended": false
   }
 ]

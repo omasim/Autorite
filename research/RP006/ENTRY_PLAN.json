@@ -1,0 +1,141 @@
+{
+  "schema_version": "0.1",
+  "package_ref": "RP-006",
+  "cycle_ref": "cycles/cycle-02/manifest.json",
+  "source_frozen": false,
+  "execution_authorized": false,
+  "domain_path": "research/RP006/DOMAIN.json",
+  "domain_sha256": "4aafa766ba3624691c62446532d3ec71c89c3f58274067320e0b26bf1345e60a",
+  "entity_universe": [
+    "a",
+    "b",
+    "c"
+  ],
+  "field_order": [
+    "state",
+    "parents",
+    "birth_kind"
+  ],
+  "masks": [
+    {
+      "id": "000",
+      "retained_fields": []
+    },
+    {
+      "id": "001",
+      "retained_fields": [
+        "birth_kind"
+      ]
+    },
+    {
+      "id": "010",
+      "retained_fields": [
+        "parents"
+      ]
+    },
+    {
+      "id": "011",
+      "retained_fields": [
+        "parents",
+        "birth_kind"
+      ]
+    },
+    {
+      "id": "100",
+      "retained_fields": [
+        "state"
+      ]
+    },
+    {
+      "id": "101",
+      "retained_fields": [
+        "state",
+        "birth_kind"
+      ]
+    },
+    {
+      "id": "110",
+      "retained_fields": [
+        "state",
+        "parents"
+      ]
+    },
+    {
+      "id": "111",
+      "retained_fields": [
+        "state",
+        "parents",
+        "birth_kind"
+      ]
+    }
+  ],
+  "query_families": {
+    "FULL": [
+      "same_state",
+      "ancestor",
+      "shared_root",
+      "parents",
+      "birth_kind",
+      "alive"
+    ],
+    "TOPOLOGY_STATE": [
+      "same_state",
+      "ancestor",
+      "shared_root",
+      "parents"
+    ]
+  },
+  "projection_keys": [
+    "entities",
+    "fields"
+  ],
+  "side_information": [
+    "common_entity_universe",
+    "query_definitions",
+    "uniform_mask",
+    "declared_finite_domain_semantics"
+  ],
+  "forbidden_projection_information": [
+    "case_id",
+    "event_order",
+    "expected_answers",
+    "alive_map",
+    "fixture_hash",
+    "encoded_case_label"
+  ],
+  "planned_counts": {
+    "full_truth_rows": 216,
+    "topology_state_truth_rows": 180,
+    "projections": 48,
+    "case_pair_mask_comparisons": 120,
+    "family_mask_verdicts": 16,
+    "max_full_pair_query_checks": 4320,
+    "max_topology_state_pair_query_checks": 3600
+  },
+  "proposed_limits": {
+    "attempts": 1,
+    "monotonic_seconds": 60,
+    "peak_process_rss_bytes": 134217728,
+    "processes": 1,
+    "network_access": false,
+    "seeds": []
+  },
+  "readiness": {
+    "producer_implemented": false,
+    "independent_verifier_implemented": false,
+    "controls_passed": false,
+    "resource_deadline_preflight_accepted": false,
+    "source_freeze_accepted": false,
+    "pre_execution_checkpoint_accepted": false
+  },
+  "outputs": [
+    "truth.jsonl",
+    "projections.jsonl",
+    "pairs.jsonl",
+    "conflicts.jsonl",
+    "certificates.json",
+    "summary.json",
+    "timing.json",
+    "replay.json"
+  ]
+}

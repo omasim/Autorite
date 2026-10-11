@@ -1,0 +1,227 @@
+{
+  "schema_version": "0.1",
+  "source_path": "research/RP004/RP004_FIXTURES.json",
+  "source_sha256": "ff80fb8bc9e96748c5e672410a7d057d3051771f60845515ff4911ba60919513",
+  "role": "Known reused RP004 constructions, only event logs; case labels are outer artifact metadata.",
+  "cases": [
+    {
+      "id": "G0",
+      "events": [
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "a",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "continue",
+          "parents": [
+            "a"
+          ],
+          "outputs": [
+            {
+              "id": "b",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "continue",
+          "parents": [
+            "b"
+          ],
+          "outputs": [
+            {
+              "id": "c",
+              "state": "A"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "G1",
+      "events": [
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "a",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "copy",
+          "parents": [
+            "a"
+          ],
+          "outputs": [
+            {
+              "id": "b",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "copy",
+          "parents": [
+            "a"
+          ],
+          "outputs": [
+            {
+              "id": "c",
+              "state": "A"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "events": [
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "a",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "fork",
+          "parents": [
+            "a"
+          ],
+          "outputs": [
+            {
+              "id": "b",
+              "state": "A"
+            },
+            {
+              "id": "c",
+              "state": "A"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "events": [
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "a",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "b",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "c",
+              "state": "A"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "events": [
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "a",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "b",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "merge",
+          "parents": [
+            "a",
+            "b"
+          ],
+          "outputs": [
+            {
+              "id": "c",
+              "state": "A"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C4",
+      "events": [
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "a",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "root",
+          "parents": [],
+          "outputs": [
+            {
+              "id": "b",
+              "state": "A"
+            }
+          ]
+        },
+        {
+          "kind": "continue",
+          "parents": [
+            "a"
+          ],
+          "outputs": [
+            {
+              "id": "c",
+              "state": "A"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

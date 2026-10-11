@@ -20,5 +20,11 @@ Specify graph/target construction, restriction rules, planner tie-breaking and h
 ## DAM X
 Require supplied source documents with provenance and a bounded pilot question. Until then, preserve only the template and a documented source dependency; do not reconstruct content from assumptions.
 
-## Current readiness
+## Bootstrap readiness snapshot
 All five workstreams remain pending execution readiness. Missing experimental parameters are deliberate open research choices, not validator defaults. Bootstrap completion, protocol readiness and authorization to execute are separate checks.
+
+## Current readiness — 2026-10-11
+
+The preceding paragraph preserves the bootstrap snapshot, rather than describing subsequent research. Bootstrap approval is on record. RP002A has since completed its scoped second confirmation and internal disposition under D-0004; its package is CLOSED and the first incomplete attempt remains preserved.
+
+RP003 now has an operational supplement, targeted collision review and four verified known-answer calibration cases in `research/RP003/`. See `PROTOCOL.md` and `PREPARATION_REVIEW.md` there. Preparation is ready for implementation of the declared bounded enumeration; no RP003 research audit or Result is recorded. The run manifest, frozen implementation and input hashes, full coverage and independent witness replay remain required before interpreting that audit. RP003 is PLANNED. RP004, RP005A and DAM X retain their existing pending gates. Cycle 01 is ACTIVE with 1/13 obligations resolved.

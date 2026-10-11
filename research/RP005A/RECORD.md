@@ -23,13 +23,15 @@
     "research/RP005A/RP005A_SOURCE_FREEZE.md",
     "research/RP005A/RP005A_SOURCE_FREEZE.json",
     "research/RP005A/RP005A_AUDIT_001_REPORT.md",
-    "research/RP005A/audit-001/result/RECORD.md"
+    "research/RP005A/audit-001/result/RECORD.md",
+    "research/RP005A/RP005A_PACKAGE_REVIEW.md",
+    "docs/decisions/DECISION-0007_RP005A_DISPOSITION.md"
   ],
   "relations": [],
   "aliases": [
     "RP005A"
   ],
-  "status": "ACTIVE",
+  "status": "CLOSED",
   "question_refs": [
     "Q-2"
   ],
@@ -39,4 +41,4 @@
 }
 ---
 
-The single authorized saved-output audit is COMPLETE with scoped Result R-RP005A001 (VALID). All 24 planner rows, 12 paired comparisons and 35 structural sources independently replayed; sixteen frozen inputs and seven output hashes match. Two positive, four zero and six negative comparisons remain preserved. RP005A is ACTIVE pending separate package interpretation and disposition; Q-2 stays ACTIVE. No broad Claim or Cycle resolution follows. The Test registration and all pre-execution documents remain historical snapshots. Cycle 01 remains ACTIVE at 3/13 (23.1%).
+D-0007 accepts the declared finite Cycle 01 commitment after explicit internal package review. RP005A is CLOSED. All 24 planner rows, 12 paired comparisons and 35 structural sources remain independently replayed with Result R-RP005A001 (VALID); every positive, zero and negative outcome is unchanged. Q-2 remains ACTIVE. Only the RP005A package-disposition obligation is newly resolved; Cycle 01 remains ACTIVE at 4/13 (30.8%). Pure edge removal does not expand structural reachability and any policy benefit remains conditional.

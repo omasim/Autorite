@@ -912,7 +912,7 @@
     "path": "research/RP005A/RP005A_PREPARATION_REVIEW.md",
     "title": "RP005A preparation review",
     "category": "Methods & protocols",
-    "summary": "Historical protocol-preparation snapshot before Test registration and execution. The subsequent audit has a scoped VALID Result; RP005A is ACTIVE pending disposition.",
+    "summary": "Historical protocol-preparation snapshot before registration and execution. The later audit has a scoped VALID Result, and D-0007 closes the finite package after internal review.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -926,7 +926,7 @@
     "path": "research/RP005A/RP005A_EXECUTION_REVIEW.md",
     "title": "RP005A pre-execution implementation review",
     "category": "Methods & protocols",
-    "summary": "Preserved pre-execution snapshot for the registered audit and independent replay. The subsequent audit completed with a scoped VALID Result; see the outcome report.",
+    "summary": "Preserved pre-execution snapshot. The later audit completed with a scoped VALID Result; D-0007 records subsequent package disposition.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -954,13 +954,41 @@
     "path": "research/RP005A/RP005A_AUDIT_001_REPORT.md",
     "title": "RP005A audited restrictions and horizon-limited planning",
     "category": "Results & evidence",
-    "summary": "24 rows, 12 pairs and 35 structural sources independently replayed. Two positive, four zero and six negative comparisons; conditional endpoint selection never expands structural reachability. RP005A ACTIVE pending disposition; Q-2 ACTIVE.",
+    "summary": "Preserved audit-stage snapshot before D-0007: all 24 rows, 12 pairs and 35 sources independently replay. Subsequent package review closes the finite commitment; all outcomes and Q-2 remain unchanged.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
-    "label": "Audited finite outcome",
+    "label": "Preserved audit-stage report",
     "recommended": true
+  },
+  {
+    "key": "rp005a-package-review",
+    "path": "research/RP005A/RP005A_PACKAGE_REVIEW.md",
+    "title": "RP005A package interpretation and disposition review",
+    "category": "Research packages",
+    "summary": "Accept the finite V0\u2013V2 commitment and auxiliary C0 without general restriction-benefit claims. RP005A CLOSED under D-0007; Q-2 ACTIVE; Cycle 01 ACTIVE at 4/13.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Current package disposition",
+    "recommended": true
+  },
+  {
+    "key": "rp005a-package-decision",
+    "path": "docs/decisions/DECISION-0007_RP005A_DISPOSITION.md",
+    "title": "Decision 0007 - RP005A package disposition",
+    "category": "Research packages",
+    "summary": "Resolve only the RP005A package obligation; preserve all outcomes and the fixed thirteen-obligation denominator. Nine obligations remain open.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Active governance decision",
+    "recommended": false
   }
 ]

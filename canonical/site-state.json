@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-11",
-  "phase": "Late Checkpoint A and graph review completed; synthesis next",
+  "updated_at": "2026-10-12",
+  "phase": "Synthesis and foundation reviews completed; change/open records next",
   "cycle": {
     "number": "01",
     "title": "Foundations Under Test",
@@ -26,7 +26,9 @@
       2,
       3,
       5,
-      6
+      6,
+      7,
+      8
     ]
   },
   "questions": [
@@ -102,6 +104,11 @@
     }
   ],
   "changes": [
+    [
+      "2026-10-12",
+      "Cycle 01 synthesis and foundation reviews completed",
+      "D-0009 accepts conditional synthesis and retains existing contracts and mathematics; no universal Claim, ontology or baseline amendment. Negative evidence and the late checkpoint deviation remain visible. Cycle ACTIVE: 8/13 (61.5%); five obligations open. Next: What Changed / What Remains Open. DAM X still awaits supplied sources or an explicit later disposition."
+    ],
     [
       "2026-10-11",
       "Late Checkpoint A and graph review completed",

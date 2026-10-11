@@ -1,15 +1,15 @@
 {
-  "published_at": "2026-10-11",
+  "published_at": "2026-10-12",
   "language": "en",
   "sites": {
     "org": {
       "project_id": "appgprj_6ac624791b8c819180b917fdc3a28cff",
-      "version_id": "appgprj_6ac624791b8c819180b917fdc3a28cff~appgver_c945cb570f888191a18baa80a3be411e",
-      "deployment_id": "appgdep_6acbf69641548191ae827530dd905c2f",
+      "version_id": "appgprj_6ac624791b8c819180b917fdc3a28cff~appgver_d17999e7f8a88191bd2cecceb60d6412",
+      "deployment_id": "appgdep_6acbfa2ee1dc8191836ce4e200cd0c43",
       "url": "https://autorite.org",
       "sites_url": "https://autorite-knowledge.omerasim.chatgpt.site",
       "access_mode": "public",
-      "commit_sha": "fe26f7859c27c887f69e114bb382bcb7588eaa87",
+      "commit_sha": "e5a6c07ce82d0c16fbad5ae8a305d3383c0ee17f",
       "custom_domain": "autorite.org",
       "custom_domain_id": "appgdom_6ac6269cddd481918a015e760f855fb8",
       "domain_status": "active",
@@ -19,12 +19,12 @@
     },
     "net": {
       "project_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6",
-      "version_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6~appgver_6672db94a7d88191a3d0c8bf40231d51",
-      "deployment_id": "appgdep_6acbf6acb7488191915e10157833d055",
+      "version_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6~appgver_bae5f91841148191b008a173ad4b5658",
+      "deployment_id": "appgdep_6acbfa4544888191afbf015eed39f0bf",
       "url": "https://autorite.net",
       "sites_url": "https://autorite-laboratory.omerasim.chatgpt.site",
       "access_mode": "public",
-      "commit_sha": "2ca2d3761d0e6c5c41840e41faa934668484526c",
+      "commit_sha": "5edd53530b36ed71e3fe7d9ad6720805c780dc26",
       "custom_domain": "autorite.net",
       "custom_domain_id": "appgdom_6ac626a42f308191afc3eb5d3ee2b9a3",
       "domain_status": "active",
@@ -34,5 +34,5 @@
     }
   },
   "canonical_repository": "https://github.com/omasim/Autorite",
-  "canonical_source_commit": "546fd01217933165d1b4ed72178d3472e0b69dcb"
+  "canonical_source_commit": "9cf5e4c2d787870b10321462d03e65df6d1f0fdf"
 }

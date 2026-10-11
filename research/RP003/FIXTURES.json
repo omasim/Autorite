@@ -1,0 +1,131 @@
+{
+  "protocol_version": "0.1",
+  "epsilon": "1",
+  "budget": "1",
+  "cases": [
+    {
+      "id": "P0",
+      "states": [
+        {
+          "key": "A",
+          "x": "0"
+        },
+        {
+          "key": "A",
+          "x": "1/2"
+        },
+        {
+          "key": "A",
+          "x": "1"
+        }
+      ],
+      "expected": {
+        "exact_local": true,
+        "exact_endpoint": true,
+        "exact_prefix": true,
+        "tolerance_local": true,
+        "tolerance_endpoint": true,
+        "tolerance_prefix": true,
+        "variation_budget": true,
+        "max_step": "1/2",
+        "endpoint_displacement": "1",
+        "max_excursion": "1",
+        "total_variation": "1"
+      }
+    },
+    {
+      "id": "P1",
+      "states": [
+        {
+          "key": "A",
+          "x": "0"
+        },
+        {
+          "key": "A",
+          "x": "3/4"
+        },
+        {
+          "key": "A",
+          "x": "3/2"
+        }
+      ],
+      "expected": {
+        "exact_local": true,
+        "exact_endpoint": true,
+        "exact_prefix": true,
+        "tolerance_local": true,
+        "tolerance_endpoint": false,
+        "tolerance_prefix": false,
+        "variation_budget": false,
+        "max_step": "3/4",
+        "endpoint_displacement": "3/2",
+        "max_excursion": "3/2",
+        "total_variation": "3/2"
+      }
+    },
+    {
+      "id": "P2",
+      "states": [
+        {
+          "key": "A",
+          "x": "0"
+        },
+        {
+          "key": "A",
+          "x": "3/4"
+        },
+        {
+          "key": "A",
+          "x": "3/2"
+        },
+        {
+          "key": "A",
+          "x": "3/4"
+        },
+        {
+          "key": "A",
+          "x": "0"
+        }
+      ],
+      "expected": {
+        "exact_local": true,
+        "exact_endpoint": true,
+        "exact_prefix": true,
+        "tolerance_local": true,
+        "tolerance_endpoint": true,
+        "tolerance_prefix": false,
+        "variation_budget": false,
+        "max_step": "3/4",
+        "endpoint_displacement": "0",
+        "max_excursion": "3/2",
+        "total_variation": "3"
+      }
+    },
+    {
+      "id": "P3",
+      "states": [
+        {
+          "key": "A",
+          "x": "0"
+        },
+        {
+          "key": "B",
+          "x": "3/2"
+        }
+      ],
+      "expected": {
+        "exact_local": false,
+        "exact_endpoint": false,
+        "exact_prefix": false,
+        "tolerance_local": false,
+        "tolerance_endpoint": false,
+        "tolerance_prefix": false,
+        "variation_budget": false,
+        "max_step": "3/2",
+        "endpoint_displacement": "3/2",
+        "max_excursion": "3/2",
+        "total_variation": "3/2"
+      }
+    }
+  ]
+}

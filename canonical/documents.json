@@ -682,5 +682,47 @@
     ],
     "label": "Active governance decision",
     "recommended": false
+  },
+  {
+    "key": "rp003-operational-protocol",
+    "path": "research/RP003/PROTOCOL.md",
+    "title": "RP003 operational preservation protocol",
+    "category": "Methods & protocols",
+    "summary": "Exact predicates, four known-answer fixtures, planned finite enumeration and explicit limits. Preparation only; no research Result.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Working protocol v0.1",
+    "recommended": true
+  },
+  {
+    "key": "rp003-prior-art",
+    "path": "research/RP003/RP003_COLLISION_REVIEW.md",
+    "title": "RP003 prior-art collision review",
+    "category": "Methods & protocols",
+    "summary": "Targeted primary-source review of tolerance relations and invariance; no novelty claim.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Targeted collision review",
+    "recommended": false
+  },
+  {
+    "key": "rp003-preparation-review",
+    "path": "research/RP003/PREPARATION_REVIEW.md",
+    "title": "RP003 preparation and execution gate",
+    "category": "Methods & protocols",
+    "summary": "Internal review of operational definitions and calibration; bounded enumeration remains to be recorded.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Preparation review",
+    "recommended": false
   }
 ]

@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-10",
-  "phase": "RP002A package reviewed and completed",
+  "updated_at": "2026-10-11",
+  "phase": "RP003 operational protocol prepared",
   "cycle": {
     "number": "01",
     "title": "Foundations Under Test",
@@ -97,6 +97,11 @@
     }
   ],
   "changes": [
+    [
+      "2026-10-11",
+      "RP003 operational protocol and controls prepared",
+      "Exact-feature and tolerance judgments now distinguish adjacent steps, endpoints, prefixes and accumulated variation. Four known-answer controls passed; a targeted prior-art review is published. RP003 remains PLANNED, with bounded enumeration next. No Result or new Cycle resolution."
+    ],
     [
       "2026-10-10",
       "RP002A package reviewed and completed",

@@ -11,7 +11,7 @@
     "RESEARCH_EXECUTION_READINESS.md",
     "research/RP003/PROTOCOL.md",
     "research/RP003/FIXTURES.json",
-    "research/RP003/PRIOR_ART_REVIEW.md",
+    "research/RP003/COLLISION_REVIEW.md",
     "research/RP003/PREPARATION_REVIEW.md"
   ],
   "relations": [],

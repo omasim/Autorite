@@ -699,7 +699,7 @@
   },
   {
     "key": "rp003-prior-art",
-    "path": "research/RP003/PRIOR_ART_REVIEW.md",
+    "path": "research/RP003/COLLISION_REVIEW.md",
     "title": "RP003 prior-art collision review",
     "category": "Methods & protocols",
     "summary": "Targeted primary-source review of tolerance relations and invariance; no novelty claim.",

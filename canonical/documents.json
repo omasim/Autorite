@@ -780,5 +780,47 @@
     ],
     "label": "Active governance decision",
     "recommended": false
+  },
+  {
+    "key": "rp004-operational-protocol",
+    "path": "research/RP004/RP004_OPERATIONAL_PROTOCOL.md",
+    "title": "RP004 operational branching lineage protocol",
+    "category": "Research packages",
+    "summary": "Exact construction, query, projection, scoring and bounded audit contracts; disclosed controls only.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Operational preparation protocol",
+    "recommended": true
+  },
+  {
+    "key": "rp004-prior-art",
+    "path": "research/RP004/RP004_COLLISION_REVIEW.md",
+    "title": "RP004 targeted provenance and DAG prior-art review",
+    "category": "Research packages",
+    "summary": "Primary-source inspection of W3C provenance and Git parent graphs; no novelty certification.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Targeted prior-art inspection",
+    "recommended": true
+  },
+  {
+    "key": "rp004-execution-review",
+    "path": "research/RP004/RP004_PREPARATION_REVIEW.md",
+    "title": "RP004 preparation readiness and next audit",
+    "category": "Research packages",
+    "summary": "Six constructions and three collision controls prepared. RP004 stays PLANNED; Circle remains 2/13.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Preparation review before execution",
+    "recommended": true
   }
 ]

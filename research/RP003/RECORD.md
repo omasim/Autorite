@@ -15,13 +15,15 @@
     "research/RP003/PREPARATION_REVIEW.md",
     "research/RP003/EXECUTION_REVIEW.md",
     "research/RP003/AUDIT_CONFIG.json",
-    "research/RP003/AUDIT_001_REPORT.md"
+    "research/RP003/AUDIT_001_REPORT.md",
+    "research/RP003/RP003_PACKAGE_REVIEW.md",
+    "docs/decisions/DECISION-0005_RP003_DISPOSITION.md"
   ],
   "relations": [],
   "aliases": [
     "RP003"
   ],
-  "status": "ACTIVE",
+  "status": "CLOSED",
   "question_refs": [
     "Q-0"
   ],
@@ -31,4 +33,4 @@
 }
 ---
 
-The authorized bounded audit audit-20261011-001 completed all 11,100 paths with independent full-row replay, verified provenance and five output hashes. Test TST-RP003001 has scoped audited Result R-RP003001 (VALID). Operational protocol v0.1 and baseline are unchanged. RP003 remains ACTIVE pending a separate package-disposition review; no broad Claim or Cycle resolution. Does not establish a metaphysical identity theory.
+The authorized bounded audit audit-20261011-001 completed all 11,100 paths with independent full-row replay, verified provenance and five output hashes. Test TST-RP003001 has scoped audited Result R-RP003001 (VALID). Operational protocol v0.1 and baseline are unchanged. D-0005 accepts the explicit internal package review and closes the scoped RP003 commitment. Only its Cycle package-disposition obligation is resolved; Q-0 and Cycle 01 remain ACTIVE. No broad Claim or whole-Cycle closure. Does not establish a metaphysical identity theory.

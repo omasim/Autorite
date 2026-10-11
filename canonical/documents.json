@@ -744,13 +744,41 @@
     "path": "research/RP003/AUDIT_001_REPORT.md",
     "title": "RP003 audited local-to-global preservation enumeration",
     "category": "Research reports",
-    "summary": "11,100 paths replayed; scoped counterexamples, positive controls, criterion signatures and path information requirements.",
+    "summary": "Preserved audit-stage report: 11,100 paths replayed. Its ACTIVE/pending-disposition statement predates D-0005; RP003 is now CLOSED after the separately published package review.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
-    "label": "Audited deterministic report",
+    "label": "Audit-stage report before disposition",
     "recommended": true
+  },
+  {
+    "key": "rp003-package-review",
+    "path": "research/RP003/RP003_PACKAGE_REVIEW.md",
+    "title": "RP003 package interpretation and disposition review",
+    "category": "Research packages",
+    "summary": "Explicit internal review accepts the scoped finite audit. RP003 is CLOSED; Q-0 remains ACTIVE and Cycle 01 is 2/13 resolved.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Post-outcome package review",
+    "recommended": true
+  },
+  {
+    "key": "rp003-package-decision",
+    "path": "docs/decisions/DECISION-0005_RP003_DISPOSITION.md",
+    "title": "Decision 0005 - RP003 package disposition",
+    "category": "Research packages",
+    "summary": "Resolve only the RP003 package commitment, preserving all outcomes and the 13-obligation denominator.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Active governance decision",
+    "recommended": false
   }
 ]

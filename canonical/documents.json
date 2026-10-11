@@ -878,5 +878,47 @@
     ],
     "label": "Active governance decision",
     "recommended": false
+  },
+  {
+    "key": "rp005a-operational-protocol",
+    "path": "research/RP005A/RP005A_OPERATIONAL_PROTOCOL.md",
+    "title": "RP005A operational constraints and viable futures protocol",
+    "category": "Methods & protocols",
+    "summary": "Four disclosed fixtures, fixed five-target denominators, exact horizon-limited planning and separate structural versus policy checks. No recorded audit.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Preparation supplement",
+    "recommended": true
+  },
+  {
+    "key": "rp005a-prior-art",
+    "path": "research/RP005A/RP005A_COLLISION_REVIEW.md",
+    "title": "RP005A targeted prior-art collision review",
+    "category": "Methods & protocols",
+    "summary": "Established graph planning and limited-horizon constrained control; primary-source inspection boundaries and no novelty claim.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Targeted primary-source review",
+    "recommended": false
+  },
+  {
+    "key": "rp005a-execution-review",
+    "path": "research/RP005A/RP005A_PREPARATION_REVIEW.md",
+    "title": "RP005A preparation review",
+    "category": "Methods & protocols",
+    "summary": "Explicit internal review of 24 disclosed planner rows and 12 paired controls. Recorded audit implementation/review remains next; Cycle stays 3/13.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Preparation review",
+    "recommended": true
   }
 ]

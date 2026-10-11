@@ -1,0 +1,398 @@
+{
+  "version": "0.1",
+  "stage": "disclosed-preparation",
+  "horizons": [
+    1,
+    2,
+    4
+  ],
+  "future_budget": 3,
+  "cases": [
+    {
+      "id": "V0",
+      "regime": "No trap; unnecessary root restriction",
+      "nodes": [
+        "s",
+        "a",
+        "b",
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
+      "start": "s",
+      "targets": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
+      "edges": [
+        {
+          "from": "s",
+          "to": "a",
+          "reward": 2
+        },
+        {
+          "from": "s",
+          "to": "b",
+          "reward": 1
+        },
+        {
+          "from": "a",
+          "to": "t1",
+          "reward": 0
+        },
+        {
+          "from": "a",
+          "to": "t2",
+          "reward": 0
+        },
+        {
+          "from": "a",
+          "to": "t3",
+          "reward": 0
+        },
+        {
+          "from": "b",
+          "to": "t4",
+          "reward": 0
+        },
+        {
+          "from": "b",
+          "to": "t5",
+          "reward": 0
+        }
+      ],
+      "removed": [
+        [
+          "s",
+          "b"
+        ]
+      ],
+      "expected": [
+        {
+          "horizon": 1,
+          "baseline_endpoint": "a",
+          "restricted_endpoint": "a",
+          "baseline_primary": 3,
+          "restricted_primary": 3,
+          "restricted_secondary": 3
+        },
+        {
+          "horizon": 2,
+          "baseline_endpoint": "a",
+          "restricted_endpoint": "a",
+          "baseline_primary": 3,
+          "restricted_primary": 3,
+          "restricted_secondary": 3
+        },
+        {
+          "horizon": 4,
+          "baseline_endpoint": "a",
+          "restricted_endpoint": "a",
+          "baseline_primary": 3,
+          "restricted_primary": 3,
+          "restricted_secondary": 3
+        }
+      ]
+    },
+    {
+      "id": "V1",
+      "regime": "Attractive delayed cost; protective restriction",
+      "nodes": [
+        "s",
+        "a",
+        "u",
+        "b",
+        "d",
+        "e",
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
+      "start": "s",
+      "targets": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
+      "edges": [
+        {
+          "from": "s",
+          "to": "a",
+          "reward": 2
+        },
+        {
+          "from": "a",
+          "to": "u",
+          "reward": 1
+        },
+        {
+          "from": "u",
+          "to": "t1",
+          "reward": 0
+        },
+        {
+          "from": "u",
+          "to": "t2",
+          "reward": 0
+        },
+        {
+          "from": "u",
+          "to": "t3",
+          "reward": 0
+        },
+        {
+          "from": "s",
+          "to": "b",
+          "reward": 8
+        },
+        {
+          "from": "b",
+          "to": "d",
+          "reward": 0
+        },
+        {
+          "from": "d",
+          "to": "e",
+          "reward": -20
+        },
+        {
+          "from": "e",
+          "to": "t4",
+          "reward": 0
+        },
+        {
+          "from": "e",
+          "to": "t5",
+          "reward": 0
+        }
+      ],
+      "removed": [
+        [
+          "s",
+          "b"
+        ]
+      ],
+      "expected": [
+        {
+          "horizon": 1,
+          "baseline_endpoint": "b",
+          "restricted_endpoint": "a",
+          "baseline_primary": 2,
+          "restricted_primary": 3,
+          "restricted_secondary": 3
+        },
+        {
+          "horizon": 2,
+          "baseline_endpoint": "b",
+          "restricted_endpoint": "a",
+          "baseline_primary": 2,
+          "restricted_primary": 3,
+          "restricted_secondary": 3
+        },
+        {
+          "horizon": 4,
+          "baseline_endpoint": "a",
+          "restricted_endpoint": "a",
+          "baseline_primary": 3,
+          "restricted_primary": 3,
+          "restricted_secondary": 3
+        }
+      ]
+    },
+    {
+      "id": "V2",
+      "regime": "Useful branch removed; harmful restriction",
+      "nodes": [
+        "s",
+        "a",
+        "b",
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
+      "start": "s",
+      "targets": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
+      "edges": [
+        {
+          "from": "s",
+          "to": "a",
+          "reward": 2
+        },
+        {
+          "from": "s",
+          "to": "b",
+          "reward": 1
+        },
+        {
+          "from": "a",
+          "to": "t1",
+          "reward": 0
+        },
+        {
+          "from": "a",
+          "to": "t2",
+          "reward": 0
+        },
+        {
+          "from": "a",
+          "to": "t3",
+          "reward": 0
+        },
+        {
+          "from": "b",
+          "to": "t4",
+          "reward": 0
+        },
+        {
+          "from": "b",
+          "to": "t5",
+          "reward": 0
+        }
+      ],
+      "removed": [
+        [
+          "s",
+          "a"
+        ]
+      ],
+      "expected": [
+        {
+          "horizon": 1,
+          "baseline_endpoint": "a",
+          "restricted_endpoint": "b",
+          "baseline_primary": 3,
+          "restricted_primary": 2,
+          "restricted_secondary": 2
+        },
+        {
+          "horizon": 2,
+          "baseline_endpoint": "a",
+          "restricted_endpoint": "b",
+          "baseline_primary": 3,
+          "restricted_primary": 2,
+          "restricted_secondary": 2
+        },
+        {
+          "horizon": 4,
+          "baseline_endpoint": "a",
+          "restricted_endpoint": "b",
+          "baseline_primary": 3,
+          "restricted_primary": 2,
+          "restricted_secondary": 2
+        }
+      ]
+    },
+    {
+      "id": "C0",
+      "regime": "Downstream deletion measurement control",
+      "nodes": [
+        "s",
+        "a",
+        "b",
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
+      "start": "s",
+      "targets": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
+      "edges": [
+        {
+          "from": "s",
+          "to": "a",
+          "reward": 2
+        },
+        {
+          "from": "s",
+          "to": "b",
+          "reward": 1
+        },
+        {
+          "from": "a",
+          "to": "t1",
+          "reward": 0
+        },
+        {
+          "from": "a",
+          "to": "t2",
+          "reward": 0
+        },
+        {
+          "from": "a",
+          "to": "t3",
+          "reward": 0
+        },
+        {
+          "from": "b",
+          "to": "t4",
+          "reward": 0
+        },
+        {
+          "from": "b",
+          "to": "t5",
+          "reward": 0
+        }
+      ],
+      "removed": [
+        [
+          "s",
+          "b"
+        ],
+        [
+          "a",
+          "t3"
+        ]
+      ],
+      "expected": [
+        {
+          "horizon": 1,
+          "baseline_endpoint": "a",
+          "restricted_endpoint": "a",
+          "baseline_primary": 3,
+          "restricted_primary": 2,
+          "restricted_secondary": 3
+        },
+        {
+          "horizon": 2,
+          "baseline_endpoint": "a",
+          "restricted_endpoint": "a",
+          "baseline_primary": 3,
+          "restricted_primary": 2,
+          "restricted_secondary": 3
+        },
+        {
+          "horizon": 4,
+          "baseline_endpoint": "a",
+          "restricted_endpoint": "a",
+          "baseline_primary": 3,
+          "restricted_primary": 2,
+          "restricted_secondary": 3
+        }
+      ]
+    }
+  ]
+}

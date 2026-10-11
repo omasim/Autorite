@@ -1,0 +1,161 @@
+{
+  "by_length": {
+    "2": 100,
+    "3": 1000,
+    "4": 10000
+  },
+  "path_count": 11100,
+  "signatures": {
+    "exact_endpoint_prefix": {
+      "antecedent_count": 5550,
+      "counterexamples": 4000,
+      "first_witness": {
+        "measurements": {
+          "endpoint_displacement": "0",
+          "exact_endpoint": true,
+          "exact_local": false,
+          "exact_prefix": false,
+          "max_excursion": "0",
+          "max_step": "0",
+          "tolerance_endpoint": true,
+          "tolerance_local": true,
+          "tolerance_prefix": true,
+          "total_variation": "0",
+          "variation_budget": true
+        },
+        "ordinal": 150,
+        "states": [
+          {
+            "key": "A",
+            "x": "0"
+          },
+          {
+            "key": "B",
+            "x": "0"
+          },
+          {
+            "key": "A",
+            "x": "0"
+          }
+        ]
+      }
+    },
+    "exact_local_endpoint": {
+      "antecedent_count": 1550,
+      "counterexamples": 0,
+      "first_witness": null
+    },
+    "exact_local_prefix": {
+      "antecedent_count": 1550,
+      "counterexamples": 0,
+      "first_witness": null
+    },
+    "tolerance_endpoint_prefix": {
+      "antecedent_count": 8436,
+      "counterexamples": 2848,
+      "first_witness": {
+        "measurements": {
+          "endpoint_displacement": "0",
+          "exact_endpoint": true,
+          "exact_local": true,
+          "exact_prefix": true,
+          "max_excursion": "3/2",
+          "max_step": "3/2",
+          "tolerance_endpoint": true,
+          "tolerance_local": false,
+          "tolerance_prefix": false,
+          "total_variation": "3",
+          "variation_budget": false
+        },
+        "ordinal": 130,
+        "states": [
+          {
+            "key": "A",
+            "x": "0"
+          },
+          {
+            "key": "A",
+            "x": "3/2"
+          },
+          {
+            "key": "A",
+            "x": "0"
+          }
+        ]
+      }
+    },
+    "tolerance_local_endpoint": {
+      "antecedent_count": 5396,
+      "counterexamples": 848,
+      "first_witness": {
+        "measurements": {
+          "endpoint_displacement": "3/2",
+          "exact_endpoint": true,
+          "exact_local": true,
+          "exact_prefix": true,
+          "max_excursion": "3/2",
+          "max_step": "1",
+          "tolerance_endpoint": false,
+          "tolerance_local": true,
+          "tolerance_prefix": false,
+          "total_variation": "3/2",
+          "variation_budget": false
+        },
+        "ordinal": 113,
+        "states": [
+          {
+            "key": "A",
+            "x": "0"
+          },
+          {
+            "key": "A",
+            "x": "1/2"
+          },
+          {
+            "key": "A",
+            "x": "3/2"
+          }
+        ]
+      }
+    },
+    "tolerance_local_prefix": {
+      "antecedent_count": 5396,
+      "counterexamples": 1136,
+      "first_witness": {
+        "measurements": {
+          "endpoint_displacement": "3/2",
+          "exact_endpoint": true,
+          "exact_local": true,
+          "exact_prefix": true,
+          "max_excursion": "3/2",
+          "max_step": "1",
+          "tolerance_endpoint": false,
+          "tolerance_local": true,
+          "tolerance_prefix": false,
+          "total_variation": "3/2",
+          "variation_budget": false
+        },
+        "ordinal": 113,
+        "states": [
+          {
+            "key": "A",
+            "x": "0"
+          },
+          {
+            "key": "A",
+            "x": "1/2"
+          },
+          {
+            "key": "A",
+            "x": "3/2"
+          }
+        ]
+      }
+    },
+    "variation_prefix": {
+      "antecedent_count": 1876,
+      "counterexamples": 0,
+      "first_witness": null
+    }
+  }
+}

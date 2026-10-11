@@ -688,13 +688,13 @@
     "path": "research/RP003/PROTOCOL.md",
     "title": "RP003 operational preservation protocol",
     "category": "Methods & protocols",
-    "summary": "Exact predicates, four known-answer fixtures, planned finite enumeration and explicit limits. Preparation only; no research Result.",
+    "summary": "Pre-outcome specification: exact predicates, known-answer controls and the finite enumeration design. Execution is recorded separately in the audited report.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
-    "label": "Working protocol v0.1",
+    "label": "Pre-audit protocol v0.1",
     "recommended": true
   },
   {
@@ -716,13 +716,41 @@
     "path": "research/RP003/PREPARATION_REVIEW.md",
     "title": "RP003 preparation and execution gate",
     "category": "Methods & protocols",
-    "summary": "Internal review of operational definitions and calibration; bounded enumeration remains to be recorded.",
+    "summary": "Historical preparation snapshot before the completed audit; remaining execution steps listed here were subsequently recorded in the run report.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
-    "label": "Preparation review",
+    "label": "Pre-audit preparation snapshot",
     "recommended": false
+  },
+  {
+    "key": "rp003-execution-review",
+    "path": "research/RP003/EXECUTION_REVIEW.md",
+    "title": "RP003 pre-execution implementation review",
+    "category": "Methods & protocols",
+    "summary": "Review of the frozen enumeration and independent integer replay before collecting target-grid outputs.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Pre-execution review",
+    "recommended": false
+  },
+  {
+    "key": "rp003-audit-001",
+    "path": "research/RP003/AUDIT_001_REPORT.md",
+    "title": "RP003 audited local-to-global preservation enumeration",
+    "category": "Research reports",
+    "summary": "11,100 paths replayed; scoped counterexamples, positive controls, criterion signatures and path information requirements.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Audited deterministic report",
+    "recommended": true
   }
 ]

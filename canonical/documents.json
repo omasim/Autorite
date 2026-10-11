@@ -1088,5 +1088,47 @@
     ],
     "label": "Active governance decision",
     "recommended": false
+  },
+  {
+    "key": "cycle01-what-changed",
+    "path": "cycles/cycle-01/reviews/WHAT_CHANGED.md",
+    "title": "Cycle 01 What Changed",
+    "category": "Research packages",
+    "summary": "Compare frozen expectations with scoped audited outcomes, package dispositions and process corrections; planned controls remain distinct from new discoveries.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Dated Cycle review",
+    "recommended": true
+  },
+  {
+    "key": "cycle01-what-open",
+    "path": "cycles/cycle-01/reviews/WHAT_REMAINS_OPEN.md",
+    "title": "Cycle 01 What Remains Open",
+    "category": "Research packages",
+    "summary": "Question-level boundaries, discriminating future evidence, method limits, legacy source dependency and remaining transition/close gates. Candidates are not execution commitments.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Dated Cycle review",
+    "recommended": true
+  },
+  {
+    "key": "cycle01-change-open-decision",
+    "path": "docs/decisions/DECISION-0010_CHANGE_AND_OPEN_RECORDS.md",
+    "title": "Decision 0010 - Change and open-work records",
+    "category": "Research packages",
+    "summary": "Resolve only what-changed and what-open. Cycle ACTIVE at 10/13 (76.9%); DAM X, transition and close bundle stay unresolved.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Active governance decision",
+    "recommended": false
   }
 ]

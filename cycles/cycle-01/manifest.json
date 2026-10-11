@@ -70,10 +70,14 @@
       "key": "damx",
       "description": "DAM X pilot",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "validly_blocked",
+      "evidence_refs": [
+        "cycles/cycle-01/reviews/DAMX_SOURCE_GATE.md",
+        "cycles/cycle-01/reviews/DAMX_SOURCE_INVENTORY.json",
+        "docs/decisions/DECISION-0011_LEGACY_DISPOSITION_AND_TRANSITION.md"
+      ],
+      "decision_ref": "D-0011"
     },
     {
       "key": "checkpoint-a",
@@ -153,10 +157,13 @@
       "key": "transition",
       "description": "Transition Record / Cycle 2 decision",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "completed",
+      "evidence_refs": [
+        "cycles/cycle-01/reviews/TRANSITION_RECORD.md",
+        "docs/decisions/DECISION-0011_LEGACY_DISPOSITION_AND_TRANSITION.md"
+      ],
+      "decision_ref": "D-0011"
     },
     {
       "key": "close-bundle",

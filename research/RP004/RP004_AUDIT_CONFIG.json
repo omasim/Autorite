@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "run_id": "audit-20261011-001",
+  "case_ids": ["G0", "G1", "G2", "G3", "G4", "C4"],
+  "entities": ["a", "b", "c"],
+  "representations": ["R0", "R1", "R2", "R3"],
+  "binary_queries": ["same_state", "ancestor", "shared_root"],
+  "unary_queries": ["parents", "birth_kind", "alive"],
+  "expected_truth_queries": 216,
+  "expected_decoder_rows": 864,
+  "expected_collision_comparisons": 60,
+  "wall_seconds": 60,
+  "memory_bytes": 134217728,
+  "seeds": {"policy": "none; deterministic finite corpus"}
+}

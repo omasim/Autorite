@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "cycle_number": 1,
   "title": "Foundations Under Test",
-  "status": "CLOSED",
+  "status": "PUBLISHED",
   "package_refs": [
     "RP-002A",
     "RP-003",
@@ -184,5 +184,9 @@
   ],
   "close_decision_ref": "D-0012",
   "snapshot_ref": "894d427d2e1e2cc7a7af308201b855c6e4bd3764",
-  "publication_refs": []
+  "publication_refs": [
+    "cycles/cycle-01/close/PUBLICATION.md",
+    "cycles/cycle-01/close/PUBLICATION.json",
+    "docs/operations/SITE_DEPLOYMENTS.json"
+  ]
 }

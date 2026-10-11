@@ -1046,5 +1046,47 @@
     ],
     "label": "Active governance decision",
     "recommended": false
+  },
+  {
+    "key": "cycle01-synthesis-review",
+    "path": "cycles/cycle-01/reviews/SYNTHESIS_REVIEW_001.md",
+    "title": "Cycle 01 Synthesis Review 1",
+    "category": "Research packages",
+    "summary": "Compare four scoped outcome families without pooled denominators, universal history claims or inferred transfer; retain negative evidence and timing deviation.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Internal Cycle review",
+    "recommended": true
+  },
+  {
+    "key": "cycle01-foundation-review",
+    "path": "cycles/cycle-01/reviews/FOUNDATION_REVIEW_001.md",
+    "title": "Cycle 01 Foundation Review 1",
+    "category": "Research packages",
+    "summary": "Retain PC01\u201303 and existing formal capabilities for completed finite tasks; PC04\u201306 draft, candidates parked and no baseline amendment.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Internal Cycle review",
+    "recommended": true
+  },
+  {
+    "key": "cycle01-synthesis-decision",
+    "path": "docs/decisions/DECISION-0009_SYNTHESIS_AND_FOUNDATION_REVIEW.md",
+    "title": "Decision 0009 - Synthesis and foundation reviews",
+    "category": "Research packages",
+    "summary": "Resolve only synthesis and foundation. Cycle ACTIVE at 8/13 (61.5%), with DAM X, change/open records, transition and close bundle still unresolved.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Active governance decision",
+    "recommended": false
   }
 ]

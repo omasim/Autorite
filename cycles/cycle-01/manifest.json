@@ -105,19 +105,25 @@
       "key": "synthesis",
       "description": "Synthesis Review 1",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "completed",
+      "evidence_refs": [
+        "cycles/cycle-01/reviews/SYNTHESIS_REVIEW_001.md",
+        "docs/decisions/DECISION-0009_SYNTHESIS_AND_FOUNDATION_REVIEW.md"
+      ],
+      "decision_ref": "D-0009"
     },
     {
       "key": "foundation",
       "description": "Foundation Review 1",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "completed",
+      "evidence_refs": [
+        "cycles/cycle-01/reviews/FOUNDATION_REVIEW_001.md",
+        "docs/decisions/DECISION-0009_SYNTHESIS_AND_FOUNDATION_REVIEW.md"
+      ],
+      "decision_ref": "D-0009"
     },
     {
       "key": "what-changed",

@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-10-11",
-  "phase": "RP004 package reviewed and completed",
+  "phase": "RP005A protocol and disclosed controls prepared",
   "cycle": {
     "number": "01",
     "title": "Foundations Under Test",
@@ -99,6 +99,11 @@
     }
   ],
   "changes": [
+    [
+      "2026-10-11",
+      "RP005A constraints and planning protocol prepared",
+      "Four disclosed fixtures specify V0\u2013V2 and a downstream deletion control. Fixed target denominators and separate planner/future budgets prevent misleading coverage gains. Twelve software controls pass; a recorded audit and independent replay remain next. RP005A stays PLANNED and Q-2 ACTIVE. No Test, Result or Cycle resolution; progress remains 3/13 (23.1%)."
+    ],
     [
       "2026-10-11",
       "RP004 package reviewed and completed",

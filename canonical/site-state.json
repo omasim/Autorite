@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-10-11",
-  "phase": "Four finite packages reviewed; Checkpoint A next",
+  "phase": "Late Checkpoint A and graph review completed; synthesis next",
   "cycle": {
     "number": "01",
     "title": "Foundations Under Test",
@@ -24,7 +24,9 @@
       0,
       1,
       2,
-      3
+      3,
+      5,
+      6
     ]
   },
   "questions": [
@@ -100,6 +102,11 @@
     }
   ],
   "changes": [
+    [
+      "2026-10-11",
+      "Late Checkpoint A and graph review completed",
+      "D-0008 records methods/contracts, negative handling, site projections and forward/backward traceability. The missed pre-RP004/RP005A checkpoint is an explicit timing deviation, not backdated approval. The historical graph binds 33 records, 18 relations and 45 typed references; living inventory has 34 records. Only checkpoint/graph obligations resolve: 6/13 (46.2%), Cycle ACTIVE. Next: synthesis/foundation reviews; DAM X source dependency stays unresolved."
+    ],
     [
       "2026-10-11",
       "RP005A reviewed and completed",

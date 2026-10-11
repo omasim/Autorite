@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "cycle_number": 1,
   "title": "Foundations Under Test",
-  "status": "ACTIVE",
+  "status": "CLOSED",
   "package_refs": [
     "RP-002A",
     "RP-003",
@@ -171,13 +171,18 @@
       "key": "close-bundle",
       "description": "Close bundle and knowledge snapshot",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "completed",
+      "evidence_refs": [
+        "cycles/cycle-01/close/CLOSE_BUNDLE.md",
+        "cycles/cycle-01/close/KNOWLEDGE_SNAPSHOT.md",
+        "cycles/cycle-01/close/KNOWLEDGE_SNAPSHOT.json",
+        "docs/decisions/DECISION-0012_CYCLE01_CLOSE.md"
+      ],
+      "decision_ref": "D-0012"
     }
   ],
-  "close_decision_ref": null,
-  "snapshot_ref": null,
+  "close_decision_ref": "D-0012",
+  "snapshot_ref": "894d427d2e1e2cc7a7af308201b855c6e4bd3764",
   "publication_refs": []
 }

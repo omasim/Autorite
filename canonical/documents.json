@@ -1200,5 +1200,47 @@
     ],
     "label": "Supplied secondary source",
     "recommended": false
+  },
+  {
+    "key": "cycle01-close-bundle",
+    "path": "cycles/cycle-01/close/CLOSE_BUNDLE.md",
+    "title": "Cycle 01 close bundle",
+    "category": "Research packages",
+    "summary": "All mandatory outputs, outcome boundaries, deviations, open questions and transition indexed under D-0012.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Accepted close bundle",
+    "recommended": true
+  },
+  {
+    "key": "cycle01-knowledge-snapshot",
+    "path": "cycles/cycle-01/close/KNOWLEDGE_SNAPSHOT.md",
+    "title": "Cycle 01 canonical knowledge snapshot",
+    "category": "Research packages",
+    "summary": "Immutable completed close anchor and preserved evidence inventory; scientific questions remain open.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Canonical close snapshot",
+    "recommended": true
+  },
+  {
+    "key": "cycle01-close-decision",
+    "path": "docs/decisions/DECISION-0012_CYCLE01_CLOSE.md",
+    "title": "Decision 0012 - Close Cycle 01",
+    "category": "Research packages",
+    "summary": "Accept final obligation at 13/13; record PUBLISHED only after deployment verification.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Active close decision",
+    "recommended": false
   }
 ]

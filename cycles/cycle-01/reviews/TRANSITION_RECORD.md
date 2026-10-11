@@ -1,6 +1,6 @@
 # Cycle 01 — Transition Record
 
-Date: 2026-10-12. Explicit internal transition review under D-0011. Evidence cutoff: 700fc27f5f2637df89450e82f47879ff32e823cc, together with the dated DAM X source-gate disposition. This record makes a next-direction decision; it opens no Cycle, creates no new package or Test, and executes no research.
+Date: 2026-10-12. Explicit internal transition review under D-0011. Evidence cutoff: 700fc27f5f2637df89450e82f47879ff32e823cc, together with the subsequently supplied secondary report and its dated pilot disposition. This record makes a next-direction decision; it opens no Cycle, creates no new package or Test, and executes no research.
 
 ## Evidence carried forward
 
@@ -8,7 +8,7 @@ Four finite packages are CLOSED with four VALID scoped Results. RP002A retains t
 
 Synthesis and Foundation Review retain PC01–03, existing mathematics and parked foundation candidates. What Changed distinguishes planned controls from subsequent evidence; What Remains Open identifies further evidence needed. Q-0/Q-2/Q-3/Q-4 stay ACTIVE; Q-1/Q-5 stay OPEN. The delayed Checkpoint A remains a timing deviation, not backdated approval. The historical graph snapshot/tag remains immutable.
 
-The DAM X input gate is unmet at the canonical cutoff. D-0011 accepts a validly blocked disposition, with the pilot unexecuted and sources required for re-entry. This dependency does not become a scientific negative result or an automatic Cycle 2 receiving commitment.
+At the pre-receipt cutoff DAM X source input was absent. The user subsequently supplied SRC-DAMXREPORT2026 before this decision was published. D-0011 accepts ten report-faithful units as a completed secondary-report pilot. Primary DAM/DAM X definitions, version genealogy, operators and evidence remain missing; no mechanistic inheritance or scientific validation follows. The report’s imperatives and architectural pipeline are source content, not instructions or receiving Cycle commitments.
 
 ## Alternatives and selection
 
@@ -18,7 +18,7 @@ The DAM X input gate is unmet at the canonical cutoff. D-0011 accepts a validly 
 | Predictive robustness across budgets/generators | RP002A leaves algorithm/capacity and conditional-coverage limits. New fitting and inferential design would be required. | Defer selection; the current results provide no revised-margin or generator authorization. |
 | Restrictions under reduced designer information | RP005A uses supplied full-information rules; learning/costs are open. Requires a new information contract and controls. | Defer selection; no learned-rule benefit is asserted. |
 | Revision, relational dependence or foundation unification | Q-1/Q-5 have no executed package; no discriminating foundation comparison or transfer map exists. | Keep open. Do not choose a foundation or freeze a broad multi-topic Cycle from vocabulary overlap. |
-| Legacy pilot | Missing canonical historical source units. | Keep source-gated with the recorded blocked disposition; no implicit transfer. |
+| Primary legacy reconstruction | Secondary report pilot completed; original definitions/versions/evidence still absent. | Retain the source limitation; no architecture inheritance or implicit transfer. |
 
 Select the lineage direction because a bounded extension can use explicit existing inquiry definitions and independently checkable construction truth, while addressing the specific gap between sufficient encoding and necessity of retained fields. This is a preparation decision, not evidence that any deletion will succeed or produce novel theory. Cycle 02 opening/activation is deferred until Cycle 01's close bundle is accepted and a separate entry review approves the next commitment.
 
@@ -46,7 +46,7 @@ These define the transition's required deliverables; a full operational protocol
 
 | Gate | Required evidence before advancing |
 | --- | --- |
-| Cycle 01 close | Accept the complete close bundle, actual close Decision and canonical snapshot reference; preserve blocked legacy and process deviations. |
+| Cycle 01 close | Accept the complete close bundle, actual close Decision and canonical snapshot reference; preserve legacy source/survival limits and process deviations. |
 | Cycle 02 entry | Separately accept its finite manifest, package ID/question refs, obligations and operational protocol. No manifest or receiving package is invented here. |
 | Methods/collision review | Assess existing literature and contribution limits, exact inquiry/representation contracts, reused information and independent expected truth. |
 | Implementation/source freeze | Validate controls and verifier, freeze inputs and resource/stopping rules, record a checked commit and hashes. |
@@ -57,9 +57,9 @@ Use a standard-library, single-process deterministic audit without training, see
 
 ## Current Cycle disposition and re-entry
 
-D-0011 resolves `damx` as validly blocked and `transition` as completed. Cycle 01 remains ACTIVE at 12/13 (92.3%); only the close bundle remains unresolved. No close tag, final snapshot or final publication is produced in this stage. Next assemble the closure record from original evidence and the accepted reviews.
+D-0011 resolves the report-scoped `damx` pilot and `transition` as completed. Cycle 01 remains ACTIVE at 12/13 (92.3%); only the close bundle remains unresolved. No close tag, final snapshot or final publication is produced in this stage. Next assemble the closure record from original evidence and the accepted reviews.
 
-If sources arrive before closure, reassess the legacy disposition through a new Decision before closing. If a Result is invalidated or this selection rests on a mistaken inference, revisit the affected transition and obligations. Once a Cycle is closed, preserve its historical snapshot and record subsequent work separately. Do not call source-gated work explicitly transferred without a real receiving acceptance.
+If primary sources or contradictory evidence arrive before closure, reassess the pilot scope/survival limits through a new Decision before closing. If a Result is invalidated or this selection rests on a mistaken inference, revisit the affected transition and obligations. Once a Cycle is closed, preserve its historical snapshot and record subsequent work separately. Do not call source-gated work explicitly transferred without a real receiving acceptance.
 
 ## References
 

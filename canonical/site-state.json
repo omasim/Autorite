@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-10-12",
-  "phase": "Legacy source-blocked disposition and transition accepted; close bundle next",
+  "phase": "DAM X report-scoped pilot and transition accepted; close bundle next",
   "cycle": {
     "number": "01",
     "title": "Foundations Under Test",
@@ -110,8 +110,8 @@
   "changes": [
     [
       "2026-10-12",
-      "DAM X disposition and Cycle 01 transition recorded",
-      "D-0011 resolves DAM X as validly blocked by missing canonical historical sources; pilot unexecuted, no scientific result or transfer. Transition selects preparation of query-relative lineage field-ablation sufficiency; Cycle 02 entry/execution deferred. Cycle ACTIVE: 12/13 (92.3%); close bundle remains open."
+      "DAM X report-scoped pilot and Cycle 01 transition completed",
+      "D-0011 accepts ten source-faithful units from the user-supplied secondary report; original DAM/DAM X definitions/evidence and stronger survival judgments remain open. No old architecture or scientific validation is inherited. Transition selects bounded lineage field-ablation preparation; Cycle 02 entry/execution deferred. Cycle ACTIVE: 12/13 (92.3%); close bundle remains open."
     ],
     [
       "2026-10-12",

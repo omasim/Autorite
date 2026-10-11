@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "review_date": "2026-10-12",
   "source_commit": "700fc27f5f2637df89450e82f47879ff32e823cc",
-  "scope": "Canonical tracked repository only; no claim about material elsewhere or disconnected applications.",
+  "scope": "Pre-receipt canonical tracked repository at source_commit only; the user subsequently supplied SRC-DAMX-REPORT2026 during this review. No claim about material elsewhere.",
   "method": "Inspect tracked legacy directory and DAM X/genealogy path candidates, and inspect their contents and recorded source gate. Template/genealogy mirrors are not historical source units.",
   "files": [
     {
@@ -45,7 +45,7 @@
     "legacy/damx/README.md"
   ],
   "supplied_historical_source_units": [],
-  "gate": "UNMET",
-  "disposition": "validly_blocked under D-0011; pilot unexecuted, no scientific outcome or survival class",
-  "reopening_condition": "Record source units, versions/locations/provenance and a bounded pilot question, then reassess through a new Decision."
+  "gate": "UNMET_AT_PRE_RECEIPT_CUTOFF",
+  "disposition": "Historical pre-receipt inventory only; final D-0011 accepts the report-scoped pilot as completed, not validly_blocked.",
+  "reopening_condition": "For original-model reconstruction, supply primary DAM/DAM X versions and provenance; this inventory does not override the later report receipt."
 }

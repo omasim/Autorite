@@ -71,10 +71,12 @@
       "description": "DAM X pilot",
       "weight": 1,
       "resolved": true,
-      "resolution": "validly_blocked",
+      "resolution": "completed",
       "evidence_refs": [
+        "legacy/damx/PILOT_001_REVIEW.md",
+        "legacy/damx/PILOT_001.json",
+        "legacy/damx/sources/LEG-SRC-001/RECEIPT.json",
         "cycles/cycle-01/reviews/DAMX_SOURCE_GATE.md",
-        "cycles/cycle-01/reviews/DAMX_SOURCE_INVENTORY.json",
         "docs/decisions/DECISION-0011_LEGACY_DISPOSITION_AND_TRANSITION.md"
       ],
       "decision_ref": "D-0011"

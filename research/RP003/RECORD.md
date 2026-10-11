@@ -12,13 +12,15 @@
     "research/RP003/PROTOCOL.md",
     "research/RP003/FIXTURES.json",
     "research/RP003/RP003_COLLISION_REVIEW.md",
-    "research/RP003/PREPARATION_REVIEW.md"
+    "research/RP003/PREPARATION_REVIEW.md",
+    "research/RP003/EXECUTION_REVIEW.md",
+    "research/RP003/AUDIT_CONFIG.json"
   ],
   "relations": [],
   "aliases": [
     "RP003"
   ],
-  "status": "PLANNED",
+  "status": "ACTIVE",
   "question_refs": [
     "Q-0"
   ],
@@ -28,4 +30,4 @@
 }
 ---
 
-Operational protocol v0.1 and targeted collision review are prepared. Four disclosed known-answer fixtures are verified by an exact rational checker. The preparation review records the remaining run gate. No enumeration, research run, Result, novelty Claim or package disposition is recorded. Does not establish a metaphysical identity theory.
+The user authorized continuation of the declared bounded audit. Operational protocol v0.1 is unchanged; the implementation and pre-execution internal review are registered. Four known-answer fixtures passed. No enumeration output or Result is recorded at this registration. Does not establish a metaphysical identity theory.

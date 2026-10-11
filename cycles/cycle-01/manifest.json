@@ -42,10 +42,15 @@
       "key": "rp004",
       "description": "RP004 package disposition",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "completed",
+      "evidence_refs": [
+        "research/RP004/RP004_PACKAGE_REVIEW.md",
+        "research/RP004/RP004_AUDIT_001_REPORT.md",
+        "research/RP004/audit-001/result/RECORD.md",
+        "docs/decisions/DECISION-0006_RP004_DISPOSITION.md"
+      ],
+      "decision_ref": "D-0006"
     },
     {
       "key": "rp005a",

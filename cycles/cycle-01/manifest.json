@@ -79,19 +79,27 @@
       "key": "checkpoint-a",
       "description": "Checkpoint A",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "completed",
+      "evidence_refs": [
+        "cycles/cycle-01/reviews/CHECKPOINT_A.md",
+        "cycles/cycle-01/reviews/CHECKPOINT_A_TIMING_DEVIATION.md",
+        "docs/decisions/DECISION-0008_CHECKPOINT_AND_GRAPH_REVIEW.md"
+      ],
+      "decision_ref": "D-0008"
     },
     {
       "key": "graph-review",
       "description": "Forward/backward research graph validation",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "completed",
+      "evidence_refs": [
+        "cycles/cycle-01/reviews/GRAPH_REVIEW_001.md",
+        "cycles/cycle-01/reviews/GRAPH_REVIEW_001.json",
+        "docs/decisions/DECISION-0008_CHECKPOINT_AND_GRAPH_REVIEW.md"
+      ],
+      "decision_ref": "D-0008"
     },
     {
       "key": "synthesis",

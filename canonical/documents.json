@@ -856,7 +856,7 @@
     "path": "research/RP004/RP004_PACKAGE_REVIEW.md",
     "title": "RP004 package interpretation and disposition review",
     "category": "Research packages",
-    "summary": "Explicit internal review accepts the finite commitment. RP004 is CLOSED; Q-0/Q-4 remain ACTIVE and Cycle 01 is 3/13 resolved.",
+    "summary": "Explicit internal review accepts the finite commitment under D-0006. RP004 is CLOSED; Q-0/Q-4 remain ACTIVE. Progress statements inside the review are its historical disposition snapshot.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -968,7 +968,7 @@
     "path": "research/RP005A/RP005A_PACKAGE_REVIEW.md",
     "title": "RP005A package interpretation and disposition review",
     "category": "Research packages",
-    "summary": "Accept the finite V0\u2013V2 commitment and auxiliary C0 without general restriction-benefit claims. RP005A CLOSED under D-0007; Q-2 ACTIVE; Cycle 01 ACTIVE at 4/13.",
+    "summary": "Accept the finite V0\u2013V2 commitment and auxiliary C0 without general restriction-benefit claims. RP005A CLOSED under D-0007; Q-2 ACTIVE. Progress statements inside the review preserve its disposition stage.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -983,6 +983,62 @@
     "title": "Decision 0007 - RP005A package disposition",
     "category": "Research packages",
     "summary": "Resolve only the RP005A package obligation; preserve all outcomes and the fixed thirteen-obligation denominator. Nine obligations remain open.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Active governance decision",
+    "recommended": false
+  },
+  {
+    "key": "cycle01-checkpoint-a",
+    "path": "cycles/cycle-01/reviews/CHECKPOINT_A.md",
+    "title": "Cycle 01 Checkpoint A",
+    "category": "Research packages",
+    "summary": "Actual late methods, contract, negative handling and projection review; no backdated approval. D-0008 resolves this and graph review, leaving Cycle ACTIVE at 6/13.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Current checkpoint review",
+    "recommended": true
+  },
+  {
+    "key": "cycle01-graph-review",
+    "path": "cycles/cycle-01/reviews/GRAPH_REVIEW_001.md",
+    "title": "Cycle 01 forward/backward research graph review",
+    "category": "Research packages",
+    "summary": "Reconstruct 33 historical records, eighteen declared relations, forty-five typed references and four Result traces. No inferred scientific support; explicit unresolved inquiries.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Audited traceability review",
+    "recommended": true
+  },
+  {
+    "key": "cycle01-checkpoint-timing",
+    "path": "cycles/cycle-01/reviews/CHECKPOINT_A_TIMING_DEVIATION.md",
+    "title": "Checkpoint A timing deviation",
+    "category": "Research packages",
+    "summary": "Document the missed gate before RP004/RP005A; preserve original evidence and acknowledge current review is late.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Preserved process deviation",
+    "recommended": false
+  },
+  {
+    "key": "cycle01-checkpoint-decision",
+    "path": "docs/decisions/DECISION-0008_CHECKPOINT_AND_GRAPH_REVIEW.md",
+    "title": "Decision 0008 - Late checkpoint and graph review",
+    "category": "Research packages",
+    "summary": "Resolve only checkpoint-a and graph-review; seven obligations remain open. No new execution, Claim promotion, synthesis or Cycle closure.",
     "primary_site": "net",
     "sites": [
       "org",

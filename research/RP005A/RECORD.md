@@ -19,7 +19,9 @@
     "research/RP005A/replay.py",
     "research/RP005A/contract.py",
     "research/RP005A/RP005A_EXECUTION_REVIEW.md",
-    "research/RP005A/audit-001/RECORD.md"
+    "research/RP005A/audit-001/RECORD.md",
+    "research/RP005A/RP005A_SOURCE_FREEZE.md",
+    "research/RP005A/RP005A_SOURCE_FREEZE.json"
   ],
   "relations": [],
   "aliases": [
@@ -35,4 +37,4 @@
 }
 ---
 
-The bounded saved-output audit and independent serialized replay are implemented and internally reviewed. TST-RP005A001 is registered before execution. All protocol choices and disclosed controls remain unchanged. RP005A stays PLANNED and Q-2 ACTIVE. No recorded attempt, Result, Claim or Cycle resolution exists. Next is one bounded recorded audit after the reviewed source/input freeze is committed. Removing edges does not expand raw structural reachability; any policy benefit is conditional.
+The bounded saved-output audit and independent serialized replay are implemented and internally reviewed. TST-RP005A001 is registered before execution. All protocol choices and disclosed controls remain unchanged. RP005A stays PLANNED and Q-2 ACTIVE. No recorded attempt, Result, Claim or Cycle resolution exists. The reviewed source commit and sixteen exact input hashes are recorded in the source freeze. Next is one bounded recorded audit after this freeze is committed. Removing edges does not expand raw structural reachability; any policy benefit is conditional.

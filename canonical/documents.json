@@ -884,7 +884,7 @@
     "path": "research/RP005A/RP005A_OPERATIONAL_PROTOCOL.md",
     "title": "RP005A operational constraints and viable futures protocol",
     "category": "Methods & protocols",
-    "summary": "Four disclosed fixtures, fixed five-target denominators, exact horizon-limited planning and separate structural versus policy checks. No recorded audit.",
+    "summary": "Preserved preparation protocol: four disclosed graphs, fixed targets and separate planning/future budgets. The subsequent execution review records implemented audit readiness; no run yet.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -912,13 +912,41 @@
     "path": "research/RP005A/RP005A_PREPARATION_REVIEW.md",
     "title": "RP005A preparation review",
     "category": "Methods & protocols",
-    "summary": "Explicit internal review of 24 disclosed planner rows and 12 paired controls. Recorded audit implementation/review remains next; Cycle stays 3/13.",
+    "summary": "Historical protocol-preparation snapshot before Test registration and implementation review; RP005A remains PLANNED, with execution now next.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
-    "label": "Preparation review",
+    "label": "Preserved preparation-stage review",
+    "recommended": false
+  },
+  {
+    "key": "rp005a-audit-execution-review",
+    "path": "research/RP005A/RP005A_EXECUTION_REVIEW.md",
+    "title": "RP005A pre-execution implementation review",
+    "category": "Methods & protocols",
+    "summary": "Registered 24-row audit, 12 pairs and 35 structural sources, with independent exhaustive replay and a 16-input freeze. Execution is next; no Result.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Pre-execution review",
+    "recommended": true
+  },
+  {
+    "key": "rp005a-source-freeze",
+    "path": "research/RP005A/RP005A_SOURCE_FREEZE.md",
+    "title": "RP005A reviewed source and input freeze",
+    "category": "Methods & protocols",
+    "summary": "Exact reviewed commit and sixteen input SHA-256 hashes. Numerical configuration and failure-preserving one-attempt contract precede execution.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Reviewed source freeze",
     "recommended": true
   }
 ]

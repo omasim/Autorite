@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.1",
+  "published_at": "2026-10-12",
+  "snapshot_ref": "894d427d2e1e2cc7a7af308201b855c6e4bd3764",
+  "canonical_close_publication_commit": "e62595f8ad03db23d2f0fcf94e53fcd608d3ef7c",
+  "sites": {
+    "org": {
+      "project_id": "appgprj_6ac624791b8c819180b917fdc3a28cff",
+      "version_id": "appgprj_6ac624791b8c819180b917fdc3a28cff~appgver_d0af5fc63a508191a6dce3932684bb67",
+      "deployment_id": "appgdep_6acc0856e7848191af71686580df2f54",
+      "source_commit": "079e6061b0ccac12619f1bef51b09cb13c5ee86d",
+      "status": "succeeded",
+      "url": "https://autorite-knowledge.omerasim.chatgpt.site"
+    },
+    "net": {
+      "project_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6",
+      "version_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6~appgver_08c77f27e5188191bb14d02369cbda55",
+      "deployment_id": "appgdep_6acc086e1d4c81918e7ae07c5b1f20ff",
+      "source_commit": "b86b3b96c7f1dbbf486cefcfbeab76b0e1118724",
+      "status": "succeeded",
+      "url": "https://autorite-laboratory.omerasim.chatgpt.site"
+    }
+  }
+}

@@ -1,10 +1,10 @@
 {
   "updated_at": "2026-10-12",
-  "phase": "Cycle 01 close bundle accepted; immutable snapshot and publication",
+  "phase": "Cycle 01 PUBLISHED; complete close snapshot retained",
   "cycle": {
     "number": "01",
     "title": "Foundations Under Test",
-    "status": "CLOSED",
+    "status": "PUBLISHED",
     "obligations": [
       "RP002A package disposition",
       "RP003 package disposition",
@@ -79,7 +79,7 @@
       "id": "RP002A",
       "title": "When history helps prediction",
       "question": "In finite partially observed stochastic processes, when does recursively updated history recover predictive distinctions unavailable in current observation?",
-      "cases": "E0: present sufficient · E1: history disambiguates · E2: history is future-irrelevant",
+      "cases": "E0: present sufficient \u00b7 E1: history disambiguates \u00b7 E2: history is future-irrelevant",
       "limit": "Does not establish universal or fundamental memory, or full-history retention.",
       "source": "RP002A_PREREGISTRATION.md"
     },
@@ -87,7 +87,7 @@
       "id": "RP003",
       "title": "From local to global preservation",
       "question": "When do local continuation and preservation judgments support a global judgment?",
-      "cases": "Transitive chain · monotonic drift · out-and-back loop · critical jump",
+      "cases": "Transitive chain \u00b7 monotonic drift \u00b7 out-and-back loop \u00b7 critical jump",
       "limit": "Does not establish a metaphysical identity theory.",
       "source": "RP003_PROTOCOL.md"
     },
@@ -95,7 +95,7 @@
       "id": "RP004",
       "title": "Branching lineages",
       "question": "Which distinctions are required for continuation claims under copying, branching and merging?",
-      "cases": "Linear succession · copy · symmetric fork · independent duplicate · merge",
+      "cases": "Linear succession \u00b7 copy \u00b7 symmetric fork \u00b7 independent duplicate \u00b7 merge",
       "limit": "Current-state equivalence does not determine lineage relations. Human intuition is not ground truth.",
       "source": "RP004_PROTOCOL.md"
     },
@@ -103,12 +103,17 @@
       "id": "RP005A",
       "title": "Constraints and viable futures",
       "question": "Can targeted restrictions steer horizon-limited decisions away from states with fewer viable future targets?",
-      "cases": "Unnecessary restriction · correct protective restriction · harmful over-restriction",
+      "cases": "Unnecessary restriction \u00b7 correct protective restriction \u00b7 harmful over-restriction",
       "limit": "Removing edges does not expand raw structural reachability. Any benefit is conditional.",
       "source": "RP005A_PROTOCOL.md"
     }
   ],
   "changes": [
+    [
+      "2026-10-12",
+      "Cycle 01 close publication verified",
+      "Both public Sites returned succeeded for the accepted close content. Cycle 01 is PUBLISHED at 13/13 (100%); the immutable CLOSED snapshot stays preserved. Cycle 02 entry and execution require separate review."
+    ],
     [
       "2026-10-12",
       "Cycle 01 closed at 13/13",
@@ -122,7 +127,7 @@
     [
       "2026-10-12",
       "Cycle 01 change and open-work records completed",
-      "D-0010 distinguishes planned controls from audited evidence and records each question’s remaining boundaries and discriminating next evidence. Cycle ACTIVE: 10/13 (76.9%). Only DAM X, transition/Cycle 2 decision and close bundle remain unresolved; no new execution, baseline amendment or final snapshot."
+      "D-0010 distinguishes planned controls from audited evidence and records each question\u2019s remaining boundaries and discriminating next evidence. Cycle ACTIVE: 10/13 (76.9%). Only DAM X, transition/Cycle 2 decision and close bundle remain unresolved; no new execution, baseline amendment or final snapshot."
     ],
     [
       "2026-10-12",
@@ -152,7 +157,7 @@
     [
       "2026-10-11",
       "RP005A constraints and planning protocol prepared",
-      "Four disclosed fixtures specify V0–V2 and a downstream deletion control. Fixed target denominators and separate planner/future budgets prevent misleading coverage gains. Twelve software controls pass; a recorded audit and independent replay remain next. RP005A stays PLANNED and Q-2 ACTIVE. No Test, Result or Cycle resolution; progress remains 3/13 (23.1%)."
+      "Four disclosed fixtures specify V0\u2013V2 and a downstream deletion control. Fixed target denominators and separate planner/future budgets prevent misleading coverage gains. Twelve software controls pass; a recorded audit and independent replay remain next. RP005A stays PLANNED and Q-2 ACTIVE. No Test, Result or Cycle resolution; progress remains 3/13 (23.1%)."
     ],
     [
       "2026-10-11",
@@ -162,12 +167,12 @@
     [
       "2026-10-11",
       "RP004 finite representation audit completed",
-      "All 864 decoder rows and 60 pair/projection comparisons independently replayed. R0–R3 give 90/141/201/216 correct and 126/75/15/0 UNKNOWN answers; no wrong answers. R-RP004001 is VALID within the six-construction corpus. RP004 remains ACTIVE pending disposition; Cycle 01 stays 2/13 (15.4%)."
+      "All 864 decoder rows and 60 pair/projection comparisons independently replayed. R0\u2013R3 give 90/141/201/216 correct and 126/75/15/0 UNKNOWN answers; no wrong answers. R-RP004001 is VALID within the six-construction corpus. RP004 remains ACTIVE pending disposition; Cycle 01 stays 2/13 (15.4%)."
     ],
     [
       "2026-10-11",
       "RP004 branching lineage protocol prepared",
-      "Six disclosed constructions, six query families and R0–R3 encodings are defined. Known-answer controls and three information-loss witnesses are calibrated; an independent recorded audit remains next. RP004 stays PLANNED, with no new Test, Result or Cycle resolution. Cycle 01 remains ACTIVE at 2/13 (15.4%)."
+      "Six disclosed constructions, six query families and R0\u2013R3 encodings are defined. Known-answer controls and three information-loss witnesses are calibrated; an independent recorded audit remains next. RP004 stays PLANNED, with no new Test, Result or Cycle resolution. Cycle 01 remains ACTIVE at 2/13 (15.4%)."
     ],
     [
       "2026-10-11",

@@ -1242,5 +1242,19 @@
     ],
     "label": "Active close decision",
     "recommended": false
+  },
+  {
+    "key": "cycle01-close-publication",
+    "path": "cycles/cycle-01/close/PUBLICATION.md",
+    "title": "Cycle 01 verified close publication",
+    "category": "Research packages",
+    "summary": "Actual succeeded deployment receipts move the living Cycle to PUBLISHED; immutable CLOSED anchor and open scientific questions retained.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Verified publication receipt",
+    "recommended": true
   }
 ]

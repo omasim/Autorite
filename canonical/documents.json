@@ -884,7 +884,7 @@
     "path": "research/RP005A/RP005A_OPERATIONAL_PROTOCOL.md",
     "title": "RP005A operational constraints and viable futures protocol",
     "category": "Methods & protocols",
-    "summary": "Preserved preparation protocol: four disclosed graphs, fixed targets and separate planning/future budgets. The subsequent execution review records implemented audit readiness; no run yet.",
+    "summary": "Preserved pre-outcome protocol: four disclosed graphs, fixed targets and separate planning/future budgets. The subsequent recorded audit is complete; see its scoped outcome report.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -912,7 +912,7 @@
     "path": "research/RP005A/RP005A_PREPARATION_REVIEW.md",
     "title": "RP005A preparation review",
     "category": "Methods & protocols",
-    "summary": "Historical protocol-preparation snapshot before Test registration and implementation review; RP005A remains PLANNED, with execution now next.",
+    "summary": "Historical protocol-preparation snapshot before Test registration and execution. The subsequent audit has a scoped VALID Result; RP005A is ACTIVE pending disposition.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -926,27 +926,41 @@
     "path": "research/RP005A/RP005A_EXECUTION_REVIEW.md",
     "title": "RP005A pre-execution implementation review",
     "category": "Methods & protocols",
-    "summary": "Registered 24-row audit, 12 pairs and 35 structural sources, with independent exhaustive replay and a 16-input freeze. Execution is next; no Result.",
+    "summary": "Preserved pre-execution snapshot for the registered audit and independent replay. The subsequent audit completed with a scoped VALID Result; see the outcome report.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
-    "label": "Pre-execution review",
-    "recommended": true
+    "label": "Preserved pre-execution review",
+    "recommended": false
   },
   {
     "key": "rp005a-source-freeze",
     "path": "research/RP005A/RP005A_SOURCE_FREEZE.md",
     "title": "RP005A reviewed source and input freeze",
     "category": "Methods & protocols",
-    "summary": "Exact reviewed commit and sixteen input SHA-256 hashes. Numerical configuration and failure-preserving one-attempt contract precede execution.",
+    "summary": "Preserved pre-execution commit and sixteen hashes; all match the completed audit. The freeze records declared limits before outcomes.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
-    "label": "Reviewed source freeze",
+    "label": "Preserved source freeze",
+    "recommended": true
+  },
+  {
+    "key": "rp005a-audit-001",
+    "path": "research/RP005A/RP005A_AUDIT_001_REPORT.md",
+    "title": "RP005A audited restrictions and horizon-limited planning",
+    "category": "Results & evidence",
+    "summary": "24 rows, 12 pairs and 35 structural sources independently replayed. Two positive, four zero and six negative comparisons; conditional endpoint selection never expands structural reachability. RP005A ACTIVE pending disposition; Q-2 ACTIVE.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Audited finite outcome",
     "recommended": true
   }
 ]

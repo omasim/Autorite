@@ -12,13 +12,16 @@
     "research/RP003/PROTOCOL.md",
     "research/RP003/FIXTURES.json",
     "research/RP003/RP003_COLLISION_REVIEW.md",
-    "research/RP003/PREPARATION_REVIEW.md"
+    "research/RP003/PREPARATION_REVIEW.md",
+    "research/RP003/EXECUTION_REVIEW.md",
+    "research/RP003/AUDIT_CONFIG.json",
+    "research/RP003/AUDIT_001_REPORT.md"
   ],
   "relations": [],
   "aliases": [
     "RP003"
   ],
-  "status": "PLANNED",
+  "status": "ACTIVE",
   "question_refs": [
     "Q-0"
   ],
@@ -28,4 +31,4 @@
 }
 ---
 
-Operational protocol v0.1 and targeted collision review are prepared. Four disclosed known-answer fixtures are verified by an exact rational checker. The preparation review records the remaining run gate. No enumeration, research run, Result, novelty Claim or package disposition is recorded. Does not establish a metaphysical identity theory.
+The authorized bounded audit audit-20261011-001 completed all 11,100 paths with independent full-row replay, verified provenance and five output hashes. Test TST-RP003001 has scoped audited Result R-RP003001 (VALID). Operational protocol v0.1 and baseline are unchanged. RP003 remains ACTIVE pending a separate package-disposition review; no broad Claim or Cycle resolution. Does not establish a metaphysical identity theory.

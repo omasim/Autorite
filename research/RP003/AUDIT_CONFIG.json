@@ -1,0 +1,13 @@
+{
+  "protocol_version": "0.1",
+  "run_id": "audit-20261011-001",
+  "keys": ["A", "B"],
+  "coordinates": ["0", "1/2", "1", "3/2", "2"],
+  "lengths": [2, 3, 4],
+  "epsilon": "1",
+  "budget": "1",
+  "expected_path_count": 11100,
+  "wall_seconds": 60,
+  "memory_bytes": 134217728,
+  "seeds": "not applicable: deterministic exhaustive enumeration"
+}

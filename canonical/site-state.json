@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-10-11",
-  "phase": "RP005A protocol and disclosed controls prepared",
+  "phase": "RP005A recorded audit implemented and reviewed",
   "cycle": {
     "number": "01",
     "title": "Foundations Under Test",
@@ -99,6 +99,11 @@
     }
   ],
   "changes": [
+    [
+      "2026-10-11",
+      "RP005A recorded audit implemented and reviewed",
+      "The 24-row audit, 12 paired comparisons and 35 structural certificates have independent serialized replay. TST-RP005A001 is registered before execution; sixteen reviewed inputs are frozen. Fourteen additional software tests pass. No recorded attempt or Result; RP005A stays PLANNED and Q-2 ACTIVE. Cycle 01 stays 3/13 (23.1%). Next: one bounded recorded audit."
+    ],
     [
       "2026-10-11",
       "RP005A constraints and planning protocol prepared",

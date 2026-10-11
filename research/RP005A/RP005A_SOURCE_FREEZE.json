@@ -1,0 +1,64 @@
+{
+  "configuration": {
+    "arms": [
+      "unrestricted",
+      "restricted"
+    ],
+    "case_ids": [
+      "V0",
+      "V1",
+      "V2",
+      "C0"
+    ],
+    "expected_ordered_pairs": 313,
+    "expected_pair_rows": 12,
+    "expected_planner_rows": 24,
+    "expected_structural_sources": 35,
+    "future_budget": 3,
+    "horizons": [
+      1,
+      2,
+      4
+    ],
+    "memory_bytes": 134217728,
+    "node_counts": [
+      8,
+      11,
+      8,
+      8
+    ],
+    "run_id": "audit-20261011-001",
+    "seeds": {
+      "policy": "none; deterministic disclosed finite corpus"
+    },
+    "targets": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5"
+    ],
+    "version": "0.1",
+    "wall_seconds": 60
+  },
+  "input_sha256": {
+    "research/RP005A/RP005A_AUDIT_CONFIG.json": "b2d21f1f2cc8dbdfcf33c066f0cb67ea2c6e6498c446989d95b57b1f3b661394",
+    "research/RP005A/RP005A_COLLISION_REVIEW.md": "f648b1502958460f8c5e4ed0c3a771472c1da2984d3a083206413345e63e0d24",
+    "research/RP005A/RP005A_EXECUTION_REVIEW.md": "55bb2a873d4604d0b1b6314e48cc6d5461f7cd37e75045216bc495de2b911cf5",
+    "research/RP005A/RP005A_FIXTURES.json": "b3fd3b78bd6d52be132e34127247599156c5a4db12d28167e0fcaa4fad0f6f1c",
+    "research/RP005A/RP005A_OPERATIONAL_PROTOCOL.md": "95701fa189b39d0610b26df359dd2bc5abffa2bf7f69630b76f155f1d725ffe7",
+    "research/RP005A/RP005A_PREPARATION_REVIEW.md": "546b18789fbe36a599495df461625dc9c1ea75f9511b0163f49984f900a4b0e8",
+    "research/RP005A/audit-001/RECORD.md": "feb15f20d71ae77c6579ef838e5eac4a1f235098bcdb0e218b8e73eb9f404578",
+    "research/RP005A/audit.py": "781b41f7fc67509357f919160d502dc660ff3153ff23e22e0cc1180af7baf0fc",
+    "research/RP005A/contract.py": "d95cb3b8e947cdc98d1df360887916ce297bd8f34ccedbbbe6241f7844c87de4",
+    "research/RP005A/planning.py": "40e2e80bd0a1065aa6ed882a27062cbec0596ba89fc24d4b40c413e197316998",
+    "research/RP005A/replay.py": "66ad0ea70d30ab98a08ab597d366d81c2a161834639aa433b7f8fbdbd95ad883",
+    "scripts/check-rp005a-audit.py": "82046245c5f07daaddb9c59103ad74c33e2590ee4b47b3572f5ec5ec67813ee7",
+    "scripts/check-rp005a-preparation.py": "00c9afb12b8675bea5756be3ce72939c4af24b3202a17836797e8c2b77a1ad05",
+    "scripts/run-rp005a-audit.py": "0e710412055101b4b685bd5a2ec05058d30764f86c021c823c2ac08bb81239c7",
+    "tests/test_rp005a_audit.py": "ea997871618a1aaad9e32197e9392348b0461f88a3783a465dec1f643c22631d",
+    "tests/test_rp005a_planning.py": "b3cab32d6b58f109e83a316bd9291813a35c2471431acea5f36d611283e02517"
+  },
+  "source_commit": "fe796a089df3e53101c20a20358391e84f59fc13",
+  "version": "0.1"
+}

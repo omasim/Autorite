@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "run_id": "audit-20261011-001",
+  "case_ids": ["V0", "V1", "V2", "C0"],
+  "node_counts": [8, 11, 8, 8],
+  "targets": ["t1", "t2", "t3", "t4", "t5"],
+  "horizons": [1, 2, 4],
+  "arms": ["unrestricted", "restricted"],
+  "future_budget": 3,
+  "expected_planner_rows": 24,
+  "expected_pair_rows": 12,
+  "expected_structural_sources": 35,
+  "expected_ordered_pairs": 313,
+  "wall_seconds": 60,
+  "memory_bytes": 134217728,
+  "seeds": {"policy": "none; deterministic disclosed finite corpus"}
+}

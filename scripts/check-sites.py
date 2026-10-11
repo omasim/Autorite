@@ -49,6 +49,13 @@ for site in ('org','net'):
    if u.fragment and q.suffix=='.html':
     dest=Links();dest.feed(q.read_text());assert u.fragment in dest.ids,(p,link)
    checks+=1
+# Both library and reader downloads must preserve each catalog source exactly.
+for document in json.loads((ROOT/'canonical/documents.json').read_text()):
+ source=(ROOT/document['path']).read_bytes()
+ for site in document['sites']:
+  assert (ROOT/'apps'/site/'dist/documents'/(document['key']+'.md')).read_bytes()==source,document['path']
+ reader=ROOT/'apps'/document['primary_site']/'dist/documents'/Path(document['path']).name
+ assert reader.read_bytes()==source,(document['path'],'Reader download differs from source; check filename collisions')
 state=[json.loads((ROOT/'apps'/s/'dist/research-state.json').read_text()) for s in ('org','net')]
 assert state[0]==state[1],'Site state diverged'
 manifest=json.loads((ROOT/'cycles/cycle-01/manifest.json').read_text())

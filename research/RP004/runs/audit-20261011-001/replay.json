@@ -1,0 +1,16 @@
+{
+  "all_projections_truth_answers_counts_and_collision_witnesses_match": true,
+  "collision_comparisons_verified": 60,
+  "coverage_order_verified": true,
+  "decoder_rows_verified": 864,
+  "disclosed_calibration": {
+    "cases": 6,
+    "cells": 216,
+    "collision_controls": 3,
+    "correct": 119,
+    "unknown": 97,
+    "wrong": 0
+  },
+  "status": "PASS",
+  "truth_queries_verified": 216
+}

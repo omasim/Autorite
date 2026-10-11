@@ -1,0 +1,249 @@
+{
+  "collision_comparisons": 60,
+  "collisions": {
+    "R0": {
+      "comparisons": 15,
+      "conflicting_pairs": 15,
+      "equal_projection_pairs": 15,
+      "witness_queries": 129,
+      "witnesses_by_family": {
+        "alive": 16,
+        "ancestor": 22,
+        "birth_kind": 26,
+        "parents": 21,
+        "same_state": 0,
+        "shared_root": 44
+      }
+    },
+    "R1": {
+      "comparisons": 15,
+      "conflicting_pairs": 2,
+      "equal_projection_pairs": 2,
+      "witness_queries": 9,
+      "witnesses_by_family": {
+        "alive": 2,
+        "ancestor": 1,
+        "birth_kind": 3,
+        "parents": 1,
+        "same_state": 0,
+        "shared_root": 2
+      }
+    },
+    "R2": {
+      "comparisons": 15,
+      "conflicting_pairs": 1,
+      "equal_projection_pairs": 1,
+      "witness_queries": 3,
+      "witnesses_by_family": {
+        "alive": 1,
+        "ancestor": 0,
+        "birth_kind": 2,
+        "parents": 0,
+        "same_state": 0,
+        "shared_root": 0
+      }
+    },
+    "R3": {
+      "comparisons": 15,
+      "conflicting_pairs": 0,
+      "equal_projection_pairs": 0,
+      "witness_queries": 0,
+      "witnesses_by_family": {
+        "alive": 0,
+        "ancestor": 0,
+        "birth_kind": 0,
+        "parents": 0,
+        "same_state": 0,
+        "shared_root": 0
+      }
+    }
+  },
+  "decoder_rows": 864,
+  "representations": {
+    "R0": {
+      "families": {
+        "alive": {
+          "correct": 0,
+          "total": 18,
+          "unknown": 18,
+          "wrong": 0
+        },
+        "ancestor": {
+          "correct": 18,
+          "total": 54,
+          "unknown": 36,
+          "wrong": 0
+        },
+        "birth_kind": {
+          "correct": 0,
+          "total": 18,
+          "unknown": 18,
+          "wrong": 0
+        },
+        "parents": {
+          "correct": 0,
+          "total": 18,
+          "unknown": 18,
+          "wrong": 0
+        },
+        "same_state": {
+          "correct": 54,
+          "total": 54,
+          "unknown": 0,
+          "wrong": 0
+        },
+        "shared_root": {
+          "correct": 18,
+          "total": 54,
+          "unknown": 36,
+          "wrong": 0
+        }
+      },
+      "totals": {
+        "correct": 90,
+        "total": 216,
+        "unknown": 126,
+        "wrong": 0
+      }
+    },
+    "R1": {
+      "families": {
+        "alive": {
+          "correct": 0,
+          "total": 18,
+          "unknown": 18,
+          "wrong": 0
+        },
+        "ancestor": {
+          "correct": 27,
+          "total": 54,
+          "unknown": 27,
+          "wrong": 0
+        },
+        "birth_kind": {
+          "correct": 10,
+          "total": 18,
+          "unknown": 8,
+          "wrong": 0
+        },
+        "parents": {
+          "correct": 10,
+          "total": 18,
+          "unknown": 8,
+          "wrong": 0
+        },
+        "same_state": {
+          "correct": 54,
+          "total": 54,
+          "unknown": 0,
+          "wrong": 0
+        },
+        "shared_root": {
+          "correct": 40,
+          "total": 54,
+          "unknown": 14,
+          "wrong": 0
+        }
+      },
+      "totals": {
+        "correct": 141,
+        "total": 216,
+        "unknown": 75,
+        "wrong": 0
+      }
+    },
+    "R2": {
+      "families": {
+        "alive": {
+          "correct": 11,
+          "total": 18,
+          "unknown": 7,
+          "wrong": 0
+        },
+        "ancestor": {
+          "correct": 54,
+          "total": 54,
+          "unknown": 0,
+          "wrong": 0
+        },
+        "birth_kind": {
+          "correct": 10,
+          "total": 18,
+          "unknown": 8,
+          "wrong": 0
+        },
+        "parents": {
+          "correct": 18,
+          "total": 18,
+          "unknown": 0,
+          "wrong": 0
+        },
+        "same_state": {
+          "correct": 54,
+          "total": 54,
+          "unknown": 0,
+          "wrong": 0
+        },
+        "shared_root": {
+          "correct": 54,
+          "total": 54,
+          "unknown": 0,
+          "wrong": 0
+        }
+      },
+      "totals": {
+        "correct": 201,
+        "total": 216,
+        "unknown": 15,
+        "wrong": 0
+      }
+    },
+    "R3": {
+      "families": {
+        "alive": {
+          "correct": 18,
+          "total": 18,
+          "unknown": 0,
+          "wrong": 0
+        },
+        "ancestor": {
+          "correct": 54,
+          "total": 54,
+          "unknown": 0,
+          "wrong": 0
+        },
+        "birth_kind": {
+          "correct": 18,
+          "total": 18,
+          "unknown": 0,
+          "wrong": 0
+        },
+        "parents": {
+          "correct": 18,
+          "total": 18,
+          "unknown": 0,
+          "wrong": 0
+        },
+        "same_state": {
+          "correct": 54,
+          "total": 54,
+          "unknown": 0,
+          "wrong": 0
+        },
+        "shared_root": {
+          "correct": 54,
+          "total": 54,
+          "unknown": 0,
+          "wrong": 0
+        }
+      },
+      "totals": {
+        "correct": 216,
+        "total": 216,
+        "unknown": 0,
+        "wrong": 0
+      }
+    }
+  },
+  "truth_queries": 216
+}

@@ -1,0 +1,97 @@
+{
+  "configuration": {
+    "command": [
+      "python3",
+      "scripts/run-rp004-audit.py",
+      "--run-id",
+      "audit-20261011-001"
+    ],
+    "config": {
+      "binary_queries": [
+        "same_state",
+        "ancestor",
+        "shared_root"
+      ],
+      "case_ids": [
+        "G0",
+        "G1",
+        "G2",
+        "G3",
+        "G4",
+        "C4"
+      ],
+      "entities": [
+        "a",
+        "b",
+        "c"
+      ],
+      "expected_collision_comparisons": 60,
+      "expected_decoder_rows": 864,
+      "expected_truth_queries": 216,
+      "memory_bytes": 134217728,
+      "representations": [
+        "R0",
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "run_id": "audit-20261011-001",
+      "seeds": {
+        "policy": "none; deterministic finite corpus"
+      },
+      "unary_queries": [
+        "parents",
+        "birth_kind",
+        "alive"
+      ],
+      "version": "0.1",
+      "wall_seconds": 60
+    },
+    "execution_authorization": "User requested continuation of the published RP004 864-cell audit on 2026-10-11",
+    "input_sha256": {
+      "research/RP004/RP004_AUDIT_CONFIG.json": "f69a5feb47f78364831644a334732ae018d8eec170c63c025f3cf667f349bcf4",
+      "research/RP004/RP004_COLLISION_REVIEW.md": "2b24457e9f1cecfc7a0ea97a34c851b96dd79e7452b7a67d0d28f7eed702840f",
+      "research/RP004/RP004_EXECUTION_REVIEW.md": "6ef8c5f2de125c494f74415feaef8667dcb2448ece59974e192c020018c7f40d",
+      "research/RP004/RP004_FIXTURES.json": "ff80fb8bc9e96748c5e672410a7d057d3051771f60845515ff4911ba60919513",
+      "research/RP004/RP004_OPERATIONAL_PROTOCOL.md": "d4280ecb66a3ae7bea0dc2ef3d2b8943dca040419bea4fb57e3a552edfdaeb00",
+      "research/RP004/RP004_PREPARATION_REVIEW.md": "d84e5866ea230c6d027b60b3f6d217f67e4f196d16996f232fef77e4dfbfe188",
+      "research/RP004/audit-001/RECORD.md": "b4af5aa4fd96595130ca20225a4022ba6fa8dc4a0e3c3bd8db83e2bbd145d4e6",
+      "research/RP004/audit.py": "2f290f8b11febcaad55147032599050a80eda7810574b0c16cec66bcca823c4f",
+      "research/RP004/lineage.py": "76e3c61b4b5002f5abefeecf3a68b23d43dc8177dc0a1995c7e80d3053d76deb",
+      "research/RP004/replay.py": "bf831ab08e536da5f7db7eb2f5a27016e343d592e49846c6a303609716867677",
+      "scripts/check-rp004-audit.py": "fbe471268f3458244ed0eff4bbd6f6359d4cc4fd7b941805c3f9ea5ec6310543",
+      "scripts/check-rp004-preparation.py": "aa773963cd77d797c98ff09a8e2ef62f4c664b0ab8fb1067fc3e4482f3b82f61",
+      "scripts/run-rp004-audit.py": "28a182c9378735b602918150a7741ab584a20359cce90d0352c22298a81ec0d3",
+      "tests/test_rp004_audit.py": "24483b069db4b78f0ababe256e062f9dd168f2eb889e98113cfac7110c3e7624",
+      "tests/test_rp004_lineage.py": "fd8fa232325eb7a6996b571834f406c89ff4c410ff58340af61815ce9d99cb1a"
+    },
+    "output_inventory": [
+      "manifest.json",
+      "frozen-inputs.json",
+      "answers.jsonl",
+      "collisions.jsonl",
+      "summary.json",
+      "replay.json",
+      "timing.json"
+    ],
+    "source_commit": "db7f8ee475e2509cd46db665a27fc00c41ffb7a9"
+  },
+  "environment": {
+    "network": "none used by the audit",
+    "os": "macOS-26.3-arm64-arm-64bit",
+    "peak_memory_units": "bytes",
+    "processes": 1,
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]"
+  },
+  "outputs": {
+    "answers.jsonl": "e5ece7b1d9453e375731ebc1b5cd929d75a2ad3f184f3d308bf1f4e329b7b814",
+    "collisions.jsonl": "e90eb06892b9296b9a621453ebe236177220ea09daa8431fade923b12dab8486",
+    "frozen-inputs.json": "484d17bbe236cc889ee7a84b7f802bee1ccb1ef5b0ff62d9e6275379ff00a825",
+    "replay.json": "82630fd4a66fc16baa559b17b2c392e3602814d0511181b5c972d95f2775e847",
+    "summary.json": "a28988862c9e740bee252906c4a8e84b5516ace3dd341adcabe7921d04f21764",
+    "timing.json": "7246bd89b7d6d37bddabb377d907343d7742e52a79cd8d4471d63dc73a81f11d"
+  },
+  "seeds": {
+    "policy": "none; deterministic finite corpus"
+  }
+}

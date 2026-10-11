@@ -786,7 +786,7 @@
     "path": "research/RP004/RP004_OPERATIONAL_PROTOCOL.md",
     "title": "RP004 operational branching lineage protocol",
     "category": "Research packages",
-    "summary": "Exact construction, query, projection, scoring and bounded audit contracts; disclosed controls only.",
+    "summary": "Preserved pre-outcome protocol: construction, query, projection and scoring contracts. The later finite audit is published separately; RP004 is now ACTIVE.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -814,13 +814,41 @@
     "path": "research/RP004/RP004_PREPARATION_REVIEW.md",
     "title": "RP004 preparation readiness and next audit",
     "category": "Research packages",
-    "summary": "Six constructions and three collision controls prepared. RP004 stays PLANNED; Circle remains 2/13.",
+    "summary": "Preserved preparation-stage snapshot predating the recorded audit. RP004 is now ACTIVE with scoped Result R-RP004001; disposition remains pending.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
-    "label": "Preparation review before execution",
+    "label": "Preparation snapshot before audit",
+    "recommended": true
+  },
+  {
+    "key": "rp004-audit-execution-review",
+    "path": "research/RP004/RP004_EXECUTION_REVIEW.md",
+    "title": "RP004 pre-execution implementation review",
+    "category": "Research packages",
+    "summary": "Source/input freeze, independent matrix-closure replay, coverage, resource and failure contracts fixed before outcomes.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Pre-outcome implementation review",
+    "recommended": true
+  },
+  {
+    "key": "rp004-audit-001",
+    "path": "research/RP004/RP004_AUDIT_001_REPORT.md",
+    "title": "RP004 audited branching lineage representations",
+    "category": "Research reports",
+    "summary": "864 decoder rows and 60 comparisons replayed. No wrong answers; UNKNOWN and information-loss witnesses remain explicit. RP004 is ACTIVE pending disposition.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Audited finite-corpus report",
     "recommended": true
   }
 ]

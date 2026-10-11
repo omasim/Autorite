@@ -786,7 +786,7 @@
     "path": "research/RP004/RP004_OPERATIONAL_PROTOCOL.md",
     "title": "RP004 operational branching lineage protocol",
     "category": "Research packages",
-    "summary": "Preserved pre-outcome protocol: construction, query, projection and scoring contracts. The later finite audit is published separately; RP004 is now ACTIVE.",
+    "summary": "Preserved pre-outcome protocol. Its preparation-stage status predates the audit and D-0006; RP004 is now CLOSED after separate internal package review.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -814,7 +814,7 @@
     "path": "research/RP004/RP004_PREPARATION_REVIEW.md",
     "title": "RP004 preparation readiness and next audit",
     "category": "Research packages",
-    "summary": "Preserved preparation-stage snapshot predating the recorded audit. RP004 is now ACTIVE with scoped Result R-RP004001; disposition remains pending.",
+    "summary": "Preserved preparation-stage snapshot predating the audit and D-0006. RP004 is now CLOSED; scoped Result R-RP004001 remains VALID.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -842,13 +842,41 @@
     "path": "research/RP004/RP004_AUDIT_001_REPORT.md",
     "title": "RP004 audited branching lineage representations",
     "category": "Research reports",
-    "summary": "864 decoder rows and 60 comparisons replayed. No wrong answers; UNKNOWN and information-loss witnesses remain explicit. RP004 is ACTIVE pending disposition.",
+    "summary": "Preserved audit-stage report: 864 rows and 60 comparisons replayed. Its ACTIVE/pending-disposition and 2/13 statements predate D-0006; RP004 is now CLOSED.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
-    "label": "Audited finite-corpus report",
+    "label": "Audit-stage report before disposition",
     "recommended": true
+  },
+  {
+    "key": "rp004-package-review",
+    "path": "research/RP004/RP004_PACKAGE_REVIEW.md",
+    "title": "RP004 package interpretation and disposition review",
+    "category": "Research packages",
+    "summary": "Explicit internal review accepts the finite commitment. RP004 is CLOSED; Q-0/Q-4 remain ACTIVE and Cycle 01 is 3/13 resolved.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Post-outcome package review",
+    "recommended": true
+  },
+  {
+    "key": "rp004-package-decision",
+    "path": "docs/decisions/DECISION-0006_RP004_DISPOSITION.md",
+    "title": "Decision 0006 - RP004 package disposition",
+    "category": "Research packages",
+    "summary": "Resolve only the RP004 package obligation; preserve all outcomes and the fixed 13-obligation denominator.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Active governance decision",
+    "recommended": false
   }
 ]

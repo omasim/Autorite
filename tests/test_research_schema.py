@@ -1,4 +1,4 @@
-import importlib.util,json,shutil,tempfile,unittest
+import importlib.util,json,shutil,tempfile,unittest,subprocess
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('validator',ROOT/'packages/research-schema/validate.py');v=importlib.util.module_from_spec(spec);spec.loader.exec_module(v)
@@ -6,6 +6,10 @@ class SchemaTests(unittest.TestCase):
  def setUp(self):
   self.temp=tempfile.TemporaryDirectory();self.root=Path(self.temp.name)/'repo'
   shutil.copytree(ROOT,self.root,ignore=shutil.ignore_patterns('.git','apps','output','__pycache__','.venv'))
+  subprocess.run(['git','init','-q'],cwd=self.root,check=True,capture_output=True)
+  objects=Path(subprocess.check_output(['git','rev-parse','--git-path','objects'],cwd=ROOT,text=True).strip())
+  if not objects.is_absolute():objects=ROOT/objects
+  (self.root/'.git/objects/info/alternates').write_text(str(objects.resolve())+'\n')
  def tearDown(self):self.temp.cleanup()
  def change(self,path,update):
   p=self.root/path;d,body=v.read_record(p);update(d);p.write_text('---\n'+json.dumps(d)+'\n---\n'+body)
@@ -25,8 +29,13 @@ class SchemaTests(unittest.TestCase):
   self.change('research/RP002A/RECORD.md',lambda d:d.update(protocol_ref='../outside.md'));self.reject('Unsafe path')
  def test_premature_full_ring(self):
   p=self.root/'cycles/cycle-01/manifest.json';d=json.loads(p.read_text())
+  d.update(status='ACTIVE',close_decision_ref=None,snapshot_ref=None,publication_refs=[])
   for o in d['obligations']:o.update(resolved=True,resolution='completed',evidence_refs=['README.md'])
   p.write_text(json.dumps(d));self.reject('progress/lifecycle mismatch')
+ def test_closed_cycle_requires_snapshot_commit(self):
+  p=self.root/'cycles/cycle-01/manifest.json';d=json.loads(p.read_text())
+  d.update(status='CLOSED',snapshot_ref='0'*40,publication_refs=[])
+  p.write_text(json.dumps(d));self.reject('missing snapshot commit')
  def test_duplicate_yaml_key(self):
   p=self.root/'graph/questions/Q-0.md';p.write_text('---\nid: Q-0\nid: Q-1\n---\nDuplicate-key fixture.');self.reject('duplicate key')
  def evidence_fixture(self):

@@ -181,8 +181,11 @@ def validate(root):
   if closed:
    require(obligations[-1]['key']=='close-bundle' and obligations[-1]['decision_ref']==c['close_decision_ref'],f'{p}: close bundle decision')
    require(object_ref(c['close_decision_ref'],{'Decision'})['status']=='ACTIVE',f'{p}: close decision')
-   require(isinstance(c['snapshot_ref'],str) and re.fullmatch('[0-9a-f]{40}',c['snapshot_ref']),f'{p}: snapshot SHA')
-   require(subprocess.run(['git','cat-file','-e',c['snapshot_ref']+'^{commit}'],cwd=root,capture_output=True).returncode==0,f'{p}: missing snapshot commit')
+   if c['snapshot_ref'] is None:
+    require(c['cycle_number']==2 and c['status']=='CLOSED' and not c['publication_refs'],f'{p}: only Cycle 02 close assembly may await snapshot pin')
+   else:
+    require(isinstance(c['snapshot_ref'],str) and re.fullmatch('[0-9a-f]{40}',c['snapshot_ref']),f'{p}: snapshot SHA')
+    require(subprocess.run(['git','cat-file','-e',c['snapshot_ref']+'^{commit}'],cwd=root,capture_output=True).returncode==0,f'{p}: missing snapshot commit')
   else:require(c['close_decision_ref'] is None and c['snapshot_ref'] is None,f'{p}: premature close metadata')
   if c['status']=='PUBLISHED':require(c['publication_refs'],f'{p}: publication evidence missing')
   cycles[p.relative_to(root).as_posix()]=c

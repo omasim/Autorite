@@ -25,8 +25,11 @@ def check():
         raise ValueError('Immutable entry blueprint must remain a preparation plan')
     resolved = {item['key'] for item in cycle['obligations'] if item['resolved']}
     base = {'rp006', 'checkpoint-a', 'graph-review', 'synthesis', 'foundation', 'what-changed', 'what-open'}
-    if cycle['status'] != 'OPEN' or resolved not in (base, base | {'transition'}):
-        raise ValueError('Cycle 02 must remain open at a valid review/transition stage with its close bundle pending')
+    closed = base | {'transition', 'close-bundle'}
+    if not ((cycle['status'] == 'OPEN' and resolved in (base, base | {'transition'}))
+            or (cycle['status'] in {'CLOSED', 'PUBLISHED'} and resolved == closed
+                and cycle.get('close_decision_ref') == 'D-0022')):
+        raise ValueError('Cycle 02 must be at a valid review/transition stage or a complete D-0022 close')
     auth = json.loads(auth_path.read_text())
     if freeze.get('checkpoint_decision_ref') != 'D-0016' or freeze.get('test_ref') != 'TST-RP006001':
         raise ValueError('Execution freeze points to the wrong Test or checkpoint')

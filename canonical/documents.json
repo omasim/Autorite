@@ -1568,5 +1568,38 @@
     "sites": ["org", "net"],
     "label": "Transition decision",
     "recommended": true
+  },
+  {
+    "key": "cycle02-close-bundle",
+    "path": "cycles/cycle-02/close/CYCLE02_CLOSE_BUNDLE.md",
+    "title": "Cycle 02 Close Bundle",
+    "category": "Research packages",
+    "summary": "Indexes the finite Cycle 02 record, its limits, open Questions and preparation-only transition; Cycle 02 closes at 9/9.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Close bundle",
+    "recommended": true
+  },
+  {
+    "key": "cycle02-knowledge-snapshot",
+    "path": "cycles/cycle-02/close/CYCLE02_KNOWLEDGE_SNAPSHOT.md",
+    "title": "Cycle 02 Canonical Knowledge Snapshot",
+    "category": "Research packages",
+    "summary": "Explains the source-bound cutoff and retained Cycle 02 knowledge state without scientific inference.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Knowledge snapshot",
+    "recommended": true
+  },
+  {
+    "key": "cycle02-close-decision",
+    "path": "docs/decisions/DECISION-0022_CYCLE02_CLOSE.md",
+    "title": "Decision 0022 - Close Cycle 02",
+    "category": "Research packages",
+    "summary": "Accepts the close bundle and snapshot at 9/9; preserves all Question and Result boundaries and opens no Cycle 03.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Close decision",
+    "recommended": true
   }
 ]

@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "cycle_number": 2,
   "title": "Query-relative Lineage Sufficiency",
-  "status": "OPEN",
+  "status": "CLOSED",
   "package_refs": [
     "RP-006"
   ],
@@ -108,13 +108,17 @@
       "key": "close-bundle",
       "description": "Close bundle and knowledge snapshot",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "completed",
+      "evidence_refs": [
+        "cycles/cycle-02/close/CYCLE02_CLOSE_BUNDLE.md",
+        "cycles/cycle-02/close/CYCLE02_KNOWLEDGE_SNAPSHOT.md",
+        "cycles/cycle-02/close/CYCLE02_KNOWLEDGE_SNAPSHOT.json"
+      ],
+      "decision_ref": "D-0022"
     }
   ],
-  "close_decision_ref": null,
+  "close_decision_ref": "D-0022",
   "snapshot_ref": null,
   "publication_refs": []
 }

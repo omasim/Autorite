@@ -97,10 +97,12 @@
       "key": "transition",
       "description": "Transition Record / Cycle 03 decision",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "completed",
+      "evidence_refs": [
+        "cycles/cycle-02/reviews/CYCLE02_TRANSITION_001.md"
+      ],
+      "decision_ref": "D-0021"
     },
     {
       "key": "close-bundle",

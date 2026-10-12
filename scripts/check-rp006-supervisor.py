@@ -1,18 +1,10 @@
-"""Validate the accepted RP006 source-bound execution gates without running them."""
+"""Validate the consumed RP006 authorization and preserved recorded attempt."""
 import ast
-import importlib.util
 import json
 from pathlib import Path
+import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
-
-
-def load_runner():
-    spec = importlib.util.spec_from_file_location(
-        'rp006_gate_check', ROOT / 'research/RP006/recorded_attempt.py')
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
 
 
 def check():
@@ -24,13 +16,16 @@ def check():
     decision_path = ROOT / 'graph/decisions/D-0016.md'
     if not all(path.is_file() for path in (freeze_path, auth_path, test_path, decision_path)):
         raise ValueError('Accepted source freeze, Test, checkpoint Decision and one-run authorization are required')
-    if (ROOT / 'research/RP006/attempts').exists():
-        raise ValueError('CI validation must not create a recorded research attempt')
+    attempts = ROOT / 'research/RP006/attempts'
+    authorization = json.loads(auth_path.read_text())
+    freeze = json.loads(freeze_path.read_text())
+    if set(p.name for p in attempts.iterdir() if p.is_dir()) != {authorization['attempt_id']}:
+        raise ValueError('Only the D-0016 authorized recorded attempt may be present')
     if plan['source_frozen'] is not False or plan['execution_authorized'] is not False:
         raise ValueError('Immutable entry blueprint must remain a preparation plan')
-    if cycle['status'] != 'OPEN' or any(item['resolved'] for item in cycle['obligations']):
-        raise ValueError('Pre-execution authorization cannot resolve Cycle 02 obligations')
-    freeze = json.loads(freeze_path.read_text())
+    resolved = {item['key'] for item in cycle['obligations'] if item['resolved']}
+    if cycle['status'] != 'OPEN' or resolved != {'rp006', 'checkpoint-a'}:
+        raise ValueError('RP006 result must leave Cycle 02 open with only its package and checkpoint accepted')
     auth = json.loads(auth_path.read_text())
     if freeze.get('checkpoint_decision_ref') != 'D-0016' or freeze.get('test_ref') != 'TST-RP006001':
         raise ValueError('Execution freeze points to the wrong Test or checkpoint')
@@ -38,10 +33,10 @@ def check():
         raise ValueError('One-attempt authorization differs from the source freeze')
     if auth.get('execution_authorized') is not True or auth.get('status') != 'ACCEPTED':
         raise ValueError('D-0016 must authorize exactly the frozen attempt')
-    runner = load_runner()
-    gate = runner.authorize()
-    if gate['attempt_id'] != auth['attempt_id'] or gate['head'] != runner.current_commit():
-        raise ValueError('Runner gate does not validate against the checked-out source')
+    for relative, checksum in freeze['input_sha256'].items():
+        committed = subprocess.check_output(['git', 'show', freeze['source_commit'] + ':' + relative], cwd=ROOT)
+        if __import__('hashlib').sha256(committed).hexdigest() != checksum:
+            raise ValueError('Frozen source commit hash mismatch: ' + relative)
     decision = decision_path.read_text()
     review = (ROOT / 'research/RP006/RP006_PREEXECUTION_REVIEW.md').read_text()
     if 'status: ACTIVE' not in decision or 'authorizes one recorded attempt' not in decision:
@@ -66,7 +61,12 @@ def check():
                 'certificates.json', 'summary.json', 'timing.json', 'replay.json'}
     if set(outputs) != expected:
         raise ValueError('Recorded attempt output inventory differs from accepted protocol')
-    print('PASS: RP006 execution gates are source-bound and authorized for one attempt; CI created no run.')
+    from importlib.util import spec_from_file_location, module_from_spec
+    spec = spec_from_file_location('rp006_audit_gate', ROOT / 'scripts/check-rp006-audit.py')
+    audit = module_from_spec(spec)
+    spec.loader.exec_module(audit)
+    audit.check()
+    print('PASS: RP006 one-attempt authorization consumed; preserved output verified; CI created no run.')
 
 
 if __name__ == '__main__':

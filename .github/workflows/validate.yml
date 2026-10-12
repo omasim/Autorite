@@ -36,6 +36,7 @@ jobs:
       - run: python scripts/check-cycle01-close.py
       - run: python scripts/check-cycle02-entry.py
       - run: python scripts/check-rp006-preparation.py
+      - run: python scripts/check-rp006-audit.py
       - run: python scripts/check-rp006-supervisor.py
       - run: python -m unittest discover -s tests
       - run: python scripts/build-sites.py

@@ -1342,6 +1342,20 @@
     "recommended": true
   },
   {
+    "key": "rp006-supervisor-review",
+    "path": "research/RP006/RP006_EXECUTION_SUPERVISOR_REVIEW.md",
+    "title": "RP006 recorded-attempt supervisor review",
+    "category": "Research packages",
+    "summary": "Fail-closed parent-worker lease, suspend-aware clock checks, durable incomplete-attempt handling, and the remaining source-freeze/Test/checkpoint gates.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Recorded-run controls",
+    "recommended": true
+  },
+  {
     "key": "rp006-preparation-decision",
     "path": "docs/decisions/DECISION-0014_RP006_IMPLEMENTATION_PREPARATION.md",
     "title": "Decision 0014 - RP006 implementation preparation",
@@ -1353,6 +1367,20 @@
       "net"
     ],
     "label": "Preparation decision",
+    "recommended": false
+  },
+  {
+    "key": "rp006-supervisor-decision",
+    "path": "docs/decisions/DECISION-0015_RP006_SUPERVISOR_PREPARATION.md",
+    "title": "Decision 0015 - RP006 supervisor preparation",
+    "category": "Research packages",
+    "summary": "Accepts the recorded-attempt supervisor preparation and two-process profile; leaves execution gates closed.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Supervisor decision",
     "recommended": false
   }
 ]

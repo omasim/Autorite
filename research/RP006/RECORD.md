@@ -13,7 +13,10 @@
     "research/RP006/DOMAIN.json",
     "research/RP006/ENTRY_PLAN.json",
     "cycles/cycle-02/CYCLE02_ENTRY_REVIEW.md",
-    "cycles/cycle-01/reviews/TRANSITION_RECORD.md"
+    "cycles/cycle-01/reviews/TRANSITION_RECORD.md",
+    "research/RP006/RP006_IMPLEMENTATION_REVIEW.md",
+    "research/RP006/RP006_SOURCE_FREEZE_PROPOSAL.md",
+    "research/RP006/preparation-001/manifest.json"
   ],
   "aliases": [
     "RP006"
@@ -29,4 +32,4 @@
 }
 ---
 
-D-0013 accepts RP006 for preparation in OPEN Cycle 02. This is a disclosed reused-domain explanatory extension. Producer/verifier, controls, resource/deadline preflight, source freeze and actual execution checkpoint remain pending. No Test or Result exists for RP006.
+D-0013 accepts the entry design and D-0014 accepts producer/verifier, 24 software controls and the preserved known-domain engineering preflight. Classifications are already observed and disclosed. The source-freeze proposal binds exact implementation/preflight receipts. RP006 remains PLANNED: recorded wrapper, external suspension-aware supervisor, full execution freeze, source-bound Test and actual pre-execution checkpoint remain pending. No research Test or Result exists.

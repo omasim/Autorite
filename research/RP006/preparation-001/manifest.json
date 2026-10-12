@@ -1,0 +1,36 @@
+{
+  "environment": {
+    "machine": "arm64",
+    "platform": "macOS-26.3-arm64-arm-64bit",
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]"
+  },
+  "execution_authorized": false,
+  "input_sha256": {
+    "research/RP004/lineage.py": "76e3c61b4b5002f5abefeecf3a68b23d43dc8177dc0a1995c7e80d3053d76deb",
+    "research/RP004/replay.py": "bf831ab08e536da5f7db7eb2f5a27016e343d592e49846c6a303609716867677",
+    "research/RP006/DOMAIN.json": "4aafa766ba3624691c62446532d3ec71c89c3f58274067320e0b26bf1345e60a",
+    "research/RP006/ENTRY_PLAN.json": "0ca50a67ede09150dd265b0b35d1607d0ebf8227a67e172881a01c4b39e8517b",
+    "research/RP006/RP006_OPERATIONAL_PROTOCOL.md": "dd0a92915be54826a8f3b8b3266c265f7566baf4de1ac87d62642b6e9234b932",
+    "research/RP006/RP006_PRIOR_ART_REVIEW.md": "18d112f5eb148daf19530ab168dce303f54dd84bba494eef477c473d9f713e49",
+    "research/RP006/producer.py": "f611839e3656831c9ab4b44468f3c27c08737a82a672d4fec10497b8edc0f8cc",
+    "research/RP006/resources.py": "4cc85bf4a1021d20526ef9b87d323205c4e7e0ffe9eacd47f6c73396ccc00f17",
+    "research/RP006/verifier.py": "0e2a08c508641f7d9986f2c3b7396e7d53068246828ac390338471be9462b58f",
+    "scripts/rp006-engineering-preflight.py": "b29ebe14fc1fe0dd39efcb0155d906576d52ffae7a37f7722a4e4cf5912097a6",
+    "tests/test_rp006_implementation.py": "20e902bbf4eea5e80f8b7eb80ac041cc18bb9fcf06ac04f92262ffc6c366f514"
+  },
+  "limits": {
+    "civil_elapsed_seconds": 60,
+    "clock_gap_seconds": 2,
+    "monotonic_seconds": 60,
+    "peak_process_rss_bytes": 134217728
+  },
+  "outputs": {
+    "bundle.json": "1aae288d7f3e862cbb8944d5acd79b96ea5750a59483804782348059ed54a72a",
+    "replay.json": "856f847f7963e82f51d3caf08d12c0f5c76da68b07a795c2504a546472f51180",
+    "timing.json": "a1bb4a532ffdc777b3308e277af843e69d1da67ca94c17b2026100bcc2b98516"
+  },
+  "purpose": "KNOWN_DOMAIN_SOFTWARE_PREFLIGHT",
+  "scientific_status_promotion": false,
+  "source_commit": "670af03aa058e74238d11e00a1c948cf703cea9e",
+  "status": "COMPLETE"
+}

@@ -1312,5 +1312,47 @@
     ],
     "label": "Active entry decision",
     "recommended": false
+  },
+  {
+    "key": "rp006-implementation-review",
+    "path": "research/RP006/RP006_IMPLEMENTATION_REVIEW.md",
+    "title": "RP006 implementation and engineering preflight",
+    "category": "Research packages",
+    "summary": "Independent exact replay and 24 software controls; known outputs disclosed, recorded research execution remains gated.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Checked software preparation",
+    "recommended": true
+  },
+  {
+    "key": "rp006-source-freeze-proposal",
+    "path": "research/RP006/RP006_SOURCE_FREEZE_PROPOSAL.md",
+    "title": "RP006 source-freeze proposal",
+    "category": "Research packages",
+    "summary": "Exact checked source and preflight receipts; recorded wrapper, external supervisor and actual checkpoint pending.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Source candidate",
+    "recommended": true
+  },
+  {
+    "key": "rp006-preparation-decision",
+    "path": "docs/decisions/DECISION-0014_RP006_IMPLEMENTATION_PREPARATION.md",
+    "title": "Decision 0014 - RP006 implementation preparation",
+    "category": "Research packages",
+    "summary": "Accept software preparation only; RP006 PLANNED and Cycle 02 OPEN at 0/9.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Preparation decision",
+    "recommended": false
   }
 ]

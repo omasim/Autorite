@@ -1,0 +1,9 @@
+{
+  "monotonic_seconds": 0.026336667000578018,
+  "civil_elapsed_seconds": 0.0263369083404541,
+  "peak_process_rss_bytes": 27426816,
+  "measurement_scope": "Guard starts after source checks/imports and includes generation, independent replay and serialization. RSS is process lifetime peak.",
+  "rss_raw_unit": "bytes",
+  "child_processes": "none inside measured computation",
+  "deadline_policy": "Cooperative dual-clock rejection only. External suspension-aware supervisor contract is pending before a recorded run."
+}

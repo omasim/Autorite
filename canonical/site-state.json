@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-10-12",
-  "phase": "Cycle 02 OPEN: RP006 entry and protocol accepted for preparation",
+  "phase": "Cycle 02 OPEN: RP006 implementation and known-domain software preflight accepted",
   "cycle": {
     "number": "02",
     "title": "Query-relative Lineage Sufficiency",
@@ -99,6 +99,11 @@
     }
   ],
   "changes": [
+    [
+      "2026-10-12",
+      "RP006 implementation and software preflight checked",
+      "D-0014 accepts independently replayed producer/verifier, 24 software controls and preserved source/resource receipts. Known-domain classifications are disclosed. Recorded wrapper, external supervisor, source freeze, Test and actual checkpoint remain pending; RP006 PLANNED, Cycle 02 OPEN 0/9."
+    ],
     [
       "2026-10-12",
       "Cycle 02 entry and RP006 protocol accepted",
@@ -311,6 +316,6 @@
     ]
   ],
   "pilot_report": "/sources/rp002a-pilot-001/",
-  "next_step": "Implement RP006 producer/verifier and controls, review resource/deadline preflight and commit a source-bound pre-execution checkpoint.",
+  "next_step": "Implement and review the recorded wrapper, external suspension-aware supervisor and complete source freeze; register the Test and accept the actual pre-execution checkpoint.",
   "active_cycle_ref": "cycles/cycle-02/manifest.json"
 }

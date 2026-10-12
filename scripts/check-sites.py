@@ -58,24 +58,36 @@ for document in json.loads((ROOT/'canonical/documents.json').read_text()):
  assert reader.read_bytes()==source,(document['path'],'Reader download differs from source; check filename collisions')
 state=[json.loads((ROOT/'apps'/s/'dist/research-state.json').read_text()) for s in ('org','net')]
 assert state[0]==state[1],'Site state diverged'
-manifest=json.loads((ROOT/'cycles/cycle-01/manifest.json').read_text())
+publication=json.loads((ROOT/'canonical/site-state.json').read_text())
+manifest=json.loads((ROOT/publication['active_cycle_ref']).read_text())
 expected=sum(o['weight'] for o in manifest['obligations'] if o['resolved'])/sum(o['weight'] for o in manifest['obligations'])
 assert state[0]['completion']==expected and state[0]['cycle']['status']==manifest['status']
-# Check the published visual/accessible ring, not only its JSON source.
-count=sum(o['resolved'] for o in manifest['obligations']);total=len(manifest['obligations'])
-label=f"Cycle {manifest['cycle_number']:02d}: {manifest['status']}, {count} / {total} obligations resolved ({expected*100:.1f}%)."
-for site,path in [('org','index.html'),('net','index.html'),('net','cycle/01/index.html')]:
- parser=Links();parser.feed((ROOT/'apps'/site/'dist'/path).read_text())
- assert parser.rings==[label],(site,path,'Accessible ring disagrees with manifest')
- assert parser.arcs==[f'{expected*100} 100'],(site,path,'Rendered ring disagrees with manifest')
- assert len(parser.track_geometry)==len(parser.progress_geometry)==1,(site,path,'Ring layers missing')
- assert parser.track_geometry==parser.progress_geometry,(site,path,'Track and progress geometry differ')
- assert parser.track_geometry[0][0][1]=='cycle-graphic',(site,path,'Ring layers must share an SVG')
-cycle_html=(ROOT/'apps/net/dist/cycle/01/index.html').read_text()
-assert f'{count} resolved · {total-count} open obligations' in cycle_html
-assert cycle_html.count('Open · no resolution on record')==total-count,'Obligation list has stale open labels'
-for obligation in manifest['obligations']:
- if obligation['resolved']:
-  for ref in obligation['evidence_refs']:
-   assert 'https://github.com/omasim/Autorite/blob/main/'+ref in cycle_html,'Resolved obligation evidence is missing'
-print(f'PASS: {pages} English pages; {checks} asset, source and page links; identical canonical Cycle state.')
+assert state[0]['cycle']['number']==f"{manifest['cycle_number']:02d}",'Current Cycle selector diverged'
+# Check each archive and the current home rings from their own manifest.
+for manifest_path in sorted((ROOT/'cycles').glob('cycle-*/manifest.json')):
+ m=json.loads(manifest_path.read_text());number=f"{m['cycle_number']:02d}"
+ fraction=sum(o['weight'] for o in m['obligations'] if o['resolved'])/sum(o['weight'] for o in m['obligations'])
+ count=sum(o['resolved'] for o in m['obligations']);total=len(m['obligations'])
+ archived=state[0]['cycles'][number]
+ assert archived['completion']==fraction and archived['cycle']['status']==m['status']
+ assert archived['cycle']['number']==number and archived['resolved_obligations']==count
+ label=f"Cycle {number}: {m['status']}, {count} / {total} obligations resolved ({fraction*100:.1f}%)."
+ targets=[('net',f'cycle/{number}/index.html')]
+ if m['cycle_number']==manifest['cycle_number']:targets.extend([('org','index.html'),('net','index.html')])
+ for site,path in targets:
+  parser=Links();parser.feed((ROOT/'apps'/site/'dist'/path).read_text())
+  assert parser.rings==[label],(site,path,'Accessible ring disagrees with selected manifest')
+  assert parser.arcs==[f'{fraction*100} 100'],(site,path,'Rendered ring disagrees with selected manifest')
+  assert len(parser.track_geometry)==len(parser.progress_geometry)==1,(site,path,'Ring layers missing')
+  assert parser.track_geometry==parser.progress_geometry,(site,path,'Track and progress geometry differ')
+  assert parser.track_geometry[0][0][1]=='cycle-graphic',(site,path,'Ring layers must share an SVG')
+ cycle_html=(ROOT/f'apps/net/dist/cycle/{number}/index.html').read_text()
+ assert f'{count} resolved · {total-count} open obligations' in cycle_html
+ assert cycle_html.count('Open · no resolution on record')==total-count,'Obligation list has stale open labels'
+ for obligation in m['obligations']:
+  if obligation['resolved']:
+   for ref in obligation['evidence_refs']:
+    assert 'https://github.com/omasim/Autorite/blob/main/'+ref in cycle_html,'Resolved obligation evidence missing'
+# A newly opened Cycle must not erase the published predecessor's full ring.
+assert state[0]['cycles']['01']['completion']==1 and state[0]['cycles']['01']['cycle']['status']=='PUBLISHED'
+print(f'PASS: {pages} English pages; {checks} asset, source and page links; shared current Cycle and separate archived rings.')

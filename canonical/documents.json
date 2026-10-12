@@ -1256,5 +1256,61 @@
     ],
     "label": "Verified publication receipt",
     "recommended": true
+  },
+  {
+    "key": "cycle02-entry-review",
+    "path": "cycles/cycle-02/CYCLE02_ENTRY_REVIEW.md",
+    "title": "Cycle 02 entry review",
+    "category": "Research packages",
+    "summary": "One planned package, nine unresolved obligations and explicit implementation/source/resource/pre-execution gates.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Accepted entry review",
+    "recommended": true
+  },
+  {
+    "key": "rp006-operational-protocol",
+    "path": "research/RP006/RP006_OPERATIONAL_PROTOCOL.md",
+    "title": "RP006 lineage field-ablation protocol",
+    "category": "Research packages",
+    "summary": "Eight whole-field masks, two query families and exact finite conflict/minimality certificates; known reused domain and no execution.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Preparation protocol",
+    "recommended": true
+  },
+  {
+    "key": "rp006-prior-art",
+    "path": "research/RP006/RP006_PRIOR_ART_REVIEW.md",
+    "title": "RP006 targeted method and prior-art review",
+    "category": "Research packages",
+    "summary": "Official functional-dependency and provenance overlap; bounded preparation review with no novelty clearance.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Targeted source review",
+    "recommended": true
+  },
+  {
+    "key": "cycle02-entry-decision",
+    "path": "docs/decisions/DECISION-0013_CYCLE02_ENTRY.md",
+    "title": "Decision 0013 - Open Cycle 02",
+    "category": "Research packages",
+    "summary": "Open the new finite commitment at 0/9 while preserving published Cycle 01; no research run authorized.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Active entry decision",
+    "recommended": false
   }
 ]

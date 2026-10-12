@@ -1,40 +1,22 @@
 {
   "updated_at": "2026-10-12",
-  "phase": "Cycle 01 PUBLISHED; complete close snapshot retained",
+  "phase": "Cycle 02 OPEN: RP006 entry and protocol accepted for preparation",
   "cycle": {
-    "number": "01",
-    "title": "Foundations Under Test",
-    "status": "PUBLISHED",
+    "number": "02",
+    "title": "Query-relative Lineage Sufficiency",
+    "status": "OPEN",
     "obligations": [
-      "RP002A package disposition",
-      "RP003 package disposition",
-      "RP004 package disposition",
-      "RP005A package disposition",
-      "DAM X pilot",
-      "Checkpoint A",
-      "Forward/backward research graph validation",
-      "Synthesis Review 1",
-      "Foundation Review 1",
+      "RP006 package disposition",
+      "Actual pre-execution methods, graph and source checkpoint",
+      "Final forward/backward research graph validation",
+      "Synthesis Review",
+      "Foundation Review",
       "What Changed",
       "What Remains Open",
-      "Transition Record / Cycle 2 decision",
+      "Transition Record / Cycle 03 decision",
       "Close bundle and knowledge snapshot"
     ],
-    "resolved_keys": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12
-    ]
+    "resolved_keys": []
   },
   "questions": [
     [
@@ -106,9 +88,22 @@
       "cases": "Unnecessary restriction \u00b7 correct protective restriction \u00b7 harmful over-restriction",
       "limit": "Removing edges does not expand raw structural reachability. Any benefit is conditional.",
       "source": "RP005A_PROTOCOL.md"
+    },
+    {
+      "id": "RP006",
+      "title": "Query-relative lineage field-ablation sufficiency",
+      "question": "Within the declared finite class, which whole fields preserve the full lineage queries, and which preserve the topology/state subset?",
+      "cases": "Six known RP004 constructions; eight uniform whole-field masks; two exact inquiry families",
+      "limit": "Finite corpus and declared mask class only; known reused cases, no unseen-domain or bit-optimal conclusion.",
+      "source": "research/RP006/RP006_OPERATIONAL_PROTOCOL.md"
     }
   ],
   "changes": [
+    [
+      "2026-10-12",
+      "Cycle 02 entry and RP006 protocol accepted",
+      "D-0013 opens Query-relative Lineage Sufficiency at 0/9. RP006 remains PLANNED; implementation, resource/deadline preflight, source freeze and actual pre-execution checkpoint are pending. Cycle 01 stays PUBLISHED at 13/13."
+    ],
     [
       "2026-10-12",
       "Cycle 01 close publication verified",
@@ -316,5 +311,6 @@
     ]
   ],
   "pilot_report": "/sources/rp002a-pilot-001/",
-  "next_step": "Prepare separate Cycle 02 entry and lineage field-ablation protocol review; no execution opened."
+  "next_step": "Implement RP006 producer/verifier and controls, review resource/deadline preflight and commit a source-bound pre-execution checkpoint.",
+  "active_cycle_ref": "cycles/cycle-02/manifest.json"
 }

@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 13024)
-Total output lines: 1518
-
 [
   {
     "key": "zero-paper",
@@ -747,7 +744,119 @@ Total output lines: 1518
     "path": "research/RP003/AUDIT_001_REPORT.md",
     "title": "RP003 audited local-to-global preservation enumeration",
     "category": "Research reports",
-    "summary": "Preserved audit-stage report: 11,100 paths replayed. Its ACTIVE/pending-disposition …1024 tokens truncated…t.",
+    "summary": "Preserved audit-stage report: 11,100 paths replayed. Its ACTIVE/pending-disposition statement predates D-0005; RP003 is now CLOSED after the separately published package review.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Audit-stage report before disposition",
+    "recommended": true
+  },
+  {
+    "key": "rp003-package-review",
+    "path": "research/RP003/RP003_PACKAGE_REVIEW.md",
+    "title": "RP003 package interpretation and disposition review",
+    "category": "Research packages",
+    "summary": "Explicit internal review accepts the scoped finite audit. RP003 is CLOSED; Q-0 remains ACTIVE and Cycle 01 is 2/13 resolved.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Post-outcome package review",
+    "recommended": true
+  },
+  {
+    "key": "rp003-package-decision",
+    "path": "docs/decisions/DECISION-0005_RP003_DISPOSITION.md",
+    "title": "Decision 0005 - RP003 package disposition",
+    "category": "Research packages",
+    "summary": "Resolve only the RP003 package commitment, preserving all outcomes and the 13-obligation denominator.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Active governance decision",
+    "recommended": false
+  },
+  {
+    "key": "rp004-operational-protocol",
+    "path": "research/RP004/RP004_OPERATIONAL_PROTOCOL.md",
+    "title": "RP004 operational branching lineage protocol",
+    "category": "Research packages",
+    "summary": "Preserved pre-outcome protocol. Its preparation-stage status predates the audit and D-0006; RP004 is now CLOSED after separate internal package review.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Operational preparation protocol",
+    "recommended": true
+  },
+  {
+    "key": "rp004-prior-art",
+    "path": "research/RP004/RP004_COLLISION_REVIEW.md",
+    "title": "RP004 targeted provenance and DAG prior-art review",
+    "category": "Research packages",
+    "summary": "Primary-source inspection of W3C provenance and Git parent graphs; no novelty certification.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Targeted prior-art inspection",
+    "recommended": true
+  },
+  {
+    "key": "rp004-execution-review",
+    "path": "research/RP004/RP004_PREPARATION_REVIEW.md",
+    "title": "RP004 preparation readiness and next audit",
+    "category": "Research packages",
+    "summary": "Preserved preparation-stage snapshot predating the audit and D-0006. RP004 is now CLOSED; scoped Result R-RP004001 remains VALID.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Preparation snapshot before audit",
+    "recommended": true
+  },
+  {
+    "key": "rp004-audit-execution-review",
+    "path": "research/RP004/RP004_EXECUTION_REVIEW.md",
+    "title": "RP004 pre-execution implementation review",
+    "category": "Research packages",
+    "summary": "Source/input freeze, independent matrix-closure replay, coverage, resource and failure contracts fixed before outcomes.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Pre-outcome implementation review",
+    "recommended": true
+  },
+  {
+    "key": "rp004-audit-001",
+    "path": "research/RP004/RP004_AUDIT_001_REPORT.md",
+    "title": "RP004 audited branching lineage representations",
+    "category": "Research reports",
+    "summary": "Preserved audit-stage report: 864 rows and 60 comparisons replayed. Its ACTIVE/pending-disposition and 2/13 statements predate D-0006; RP004 is now CLOSED.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Audit-stage report before disposition",
+    "recommended": true
+  },
+  {
+    "key": "rp004-package-review",
+    "path": "research/RP004/RP004_PACKAGE_REVIEW.md",
+    "title": "RP004 package interpretation and disposition review",
+    "category": "Research packages",
+    "summary": "Explicit internal review accepts the finite commitment under D-0006. RP004 is CLOSED; Q-0/Q-4 remain ACTIVE. Progress statements inside the review are its historical disposition snapshot.",
     "primary_site": "net",
     "sites": [
       "org",

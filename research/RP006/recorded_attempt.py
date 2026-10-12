@@ -34,10 +34,13 @@ REQUIRED_INPUTS = {
     'research/RP006/producer.py', 'research/RP006/verifier.py',
     'research/RP006/recorded_attempt.py', 'research/RP006/recorded_worker.py',
     'research/RP004/lineage.py', 'research/RP004/replay.py',
+    'research/RP004/RP004_FIXTURES.json',
     'research/RP006/DOMAIN.json', 'research/RP006/ENTRY_PLAN.json',
     'research/RP006/RP006_OPERATIONAL_PROTOCOL.md',
     'research/RP006/RP006_PRIOR_ART_REVIEW.md',
     'research/RP006/RP006_EXECUTION_SUPERVISOR_REVIEW.md',
+    'research/RP006/RP006_PREEXECUTION_REVIEW.md',
+    'research/RP006/resources.py',
     'tests/test_rp006_implementation.py', 'tests/test_rp006_supervisor.py',
     'scripts/check-rp006-supervisor.py',
 }

@@ -22,13 +22,16 @@
     "research/RP006/EXECUTION_FREEZE.json",
     "research/RP006/EXECUTION_AUTHORIZATION.json",
     "docs/decisions/DECISION-0016_RP006_PREEXECUTION_CHECKPOINT.md",
+    "research/RP006/RP006_RESULT_REVIEW_001.md",
+    "research/RP006/audit-001/result/RECORD.md",
+    "docs/decisions/DECISION-0017_RP006_RESULT_DISPOSITION.md",
     "docs/decisions/DECISION-0015_RP006_SUPERVISOR_PREPARATION.md",
     "research/RP006/preparation-001/manifest.json"
   ],
   "aliases": [
     "RP006"
   ],
-  "status": "PLANNED",
+  "status": "CLOSED",
   "question_refs": [
     "Q-3",
     "Q-4"
@@ -39,4 +42,4 @@
 }
 ---
 
-D-0013 accepts the entry design; D-0014 accepts producer/verifier and the disclosed known-domain engineering preflight; D-0015 accepts the fail-closed supervisor preparation and reviewed two-process execution profile; D-0016 accepts the actual source-bound checkpoint and one recorded attempt. Known classifications remain disclosed. RP-006 remains PLANNED until the attempt is independently reviewed; no Result is yet recorded.
+D-0013 accepts the entry design; D-0014 accepts producer/verifier and the disclosed known-domain engineering preflight; D-0015 accepts the fail-closed supervisor preparation and reviewed two-process execution profile; D-0016 accepts the actual source-bound checkpoint and one recorded attempt; D-0017 accepts the independently replayed finite result. RP-006 is CLOSED for the six known cases and registered finite mask/query class only. Q-3 and Q-4 remain ACTIVE; Cycle 02 remains OPEN at 2/9.

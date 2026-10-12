@@ -1,0 +1,40 @@
+{
+  "cases": 6,
+  "conflict_rows": 438,
+  "entities": 3,
+  "families": {
+    "FULL": {
+      "conflict_rows": 264,
+      "equality_gated_query_checks": 1152,
+      "minimal_masks": [
+        "001"
+      ],
+      "sufficient_masks": [
+        "001",
+        "011",
+        "101",
+        "111"
+      ]
+    },
+    "TOPOLOGY_STATE": {
+      "conflict_rows": 174,
+      "equality_gated_query_checks": 960,
+      "minimal_masks": [
+        "001",
+        "010"
+      ],
+      "sufficient_masks": [
+        "001",
+        "010",
+        "011",
+        "101",
+        "110",
+        "111"
+      ]
+    }
+  },
+  "family_mask_verdicts": 16,
+  "pair_mask_comparisons": 120,
+  "projections": 48,
+  "truth_rows": 216
+}

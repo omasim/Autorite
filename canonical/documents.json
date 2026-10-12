@@ -1372,7 +1372,7 @@
     "title": "Test TST-RP006001 - finite lineage field-ablation audit",
     "category": "Research packages",
     "summary": "Fixed six-case domain, masks, query families, source freeze and bounded attempt. No outcome is asserted.",
-    "primary_site": "net",
+    "primary_site": "org",
     "sites": ["org", "net"],
     "label": "Registered Test",
     "recommended": false
@@ -1386,6 +1386,39 @@
     "primary_site": "net",
     "sites": ["org", "net"],
     "label": "Active checkpoint decision",
+    "recommended": true
+  },
+  {
+    "key": "rp006-result-review",
+    "path": "research/RP006/RP006_RESULT_REVIEW_001.md",
+    "title": "RP006 result review 001",
+    "category": "Research packages",
+    "summary": "One authorized attempt, output hashes and independent replay; finite findings and interpretation limits.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Reviewed result",
+    "recommended": true
+  },
+  {
+    "key": "rp006-result-record",
+    "path": "research/RP006/audit-001/result/RECORD.md",
+    "title": "Result R-RP006001 - finite lineage field-ablation audit",
+    "category": "Research packages",
+    "summary": "VALID finite-corpus result; known RP004 constructions only, no Q-3/Q-4 resolution.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Result",
+    "recommended": false
+  },
+  {
+    "key": "rp006-result-decision",
+    "path": "docs/decisions/DECISION-0017_RP006_RESULT_DISPOSITION.md",
+    "title": "Decision 0017 - RP006 finite result disposition",
+    "category": "Research packages",
+    "summary": "Accepts the independently replayed finite result and closes RP006 within its registered scope; Cycle 02 remains open.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Result disposition",
     "recommended": true
   },
   {

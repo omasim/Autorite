@@ -1,0 +1,12 @@
+{
+  "civil_elapsed_seconds": 0.104424,
+  "clock": "mach_continuous_time",
+  "clock_gap_seconds": 3.1260000000060684e-06,
+  "conservative_process_tree_peak_rss_bytes": 50511872,
+  "measurement": "Parent continuous-clock supervisor; worker blocks at every producer/verifier guard; summed process lifetime peaks are a conservative two-process RSS bound.",
+  "monotonic_seconds": 0.104425458,
+  "parent_peak_rss_bytes": 27721728,
+  "suspend_aware_seconds": 0.104428584,
+  "worker_peak_rss_bytes": 22790144,
+  "worker_resource_source": "resource.getrusage(RUSAGE_SELF); Darwin bytes, Linux KiB"
+}

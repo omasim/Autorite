@@ -1,0 +1,32 @@
+{
+  "authorization": {
+    "attempt_id": "570e92be-204b-4330-8300-bcbc4e2078d2",
+    "authorization_sha256": "756fcc3d2ee1b3ecd39bd9e73963ab0fd798eea368f1043c9edf4e446dfaf332",
+    "checkpoint_decision_ref": "D-0016",
+    "head": "2c983ebe41fe59f334f5eb1f580fb2552831bf69",
+    "source_commit": "b511e2234c7b59f90e4cc8cb089b58b3d3ed8d36",
+    "source_freeze_sha256": "f2e84dbdb46ebbf5c657d8a0f127c10a9c377262fa4c425c9e3dfeac6ebbbb39",
+    "test_ref": "TST-RP006001"
+  },
+  "completed_at": "2026-10-12T14:21:51Z",
+  "failure": null,
+  "limits": {
+    "clock_gap_seconds": 2,
+    "rss_bytes": 134217728,
+    "seconds": 60
+  },
+  "outputs": {
+    "certificates.json": "058be93871c38f4a885ac6eeb3a95af6b0d7cabe776f12966abad4c42618ac94",
+    "conflicts.jsonl": "cc187db91e62213d09cc1b7143dbbc666a7ff052f6b34dc1fb76e6df3f2456f7",
+    "pairs.jsonl": "63ea462e6ee53e72ba91da92faca943e727e4c0d3ce156bb26ea0e81ed8f8d84",
+    "projections.jsonl": "9fc0faa906287aaac85629184c168b50c90a738dffd82f2bf8618a34f00c352b",
+    "replay.json": "856f847f7963e82f51d3caf08d12c0f5c76da68b07a795c2504a546472f51180",
+    "summary.json": "efcf7f7b69d88bc4e7be3861f4f5d0861c48f2655e97f5e0f801aeecde66b467",
+    "timing.json": "98638f5d3beef3af67e195b8302323cbb7511726aebc3aa24a2e0f3ab571da8d",
+    "truth.jsonl": "001bca8c653defc7214175e223b2a4693a806d52bf5399e4b9e71c9e6ff33e85"
+  },
+  "run_id": "570e92be-204b-4330-8300-bcbc4e2078d2",
+  "schema_version": "0.1",
+  "started_at": "2026-10-12T14:21:51Z",
+  "status": "COMPLETE"
+}

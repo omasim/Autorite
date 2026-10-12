@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-10-12",
-  "phase": "Cycle 02 OPEN: RP006 execution checkpoint accepted; one recorded attempt authorized",
+  "phase": "Cycle 02 OPEN: RP006 finite result accepted; 2 of 9 obligations resolved",
   "cycle": {
     "number": "02",
     "title": "Query-relative Lineage Sufficiency",
@@ -16,7 +16,7 @@
       "Transition Record / Cycle 03 decision",
       "Close bundle and knowledge snapshot"
     ],
-    "resolved_keys": []
+    "resolved_keys": ["rp006", "checkpoint-a"]
   },
   "questions": [
     [
@@ -94,11 +94,16 @@
       "title": "Query-relative lineage field-ablation sufficiency",
       "question": "Within the declared finite class, which whole fields preserve the full lineage queries, and which preserve the topology/state subset?",
       "cases": "Six known RP004 constructions; eight uniform whole-field masks; two exact inquiry families",
-      "limit": "Finite corpus and declared mask class only; known reused cases, no unseen-domain or bit-optimal conclusion.",
+      "limit": "Closed for the six known cases and declared mask class only; no unseen-domain or bit-optimal conclusion.",
       "source": "research/RP006/RP006_OPERATIONAL_PROTOCOL.md"
     }
   ],
   "changes": [
+    [
+      "2026-10-12",
+      "RP006 finite result accepted and package closed",
+      "D-0017 accepts R-RP006001 after full independent replay of the sole authorized run. RP-006 is CLOSED within the six known cases and registered finite masks/query families. Cycle 02 remains OPEN at 2/9; Q-3 and Q-4 remain ACTIVE."
+    ],
     [
       "2026-10-12",
       "RP006 source freeze, Test and actual checkpoint accepted",

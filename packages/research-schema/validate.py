@@ -110,14 +110,32 @@ def validate(root):
     require(current==set(tree),f'{id}: immutable run file set changed')
     for path in tree:require((root/path).read_bytes()==subprocess.check_output(['git','show',first+':'+path],cwd=root),f'{id}: immutable run changed')
    legacy=isinstance(manifest,dict) and set(manifest)=={'configuration','seeds','environment','outputs'}
+   recorded_fields={'schema_version','run_id','status','started_at','completed_at','authorization','limits','outputs','failure'}
+   recorded=(isinstance(manifest,dict) and set(manifest)==recorded_fields
+             and manifest.get('schema_version')=='0.1' and manifest.get('status')=='COMPLETE'
+             and manifest.get('run_id')==run.name and manifest.get('failure') is None
+             and isinstance(manifest.get('authorization'),dict)
+             and isinstance(manifest.get('limits'),dict))
    pipeline_fields={'stage','run_id','source_commit','approval_path','approval_sha256','plan_path','plan_sha256','plan','base','seeds','environment','elapsed_wall_seconds','peak_process_resident_memory','outputs'}
    confirm=isinstance(manifest,dict) and set(manifest)==pipeline_fields and manifest.get('stage')=='confirmation'
-   require((legacy or confirm) and all(manifest.values()),f'{id}: incomplete run manifest')
+   require((legacy or confirm or recorded) and (recorded or all(manifest.values())),f'{id}: incomplete run manifest')
    if confirm:
     plan=manifest['plan']
     require(isinstance(plan,dict) and plan.get('frozen') is True and plan.get('execution_authorized') is True and plan.get('run_id')==manifest['run_id']==run.name,f'{id}: unfrozen confirmation manifest')
     require(not (run/'failure.txt').exists() and isinstance(manifest['outputs'],dict) and {'summary.json','replicates.json'}<=manifest['outputs'].keys(),f'{id}: incomplete confirmation evidence')
     require(all(isinstance(manifest[k],str) for k in ['source_commit','plan_sha256','approval_sha256']) and re.fullmatch(r'[0-9a-f]{40}',manifest['source_commit']) is not None and re.fullmatch(r'[0-9a-f]{64}',manifest['plan_sha256']) is not None and re.fullmatch(r'[0-9a-f]{64}',manifest['approval_sha256']) is not None,f'{id}: confirmation provenance hashes')
+   if recorded:
+    require(re.fullmatch(r'[0-9a-f-]{36}',manifest['run_id']) is not None,f'{id}: recorded attempt UUID')
+    auth=manifest['authorization']
+    require(set(auth)=={'attempt_id','authorization_sha256','checkpoint_decision_ref','head','source_commit','source_freeze_sha256','test_ref'}
+            and auth.get('attempt_id')==manifest['run_id'] and auth.get('test_ref')=='TST-RP006001'
+            and auth.get('checkpoint_decision_ref')=='D-0016'
+            and re.fullmatch(r'[0-9a-f]{40}',auth.get('source_commit','')) is not None
+            and re.fullmatch(r'[0-9a-f]{64}',auth.get('authorization_sha256','')) is not None
+            and re.fullmatch(r'[0-9a-f]{64}',auth.get('source_freeze_sha256','')) is not None,
+            f'{id}: recorded attempt authorization')
+    require(manifest['limits'].get('seconds')==60
+            and manifest['limits'].get('rss_bytes')==134217728,f'{id}: recorded attempt limits')
    require(isinstance(manifest['outputs'],dict),f'{id}: output manifest')
    for name,digest in manifest['outputs'].items():
     output=(run/name).resolve();require(output.is_relative_to(run) and output.is_file(),f'{id}: invalid run output')

@@ -11,19 +11,28 @@
       "key": "rp006",
       "description": "RP006 package disposition",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "completed",
+      "evidence_refs": [
+        "research/RP006/RP006_RESULT_REVIEW_001.md",
+        "research/RP006/audit-001/result/RECORD.md",
+        "research/RP006/attempts/570e92be-204b-4330-8300-bcbc4e2078d2/manifest.json"
+      ],
+      "decision_ref": "D-0017"
     },
     {
       "key": "checkpoint-a",
       "description": "Actual pre-execution methods, graph and source checkpoint",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "completed",
+      "evidence_refs": [
+        "research/RP006/RP006_PREEXECUTION_REVIEW.md",
+        "research/RP006/EXECUTION_FREEZE.json",
+        "research/RP006/audit-001/RECORD.md",
+        "research/RP006/attempts/570e92be-204b-4330-8300-bcbc4e2078d2/replay.json"
+      ],
+      "decision_ref": "D-0017"
     },
     {
       "key": "graph-review",

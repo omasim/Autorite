@@ -27,7 +27,7 @@ def sample(continuous, monotonic, civil):
 class RP006SupervisorControls(unittest.TestCase):
     def supervisor(self, values, parent_peak=100, child_peak=200):
         value = attempt.Supervisor.__new__(attempt.Supervisor)
-        value.clock = Clock(values)
+        value.clock = Clock(values[1:])
         value.start = values[0]
         value.previous = values[0]
         value.parent_peak = parent_peak

@@ -101,6 +101,11 @@
   "changes": [
     [
       "2026-10-12",
+      "RP006 recorded-attempt supervisor prepared",
+      "D-0015 accepts a fail-closed parent-worker supervisor with suspend-aware clocks, a blocking worker lease, durable INCOMPLETE records and conservative two-process memory accounting. No execution freeze, Test, actual checkpoint or run authorization exists; Cycle 02 remains OPEN at 0/9."
+    ],
+    [
+      "2026-10-12",
       "RP006 implementation and software preflight checked",
       "D-0014 accepts independently replayed producer/verifier, 24 software controls and preserved source/resource receipts. Known-domain classifications are disclosed. Recorded wrapper, external supervisor, source freeze, Test and actual checkpoint remain pending; RP006 PLANNED, Cycle 02 OPEN 0/9."
     ],

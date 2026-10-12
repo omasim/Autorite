@@ -16,6 +16,8 @@
     "cycles/cycle-01/reviews/TRANSITION_RECORD.md",
     "research/RP006/RP006_IMPLEMENTATION_REVIEW.md",
     "research/RP006/RP006_SOURCE_FREEZE_PROPOSAL.md",
+    "research/RP006/RP006_EXECUTION_SUPERVISOR_REVIEW.md",
+    "docs/decisions/DECISION-0015_RP006_SUPERVISOR_PREPARATION.md",
     "research/RP006/preparation-001/manifest.json"
   ],
   "aliases": [
@@ -32,4 +34,4 @@
 }
 ---
 
-D-0013 accepts the entry design and D-0014 accepts producer/verifier, 24 software controls and the preserved known-domain engineering preflight. Classifications are already observed and disclosed. The source-freeze proposal binds exact implementation/preflight receipts. RP006 remains PLANNED: recorded wrapper, external suspension-aware supervisor, full execution freeze, source-bound Test and actual pre-execution checkpoint remain pending. No research Test or Result exists.
+D-0013 accepts the entry design; D-0014 accepts producer/verifier and the disclosed known-domain engineering preflight; D-0015 accepts the fail-closed supervisor preparation and reviewed two-process execution profile. Classifications are already observed and disclosed. The exact execution freeze, source-bound Test and actual pre-execution checkpoint remain pending. RP006 remains PLANNED with no research Test or Result.

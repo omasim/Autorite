@@ -1455,6 +1455,39 @@
     "recommended": true
   },
   {
+    "key": "cycle02-synthesis-review",
+    "path": "cycles/cycle-02/reviews/CYCLE02_SYNTHESIS_REVIEW_001.md",
+    "title": "Cycle 02 Synthesis Review 1",
+    "category": "Research packages",
+    "summary": "Compares five scoped Results without pooling denominators or treating graph links as scientific support.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Synthesis review",
+    "recommended": true
+  },
+  {
+    "key": "cycle02-foundation-review",
+    "path": "cycles/cycle-02/reviews/CYCLE02_FOUNDATION_REVIEW_001.md",
+    "title": "Cycle 02 Foundation Review 2",
+    "category": "Research packages",
+    "summary": "Retains PC01-PC03 and existing mathematics for these finite tasks; leaves PC04-PC06 and foundational questions open.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Foundation review",
+    "recommended": true
+  },
+  {
+    "key": "cycle02-synthesis-foundation-decision",
+    "path": "docs/decisions/DECISION-0019_CYCLE02_SYNTHESIS_FOUNDATION.md",
+    "title": "Decision 0019 - Accept Cycle 02 synthesis and foundation reviews",
+    "category": "Research packages",
+    "summary": "Completes synthesis and foundation only; Cycle 02 remains OPEN at 5/9 with all foundational questions unchanged.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Review disposition",
+    "recommended": true
+  },
+  {
     "key": "rp006-preparation-decision",
     "path": "docs/decisions/DECISION-0014_RP006_IMPLEMENTATION_PREPARATION.md",
     "title": "Decision 0014 - RP006 implementation preparation",

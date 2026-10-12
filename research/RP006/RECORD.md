@@ -42,4 +42,4 @@
 }
 ---
 
-D-0013 accepts the entry design; D-0014 accepts producer/verifier and the disclosed known-domain engineering preflight; D-0015 accepts the fail-closed supervisor preparation and reviewed two-process execution profile; D-0016 accepts the actual source-bound checkpoint and one recorded attempt; D-0017 accepts the independently replayed finite result. RP-006 is CLOSED for the six known cases and registered finite mask/query class only. Q-3 and Q-4 remain ACTIVE; Cycle 02 remains OPEN at 2/9.
+D-0013 accepts the entry design; D-0014 accepts producer/verifier and the disclosed known-domain engineering preflight; D-0015 accepts the fail-closed supervisor preparation and reviewed two-process execution profile; D-0016 accepts the actual source-bound checkpoint and one recorded attempt; D-0017 accepts the independently replayed finite result. D-0018 accepts the separate source-bound forward/backward graph review. RP-006 is CLOSED for the six known cases and registered finite mask/query class only. Q-3 and Q-4 remain ACTIVE; Cycle 02 remains OPEN at 3/9.

@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-10-12",
-  "phase": "Cycle 02 OPEN: RP006 finite result accepted; 2 of 9 obligations resolved",
+  "phase": "Cycle 02 OPEN: RP006 result accepted and graph review completed; 3 of 9 obligations resolved",
   "cycle": {
     "number": "02",
     "title": "Query-relative Lineage Sufficiency",
@@ -16,7 +16,7 @@
       "Transition Record / Cycle 03 decision",
       "Close bundle and knowledge snapshot"
     ],
-    "resolved_keys": ["rp006", "checkpoint-a"]
+    "resolved_keys": ["rp006", "checkpoint-a", "graph-review"]
   },
   "questions": [
     [
@@ -99,6 +99,11 @@
     }
   ],
   "changes": [
+    [
+      "2026-10-12",
+      "Cycle 02 forward/backward graph review accepted",
+      "D-0018 accepts the source-bound structural inventory: 49 records, 22 declared relations, 124 typed references and five Result traces. Cycle 02 remains OPEN at 3/9; Q-3 and Q-4 remain ACTIVE."
+    ],
     [
       "2026-10-12",
       "RP006 finite result accepted and package closed",

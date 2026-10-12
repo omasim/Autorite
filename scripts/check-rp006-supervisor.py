@@ -24,8 +24,9 @@ def check():
     if plan['source_frozen'] is not False or plan['execution_authorized'] is not False:
         raise ValueError('Immutable entry blueprint must remain a preparation plan')
     resolved = {item['key'] for item in cycle['obligations'] if item['resolved']}
-    if cycle['status'] != 'OPEN' or resolved != {'rp006', 'checkpoint-a', 'graph-review', 'synthesis', 'foundation', 'what-changed', 'what-open'}:
-        raise ValueError('Cycle 02 must remain open with only the RP006 package, checkpoint, graph, synthesis, foundation and change/open reviews accepted')
+    base = {'rp006', 'checkpoint-a', 'graph-review', 'synthesis', 'foundation', 'what-changed', 'what-open'}
+    if cycle['status'] != 'OPEN' or resolved not in (base, base | {'transition'}):
+        raise ValueError('Cycle 02 must remain open at a valid review/transition stage with its close bundle pending')
     auth = json.loads(auth_path.read_text())
     if freeze.get('checkpoint_decision_ref') != 'D-0016' or freeze.get('test_ref') != 'TST-RP006001':
         raise ValueError('Execution freeze points to the wrong Test or checkpoint')

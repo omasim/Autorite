@@ -1547,4 +1547,26 @@
     "label": "Review disposition",
     "recommended": true
   }
+  ,{
+    "key": "cycle02-transition",
+    "path": "cycles/cycle-02/reviews/CYCLE02_TRANSITION_001.md",
+    "title": "Cycle 02 Transition Record",
+    "category": "Research packages",
+    "summary": "Selects preparation of a new finite lineage challenge after Cycle 02; no Cycle 03 entry or run is authorized.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Transition review",
+    "recommended": true
+  },
+  {
+    "key": "cycle02-transition-decision",
+    "path": "docs/decisions/DECISION-0021_CYCLE02_TRANSITION.md",
+    "title": "Decision 0021 - Accept Cycle 02 transition review",
+    "category": "Research packages",
+    "summary": "Selects preparation of a finite lineage challenge; Cycle 02 stays OPEN at 8/9, with no Cycle 03 entry or execution.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Transition decision",
+    "recommended": true
+  }
 ]

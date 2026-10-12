@@ -75,19 +75,23 @@
       "key": "what-changed",
       "description": "What Changed",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "completed",
+      "evidence_refs": [
+        "cycles/cycle-02/reviews/CYCLE02_WHAT_CHANGED_001.md"
+      ],
+      "decision_ref": "D-0020"
     },
     {
       "key": "what-open",
       "description": "What Remains Open",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "completed",
+      "evidence_refs": [
+        "cycles/cycle-02/reviews/CYCLE02_WHAT_OPEN_001.md"
+      ],
+      "decision_ref": "D-0020"
     },
     {
       "key": "transition",

@@ -1514,5 +1514,37 @@
     ],
     "label": "Supervisor decision",
     "recommended": false
+  }  ,{
+    "key": "cycle02-what-changed",
+    "path": "cycles/cycle-02/reviews/CYCLE02_WHAT_CHANGED_001.md",
+    "title": "Cycle 02 What Changed",
+    "category": "Research packages",
+    "summary": "Compares accepted Cycle 02 commitments with the bounded RP006 result, graph/synthesis/foundation reviews and current governance state.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Dated Cycle review",
+    "recommended": true
+  },
+  {
+    "key": "cycle02-what-open",
+    "path": "cycles/cycle-02/reviews/CYCLE02_WHAT_OPEN_001.md",
+    "title": "Cycle 02 What Remains Open",
+    "category": "Research packages",
+    "summary": "Question boundaries, finite evidence limits and the two remaining transition and close obligations; no further experiment is authorized.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Dated Cycle review",
+    "recommended": true
+  },
+  {
+    "key": "cycle02-change-open-decision",
+    "path": "docs/decisions/DECISION-0020_CYCLE02_CHANGE_OPEN.md",
+    "title": "Decision 0020 - Accept Cycle 02 change and open-work records",
+    "category": "Research packages",
+    "summary": "Resolves only change/open records; Cycle 02 stays OPEN at 7/9 with transition and close bundle outstanding.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Review disposition",
+    "recommended": true
   }
 ]

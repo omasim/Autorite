@@ -1,0 +1,8 @@
+{
+  "attempt_id": "570e92be-204b-4330-8300-bcbc4e2078d2",
+  "status": "ACCEPTED",
+  "execution_authorized": true,
+  "source_commit": "b511e2234c7b59f90e4cc8cb089b58b3d3ed8d36",
+  "test_ref": "TST-RP006001",
+  "checkpoint_decision_ref": "D-0016"
+}

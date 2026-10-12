@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-10-12",
-  "phase": "Cycle 02 OPEN: RP006 implementation and known-domain software preflight accepted",
+  "phase": "Cycle 02 OPEN: RP006 execution checkpoint accepted; one recorded attempt authorized",
   "cycle": {
     "number": "02",
     "title": "Query-relative Lineage Sufficiency",
@@ -99,6 +99,11 @@
     }
   ],
   "changes": [
+    [
+      "2026-10-12",
+      "RP006 source freeze, Test and actual checkpoint accepted",
+      "D-0016 accepts TST-RP006001 and a 35-file source freeze at b511e2234c7b59f90e4cc8cb089b58b3d3ed8d36, authorizing exactly one attempt on macOS 26.3 arm64 with Python 3.12.13. No recorded output or Result exists yet; Cycle 02 remains OPEN at 0/9."
+    ],
     [
       "2026-10-12",
       "RP006 recorded-attempt supervisor prepared",

@@ -1356,6 +1356,39 @@
     "recommended": true
   },
   {
+    "key": "rp006-preexecution-review",
+    "path": "research/RP006/RP006_PREEXECUTION_REVIEW.md",
+    "title": "RP006 actual pre-execution review",
+    "category": "Research packages",
+    "summary": "Methods, prior-art limits, graph trace, frozen source inventory, runtime and stop behavior reviewed before one bounded attempt.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Execution checkpoint",
+    "recommended": true
+  },
+  {
+    "key": "rp006-test-record",
+    "path": "research/RP006/audit-001/RECORD.md",
+    "title": "Test TST-RP006001 - finite lineage field-ablation audit",
+    "category": "Research packages",
+    "summary": "Fixed six-case domain, masks, query families, source freeze and bounded attempt. No outcome is asserted.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Registered Test",
+    "recommended": false
+  },
+  {
+    "key": "rp006-checkpoint-decision",
+    "path": "docs/decisions/DECISION-0016_RP006_PREEXECUTION_CHECKPOINT.md",
+    "title": "Decision 0016 - RP006 pre-execution checkpoint",
+    "category": "Research packages",
+    "summary": "Accepts the source-bound Test and authorizes one bounded recorded attempt; no result or Cycle credit yet.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Active checkpoint decision",
+    "recommended": true
+  },
+  {
     "key": "rp006-preparation-decision",
     "path": "docs/decisions/DECISION-0014_RP006_IMPLEMENTATION_PREPARATION.md",
     "title": "Decision 0014 - RP006 implementation preparation",

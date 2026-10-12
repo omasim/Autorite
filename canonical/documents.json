@@ -1422,6 +1422,39 @@
     "recommended": true
   },
   {
+    "key": "cycle02-graph-review",
+    "path": "cycles/cycle-02/reviews/CYCLE02_GRAPH_REVIEW_001.md",
+    "title": "Cycle 02 forward and backward graph review 001",
+    "category": "Research packages",
+    "summary": "Source-bound inventory of all records, relations, typed references, Question paths and five Result provenance traces; no transitive inference.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Graph review",
+    "recommended": true
+  },
+  {
+    "key": "cycle02-graph-snapshot",
+    "path": "cycles/cycle-02/reviews/CYCLE02_GRAPH_REVIEW_001.json",
+    "title": "Cycle 02 graph review inventory",
+    "category": "Research packages",
+    "summary": "Immutable reconstructed graph snapshot at the D-0017 result disposition cutoff.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Structural inventory",
+    "recommended": false
+  },
+  {
+    "key": "cycle02-graph-decision",
+    "path": "docs/decisions/DECISION-0018_CYCLE02_GRAPH_REVIEW.md",
+    "title": "Decision 0018 - Accept Cycle 02 graph review",
+    "category": "Research packages",
+    "summary": "Completes only the graph-review obligation; Cycle 02 remains OPEN at 3/9 and Question statuses do not change.",
+    "primary_site": "net",
+    "sites": ["org", "net"],
+    "label": "Graph-review disposition",
+    "recommended": true
+  },
+  {
     "key": "rp006-preparation-decision",
     "path": "docs/decisions/DECISION-0014_RP006_IMPLEMENTATION_PREPARATION.md",
     "title": "Decision 0014 - RP006 implementation preparation",

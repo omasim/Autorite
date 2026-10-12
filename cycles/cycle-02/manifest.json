@@ -38,10 +38,14 @@
       "key": "graph-review",
       "description": "Final forward/backward research graph validation",
       "weight": 1,
-      "resolved": false,
-      "resolution": null,
-      "evidence_refs": [],
-      "decision_ref": null
+      "resolved": true,
+      "resolution": "completed",
+      "evidence_refs": [
+        "cycles/cycle-02/reviews/CYCLE02_GRAPH_REVIEW_001.md",
+        "cycles/cycle-02/reviews/CYCLE02_GRAPH_REVIEW_001.json",
+        "scripts/check-cycle02-graph-review.py"
+      ],
+      "decision_ref": "D-0018"
     },
     {
       "key": "synthesis",

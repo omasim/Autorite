@@ -1,0 +1,2133 @@
+{
+  "backward_result_trace": [
+    {
+      "artifact_refs": [
+        "research/RP002A/runs/confirmatory-20261010-002/manifest.json",
+        "research/RP002A/runs/confirmatory-20261010-002/summary.json",
+        "research/RP002A/runs/confirmatory-20261010-002/replicates.json",
+        "research/RP002A/runs/confirmatory-20261010-002/timing.json"
+      ],
+      "package": "RP-002A",
+      "protocol_ref": "research/RP002A/CONFIRMATORY_002_PROTOCOL.md",
+      "question_or_claim_targets": [
+        "Q-3",
+        "Q-4"
+      ],
+      "result": "R-RP002A002",
+      "run_ref": "research/RP002A/runs/confirmatory-20261010-002",
+      "status": "VALID",
+      "test": "TST-RP002A002"
+    },
+    {
+      "artifact_refs": [
+        "research/RP003/runs/audit-20261011-001/manifest.json",
+        "research/RP003/runs/audit-20261011-001/frozen-inputs.json",
+        "research/RP003/runs/audit-20261011-001/paths.jsonl",
+        "research/RP003/runs/audit-20261011-001/summary.json",
+        "research/RP003/runs/audit-20261011-001/replay.json",
+        "research/RP003/runs/audit-20261011-001/timing.json"
+      ],
+      "package": "RP-003",
+      "protocol_ref": "research/RP003/PROTOCOL.md",
+      "question_or_claim_targets": [
+        "Q-0"
+      ],
+      "result": "R-RP003001",
+      "run_ref": "research/RP003/runs/audit-20261011-001",
+      "status": "VALID",
+      "test": "TST-RP003001"
+    },
+    {
+      "artifact_refs": [
+        "research/RP004/runs/audit-20261011-001/manifest.json",
+        "research/RP004/runs/audit-20261011-001/frozen-inputs.json",
+        "research/RP004/runs/audit-20261011-001/answers.jsonl",
+        "research/RP004/runs/audit-20261011-001/collisions.jsonl",
+        "research/RP004/runs/audit-20261011-001/summary.json",
+        "research/RP004/runs/audit-20261011-001/replay.json",
+        "research/RP004/runs/audit-20261011-001/timing.json"
+      ],
+      "package": "RP-004",
+      "protocol_ref": "research/RP004/RP004_OPERATIONAL_PROTOCOL.md",
+      "question_or_claim_targets": [
+        "Q-0",
+        "Q-4"
+      ],
+      "result": "R-RP004001",
+      "run_ref": "research/RP004/runs/audit-20261011-001",
+      "status": "VALID",
+      "test": "TST-RP004001"
+    },
+    {
+      "artifact_refs": [
+        "research/RP005A/runs/audit-20261011-001/manifest.json",
+        "research/RP005A/runs/audit-20261011-001/frozen-inputs.json",
+        "research/RP005A/runs/audit-20261011-001/planner.jsonl",
+        "research/RP005A/runs/audit-20261011-001/pairs.jsonl",
+        "research/RP005A/runs/audit-20261011-001/structural.jsonl",
+        "research/RP005A/runs/audit-20261011-001/summary.json",
+        "research/RP005A/runs/audit-20261011-001/replay.json",
+        "research/RP005A/runs/audit-20261011-001/timing.json"
+      ],
+      "package": "RP-005A",
+      "protocol_ref": "research/RP005A/RP005A_OPERATIONAL_PROTOCOL.md",
+      "question_or_claim_targets": [
+        "Q-2"
+      ],
+      "result": "R-RP005A001",
+      "run_ref": "research/RP005A/runs/audit-20261011-001",
+      "status": "VALID",
+      "test": "TST-RP005A001"
+    },
+    {
+      "artifact_refs": [
+        "research/RP006/attempts/570e92be-204b-4330-8300-bcbc4e2078d2/manifest.json",
+        "research/RP006/attempts/570e92be-204b-4330-8300-bcbc4e2078d2/truth.jsonl",
+        "research/RP006/attempts/570e92be-204b-4330-8300-bcbc4e2078d2/projections.jsonl",
+        "research/RP006/attempts/570e92be-204b-4330-8300-bcbc4e2078d2/pairs.jsonl",
+        "research/RP006/attempts/570e92be-204b-4330-8300-bcbc4e2078d2/conflicts.jsonl",
+        "research/RP006/attempts/570e92be-204b-4330-8300-bcbc4e2078d2/certificates.json",
+        "research/RP006/attempts/570e92be-204b-4330-8300-bcbc4e2078d2/summary.json",
+        "research/RP006/attempts/570e92be-204b-4330-8300-bcbc4e2078d2/timing.json",
+        "research/RP006/attempts/570e92be-204b-4330-8300-bcbc4e2078d2/replay.json"
+      ],
+      "package": "RP-006",
+      "protocol_ref": "research/RP006/RP006_OPERATIONAL_PROTOCOL.md",
+      "question_or_claim_targets": [
+        "Q-3",
+        "Q-4"
+      ],
+      "result": "R-RP006001",
+      "run_ref": "research/RP006/attempts/570e92be-204b-4330-8300-bcbc4e2078d2",
+      "status": "VALID",
+      "test": "TST-RP006001"
+    }
+  ],
+  "cycle_manifest_sha256": "9df89b9d515382f5f725e3c340b35710cd0d29c3b67d3051806182f11d88d7fc",
+  "declared_relations": [
+    {
+      "relation": "informs",
+      "source": "D-0004",
+      "target": "RP-002A"
+    },
+    {
+      "relation": "informs",
+      "source": "D-0005",
+      "target": "RP-003"
+    },
+    {
+      "relation": "informs",
+      "source": "D-0006",
+      "target": "RP-004"
+    },
+    {
+      "relation": "informs",
+      "source": "D-0007",
+      "target": "RP-005A"
+    },
+    {
+      "relation": "informs",
+      "source": "R-RP003001",
+      "target": "Q-0"
+    },
+    {
+      "relation": "informs",
+      "source": "R-RP004001",
+      "target": "Q-0"
+    },
+    {
+      "relation": "informs",
+      "source": "R-RP004001",
+      "target": "Q-4"
+    },
+    {
+      "relation": "informs",
+      "source": "R-RP005A001",
+      "target": "Q-2"
+    },
+    {
+      "relation": "informs",
+      "source": "R-RP006001",
+      "target": "Q-3"
+    },
+    {
+      "relation": "informs",
+      "source": "R-RP006001",
+      "target": "Q-4"
+    },
+    {
+      "relation": "informs",
+      "source": "RP-002A",
+      "target": "Q-3"
+    },
+    {
+      "relation": "informs",
+      "source": "RP-002A",
+      "target": "Q-4"
+    },
+    {
+      "relation": "tests",
+      "source": "TST-RP002A001",
+      "target": "Q-3"
+    },
+    {
+      "relation": "tests",
+      "source": "TST-RP002A001",
+      "target": "Q-4"
+    },
+    {
+      "relation": "tests",
+      "source": "TST-RP002A002",
+      "target": "Q-3"
+    },
+    {
+      "relation": "tests",
+      "source": "TST-RP002A002",
+      "target": "Q-4"
+    },
+    {
+      "relation": "tests",
+      "source": "TST-RP003001",
+      "target": "Q-0"
+    },
+    {
+      "relation": "tests",
+      "source": "TST-RP004001",
+      "target": "Q-0"
+    },
+    {
+      "relation": "tests",
+      "source": "TST-RP004001",
+      "target": "Q-4"
+    },
+    {
+      "relation": "tests",
+      "source": "TST-RP005A001",
+      "target": "Q-2"
+    },
+    {
+      "relation": "tests",
+      "source": "TST-RP006001",
+      "target": "Q-3"
+    },
+    {
+      "relation": "tests",
+      "source": "TST-RP006001",
+      "target": "Q-4"
+    }
+  ],
+  "forward_question_trace": [
+    {
+      "declared_informs": [
+        "R-RP003001",
+        "R-RP004001"
+      ],
+      "id": "Q-0",
+      "packages": [
+        "RP-003",
+        "RP-004"
+      ],
+      "results_via_test_ref": [
+        "R-RP003001",
+        "R-RP004001"
+      ],
+      "status": "ACTIVE",
+      "tests": [
+        "TST-RP003001",
+        "TST-RP004001"
+      ]
+    },
+    {
+      "declared_informs": [],
+      "id": "Q-1",
+      "packages": [],
+      "results_via_test_ref": [],
+      "status": "OPEN",
+      "tests": []
+    },
+    {
+      "declared_informs": [
+        "R-RP005A001"
+      ],
+      "id": "Q-2",
+      "packages": [
+        "RP-005A"
+      ],
+      "results_via_test_ref": [
+        "R-RP005A001"
+      ],
+      "status": "ACTIVE",
+      "tests": [
+        "TST-RP005A001"
+      ]
+    },
+    {
+      "declared_informs": [
+        "R-RP006001",
+        "RP-002A"
+      ],
+      "id": "Q-3",
+      "packages": [
+        "RP-002A",
+        "RP-006"
+      ],
+      "results_via_test_ref": [
+        "R-RP002A002",
+        "R-RP006001"
+      ],
+      "status": "ACTIVE",
+      "tests": [
+        "TST-RP002A001",
+        "TST-RP002A002",
+        "TST-RP006001"
+      ]
+    },
+    {
+      "declared_informs": [
+        "R-RP004001",
+        "R-RP006001",
+        "RP-002A"
+      ],
+      "id": "Q-4",
+      "packages": [
+        "RP-002A",
+        "RP-004",
+        "RP-006"
+      ],
+      "results_via_test_ref": [
+        "R-RP002A002",
+        "R-RP004001",
+        "R-RP006001"
+      ],
+      "status": "ACTIVE",
+      "tests": [
+        "TST-RP002A001",
+        "TST-RP002A002",
+        "TST-RP004001",
+        "TST-RP006001"
+      ]
+    },
+    {
+      "declared_informs": [],
+      "id": "Q-5",
+      "packages": [],
+      "results_via_test_ref": [],
+      "status": "OPEN",
+      "tests": []
+    }
+  ],
+  "incoming_index": {
+    "D-0001": {
+      "relations": [],
+      "typed_references": []
+    },
+    "D-0002": {
+      "relations": [],
+      "typed_references": []
+    },
+    "D-0003": {
+      "relations": [],
+      "typed_references": []
+    },
+    "D-0004": {
+      "relations": [],
+      "typed_references": []
+    },
+    "D-0005": {
+      "relations": [],
+      "typed_references": []
+    },
+    "D-0006": {
+      "relations": [],
+      "typed_references": []
+    },
+    "D-0007": {
+      "relations": [],
+      "typed_references": []
+    },
+    "D-0008": {
+      "relations": [],
+      "typed_references": []
+    },
+    "D-0009": {
+      "relations": [],
+      "typed_references": []
+    },
+    "D-0010": {
+      "relations": [],
+      "typed_references": []
+    },
+    "D-0011": {
+      "relations": [],
+      "typed_references": []
+    },
+    "D-0012": {
+      "relations": [],
+      "typed_references": []
+    },
+    "D-0013": {
+      "relations": [],
+      "typed_references": []
+    },
+    "D-0014": {
+      "relations": [],
+      "typed_references": []
+    },
+    "D-0015": {
+      "relations": [],
+      "typed_references": []
+    },
+    "D-0016": {
+      "relations": [],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0017",
+          "target": "D-0016"
+        }
+      ]
+    },
+    "D-0017": {
+      "relations": [],
+      "typed_references": []
+    },
+    "Q-0": {
+      "relations": [
+        {
+          "relation": "informs",
+          "source": "R-RP003001",
+          "target": "Q-0"
+        },
+        {
+          "relation": "informs",
+          "source": "R-RP004001",
+          "target": "Q-0"
+        },
+        {
+          "relation": "tests",
+          "source": "TST-RP003001",
+          "target": "Q-0"
+        },
+        {
+          "relation": "tests",
+          "source": "TST-RP004001",
+          "target": "Q-0"
+        }
+      ],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0005",
+          "target": "Q-0"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0006",
+          "target": "Q-0"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0008",
+          "target": "Q-0"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0009",
+          "target": "Q-0"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0010",
+          "target": "Q-0"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0011",
+          "target": "Q-0"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0012",
+          "target": "Q-0"
+        },
+        {
+          "field": "question_refs",
+          "source": "RP-003",
+          "target": "Q-0"
+        },
+        {
+          "field": "question_refs",
+          "source": "RP-004",
+          "target": "Q-0"
+        },
+        {
+          "field": "target_refs",
+          "source": "TST-RP003001",
+          "target": "Q-0"
+        },
+        {
+          "field": "target_refs",
+          "source": "TST-RP004001",
+          "target": "Q-0"
+        }
+      ]
+    },
+    "Q-1": {
+      "relations": [],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0008",
+          "target": "Q-1"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0009",
+          "target": "Q-1"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0010",
+          "target": "Q-1"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0011",
+          "target": "Q-1"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0012",
+          "target": "Q-1"
+        }
+      ]
+    },
+    "Q-2": {
+      "relations": [
+        {
+          "relation": "informs",
+          "source": "R-RP005A001",
+          "target": "Q-2"
+        },
+        {
+          "relation": "tests",
+          "source": "TST-RP005A001",
+          "target": "Q-2"
+        }
+      ],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0007",
+          "target": "Q-2"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0008",
+          "target": "Q-2"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0009",
+          "target": "Q-2"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0010",
+          "target": "Q-2"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0011",
+          "target": "Q-2"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0012",
+          "target": "Q-2"
+        },
+        {
+          "field": "question_refs",
+          "source": "RP-005A",
+          "target": "Q-2"
+        },
+        {
+          "field": "target_refs",
+          "source": "TST-RP005A001",
+          "target": "Q-2"
+        }
+      ]
+    },
+    "Q-3": {
+      "relations": [
+        {
+          "relation": "informs",
+          "source": "R-RP006001",
+          "target": "Q-3"
+        },
+        {
+          "relation": "informs",
+          "source": "RP-002A",
+          "target": "Q-3"
+        },
+        {
+          "relation": "tests",
+          "source": "TST-RP002A001",
+          "target": "Q-3"
+        },
+        {
+          "relation": "tests",
+          "source": "TST-RP002A002",
+          "target": "Q-3"
+        },
+        {
+          "relation": "tests",
+          "source": "TST-RP006001",
+          "target": "Q-3"
+        }
+      ],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0004",
+          "target": "Q-3"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0008",
+          "target": "Q-3"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0009",
+          "target": "Q-3"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0010",
+          "target": "Q-3"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0011",
+          "target": "Q-3"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0012",
+          "target": "Q-3"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0013",
+          "target": "Q-3"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0014",
+          "target": "Q-3"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0015",
+          "target": "Q-3"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0016",
+          "target": "Q-3"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0017",
+          "target": "Q-3"
+        },
+        {
+          "field": "question_refs",
+          "source": "RP-002A",
+          "target": "Q-3"
+        },
+        {
+          "field": "question_refs",
+          "source": "RP-006",
+          "target": "Q-3"
+        },
+        {
+          "field": "target_refs",
+          "source": "TST-RP002A001",
+          "target": "Q-3"
+        },
+        {
+          "field": "target_refs",
+          "source": "TST-RP002A002",
+          "target": "Q-3"
+        },
+        {
+          "field": "target_refs",
+          "source": "TST-RP006001",
+          "target": "Q-3"
+        }
+      ]
+    },
+    "Q-4": {
+      "relations": [
+        {
+          "relation": "informs",
+          "source": "R-RP004001",
+          "target": "Q-4"
+        },
+        {
+          "relation": "informs",
+          "source": "R-RP006001",
+          "target": "Q-4"
+        },
+        {
+          "relation": "informs",
+          "source": "RP-002A",
+          "target": "Q-4"
+        },
+        {
+          "relation": "tests",
+          "source": "TST-RP002A001",
+          "target": "Q-4"
+        },
+        {
+          "relation": "tests",
+          "source": "TST-RP002A002",
+          "target": "Q-4"
+        },
+        {
+          "relation": "tests",
+          "source": "TST-RP004001",
+          "target": "Q-4"
+        },
+        {
+          "relation": "tests",
+          "source": "TST-RP006001",
+          "target": "Q-4"
+        }
+      ],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0004",
+          "target": "Q-4"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0006",
+          "target": "Q-4"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0008",
+          "target": "Q-4"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0009",
+          "target": "Q-4"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0010",
+          "target": "Q-4"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0011",
+          "target": "Q-4"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0012",
+          "target": "Q-4"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0013",
+          "target": "Q-4"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0014",
+          "target": "Q-4"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0015",
+          "target": "Q-4"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0016",
+          "target": "Q-4"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0017",
+          "target": "Q-4"
+        },
+        {
+          "field": "question_refs",
+          "source": "RP-002A",
+          "target": "Q-4"
+        },
+        {
+          "field": "question_refs",
+          "source": "RP-004",
+          "target": "Q-4"
+        },
+        {
+          "field": "question_refs",
+          "source": "RP-006",
+          "target": "Q-4"
+        },
+        {
+          "field": "target_refs",
+          "source": "TST-RP002A001",
+          "target": "Q-4"
+        },
+        {
+          "field": "target_refs",
+          "source": "TST-RP002A002",
+          "target": "Q-4"
+        },
+        {
+          "field": "target_refs",
+          "source": "TST-RP004001",
+          "target": "Q-4"
+        },
+        {
+          "field": "target_refs",
+          "source": "TST-RP006001",
+          "target": "Q-4"
+        }
+      ]
+    },
+    "Q-5": {
+      "relations": [],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0008",
+          "target": "Q-5"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0009",
+          "target": "Q-5"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0010",
+          "target": "Q-5"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0011",
+          "target": "Q-5"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0012",
+          "target": "Q-5"
+        }
+      ]
+    },
+    "R-RP002A002": {
+      "relations": [],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0004",
+          "target": "R-RP002A002"
+        }
+      ]
+    },
+    "R-RP003001": {
+      "relations": [],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0005",
+          "target": "R-RP003001"
+        }
+      ]
+    },
+    "R-RP004001": {
+      "relations": [],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0006",
+          "target": "R-RP004001"
+        }
+      ]
+    },
+    "R-RP005A001": {
+      "relations": [],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0007",
+          "target": "R-RP005A001"
+        }
+      ]
+    },
+    "R-RP006001": {
+      "relations": [],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0017",
+          "target": "R-RP006001"
+        }
+      ]
+    },
+    "RP-002A": {
+      "relations": [
+        {
+          "relation": "informs",
+          "source": "D-0004",
+          "target": "RP-002A"
+        }
+      ],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0004",
+          "target": "RP-002A"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0008",
+          "target": "RP-002A"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0009",
+          "target": "RP-002A"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0010",
+          "target": "RP-002A"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0011",
+          "target": "RP-002A"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0012",
+          "target": "RP-002A"
+        },
+        {
+          "field": "package_ref",
+          "source": "R-RP002A002",
+          "target": "RP-002A"
+        },
+        {
+          "field": "package_ref",
+          "source": "TST-RP002A001",
+          "target": "RP-002A"
+        },
+        {
+          "field": "package_ref",
+          "source": "TST-RP002A002",
+          "target": "RP-002A"
+        }
+      ]
+    },
+    "RP-003": {
+      "relations": [
+        {
+          "relation": "informs",
+          "source": "D-0005",
+          "target": "RP-003"
+        }
+      ],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0005",
+          "target": "RP-003"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0008",
+          "target": "RP-003"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0009",
+          "target": "RP-003"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0010",
+          "target": "RP-003"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0011",
+          "target": "RP-003"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0012",
+          "target": "RP-003"
+        },
+        {
+          "field": "package_ref",
+          "source": "R-RP003001",
+          "target": "RP-003"
+        },
+        {
+          "field": "package_ref",
+          "source": "TST-RP003001",
+          "target": "RP-003"
+        }
+      ]
+    },
+    "RP-004": {
+      "relations": [
+        {
+          "relation": "informs",
+          "source": "D-0006",
+          "target": "RP-004"
+        }
+      ],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0006",
+          "target": "RP-004"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0008",
+          "target": "RP-004"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0009",
+          "target": "RP-004"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0010",
+          "target": "RP-004"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0011",
+          "target": "RP-004"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0012",
+          "target": "RP-004"
+        },
+        {
+          "field": "package_ref",
+          "source": "R-RP004001",
+          "target": "RP-004"
+        },
+        {
+          "field": "package_ref",
+          "source": "TST-RP004001",
+          "target": "RP-004"
+        }
+      ]
+    },
+    "RP-005A": {
+      "relations": [
+        {
+          "relation": "informs",
+          "source": "D-0007",
+          "target": "RP-005A"
+        }
+      ],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0007",
+          "target": "RP-005A"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0008",
+          "target": "RP-005A"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0009",
+          "target": "RP-005A"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0010",
+          "target": "RP-005A"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0011",
+          "target": "RP-005A"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0012",
+          "target": "RP-005A"
+        },
+        {
+          "field": "package_ref",
+          "source": "R-RP005A001",
+          "target": "RP-005A"
+        },
+        {
+          "field": "package_ref",
+          "source": "TST-RP005A001",
+          "target": "RP-005A"
+        }
+      ]
+    },
+    "RP-006": {
+      "relations": [],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0013",
+          "target": "RP-006"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0014",
+          "target": "RP-006"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0015",
+          "target": "RP-006"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0016",
+          "target": "RP-006"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0017",
+          "target": "RP-006"
+        },
+        {
+          "field": "package_ref",
+          "source": "R-RP006001",
+          "target": "RP-006"
+        },
+        {
+          "field": "package_ref",
+          "source": "TST-RP006001",
+          "target": "RP-006"
+        }
+      ]
+    },
+    "SRC-BELIEF2025": {
+      "relations": [],
+      "typed_references": []
+    },
+    "SRC-BENCH2024": {
+      "relations": [],
+      "typed_references": []
+    },
+    "SRC-DAMXREPORT2026": {
+      "relations": [],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0011",
+          "target": "SRC-DAMXREPORT2026"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0012",
+          "target": "SRC-DAMXREPORT2026"
+        }
+      ]
+    },
+    "SRC-FD2026": {
+      "relations": [],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0013",
+          "target": "SRC-FD2026"
+        }
+      ]
+    },
+    "SRC-OOM2015": {
+      "relations": [],
+      "typed_references": []
+    },
+    "SRC-PSR2001": {
+      "relations": [],
+      "typed_references": []
+    },
+    "SRC-PSRNN2017": {
+      "relations": [],
+      "typed_references": []
+    },
+    "SRC-RP006CLOCKS": {
+      "relations": [],
+      "typed_references": []
+    },
+    "SRC-RPSP2018": {
+      "relations": [],
+      "typed_references": []
+    },
+    "SRC-VAR2004": {
+      "relations": [],
+      "typed_references": []
+    },
+    "TST-RP002A001": {
+      "relations": [],
+      "typed_references": []
+    },
+    "TST-RP002A002": {
+      "relations": [],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0004",
+          "target": "TST-RP002A002"
+        },
+        {
+          "field": "test_ref",
+          "source": "R-RP002A002",
+          "target": "TST-RP002A002"
+        }
+      ]
+    },
+    "TST-RP003001": {
+      "relations": [],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0005",
+          "target": "TST-RP003001"
+        },
+        {
+          "field": "test_ref",
+          "source": "R-RP003001",
+          "target": "TST-RP003001"
+        }
+      ]
+    },
+    "TST-RP004001": {
+      "relations": [],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0006",
+          "target": "TST-RP004001"
+        },
+        {
+          "field": "test_ref",
+          "source": "R-RP004001",
+          "target": "TST-RP004001"
+        }
+      ]
+    },
+    "TST-RP005A001": {
+      "relations": [],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0007",
+          "target": "TST-RP005A001"
+        },
+        {
+          "field": "test_ref",
+          "source": "R-RP005A001",
+          "target": "TST-RP005A001"
+        }
+      ]
+    },
+    "TST-RP006001": {
+      "relations": [],
+      "typed_references": [
+        {
+          "field": "affected_refs",
+          "source": "D-0016",
+          "target": "TST-RP006001"
+        },
+        {
+          "field": "affected_refs",
+          "source": "D-0017",
+          "target": "TST-RP006001"
+        },
+        {
+          "field": "test_ref",
+          "source": "R-RP006001",
+          "target": "TST-RP006001"
+        }
+      ]
+    }
+  },
+  "no_automatic_transitive_inference": true,
+  "record_inputs": {
+    "D-0001": {
+      "path": "graph/decisions/D-0001.md",
+      "sha256": "c68a4394141bc1845180bb8227a78b21cf9c7c6d33ca045ad13627844c67abfd"
+    },
+    "D-0002": {
+      "path": "graph/decisions/D-0002.md",
+      "sha256": "8266ead1dc983818c042aeeab39d434ae6c4d5239d9ac295573f2f7fe5a9ba42"
+    },
+    "D-0003": {
+      "path": "graph/decisions/D-0003.md",
+      "sha256": "a677604ca16ce06284980149f84633cd51724c1fbb3aa61757a73d7209471480"
+    },
+    "D-0004": {
+      "path": "graph/decisions/D-0004.md",
+      "sha256": "301c412d72e186fa4165f77a13431057179e1d1a809b69b6b6eab77035269f36"
+    },
+    "D-0005": {
+      "path": "graph/decisions/D-0005.md",
+      "sha256": "6f17ef221126624910b5803db49f9177eb93c9311a80dd2759ddbc6eed2612ec"
+    },
+    "D-0006": {
+      "path": "graph/decisions/D-0006.md",
+      "sha256": "a1025eaae95270b0db2482d9b4c6191f1f8ccb01303abdb7a26a44325e575225"
+    },
+    "D-0007": {
+      "path": "graph/decisions/D-0007.md",
+      "sha256": "862dd35aef8d2565c5ddbe48c1014fe3d12f5ab5b4e3f47e9fe0b9f2f90e84d8"
+    },
+    "D-0008": {
+      "path": "graph/decisions/D-0008.md",
+      "sha256": "90ec5c93c097dca8a03d09c7d1e04d93ff3b2416e91b6dbc0f4d4b50b791b489"
+    },
+    "D-0009": {
+      "path": "graph/decisions/D-0009.md",
+      "sha256": "a4acb73bf4230d1f582e01c4f59c3a03f27cbead400f919ecf6620f2cca24173"
+    },
+    "D-0010": {
+      "path": "graph/decisions/D-0010.md",
+      "sha256": "49c049f5a8e35b52e6c9c99ced19fd457e141a6817e9b8b359edf4c764022439"
+    },
+    "D-0011": {
+      "path": "graph/decisions/D-0011.md",
+      "sha256": "d666542acff98d3c556f35bceee26b9b2940eaf044f2102a580e2d5c1aaef17e"
+    },
+    "D-0012": {
+      "path": "graph/decisions/D-0012.md",
+      "sha256": "85b35de63b96f459eb7d1a428484b49c9fb858c973c53f24edc0a829aeb2f477"
+    },
+    "D-0013": {
+      "path": "graph/decisions/D-0013.md",
+      "sha256": "1f3047be748234fb14aaa595f08872c4e82705c0990669a067608cfdd6c5ffdf"
+    },
+    "D-0014": {
+      "path": "graph/decisions/D-0014.md",
+      "sha256": "a1132b84ae99be18a14b3771cc640b5c5a9b6135ac7b6f2d362b64a78b76f5e4"
+    },
+    "D-0015": {
+      "path": "graph/decisions/D-0015.md",
+      "sha256": "cc35ef074aa61186c5093bf3495c9be6c46fa1ee016c82baa1b813843179ecbd"
+    },
+    "D-0016": {
+      "path": "graph/decisions/D-0016.md",
+      "sha256": "e2b497609172472f4e2e968f236691cf4eb96ae64acac5489d6d6df71a4c2876"
+    },
+    "D-0017": {
+      "path": "graph/decisions/D-0017.md",
+      "sha256": "873b0d903813c03e57eccc6328d3132f7bf4bc475246fd94742d5502677d618c"
+    },
+    "Q-0": {
+      "path": "graph/questions/Q-0.md",
+      "sha256": "9cff69058695febb9a344409a812e6e15caf91f1364b7442c20cd0aad19e4c1d"
+    },
+    "Q-1": {
+      "path": "graph/questions/Q-1.md",
+      "sha256": "8d6f7def8f01a71bf10aa3b660d3f165e27ade0976371173ba937a408250b558"
+    },
+    "Q-2": {
+      "path": "graph/questions/Q-2.md",
+      "sha256": "678d0b9f026b35b84206303682b0d672c49a58af58b699f255943e465616afeb"
+    },
+    "Q-3": {
+      "path": "graph/questions/Q-3.md",
+      "sha256": "9b43df42cf2a1b414153e1cfb84c387d71ff2eb41929b240879a5d60bf699da6"
+    },
+    "Q-4": {
+      "path": "graph/questions/Q-4.md",
+      "sha256": "78c4693c4cefc7237e618359841cb900e08bfaa6d3432bc7eaa027aa149f4868"
+    },
+    "Q-5": {
+      "path": "graph/questions/Q-5.md",
+      "sha256": "e7b97622f3de4b4c3709f61bccb718748b40511a1c8fa53585dd29e3c0bfedb9"
+    },
+    "R-RP002A002": {
+      "path": "research/RP002A/confirmation-002/result/RECORD.md",
+      "sha256": "c0b231802c936ab35e36e211a63a5ad80b3f6c319a1ead64e85a8ee49c12928e"
+    },
+    "R-RP003001": {
+      "path": "research/RP003/audit-001/result/RECORD.md",
+      "sha256": "dfb4bb3a4f60c35f947e32ac22a63d67c437b49ca7986614212be1679d4bc3e0"
+    },
+    "R-RP004001": {
+      "path": "research/RP004/audit-001/result/RECORD.md",
+      "sha256": "7a2fc87c58d0ae08eb7776a5ddcd460a9578ccdb37c16d2e84bb440abd35b1ca"
+    },
+    "R-RP005A001": {
+      "path": "research/RP005A/audit-001/result/RECORD.md",
+      "sha256": "17586713a208090338cd78f7a2f4133c236c4359d00385c4742863d4c2329dfd"
+    },
+    "R-RP006001": {
+      "path": "research/RP006/audit-001/result/RECORD.md",
+      "sha256": "a0026f85e048a4f2f2faf577df1277e1916d9c2e02350cecc015832909c13154"
+    },
+    "RP-002A": {
+      "path": "research/RP002A/RECORD.md",
+      "sha256": "158479c8855e7b879e0c86b7b1f29cedf5eebcd1ec04ab25d1297f5fdc505f33"
+    },
+    "RP-003": {
+      "path": "research/RP003/RECORD.md",
+      "sha256": "aed3cd4e32d4e020c60a19270f2d087b1f71493066a9f92a833744835489afbe"
+    },
+    "RP-004": {
+      "path": "research/RP004/RECORD.md",
+      "sha256": "6da184195f09f5bfa90527c71c3133e629de2696b722f4bd13c88b512b776797"
+    },
+    "RP-005A": {
+      "path": "research/RP005A/RECORD.md",
+      "sha256": "9989f85b077079acc5e9d46a03ec4529de2a61379c5fc9eb9cd4ef9c40d3e66d"
+    },
+    "RP-006": {
+      "path": "research/RP006/RECORD.md",
+      "sha256": "d6215ad27efe9502f1c7086f15dca06fffe95038edcc6484f53e6645386fd667"
+    },
+    "SRC-BELIEF2025": {
+      "path": "graph/sources/BELIEF2025.md",
+      "sha256": "e4012ccf03caed0cfc2ae8bde43507d9c13f63961b14261cc3eb956a6e010db7"
+    },
+    "SRC-BENCH2024": {
+      "path": "graph/sources/BENCH2024.md",
+      "sha256": "045006bff9bd33efc42e82d1ed99f7e058e8a6467c9b7ea72fe4dbcfd98e65c4"
+    },
+    "SRC-DAMXREPORT2026": {
+      "path": "graph/sources/SRC-DAMXREPORT2026.md",
+      "sha256": "ab0d1548918a61cef96615d24fd9e6cb2b0f70cdde61ba50e40f58bfd066c217"
+    },
+    "SRC-FD2026": {
+      "path": "graph/sources/SRC-FD2026.md",
+      "sha256": "f0df79447b27cfef8c498a22a3632db259abc1a75752f4daa2096aa9b309db8a"
+    },
+    "SRC-OOM2015": {
+      "path": "graph/sources/OOM2015.md",
+      "sha256": "0e3e1236e7f8d67fb6e59e4ef98544bb0123c0f6542078d43af25a40cc6a7314"
+    },
+    "SRC-PSR2001": {
+      "path": "graph/sources/SRC-PSR2001.md",
+      "sha256": "164eabe4e0dce76081a7e791015ed812907dff2ffca3b9d104adc72b7ff636ec"
+    },
+    "SRC-PSRNN2017": {
+      "path": "graph/sources/PSRNN2017.md",
+      "sha256": "6a43306da7d6f62958c9323bc2e057a830c9abe8180b171bd86bd80bbe6023e3"
+    },
+    "SRC-RP006CLOCKS": {
+      "path": "graph/sources/SRC-RP006CLOCKS.md",
+      "sha256": "3893e661e8b0d981a5144a15ef0521c7e1614d0087c27b2089282046986b328c"
+    },
+    "SRC-RPSP2018": {
+      "path": "graph/sources/SRC-RPSP2018.md",
+      "sha256": "1031cb37332d2cc881ef5cf60ceae2d14ac2d1230afda1a6cbb9a48adba33836"
+    },
+    "SRC-VAR2004": {
+      "path": "graph/sources/VAR2004.md",
+      "sha256": "ff363e4510c9973034ed8f834f61c5cbd850b9a51606b4b24fcc22fdcc2d7b50"
+    },
+    "TST-RP002A001": {
+      "path": "research/RP002A/confirmation/RECORD.md",
+      "sha256": "6f7b678329f9e7fcc0b553e2da1b5c457e8c8350cb1beb20de0bada9dd597a96"
+    },
+    "TST-RP002A002": {
+      "path": "research/RP002A/confirmation-002/RECORD.md",
+      "sha256": "f40305bc842e01257baf2b33049bdeef4ec119e2d016976ee9eb89bde264552a"
+    },
+    "TST-RP003001": {
+      "path": "research/RP003/audit-001/RECORD.md",
+      "sha256": "e7a53f4436e2a71e5d00198feefabd306e76d9a845371ab95434b5411bbf7f28"
+    },
+    "TST-RP004001": {
+      "path": "research/RP004/audit-001/RECORD.md",
+      "sha256": "b4af5aa4fd96595130ca20225a4022ba6fa8dc4a0e3c3bd8db83e2bbd145d4e6"
+    },
+    "TST-RP005A001": {
+      "path": "research/RP005A/audit-001/RECORD.md",
+      "sha256": "feb15f20d71ae77c6579ef838e5eac4a1f235098bcdb0e218b8e73eb9f404578"
+    },
+    "TST-RP006001": {
+      "path": "research/RP006/audit-001/RECORD.md",
+      "sha256": "1e313a41ed57fbb97399dece00578564553f0a602c14d2c50c840b2fbf66e9d3"
+    }
+  },
+  "resolved_obligation_evidence": [
+    {
+      "decision_ref": "D-0017",
+      "evidence_refs": [
+        "research/RP006/RP006_RESULT_REVIEW_001.md",
+        "research/RP006/audit-001/result/RECORD.md",
+        "research/RP006/attempts/570e92be-204b-4330-8300-bcbc4e2078d2/manifest.json"
+      ],
+      "key": "rp006",
+      "resolution": "completed"
+    },
+    {
+      "decision_ref": "D-0017",
+      "evidence_refs": [
+        "research/RP006/RP006_PREEXECUTION_REVIEW.md",
+        "research/RP006/EXECUTION_FREEZE.json",
+        "research/RP006/audit-001/RECORD.md",
+        "research/RP006/attempts/570e92be-204b-4330-8300-bcbc4e2078d2/replay.json"
+      ],
+      "key": "checkpoint-a",
+      "resolution": "completed"
+    }
+  ],
+  "reviewed_source_commit": "fbc76e0209819fa7f24499162349c81db4adf3eb",
+  "type_counts": {
+    "Decision": 17,
+    "Question": 6,
+    "ResearchPackage": 5,
+    "Result": 5,
+    "Source": 10,
+    "Test": 6
+  },
+  "typed_references": [
+    {
+      "field": "affected_refs",
+      "source": "D-0004",
+      "target": "Q-3"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0004",
+      "target": "Q-4"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0004",
+      "target": "R-RP002A002"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0004",
+      "target": "RP-002A"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0004",
+      "target": "TST-RP002A002"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0005",
+      "target": "Q-0"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0005",
+      "target": "R-RP003001"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0005",
+      "target": "RP-003"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0005",
+      "target": "TST-RP003001"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0006",
+      "target": "Q-0"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0006",
+      "target": "Q-4"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0006",
+      "target": "R-RP004001"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0006",
+      "target": "RP-004"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0006",
+      "target": "TST-RP004001"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0007",
+      "target": "Q-2"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0007",
+      "target": "R-RP005A001"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0007",
+      "target": "RP-005A"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0007",
+      "target": "TST-RP005A001"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0008",
+      "target": "Q-0"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0008",
+      "target": "Q-1"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0008",
+      "target": "Q-2"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0008",
+      "target": "Q-3"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0008",
+      "target": "Q-4"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0008",
+      "target": "Q-5"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0008",
+      "target": "RP-002A"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0008",
+      "target": "RP-003"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0008",
+      "target": "RP-004"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0008",
+      "target": "RP-005A"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0009",
+      "target": "Q-0"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0009",
+      "target": "Q-1"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0009",
+      "target": "Q-2"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0009",
+      "target": "Q-3"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0009",
+      "target": "Q-4"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0009",
+      "target": "Q-5"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0009",
+      "target": "RP-002A"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0009",
+      "target": "RP-003"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0009",
+      "target": "RP-004"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0009",
+      "target": "RP-005A"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0010",
+      "target": "Q-0"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0010",
+      "target": "Q-1"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0010",
+      "target": "Q-2"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0010",
+      "target": "Q-3"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0010",
+      "target": "Q-4"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0010",
+      "target": "Q-5"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0010",
+      "target": "RP-002A"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0010",
+      "target": "RP-003"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0010",
+      "target": "RP-004"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0010",
+      "target": "RP-005A"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0011",
+      "target": "Q-0"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0011",
+      "target": "Q-1"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0011",
+      "target": "Q-2"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0011",
+      "target": "Q-3"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0011",
+      "target": "Q-4"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0011",
+      "target": "Q-5"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0011",
+      "target": "RP-002A"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0011",
+      "target": "RP-003"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0011",
+      "target": "RP-004"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0011",
+      "target": "RP-005A"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0011",
+      "target": "SRC-DAMXREPORT2026"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0012",
+      "target": "Q-0"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0012",
+      "target": "Q-1"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0012",
+      "target": "Q-2"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0012",
+      "target": "Q-3"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0012",
+      "target": "Q-4"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0012",
+      "target": "Q-5"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0012",
+      "target": "RP-002A"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0012",
+      "target": "RP-003"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0012",
+      "target": "RP-004"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0012",
+      "target": "RP-005A"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0012",
+      "target": "SRC-DAMXREPORT2026"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0013",
+      "target": "Q-3"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0013",
+      "target": "Q-4"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0013",
+      "target": "RP-006"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0013",
+      "target": "SRC-FD2026"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0014",
+      "target": "Q-3"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0014",
+      "target": "Q-4"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0014",
+      "target": "RP-006"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0015",
+      "target": "Q-3"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0015",
+      "target": "Q-4"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0015",
+      "target": "RP-006"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0016",
+      "target": "Q-3"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0016",
+      "target": "Q-4"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0016",
+      "target": "RP-006"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0016",
+      "target": "TST-RP006001"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0017",
+      "target": "D-0016"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0017",
+      "target": "Q-3"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0017",
+      "target": "Q-4"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0017",
+      "target": "R-RP006001"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0017",
+      "target": "RP-006"
+    },
+    {
+      "field": "affected_refs",
+      "source": "D-0017",
+      "target": "TST-RP006001"
+    },
+    {
+      "field": "package_ref",
+      "source": "R-RP002A002",
+      "target": "RP-002A"
+    },
+    {
+      "field": "test_ref",
+      "source": "R-RP002A002",
+      "target": "TST-RP002A002"
+    },
+    {
+      "field": "package_ref",
+      "source": "R-RP003001",
+      "target": "RP-003"
+    },
+    {
+      "field": "test_ref",
+      "source": "R-RP003001",
+      "target": "TST-RP003001"
+    },
+    {
+      "field": "package_ref",
+      "source": "R-RP004001",
+      "target": "RP-004"
+    },
+    {
+      "field": "test_ref",
+      "source": "R-RP004001",
+      "target": "TST-RP004001"
+    },
+    {
+      "field": "package_ref",
+      "source": "R-RP005A001",
+      "target": "RP-005A"
+    },
+    {
+      "field": "test_ref",
+      "source": "R-RP005A001",
+      "target": "TST-RP005A001"
+    },
+    {
+      "field": "package_ref",
+      "source": "R-RP006001",
+      "target": "RP-006"
+    },
+    {
+      "field": "test_ref",
+      "source": "R-RP006001",
+      "target": "TST-RP006001"
+    },
+    {
+      "field": "question_refs",
+      "source": "RP-002A",
+      "target": "Q-3"
+    },
+    {
+      "field": "question_refs",
+      "source": "RP-002A",
+      "target": "Q-4"
+    },
+    {
+      "field": "question_refs",
+      "source": "RP-003",
+      "target": "Q-0"
+    },
+    {
+      "field": "question_refs",
+      "source": "RP-004",
+      "target": "Q-0"
+    },
+    {
+      "field": "question_refs",
+      "source": "RP-004",
+      "target": "Q-4"
+    },
+    {
+      "field": "question_refs",
+      "source": "RP-005A",
+      "target": "Q-2"
+    },
+    {
+      "field": "question_refs",
+      "source": "RP-006",
+      "target": "Q-3"
+    },
+    {
+      "field": "question_refs",
+      "source": "RP-006",
+      "target": "Q-4"
+    },
+    {
+      "field": "package_ref",
+      "source": "TST-RP002A001",
+      "target": "RP-002A"
+    },
+    {
+      "field": "target_refs",
+      "source": "TST-RP002A001",
+      "target": "Q-3"
+    },
+    {
+      "field": "target_refs",
+      "source": "TST-RP002A001",
+      "target": "Q-4"
+    },
+    {
+      "field": "package_ref",
+      "source": "TST-RP002A002",
+      "target": "RP-002A"
+    },
+    {
+      "field": "target_refs",
+      "source": "TST-RP002A002",
+      "target": "Q-3"
+    },
+    {
+      "field": "target_refs",
+      "source": "TST-RP002A002",
+      "target": "Q-4"
+    },
+    {
+      "field": "package_ref",
+      "source": "TST-RP003001",
+      "target": "RP-003"
+    },
+    {
+      "field": "target_refs",
+      "source": "TST-RP003001",
+      "target": "Q-0"
+    },
+    {
+      "field": "package_ref",
+      "source": "TST-RP004001",
+      "target": "RP-004"
+    },
+    {
+      "field": "target_refs",
+      "source": "TST-RP004001",
+      "target": "Q-0"
+    },
+    {
+      "field": "target_refs",
+      "source": "TST-RP004001",
+      "target": "Q-4"
+    },
+    {
+      "field": "package_ref",
+      "source": "TST-RP005A001",
+      "target": "RP-005A"
+    },
+    {
+      "field": "target_refs",
+      "source": "TST-RP005A001",
+      "target": "Q-2"
+    },
+    {
+      "field": "package_ref",
+      "source": "TST-RP006001",
+      "target": "RP-006"
+    },
+    {
+      "field": "target_refs",
+      "source": "TST-RP006001",
+      "target": "Q-3"
+    },
+    {
+      "field": "target_refs",
+      "source": "TST-RP006001",
+      "target": "Q-4"
+    }
+  ],
+  "version": "0.1"
+}

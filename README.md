@@ -2,7 +2,7 @@
 
 ## Current package disposition - 2026-10-10
 
-RP002A is CLOSED for its defined Cycle 01 commitment after the explicit internal [package review](research/RP002A/PACKAGE_REVIEW.md) and [Decision D-0004](docs/decisions/DECISION-0004_RP002A_DISPOSITION.md). All seven frozen outcomes are preserved, including the indeterminate recurrent comparison. Cycle 01 remains ACTIVE with 1/13 obligations resolved (7.7%). Q-3 and Q-4 remain ACTIVE; no broad Claim, new execution or whole-Cycle closure is asserted. Next: RP003 protocol preparation.
+Cycle 01 is PUBLISHED at 13/13. Cycle 02 is OPEN at 0/9 with RP006 PLANNED. [D-0014](docs/decisions/DECISION-0014_RP006_IMPLEMENTATION_PREPARATION.md) accepts the producer, independent verifier, 24 software controls and preserved [known-domain engineering preflight](research/RP006/RP006_IMPLEMENTATION_REVIEW.md). Its observed classifications and interpretation limits are disclosed. Recorded wrapper, external suspension-aware supervisor, complete execution source freeze, Test registration and the actual pre-execution checkpoint remain pending. Existing Results, questions and baseline are preserved.
 
 ## Historical pipeline disposition - 2026-10-10
 

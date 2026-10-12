@@ -35,6 +35,7 @@ jobs:
       - run: python scripts/check-damx-pilot.py
       - run: python scripts/check-cycle01-close.py
       - run: python scripts/check-cycle02-entry.py
+      - run: python scripts/check-rp006-preparation.py
       - run: python -m unittest discover -s tests
       - run: python scripts/build-sites.py
       - run: python scripts/check-sites.py

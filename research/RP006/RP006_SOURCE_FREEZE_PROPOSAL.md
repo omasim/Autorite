@@ -1,0 +1,9 @@
+# RP006 source-freeze proposal
+
+Date: 2026-10-12. Status: CHECKED IMPLEMENTATION CANDIDATE. Source freeze: false. Research execution authorization: false. Actual pre-execution checkpoint accepted: false.
+
+[SOURCE_FREEZE_PROPOSAL.json](https://github.com/omasim/Autorite/blob/main/research/RP006/SOURCE_FREEZE_PROPOSAL.json) is the machine-readable receipt. It binds eleven input hashes to `670af03aa058e74238d11e00a1c948cf703cea9e` and four preserved engineering-preflight file hashes. Those inputs include both separate RP004 truth paths, the RP006 producer/verifier/resource code, the unchanged known-domain intake and entry protocol, software controls and the engineering entry point. `scripts/check-rp006-preparation.py` verifies the commit's bytes, current bytes, immutable preflight receipts and independent replay. Preserve that commit in canonical ancestry and retain `rp006-preparation-001` at it once the checked merge completes.
+
+This candidate is concrete and inspectable, but incomplete for a recorded run. Add and review the recorded wrapper and exclusive attempt/failure persistence contract, external suspension-aware supervisor and total process accounting. Then freeze the complete execution source/inputs, register its source-bound Test and accept the actual methods/graph/source checkpoint through a new Decision before any recorded attempt. A later source revision must keep this preparation and its observed outputs preserved; use a distinct execution freeze rather than rewriting the preflight.
+
+Read `RP006_IMPLEMENTATION_REVIEW.md` for the already observed known-domain classifications and narrow interpretation. This proposal does not create a Test, Result, fresh confirmation, run ID, retry authorization or Cycle completion credit. The original entry remains anchored by `cycle-02-open`; Cycle 01 remains PUBLISHED at 13/13 and Cycle 02 OPEN at 0/9.

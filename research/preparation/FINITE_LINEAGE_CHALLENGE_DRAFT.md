@@ -60,6 +60,50 @@ For four cases in each stratum, the expected work from the query inventory alone
 - Include validation controls for invalid parent availability, duplicate/future parents, invalid event arity, copy/fork state violations, and an entity count outside the declared strata. Controls test implementation behavior; they do not become additional research cases.
 - Compare the final candidate inventory structurally and by hash against the six old fixtures. Report overlap and the rule used to exclude simple extensions before entry review.
 
+## Candidate input, verifier, and evidence contract
+
+This section specifies a review target only. It does not create the candidate inputs, freeze a schema, or authorize a producer run.
+
+### Input boundary
+
+Use two separate future input documents, one for the four four-entity cases and one for the four five-entity cases. Each document should contain only a case identifier and its ordered event log, with state payloads attached to the corresponding event output under the accepted RP004 grammar. The public entity universe is `a`–`d` or `a`–`e`, respectively, and must be common to all cases in that document. Keeping strata as separate inputs makes cross-size comparison impossible by construction; a later evidence manifest may label the stratum but must not merge their comparison universes. Do not put expected query answers, mask results, conflict expectations, motif/coverage labels, or prose explanations in producer input. The state vectors above remain review material until a separate input-freeze decision.
+
+Before any future run, validate exact keys and types, unique case IDs, exact entity coverage, ordered event legality, and the copy/fork state-preservation rule. Reject unknown fields and malformed values rather than silently normalizing them. Hash the exact input bytes. Candidate identity and case ordering must be fixed before answer inspection; deterministic ordering should be by case ID, query family, mask, and canonical query key. The exact JSON canonicalization and byte-level serialization rules must be declared and versioned before freeze.
+
+### Independent verifier boundary
+
+The proposed verifier may rely on the accepted event semantics and replay domain, but it must independently reconstruct the entity facts and enumerate the registered query inventory. It must not import or call the future producer, its query enumerator, projection builder, conflict scanner, or certificate builder; it must not consume producer-generated truth rows as ground truth. The verifier should independently check input validity, truth rows, projected retained fields, all within-stratum pair/mask equality decisions, every equality-gated answer comparison, every conflict witness, certificate partitions and minimality claims, summary counts, and hashes. Producer and verifier should be authored and source-hashed separately. A disagreement is a failed verification, preserved with both outputs for diagnosis; it must not be resolved by editing expected answers or dropping a case after observing outcomes.
+
+### Coverage arithmetic and edge handling
+
+For the proposed inventory, the exact structural workload is:
+
+| Stratum | FULL truth rows | Projections | Pair/mask comparisons | Family/mask certificates |
+| --- | ---: | ---: | ---: | ---: |
+| 4 entities × 4 cases | 240 | 32 | 48 | 16 |
+| 5 entities × 4 cases | 360 | 32 | 48 | 16 |
+| Total | 600 | 64 | 96 | 32 |
+
+The per-case `FULL` query count is `3n² + 3n` (ordered pairs for the three pairwise families and one row per entity for the three unary families). `TOPOLOGY_STATE` uses the same truth inventory and checks its registered first-four-family subset. The 96 comparison records are present even when projections differ; answer checks are performed only for equal projections, and their number is outcome-dependent. No cross-stratum pairs are valid. These counts are protocol arithmetic, not query outcomes or measured work.
+
+Each equal-projection comparison must retain all differing query answers, not just the first witness. An equal projection with no differing answer is recorded as an observed no-conflict pair; a non-equal projection is recorded as not answer-compared. Certificates must preserve the full equivalence partition for each mask/family, mark a partition's common answer vector only when all members agree, and record an explicit conflict state otherwise. Compute sufficiency and inclusion-minimality over all eight masks, retaining incomparable minimal masks. The protocol must not assume in advance that a conflict exists or that any particular mask is sufficient.
+
+Coverage checks should independently assert: every candidate case appears once per stratum; all eight masks occur per case; each expected family/query row occurs exactly once; every unordered pair in a stratum appears for every mask; every certificate family/mask combination exists; and the verifier rejects each invalid-input control listed above. Invalid-input controls are kept outside the research corpus and never counted in the table. Missing rows, duplicate rows, mismatched hashes, or a comparison across different strata invalidate the evidence package.
+
+### Future evidence inventory
+
+If a later decision authorizes execution, the reviewed output contract should include:
+
+- a manifest with protocol/schema versions, stratum, case/entity counts, exact input and source hashes, query/mask configuration, and deterministic ordering rules;
+- complete truth rows, with query family/key and typed answer;
+- all case/mask projections in canonical form;
+- a record for every within-stratum unordered pair and mask, including projection equality and whether answers were compared;
+- all conflict witnesses, including the differing query key and both typed answers;
+- family/mask certificates with equivalence classes, common answer vectors or explicit conflict markers, sufficiency, and proper-submask evidence for inclusion minimality;
+- a summary derived from those records, plus an independent verification receipt containing pass/fail, validated inventory counts, and hashes of the exact evidence and verifier source.
+
+The verifier receipt is not itself proof of correctness; the verifier source and reproducible evidence remain part of the reviewable package. A future evidence contract must specify whether outputs are JSON or JSONL, canonical byte encoding, numeric/boolean typing, and stable row ordering before freeze. At present none of these output files exists for this challenge, no answers have been generated, and no feasibility run has occurred.
+
 ## Prior-art boundary
 
 View determinacy is already a formal information-theoretic property: equality of view outputs must force equality of query answers across the declared database-instance universe. The database-theory literature distinguishes finite-only from unrestricted instance universes, so this note must not use “finite determinacy” as a label for eight hand-selected cases. RP006 and the proposed challenge make finite-corpus comparisons; neither establishes determinacy over all finite databases ([Nash, Segoufin & Vianu, *Views and Queries: Determinacy and Rewriting*](https://dbucsd.github.io/paperpdfs/2010_3.pdf)).
@@ -72,12 +116,12 @@ The scoped search used the terms “view determinacy graph databases path querie
 
 ## Gates before any separate entry decision
 
-Current preparation status: the scope and eight prose templates are proposed; a schema-only legality, within-stratum uniqueness, and fixture-prefix check passed. A targeted primary-source collision map is recorded below. Independent design review, a broader citation-chain search, input/verifier review, toy feasibility work, source freeze, and any entry decision remain outstanding.
+Current preparation status: the scope and eight prose templates are proposed; a schema-only legality, within-stratum uniqueness, and fixture-prefix check passed. A targeted primary-source collision map and a proposed input/verifier/evidence contract with structural coverage arithmetic are recorded below. Independent design review, a broader citation-chain search, review of this contract, toy feasibility work, source freeze, and any entry decision remain outstanding.
 
 1. Review the question and the two-stratum comparison rule, including whether keeping both registered inquiry families remains justified.
 2. Fix the finite construction templates, entity counts, state controls, public side information, and exclusion test against old fixtures.
 3. Complete a scoped prior-art collision review and describe the finite contribution without overclaiming.
-4. Independently review the input schema, producer/verifier separation, coverage calculation, negative/conflict handling, and output inventory.
+4. Independently review the proposed input schema, producer/verifier separation, coverage calculation, negative/conflict handling, and output inventory in this draft.
 5. Measure feasibility on an explicitly non-research toy workload, with proposed resource limits and suspension behavior reviewed separately.
 6. Commit the reviewed protocol and inputs; bind hashes to that exact source state; perform the actual pre-execution review and receive a separate decision before any research run.
 

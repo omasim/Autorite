@@ -6,7 +6,7 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 CLOSE = 'cycles/cycle-02/close'
-CUTOFF = 'f3d538a32987882c5c02a7c821a2da71a5092d6d1'
+CUTOFF = 'f3d538a32987882c5a2a7c821a2da71a5092d6d1'
 PATHS = ('baseline', 'research', 'graph', 'legacy', 'docs/decisions',
          'cycles/cycle-01/reviews', 'cycles/cycle-02/reviews',
          'cycles/cycle-02/CYCLE02_ENTRY_REVIEW.md', 'cycles/cycle-02/manifest.json')

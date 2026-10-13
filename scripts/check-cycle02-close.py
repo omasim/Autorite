@@ -51,11 +51,10 @@ def historical_hashes(commit):
 def check():
     snapshot = json.loads((ROOT / CLOSE / 'CYCLE02_KNOWLEDGE_SNAPSHOT.json').read_text())
     manifest = json.loads((ROOT / 'cycles/cycle-02/manifest.json').read_text())
-    require(snapshot.get('schema_version') == '0.1'
-            and snapshot.get('captured_at') == '2026-10-13'
-            and snapshot.get('evidence_cutoff') == CUTOFF
-            and snapshot.get('no_automatic_scientific_inference') is True,
-            'Snapshot cutoff or interpretation role is invalid')
+    for field, expected in (('schema_version', '0.1'), ('captured_at', '2026-10-13'),
+                            ('evidence_cutoff', CUTOFF), ('no_automatic_scientific_inference', True)):
+        require(snapshot.get(field) == expected,
+                f'Snapshot {field} mismatch: {snapshot.get(field)!r} != {expected!r}')
     require(snapshot['evidence_files'] == historical_hashes(CUTOFF),
             'Evidence file inventory differs from the historical cutoff')
     require(CUTOFF in git('rev-list', 'HEAD').decode().splitlines(),

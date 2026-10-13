@@ -1,6 +1,6 @@
 # Finite lineage challenge — preparation draft
 
-**Status: PREPARATION ONLY.** This is a working design note following D-0021. It does not open Cycle 03, create a package or Test, commit resources, freeze source or inputs, or authorize execution. The proposed templates below remain prose for review; no machine-readable candidate corpus has been generated and no query outcomes have been computed.
+**Status: PREPARATION ONLY.** This is a working design note following D-0021. It does not open Cycle 03, create a package or Test, commit resources, freeze source or inputs, or authorize execution. The proposed templates below remain prose for review; no machine-readable candidate corpus has been generated and no candidate query outcomes have been computed. A separate synthetic software-only probe is recorded below; its answer outputs were not retained or inspected.
 
 ## Proposed question and boundary
 
@@ -102,7 +102,7 @@ If a later decision authorizes execution, the reviewed output contract should in
 - family/mask certificates with equivalence classes, common answer vectors or explicit conflict markers, sufficiency, and proper-submask evidence for inclusion minimality;
 - a summary derived from those records, plus an independent verification receipt containing pass/fail, validated inventory counts, and hashes of the exact evidence and verifier source.
 
-The verifier receipt is not itself proof of correctness; the verifier source and reproducible evidence remain part of the reviewable package. A future evidence contract must specify whether outputs are JSON or JSONL, canonical byte encoding, numeric/boolean typing, and stable row ordering before freeze. At present none of these output files exists for this challenge, no answers have been generated, and no feasibility run has occurred.
+The verifier receipt is not itself proof of correctness; the verifier source and reproducible evidence remain part of the reviewable package. A future evidence contract must specify whether outputs are JSON or JSONL, canonical byte encoding, numeric/boolean typing, and stable row ordering before freeze. At present none of these output files exists for this challenge, and no candidate answers have been generated. The separate, non-research software feasibility probe below does not populate this evidence inventory.
 
 ## Prior-art boundary
 
@@ -114,15 +114,23 @@ Provenance work also studies abstraction and information loss. Existing systems 
 
 The scoped search used the terms “view determinacy graph databases path queries,” “provenance graph summarization abstraction,” “why-not provenance approximate summarization,” and “finite database view determinacy,” with primary conference/publisher and author-hosted records. It did not include a systematic citation-chain or database-index search. This is therefore a collision map, not novelty clearance. The only defensible possible contribution remains a reproducible finite comparison of declared fields against declared answers on a separately reviewed corpus. No theorem, general representation-minimality, universal field-necessity, or novelty claim follows.
 
+## Non-research software feasibility probe
+
+On 2026-10-13, the existing RP006 producer and separately implemented verifier were exercised on a synthetic in-memory control domain with three toy cases and three entities. This domain was authored only to measure software overhead; it is not one of the proposed F4/F5 cases and is not candidate evidence. Five producer → verifier → canonical serialization rounds all passed. Each round handled 108 truth rows, 24 projections, 24 pair/mask comparisons, and 16 family/mask certificates. Serialized output size was 52,203 bytes per round. Median round time was 0.00717 seconds and maximum was 0.00771 seconds. The process lifetime peak RSS, including imports, was 14,778,368 bytes. No input, answer output, artifact, or report file was written; returned answer-bearing objects remained in memory and were discarded without inspecting individual answers or conflict/sufficiency results.
+
+The probe used the existing engineering guard limits: 60 seconds, 134,217,728 bytes peak process RSS, and no more than a two-second civil/monotonic clock gap. Across the five rounds the guard's total measured interval was 0.03654 seconds with a clock gap below one microsecond. These observations establish only that this tiny local software path completed under those limits on the current host. The proposed challenge's arithmetic inventory is larger (600 truth rows, 64 projections, 96 pair/mask comparisons, 32 family/mask certificates across two separate strata); the toy timings and bytes do not establish a scale guarantee or forecast conflict-dependent output size. The probe did not test disk durability, archive packaging, host suspension, child-process policy, or a fresh independent implementation.
+
+For any later recorded attempt, retain the 60-second/128-MiB ceilings only as provisional controls until they are reviewed against the actual challenge and output format. Stop and preserve an incomplete diagnostic if a sampled resource limit is crossed, clocks regress, the civil/monotonic gap exceeds two seconds, validation fails, or producer/verifier results differ. The cooperative guard cannot itself stop a suspended or runaway worker; an external suspension-aware supervisor and child-process policy must be reviewed before a recorded attempt. This probe does not authorize that attempt.
+
 ## Gates before any separate entry decision
 
-Current preparation status: the scope and eight prose templates are proposed; a schema-only legality, within-stratum uniqueness, and fixture-prefix check passed. A targeted primary-source collision map and a proposed input/verifier/evidence contract with structural coverage arithmetic are recorded below. Independent design review, a broader citation-chain search, review of this contract, toy feasibility work, source freeze, and any entry decision remain outstanding.
+Current preparation status: the scope and eight prose templates are proposed; a schema-only legality, within-stratum uniqueness, and fixture-prefix check passed. A targeted primary-source collision map, proposed input/verifier/evidence contract, structural coverage arithmetic, and five-round non-research software probe are recorded below. Independent design review, a broader citation-chain search, review of the input/evidence contract and feasibility limits, source freeze, and any entry decision remain outstanding.
 
 1. Review the question and the two-stratum comparison rule, including whether keeping both registered inquiry families remains justified.
 2. Fix the finite construction templates, entity counts, state controls, public side information, and exclusion test against old fixtures.
 3. Complete a scoped prior-art collision review and describe the finite contribution without overclaiming.
 4. Independently review the proposed input schema, producer/verifier separation, coverage calculation, negative/conflict handling, and output inventory in this draft.
-5. Measure feasibility on an explicitly non-research toy workload, with proposed resource limits and suspension behavior reviewed separately.
+5. A five-round non-research software feasibility probe is recorded below. Independently review its limits and output-size implications; review the suspension-aware supervisor and child-process stop behavior before any recorded attempt.
 6. Commit the reviewed protocol and inputs; bind hashes to that exact source state; perform the actual pre-execution review and receive a separate decision before any research run.
 
 Until these gates are reviewed, this document remains a preparation draft only. Cycle 02 remains PUBLISHED; Cycle 03 remains unopened.

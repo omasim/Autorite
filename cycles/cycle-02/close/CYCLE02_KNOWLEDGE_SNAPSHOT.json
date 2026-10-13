@@ -55,7 +55,6 @@
     "cycles/cycle-01/reviews/WHAT_CHANGED.md": "8921d1aba90e3b2d9f55f42648e715a584dcd25cd3cdecb1420a111d24321941",
     "cycles/cycle-01/reviews/WHAT_REMAINS_OPEN.md": "ca899d2eefd8cea7dea942178857d95d3b7cb821850eb327552f8488dc2e4d43",
     "cycles/cycle-02/CYCLE02_ENTRY_REVIEW.md": "0e209db0f8c134950434414d0c183e9bf548be6724d669bbaa2b5a7398ed723e",
-    "cycles/cycle-02/manifest.json": "ff48bf0db438575c4716bc8cbb7df9e028b638dc9a333bea09a6aac0e23c618f",
     "cycles/cycle-02/reviews/CYCLE02_FOUNDATION_REVIEW_001.md": "6ea589240c32cb95d3e540881d3462540ae05df01237fdaaa67fa1aa2cc0ef69",
     "cycles/cycle-02/reviews/CYCLE02_GRAPH_REVIEW_001.json": "8b3715ee6201747bdb5aafdaf15f2c64f803bb8b48f51bb7fec4f19e77708ef1",
     "cycles/cycle-02/reviews/CYCLE02_GRAPH_REVIEW_001.md": "c28d0daf29bbd7e7c0fce818888c0fceccf89c51f2a1e025e4758e8b977aed74",
@@ -2099,5 +2098,6 @@
     "D-0020",
     "D-0021"
   ],
+  "preclose_manifest_sha256": "ff48bf0db438575c4716bc8cbb7df9e028b638dc9a333bea09a6aac0e23c618f",
   "schema_version": "0.1"
 }

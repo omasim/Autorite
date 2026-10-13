@@ -4,7 +4,7 @@
     "path": "baseline/ZERO_PAPER.md",
     "title": "Zero Paper",
     "category": "Foundations",
-    "summary": "Start here for the research program\u2019s purpose, commitments and limits.",
+    "summary": "Start here for the research program’s purpose, commitments and limits.",
     "primary_site": "org",
     "sites": [
       "org"
@@ -56,7 +56,7 @@
     "path": "baseline/03_FORMAL_CAPABILITY_CONTRACT.md",
     "title": "Formal Capability Contract",
     "category": "Foundations",
-    "summary": "How mathematical structures are selected by a problem\u2019s obligations.",
+    "summary": "How mathematical structures are selected by a problem’s obligations.",
     "primary_site": "org",
     "sites": [
       "org"
@@ -108,7 +108,7 @@
     "path": "baseline/07_RESEARCH_GRAPH_SPEC.md",
     "title": "Research Graph Specification",
     "category": "Methods & records",
-    "summary": "The graph\u2019s object types, relations and epistemic status vocabularies.",
+    "summary": "The graph’s object types, relations and epistemic status vocabularies.",
     "primary_site": "org",
     "sites": [
       "org",
@@ -134,7 +134,7 @@
   {
     "key": "cycle-governance",
     "path": "baseline/CYCLE_GOVERNANCE.md",
-    "title": "Cycle Governance \u2014 Baseline",
+    "title": "Cycle Governance — Baseline",
     "category": "Cycle & governance",
     "summary": "Finite Cycle lifecycles within an open-ended research program.",
     "primary_site": "org",
@@ -148,7 +148,7 @@
   {
     "key": "rp002a-preregistration",
     "path": "baseline/RP002A_PREREGISTRATION.md",
-    "title": "RP002A \u2014 History and Prediction",
+    "title": "RP002A — History and Prediction",
     "category": "Research protocols",
     "summary": "The question, worlds, baselines and interpretation limits for testing history usefulness.",
     "primary_site": "net",
@@ -162,7 +162,7 @@
   {
     "key": "rp003-protocol",
     "path": "baseline/RP003_PROTOCOL.md",
-    "title": "RP003 \u2014 Local\u2013Global Preservation",
+    "title": "RP003 — Local–Global Preservation",
     "category": "Research protocols",
     "summary": "Controls and counterexamples for local and path-level preservation judgments.",
     "primary_site": "net",
@@ -176,7 +176,7 @@
   {
     "key": "rp004-protocol",
     "path": "baseline/RP004_PROTOCOL.md",
-    "title": "RP004 \u2014 Branching Lineages",
+    "title": "RP004 — Branching Lineages",
     "category": "Research protocols",
     "summary": "Copying, branching, duplication and merging across alternative lineage representations.",
     "primary_site": "net",
@@ -190,7 +190,7 @@
   {
     "key": "rp005a-protocol",
     "path": "baseline/RP005A_PROTOCOL.md",
-    "title": "RP005A \u2014 Constraints and Viable Futures",
+    "title": "RP005A — Constraints and Viable Futures",
     "category": "Research protocols",
     "summary": "Structural reachability and conditional benefits of targeted restrictions.",
     "primary_site": "net",
@@ -283,7 +283,7 @@
   {
     "key": "implementation-cycle-governance",
     "path": "CYCLE_GOVERNANCE.md",
-    "title": "Cycle Governance \u2014 Implementation",
+    "title": "Cycle Governance — Implementation",
     "category": "Cycle & governance",
     "summary": "Obligation weights, documented resolutions and the shared progress ring.",
     "primary_site": "net",
@@ -968,7 +968,7 @@
     "path": "research/RP005A/RP005A_PACKAGE_REVIEW.md",
     "title": "RP005A package interpretation and disposition review",
     "category": "Research packages",
-    "summary": "Accept the finite V0\u2013V2 commitment and auxiliary C0 without general restriction-benefit claims. RP005A CLOSED under D-0007; Q-2 ACTIVE. Progress statements inside the review preserve its disposition stage.",
+    "summary": "Accept the finite V0–V2 commitment and auxiliary C0 without general restriction-benefit claims. RP005A CLOSED under D-0007; Q-2 ACTIVE. Progress statements inside the review preserve its disposition stage.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -1066,7 +1066,7 @@
     "path": "cycles/cycle-01/reviews/FOUNDATION_REVIEW_001.md",
     "title": "Cycle 01 Foundation Review 1",
     "category": "Research packages",
-    "summary": "Retain PC01\u201303 and existing formal capabilities for completed finite tasks; PC04\u201306 draft, candidates parked and no baseline amendment.",
+    "summary": "Retain PC01–03 and existing formal capabilities for completed finite tasks; PC04–06 draft, candidates parked and no baseline amendment.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -1178,7 +1178,7 @@
     "path": "legacy/damx/PILOT_001_REVIEW.md",
     "title": "DAM X report-scoped archaeology pilot",
     "category": "Research packages",
-    "summary": "Ten exact source units, L0\u2013L3 decomposition and explicit uncertainty; two S4/one S5 candidates provisional, seven unresolved. No original-model validation.",
+    "summary": "Ten exact source units, L0–L3 decomposition and explicit uncertainty; two S4/one S5 candidates provisional, seven unresolved. No original-model validation.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -1362,7 +1362,10 @@
     "category": "Research packages",
     "summary": "Methods, prior-art limits, graph trace, frozen source inventory, runtime and stop behavior reviewed before one bounded attempt.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Execution checkpoint",
     "recommended": true
   },
@@ -1373,7 +1376,10 @@
     "category": "Research packages",
     "summary": "Fixed six-case domain, masks, query families, source freeze and bounded attempt. No outcome is asserted.",
     "primary_site": "org",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Registered Test",
     "recommended": false
   },
@@ -1384,7 +1390,10 @@
     "category": "Research packages",
     "summary": "Accepts the source-bound Test and authorizes one bounded recorded attempt; no result or Cycle credit yet.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Active checkpoint decision",
     "recommended": true
   },
@@ -1395,7 +1404,10 @@
     "category": "Research packages",
     "summary": "One authorized attempt, output hashes and independent replay; finite findings and interpretation limits.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Reviewed result",
     "recommended": true
   },
@@ -1406,7 +1418,10 @@
     "category": "Research packages",
     "summary": "VALID finite-corpus result; known RP004 constructions only, no Q-3/Q-4 resolution.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Result",
     "recommended": false
   },
@@ -1417,7 +1432,10 @@
     "category": "Research packages",
     "summary": "Accepts the independently replayed finite result and closes RP006 within its registered scope; Cycle 02 remains open.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Result disposition",
     "recommended": true
   },
@@ -1428,7 +1446,10 @@
     "category": "Research packages",
     "summary": "Source-bound inventory of all records, relations, typed references, Question paths and five Result provenance traces; no transitive inference.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Graph review",
     "recommended": true
   },
@@ -1439,7 +1460,10 @@
     "category": "Research packages",
     "summary": "Immutable reconstructed graph snapshot at the D-0017 result disposition cutoff.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Structural inventory",
     "recommended": false
   },
@@ -1450,7 +1474,10 @@
     "category": "Research packages",
     "summary": "Completes only the graph-review obligation; Cycle 02 remains OPEN at 3/9 and Question statuses do not change.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Graph-review disposition",
     "recommended": true
   },
@@ -1461,7 +1488,10 @@
     "category": "Research packages",
     "summary": "Compares five scoped Results without pooling denominators or treating graph links as scientific support.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Synthesis review",
     "recommended": true
   },
@@ -1472,7 +1502,10 @@
     "category": "Research packages",
     "summary": "Retains PC01-PC03 and existing mathematics for these finite tasks; leaves PC04-PC06 and foundational questions open.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Foundation review",
     "recommended": true
   },
@@ -1483,7 +1516,10 @@
     "category": "Research packages",
     "summary": "Completes synthesis and foundation only; Cycle 02 remains OPEN at 5/9 with all foundational questions unchanged.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Review disposition",
     "recommended": true
   },
@@ -1514,14 +1550,18 @@
     ],
     "label": "Supervisor decision",
     "recommended": false
-  }  ,{
+  },
+  {
     "key": "cycle02-what-changed",
     "path": "cycles/cycle-02/reviews/CYCLE02_WHAT_CHANGED_001.md",
     "title": "Cycle 02 What Changed",
     "category": "Research packages",
     "summary": "Compares accepted Cycle 02 commitments with the bounded RP006 result, graph/synthesis/foundation reviews and current governance state.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Dated Cycle review",
     "recommended": true
   },
@@ -1532,7 +1572,10 @@
     "category": "Research packages",
     "summary": "Question boundaries, finite evidence limits and the two remaining transition and close obligations; no further experiment is authorized.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Dated Cycle review",
     "recommended": true
   },
@@ -1543,18 +1586,24 @@
     "category": "Research packages",
     "summary": "Resolves only change/open records; Cycle 02 stays OPEN at 7/9 with transition and close bundle outstanding.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Review disposition",
     "recommended": true
-  }
-  ,{
+  },
+  {
     "key": "cycle02-transition",
     "path": "cycles/cycle-02/reviews/CYCLE02_TRANSITION_001.md",
     "title": "Cycle 02 Transition Record",
     "category": "Research packages",
     "summary": "Selects preparation of a new finite lineage challenge after Cycle 02; no Cycle 03 entry or run is authorized.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Transition review",
     "recommended": true
   },
@@ -1565,7 +1614,10 @@
     "category": "Research packages",
     "summary": "Selects preparation of a finite lineage challenge; Cycle 02 stays OPEN at 8/9, with no Cycle 03 entry or execution.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Transition decision",
     "recommended": true
   },
@@ -1576,7 +1628,10 @@
     "category": "Research packages",
     "summary": "Indexes the finite Cycle 02 record, its limits, open Questions and preparation-only transition; Cycle 02 closes at 9/9.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Close bundle",
     "recommended": true
   },
@@ -1587,7 +1642,10 @@
     "category": "Research packages",
     "summary": "Explains the source-bound cutoff and retained Cycle 02 knowledge state without scientific inference.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Knowledge snapshot",
     "recommended": true
   },
@@ -1598,8 +1656,25 @@
     "category": "Research packages",
     "summary": "Accepts the close bundle and snapshot at 9/9; preserves all Question and Result boundaries and opens no Cycle 03.",
     "primary_site": "net",
-    "sites": ["org", "net"],
+    "sites": [
+      "org",
+      "net"
+    ],
     "label": "Close decision",
+    "recommended": true
+  },
+  {
+    "key": "cycle02-publication",
+    "path": "cycles/cycle-02/close/CYCLE02_PUBLICATION.md",
+    "title": "Cycle 02 Verified Site Publication",
+    "category": "Research packages",
+    "summary": "Records successful publication of the 9/9 Cycle 02 close on autorite.org and autorite.net, with the closed snapshot preserved.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Publication receipt",
     "recommended": true
   }
 ]

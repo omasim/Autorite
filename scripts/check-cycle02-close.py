@@ -9,7 +9,7 @@ CLOSE = 'cycles/cycle-02/close'
 CUTOFF = 'f3d538a32987882c5a2a7c821a2da71a5092d6d1'
 PATHS = ('baseline', 'research', 'graph', 'legacy', 'docs/decisions',
          'cycles/cycle-01/reviews', 'cycles/cycle-02/reviews',
-         'cycles/cycle-02/CYCLE02_ENTRY_REVIEW.md', 'cycles/cycle-02/manifest.json')
+         'cycles/cycle-02/CYCLE02_ENTRY_REVIEW.md')
 CATEGORIES = {'initial_manifest_questions', 'package_disposition', 'protocol_checkpoint',
               'result_outputs', 'deviations_incomplete', 'graph_review', 'synthesis_foundation',
               'change_open', 'transition', 'close_bundle_snapshot'}
@@ -57,6 +57,9 @@ def check():
                 f'Snapshot {field} mismatch: {snapshot.get(field)!r} != {expected!r}')
     require(snapshot['evidence_files'] == historical_hashes(CUTOFF),
             'Evidence file inventory differs from the historical cutoff')
+    initial_manifest = git('show', f'{CUTOFF}:cycles/cycle-02/manifest.json')
+    require(hashlib.sha256(initial_manifest).hexdigest() == snapshot.get('preclose_manifest_sha256'),
+            'Pre-close manifest does not match the recorded cutoff')
     require(CUTOFF in git('rev-list', 'HEAD').decode().splitlines(),
             'Evidence cutoff is not an ancestor of this checkout')
     graph = snapshot['graph_review_inventory']

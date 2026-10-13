@@ -1676,5 +1676,19 @@
     ],
     "label": "Publication receipt",
     "recommended": true
+  },
+  {
+    "key": "finite-lineage-challenge-draft",
+    "path": "research/preparation/FINITE_LINEAGE_CHALLENGE_DRAFT.md",
+    "title": "Finite lineage challenge — preparation draft",
+    "category": "Research packages",
+    "summary": "Preparation-only design for a proposed new finite corpus; no Cycle 03 entry, package, Test or run is authorized.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Preparation draft",
+    "recommended": true
   }
 ]

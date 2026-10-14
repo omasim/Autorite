@@ -42,7 +42,7 @@ For a first legality pass, state vectors are listed in ID order and use opaque l
 | F5-03 | `(A,A,B,C,D)` | Copy preservation and a changed continuation across distinct payloads. |
 | F5-04 | `(A,B,C,C,A)` | A changed continuation, copy preservation, and a merge output sharing `a`'s value. |
 
-An in-memory, schema-only check using the existing RP004 construction grammar accepted all eight proposed event logs and their copy/fork state constraints. A separate ID-permutation comparison found no duplicate event graphs within either count stratum and no complete disclosed fixture as the first three events under renaming. This excludes a direct fixture-prefix-plus-appended-events pattern, not every possible shared substructure. F4-02 composes continuation with branching; F5-01 adds an unequal-depth descendant; the merge cases change parent structure or combine motifs. Before entry, an independent reviewer should repeat this check against the source-hashed fixture file and document any broader subgraph overlap.
+An in-memory, schema-only check using the existing RP004 construction grammar accepted all eight proposed event logs and their copy/fork state constraints. A separate ID-permutation comparison found no duplicate full event structures within either count stratum. The earlier prefix-only comparison was too narrow: several candidates contain a complete three-entity RP004 parent-DAG as an operation-closed substructure. The preliminary overlap audit below records this explicitly. Before entry, an independent reviewer should repeat it against the source-hashed fixture file, decide whether these overlaps are acceptable for the transfer question, and document the criterion.
 
 The proposed vectors give each stratum repeated and distinct payloads, equal labels on unrelated roots, and a changed value along a connected continuation. They do not settle whether every slot is needed, whether both query families remain justified, or whether the planned eight cases are the best finite coverage. Those remain review questions.
 
@@ -160,6 +160,29 @@ The review received through the user assessed the preparation draft as methodolo
 | Hash integrity, deterministic coverage arithmetic and the feasibility probe's separation from candidate outcomes should be explicit. | Largely already specified; retain as entry gates. Recalculate the 600 FULL rows and 96 within-stratum pair/mask comparisons from the final frozen inventory and have the verifier check them independently. Bind exact input and source bytes to hashes before any authorized run. The five-round probe did create and pass answer-bearing objects in memory for a separate three-entity toy domain; individual answers, conflicts and sufficiency outcomes were not inspected, and no proposed F4/F5 inputs or answer outputs were created. Do not describe the probe as output-free. |
 
 The motif rationale to carry into the revised design is: F4-01 tests continuation with a disconnected root; F4-02 tests a branch after continuation; F4-03 tests copy plus a merge with an independent root; F4-04 tests asymmetric development from two roots; F5-01 adds unequal branch depth; F5-02 combines a branch with a merge while a sibling remains; F5-03 combines distinct state changes and independent roots at a merge; and F5-04 combines a continuing line, retained copy and independent-root merge. These are design intentions only; they do not establish coverage, distinctness from the old corpus, or answer outcomes.
+
+### Preliminary structural-overlap audit (2026-10-14; not independent review)
+
+This limited audit compared only the eight prose event structures above with the six event logs in `research/RP004/RP004_FIXTURES.json` (SHA-256 `ff80fb8bc9e96748c5e672410a7d057d3051771f60845515ff4911ba60919513`). It did not read fixture controls, compute candidate answers, or inspect mask/conflict outcomes. Nodes were freely renamed. An overlap counted only when all parents of every selected candidate node were included (operation-closed three-node substructure). “Parent-DAG” ignores event kinds; “event-labelled” retains each node's birth kind and fork sibling relation. RP006 uses these same six disclosed constructions, so it adds no separate structural inventory here.
+
+| Candidate | Operation-closed parent-DAG overlap | Operation-labelled overlap |
+| --- | --- | --- |
+| F4-01 | G0 (`a,b,c`); C4 (`a,b,d`) | none |
+| F4-02 | G0 (`a,b,c` and `a,b,d`) | none |
+| F4-03 | C4 (`a,b,c`) | none |
+| F4-04 | C4 (`a,b,c` and `a,b,d`) | C4 (`a,b,d`) |
+| F5-01 | G0 (`a,b,c` and `a,b,d`) | none |
+| F5-02 | G1 (`a,c,d`); G2 (`a,c,d`); C4 (`a,b,c` and `a,b,d`) | G2 (`a,c,d`) |
+| F5-03 | C4 (`a,b,c` and `a,c,d`) | C4 (`a,c,d`) |
+| F5-04 | G0 (`b,c,d`); C4 (`a,b,c`) | C4 (`a,b,c`) |
+
+No full F4/F5 candidate is isomorphic to a three-node fixture because the entity counts differ. The table does show that simple extension exclusion is not equivalent to structural novelty: some new cases deliberately reuse old three-node motifs while adding entities or changing operation labels. This may be appropriate for a transfer challenge, but it must be an explicit design choice, not a claim of wholly new motifs. The audit is a local permutation check, not an independently implemented verifier or a general subgraph-isomorphism certificate; the entry reviewer should validate its normalization and inspect any larger meaningful overlaps.
+
+### State-equality sensitivity proposal (not frozen)
+
+Renaming opaque labels bijectively cannot change equality-based `same_state` answers. The relevant sensitivity factor is the equality partition over entities, subject to copy/fork preservation. For the eight fixed topologies, a complete finite set using at most three opaque values contains 55 admissible partitions: F4-01 through F4-04 have respectively 5, 2, 5 and 5; F5-01 through F5-04 have 5, 5, 14 and 14. These counts enumerate partitions of the copy/fork-forced equality components into at most three blocks; they do not use answers. The currently listed vectors are individual members of those sets.
+
+One conservative response to the review is to preregister all 55 variants, with no post-outcome selection. If variants count as separate cases and all aligned pairs within each stratum are compared, the arithmetic becomes 4,440 FULL truth rows (17 × 60 + 38 × 90), 440 per-case/mask projections (55 × 8), and 6,712 within-stratum pair/mask comparisons (C(17,2) × 8 + C(38,2) × 8). The verifier must independently confirm these figures. This expands the candidate corpus and treats alternate payload assignments on one topology as aligned cases; the entry review must decide whether that is the intended estimand and comparison rule. Until that decision, the eight vectors and the 55-variant arm remain proposals; no candidate answers have been generated.
 
 **Disposition:** revise the preparation contract as above, then return it for a separate entry review. This review does not itself authorize Cycle 03, a Test, package commitment, source freeze or research run.
 

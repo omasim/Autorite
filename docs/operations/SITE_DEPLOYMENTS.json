@@ -4,14 +4,14 @@
   "sites": {
     "org": {
       "project_id": "appgprj_6ac624791b8c819180b917fdc3a28cff",
-      "version_id": "appgprj_6ac624791b8c819180b917fdc3a28cff~appgver_52e2fee7b9fc8191a989d75c557b84ec",
-      "version_number": 72,
-      "deployment_id": "appgdep_6ad13d315a1c8191ab567cce7a752d62",
+      "version_id": "appgprj_6ac624791b8c819180b917fdc3a28cff~appgver_60ffaddc707c8191bbd1ab2688dca21d",
+      "version_number": 73,
+      "deployment_id": "appgdep_6ad13f2df320819194cceed35fb31c88",
       "url": "https://autorite.org",
       "sites_url": "https://autorite-knowledge.omerasim.chatgpt.site",
       "access_mode": "public",
-      "commit_sha": "9fd5417d35d1757569e124a7ac3b3361e049d7db",
-      "archive_content_sha256": "4d0153a0c0cd1f2a0e679ba005111ac0bdd53ad50158e62eef06d4fcc9d7a65c",
+      "commit_sha": "82cad189d6ee635f87c413fae74c10ffdbe6207f",
+      "archive_content_sha256": "899b65b3b702cbfb89deee8ce10c30636ac0c47a5decd6dadf5f963e597c0cb7",
       "custom_domain": "autorite.org",
       "custom_domain_id": "appgdom_6ac6269cddd481918a015e760f855fb8",
       "domain_status": "active",
@@ -22,14 +22,14 @@
     },
     "net": {
       "project_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6",
-      "version_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6~appgver_1fc3c771cb2c8191b8dc1eca53d50888",
-      "version_number": 71,
-      "deployment_id": "appgdep_6ad13d1b1ba48191a881fff5538ea10a",
+      "version_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6~appgver_3bf398cbb9c48191b1670446847d2a9a",
+      "version_number": 72,
+      "deployment_id": "appgdep_6ad13f454ee48191a06a23c12b9245b3",
       "url": "https://autorite.net",
       "sites_url": "https://autorite-laboratory.omerasim.chatgpt.site",
       "access_mode": "public",
-      "commit_sha": "46b138e3a08f526a65d8f9419e819819398a8090",
-      "archive_content_sha256": "69447feb04bd07262072530f28fca08ab5c6701a4299477a28bb45df4b67fa43",
+      "commit_sha": "e6e36d6a57dfc9fa9f014129d007c1e1fd8ef555",
+      "archive_content_sha256": "2f92dbe56fdc258a79d9dd7cacd6139121b8589f069d7951dbabf1379400d3d5",
       "custom_domain": "autorite.net",
       "custom_domain_id": "appgdom_6ac626a42f308191afc3eb5d3ee2b9a3",
       "domain_status": "active",
@@ -40,5 +40,5 @@
     }
   },
   "canonical_repository": "https://github.com/omasim/Autorite",
-  "canonical_source_commit": "a742d68caf9eb00070129366950231fabe0088dc"
+  "canonical_source_commit": "ee59dd8adad0b0549198e19e2d0ccb68b9291009"
 }

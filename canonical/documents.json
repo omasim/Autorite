@@ -1682,13 +1682,27 @@
     "path": "research/preparation/FINITE_LINEAGE_CHALLENGE_DRAFT.md",
     "title": "Finite lineage challenge — preparation draft",
     "category": "Research packages",
-    "summary": "Preparation-only 4/5-entity lineage challenge with a proposed 55-partition state sensitivity set; no Cycle 03 entry or run is authorized.",
+    "summary": "Preparation-only 4/5-entity lineage challenge with a proposed 55-partition sensitivity set and clean AI design/resource reviews; operational gates and Cycle 03 entry remain open.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
     "label": "Preparation draft",
+    "recommended": true
+  },
+  {
+    "key": "finite-lineage-ai-review-002",
+    "path": "research/preparation/FINITE_LINEAGE_AI_REVIEW_002_2026-10-16.md",
+    "title": "Finite lineage challenge — clean AI design re-review 002",
+    "category": "Research packages",
+    "summary": "Clean AI design, focused resource-contract, and bounded citation reviews; Cycle 03 entry, expanded prior-art, writer integration, and supervisor gates remain open.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Independent AI review",
     "recommended": true
   }
 ]

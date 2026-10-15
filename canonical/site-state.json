@@ -111,8 +111,8 @@
   "changes": [
     [
       "2026-10-16",
-      "Finite lineage resource and supervisor controls checked",
-      "Answer-free synthetic checks now enforce the 64 MiB non-row artifact reserve and exercise dual-clock deadline handling, process-group stop/reap, and crash/partial-output recording. These are isolated helper controls, not final-writer integration or genuine host-suspension/disk-failure tests. Structural and partition rechecks, provenance, targeted prior-art scope and a separate Cycle 03 entry decision remain open; no candidate answers or Cycle 03 run were produced."
+      "Finite-lineage preparation gates advanced",
+      "Answer-free synthetic checks now enforce the 64 MiB non-row artifact reserve and exercise dual-clock deadline handling, process-group stop/reap, and crash/partial-output recording. A targeted prior-art follow-up added 2024 project-select view determinacy and 2025 SQL-lineage compression as adjacent work; coverage remains selective. The user classified the supplied assessment as an AI evaluation; its authoring system and reviewed-byte hash are unknown, so it does not satisfy an independent human/external-review gate. These are isolated helper controls, not final-writer integration or genuine host-suspension/disk-failure tests. Structural and partition rechecks, writer integration, any required identifiable external review, and a separate Cycle 03 entry decision remain open; no candidate answers or Cycle 03 run were produced."
     ],
     [
       "2026-10-13",
@@ -376,6 +376,6 @@
     ]
   ],
   "pilot_report": "/sources/rp002a-pilot-001/",
-  "next_step": "Implement and review the recorded wrapper, external suspension-aware supervisor and complete source freeze; register the Test and accept the actual pre-execution checkpoint.",
+  "next_step": "Independently reproduce the structural-overlap and state-partition checks from sanitized inputs; review final-writer/supervisor integration and failure behavior; decide whether identifiable external review is required; then make a separate Cycle 03 entry decision. No freeze, Test, or research run is authorized.",
   "active_cycle_ref": "cycles/cycle-02/manifest.json"
 }

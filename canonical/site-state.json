@@ -112,7 +112,7 @@
     [
       "2026-10-15",
       "Finite lineage preparation review continued",
-      "The preparation draft now records four bounded prior-art/index rounds, including conjunctive-query finite determinacy, query-preserving graph compression, lossless summaries, and synopsis-based lossless contraction. The limits of this selective search, internal workload and structure rechecks, evidence serialization proposal, and legacy-fixture control-read deviation remain documented for the independent reviewer. No candidate answers or Cycle 03 run were produced; Cycle 03 remains unopened."
+      "The preparation draft now records five bounded prior-art/index rounds, including projection-based query preservation, conjunctive-query finite determinacy, query-preserving graph compression, lossless summaries, and synopsis-based lossless contraction. It frames the proposed work as a finite corpus evaluation of established preservation ideas and records search limits, internal rechecks, and the legacy-fixture control-read deviation for independent review. No candidate answers or Cycle 03 run were produced; Cycle 03 remains unopened."
     ],
     [
       "2026-10-13",

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15",
+  "updated_at": "2026-10-16",
   "phase": "Cycle 02 PUBLISHED: all nine obligations accepted; RP006 remains within its finite scope and Cycle 03 is not open",
   "cycle": {
     "number": "02",
@@ -110,7 +110,7 @@
   ],
   "changes": [
     [
-      "2026-10-15",
+      "2026-10-16",
       "Finite lineage preparation review continued",
       "The preparation draft now records five bounded prior-art/index rounds, including projection-based query preservation, conjunctive-query finite determinacy, query-preserving graph compression, lossless summaries, and synopsis-based lossless contraction. It frames the proposed work as a finite corpus evaluation of established preservation ideas and records search limits, internal rechecks, and the legacy-fixture control-read deviation for independent review. No candidate answers or Cycle 03 run were produced; Cycle 03 remains unopened."
     ],

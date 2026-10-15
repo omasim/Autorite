@@ -111,8 +111,8 @@
   "changes": [
     [
       "2026-10-16",
-      "Finite lineage preparation gates narrowed",
-      "Clean AI design, focused resource-contract, and bounded primary-source citation reviews passed for the revised finite-lineage preparation draft. The inventory-derived conflict-witness bound, complete-package byte ceiling and answer-free row/cap/low-space boundary checks are recorded. Challenge-specific writer integration, supervisor controls, broader prior-art assessment and a separate Cycle 03 entry decision remain open; no candidate answers or Cycle 03 run were produced."
+      "Finite lineage resource and supervisor controls checked",
+      "Answer-free synthetic checks now enforce the 64 MiB non-row artifact reserve and exercise dual-clock deadline handling, process-group stop/reap, and crash/partial-output recording. These are isolated helper controls, not final-writer integration or genuine host-suspension/disk-failure tests. Structural and partition rechecks, provenance, targeted prior-art scope and a separate Cycle 03 entry decision remain open; no candidate answers or Cycle 03 run were produced."
     ],
     [
       "2026-10-13",

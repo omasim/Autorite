@@ -11,6 +11,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -45,6 +46,8 @@ def main() -> None:
     writer = load("finite_lineage_bounded_writer", ROOT / "research/preparation/finite_lineage_writer.py")
     guard = load("finite_lineage_bounded_guard", ROOT / "scripts/check-finite-lineage-execution-guard.py")
     resources = load("finite_lineage_bounded_resources", ROOT / "research/RP006/resources.py")
+    if shutil.disk_usage("/private/tmp").free < 2 * 1024**3:
+        raise RuntimeError("Need at least 2 GiB free for the bounded toy pipeline")
     domain = {"cases": [
         {"id": "TOY-01", "events": [
             event("root", [], ("a", "A")), event("continue", ["a"], ("b", "B")),
@@ -63,17 +66,17 @@ def load(name, path):
     spec = importlib.util.spec_from_file_location(name, path)
     module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module); return module
 producer = load("bounded_worker_producer", root / "research/RP006/producer.py")
+writer = load("bounded_worker_writer", root / "research/preparation/finite_lineage_writer.py")
 domain = json.loads(domain_file.read_text(encoding="utf-8"))
-count = 0
-with conflict_file.open("x", encoding="utf-8") as stream:
-    def sink(row):
-        global count
-        raw = (json.dumps(row, sort_keys=True, separators=(",", ":"), ensure_ascii=False, allow_nan=False) + "\n").encode()
-        if len(raw) > 448 or count >= 1077936:
-            raise ValueError("conflict row cap breached")
-        stream.write(raw.decode("utf-8")); count += 1
-    bundle = producer.produce(domain, retain_conflicts=False, conflict_sink=sink)
-    stream.flush()
+rp_resources = load("bounded_worker_resources", root / "research/RP006/resources.py")
+guard = rp_resources.Guard(seconds=60, memory_bytes=134217728)
+sink = writer.CappedJsonlSink(conflict_file, guard=guard)
+try:
+    bundle = producer.produce(domain, guard=guard, retain_conflicts=False, conflict_sink=sink)
+except BaseException:
+    sink.close(complete=False)
+    raise
+count, _size = sink.close(complete=True)
 bundle["conflicts"] = []
 bundle_file.write_text(json.dumps(bundle, sort_keys=True, separators=(",", ":"), allow_nan=False), encoding="utf-8")
 print(json.dumps({"conflict_rows": count, "peak_rss_bytes": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * (1 if sys.platform == "darwin" else 1024)}))

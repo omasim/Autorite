@@ -87,6 +87,8 @@ def _receipt(root: Path, name: str, value: dict[str, Any]) -> bytes:
 
 def _compact_pair(pair: dict[str, Any]) -> dict[str, Any]:
     """Avoid duplicating every witness ordinal in potentially large pair rows."""
+    if "conflict_index" in pair:
+        return pair
     result = {key: value for key, value in pair.items() if key != "conflict_ordinals"}
     ordinals = pair["conflict_ordinals"]
     result["conflict_index"] = {
@@ -98,6 +100,8 @@ def _compact_pair(pair: dict[str, Any]) -> dict[str, Any]:
 
 def _compact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
     """Index all conflict rows without repeating their IDs in every supermask."""
+    if all("conflict_index" in item for item in certificate["proper_submasks"]):
+        return certificate
     result = dict(certificate)
     compact = []
     for item in certificate["proper_submasks"]:
@@ -111,7 +115,7 @@ def _compact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
 
 def write_bundle(outdir: str | Path, domain: dict[str, Any], bundle: dict[str, Any],
                  verifier: dict[str, Any], source_hashes: dict[str, str], *,
-                 stratum: str, source_commit: str) -> dict[str, Any]:
+                 stratum: str, source_commit: str, guard=lambda: None) -> dict[str, Any]:
     """Write a verified bundle under proposed row, reserve, and total caps.
 
     The destination must be a new directory. On any failure, preserve the
@@ -123,6 +127,7 @@ def write_bundle(outdir: str | Path, domain: dict[str, Any], bundle: dict[str, A
     row_total = 0
     non_row_total = 0
     try:
+        guard()
         if verifier.get("status") != "PASS":
             raise ValueError("A passing independent verifier receipt is required")
         if stratum not in {"F4", "F5", "TOY"}:
@@ -145,19 +150,29 @@ def write_bundle(outdir: str | Path, domain: dict[str, Any], bundle: dict[str, A
             rows: Iterable[dict[str, Any]] = bundle[ROW_BUNDLE_KEYS[name]]
             if name == "pairs.jsonl":
                 rows = (_compact_pair(row) for row in rows)
+            def guarded_rows(values):
+                for index, row in enumerate(values):
+                    if index % 256 == 0:
+                        guard()
+                    yield row
             count, size = _resource.write_capped_jsonl(
-                root / name, rows, row_cap=ROW_CAP,
+                root / name, guarded_rows(rows), row_cap=ROW_CAP,
                 file_cap=TOTAL_CAP if name == "conflicts.jsonl" else ROW_LIMITS[name] * ROW_CAP,
                 total_cap=TOTAL_CAP, total_before=row_total,
                 row_count_cap=ROW_LIMITS[name],
             )
             row_total += size
-            row_inventory[name] = {"rows": count, "bytes": size, "sha256": digest(root / name)}
+            row_hash = digest(root / name)
+            verified_hash = verifier.get("verified_artifact_sha256", {}).get(name)
+            if verified_hash is not None and row_hash != verified_hash:
+                raise ValueError(f"Written {name} differs from the independently verified bytes")
+            row_inventory[name] = {"rows": count, "bytes": size, "sha256": row_hash}
 
         non_row_inventory: dict[str, dict[str, Any]] = {}
         compact_certificates = [_compact_certificate(row) for row in bundle["certificates"]]
         for name, value in (("certificates.json", compact_certificates),
                             ("summary.json", bundle["summary"])):
+            guard()
             data = canonical_bytes(value, pretty=True)
             size, non_row_total = _write_artifact(root, name, data, row_total=row_total,
                                                    non_row_total=non_row_total)
@@ -182,6 +197,7 @@ def write_bundle(outdir: str | Path, domain: dict[str, Any], bundle: dict[str, A
             "exclusions": ["manifest.json", "verifier-receipt.json"],
         }
         manifest_bytes = canonical_bytes(manifest, pretty=True)
+        guard()
         size, non_row_total = _write_artifact(root, "manifest.json", manifest_bytes,
                                                row_total=row_total, non_row_total=non_row_total)
         manifest_hash = hashlib.sha256(manifest_bytes).hexdigest()
@@ -195,6 +211,7 @@ def write_bundle(outdir: str | Path, domain: dict[str, Any], bundle: dict[str, A
             "source_hashes": dict(sorted(source_hashes.items())),
         }
         receipt_bytes = canonical_bytes(receipt, pretty=True)
+        guard()
         size, non_row_total = _write_artifact(root, "verifier-receipt.json", receipt_bytes,
                                                row_total=row_total, non_row_total=non_row_total)
         return {"status": "COMPLETE", "manifest_sha256": manifest_hash,

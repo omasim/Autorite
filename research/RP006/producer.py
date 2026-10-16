@@ -35,7 +35,8 @@ def proper_submasks(mask):
     return [m for m in MASKS if m != mask and all(a == '0' or b == '1' for a, b in zip(m, mask))]
 
 
-def produce(domain, guard=lambda: None, *, retain_conflicts=True, conflict_sink=None):
+def produce(domain, guard=lambda: None, *, retain_conflicts=True, conflict_sink=None,
+            stratum=None):
     """Produce the RP006 bundle.
 
     Bounded mode (`retain_conflicts=False`) sends each conflict row to the
@@ -45,8 +46,14 @@ def produce(domain, guard=lambda: None, *, retain_conflicts=True, conflict_sink=
     """
     if not retain_conflicts and conflict_sink is None:
         raise ValueError('Bounded mode requires a conflict sink')
+    if not retain_conflicts and stratum not in {'F4', 'F5', 'TOY'}:
+        raise ValueError('Bounded mode requires an explicit F4, F5, or TOY stratum')
     guard()
     cases = domain['cases']
+    if not retain_conflicts:
+        expected_cases = {'F4': 17, 'F5': 38}.get(stratum)
+        if expected_cases is not None and len(cases) != expected_cases:
+            raise ValueError(f'{stratum} requires exactly {expected_cases} cases')
     if not cases or any(set(c) != {'id', 'events'} or not isinstance(c['id'], str) or not c['id'] for c in cases):
         raise ValueError('Case fields; expected-answer side channels forbidden')
     names = [c['id'] for c in cases]
@@ -56,6 +63,10 @@ def produce(domain, guard=lambda: None, *, retain_conflicts=True, conflict_sink=
     entities = sorted(graphs[names[0]])
     if any(sorted(g) != entities for g in graphs.values()):
         raise ValueError('Common aligned entity universe required')
+    if not retain_conflicts:
+        expected_entities = {'F4': 4, 'F5': 5}.get(stratum)
+        if expected_entities is not None and len(entities) != expected_entities:
+            raise ValueError(f'{stratum} requires exactly {expected_entities} entities')
     inventory = queries(entities)
     values = {name: [lineage.truth(graphs[name], q) for q in inventory] for name in names}
     truth_rows = []

@@ -43,6 +43,7 @@ def jsonl(path: Path):
 
 def main() -> None:
     verifier = load("finite_lineage_bounded_verifier", ROOT / "research/RP006/verifier.py")
+    producer = load("finite_lineage_bounded_producer", ROOT / "research/RP006/producer.py")
     writer = load("finite_lineage_bounded_writer", ROOT / "research/preparation/finite_lineage_writer.py")
     guard = load("finite_lineage_bounded_guard", ROOT / "scripts/check-finite-lineage-execution-guard.py")
     resources = load("finite_lineage_bounded_resources", ROOT / "research/RP006/resources.py")
@@ -58,6 +59,21 @@ def main() -> None:
             event("root", [], ("c", "C")),
         ]},
     ]}
+    sink_calls = []
+    try:
+        producer.produce(domain, retain_conflicts=False, conflict_sink=sink_calls.append)
+    except ValueError:
+        pass
+    else:
+        raise RuntimeError("Bounded producer accepted an unspecified stratum")
+    try:
+        producer.produce(domain, retain_conflicts=False, conflict_sink=sink_calls.append, stratum="F4")
+    except ValueError:
+        pass
+    else:
+        raise RuntimeError("Bounded producer accepted a non-F4 inventory in the F4 stratum")
+    if sink_calls:
+        raise RuntimeError("Invalid stratum validation emitted a witness")
 
     worker = r'''
 import hashlib, importlib.util, json, pathlib, resource, sys
@@ -72,7 +88,7 @@ rp_resources = load("bounded_worker_resources", root / "research/RP006/resources
 guard = rp_resources.Guard(seconds=60, memory_bytes=134217728)
 sink = writer.CappedJsonlSink(conflict_file, guard=guard)
 try:
-    bundle = producer.produce(domain, guard=guard, retain_conflicts=False, conflict_sink=sink)
+    bundle = producer.produce(domain, guard=guard, retain_conflicts=False, conflict_sink=sink, stratum="TOY")
 except BaseException:
     sink.close(complete=False)
     raise
@@ -92,7 +108,7 @@ print(json.dumps({"conflict_rows": count, "peak_rss_bytes": resource.getrusage(r
         supervised = guard.supervise([sys.executable, "-c", worker, str(ROOT), str(domain_file),
                                       str(bundle_file), str(conflict_file)], timeout_seconds=30)
         if supervised.get("status") != "COMPLETE":
-            raise RuntimeError(f"Bounded worker failed: {supervised.get('reason')}")
+            raise RuntimeError(f"Bounded worker failed: {supervised.get('reason')}; {supervised.get('stderr')}")
         worker_record = json.loads(supervised["stdout"])
         if worker_record["peak_rss_bytes"] >= 128 * 1024 * 1024:
             raise RuntimeError("Toy bounded worker exceeded 128 MiB RSS")
@@ -100,7 +116,15 @@ print(json.dumps({"conflict_rows": count, "peak_rss_bytes": resource.getrusage(r
         if bundle.get("conflicts") != []:
             raise RuntimeError("Worker retained conflicts in the small bundle")
         parent_guard = resources.Guard(seconds=30, memory_bytes=128 * 1024 * 1024)
-        verified = verifier.verify_bounded(bundle, conflict_file, domain, guard=parent_guard)
+        try:
+            verifier.verify_bounded(bundle, conflict_file, domain,
+                                    guard=parent_guard, stratum="F4")
+        except ValueError:
+            pass
+        else:
+            raise RuntimeError("Independent verifier accepted a non-F4 inventory in the F4 stratum")
+        verified = verifier.verify_bounded(bundle, conflict_file, domain, guard=parent_guard,
+                                           stratum="TOY")
         if verified.get("status") != "PASS":
             raise RuntimeError("Streaming independent verifier failed")
         if verified["counts"]["conflict_rows"] != worker_record["conflict_rows"]:
@@ -115,7 +139,8 @@ print(json.dumps({"conflict_rows": count, "peak_rss_bytes": resource.getrusage(r
         tampered.write_text("\n".join(lines) + "\n", encoding="utf-8")
         try:
             verifier.verify_bounded(bundle, tampered, domain,
-                                    guard=resources.Guard(seconds=30, memory_bytes=128 * 1024 * 1024))
+                                    guard=resources.Guard(seconds=30, memory_bytes=128 * 1024 * 1024),
+                                    stratum="TOY")
         except ValueError:
             pass
         else:
@@ -127,6 +152,16 @@ print(json.dumps({"conflict_rows": count, "peak_rss_bytes": resource.getrusage(r
         source_hashes = {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
                          for path in source_paths}
         source_commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+        try:
+            writer.write_bundle(root / "wrong-stratum-package", domain, bundle, verified,
+                                source_hashes, stratum="F4", source_commit=source_commit,
+                                guard=resources.Guard(seconds=30, memory_bytes=128 * 1024 * 1024))
+        except ValueError:
+            pass
+        else:
+            raise RuntimeError("Package writer accepted a non-F4 inventory in the F4 stratum")
+        if not (root / "wrong-stratum-package" / "INCOMPLETE.json").is_file():
+            raise RuntimeError("Rejected stratum did not preserve an INCOMPLETE receipt")
         packaged = writer.write_bundle(output, domain, bundle, verified, source_hashes,
                                        stratum="TOY", source_commit=source_commit,
                                        guard=parent_guard)

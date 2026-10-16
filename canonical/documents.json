@@ -1682,7 +1682,7 @@
     "path": "research/preparation/FINITE_LINEAGE_CHALLENGE_DRAFT.md",
     "title": "Finite lineage challenge — preparation draft",
     "category": "Research packages",
-    "summary": "Preparation-only finite lineage challenge; a second answer-free implementation now reproduces the partition, overlap and workload checks. Entry review, writer integration and Cycle 03 authorization remain open.",
+    "summary": "Preparation-only finite lineage challenge; answer-free controls now cover partial-write recovery and conflicting terminal-receipt prevention. Entry review, final-writer integration and Cycle 03 authorization remain open.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -1718,5 +1718,19 @@
     ],
     "label": "Independent AI review",
     "recommended": true
+  },
+  {
+    "key": "finite-lineage-failure-control-review",
+    "path": "research/preparation/FINITE_LINEAGE_FAILURE_CONTROL_REVIEW_2026-10-16.md",
+    "title": "Finite lineage challenge — failure-control follow-up review",
+    "category": "Research packages",
+    "summary": "Independent AI code review of answer-free ENOSPC and terminal-receipt recovery controls, with synthetic-test scope and environmental limitations recorded.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "AI control review",
+    "recommended": false
   }
 ]

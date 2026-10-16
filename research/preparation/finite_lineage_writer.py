@@ -85,6 +85,30 @@ def _receipt(root: Path, name: str, value: dict[str, Any]) -> bytes:
     return data
 
 
+def _compact_pair(pair: dict[str, Any]) -> dict[str, Any]:
+    """Avoid duplicating every witness ordinal in potentially large pair rows."""
+    result = {key: value for key, value in pair.items() if key != "conflict_ordinals"}
+    ordinals = pair["conflict_ordinals"]
+    result["conflict_index"] = {
+        family: {"count": len(values), "first_ordinal": values[0] if values else None}
+        for family, values in sorted(ordinals.items())
+    }
+    return result
+
+
+def _compact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
+    """Index all conflict rows without repeating their IDs in every supermask."""
+    result = dict(certificate)
+    compact = []
+    for item in certificate["proper_submasks"]:
+        ordinals = item["conflict_ordinals"]
+        compact.append({"mask": item["mask"], "sufficient": item["sufficient"],
+                        "conflict_index": {"count": len(ordinals),
+                                           "first_ordinal": ordinals[0] if ordinals else None}})
+    result["proper_submasks"] = compact
+    return result
+
+
 def write_bundle(outdir: str | Path, domain: dict[str, Any], bundle: dict[str, Any],
                  verifier: dict[str, Any], source_hashes: dict[str, str], *,
                  stratum: str, source_commit: str) -> dict[str, Any]:
@@ -118,8 +142,11 @@ def write_bundle(outdir: str | Path, domain: dict[str, Any], bundle: dict[str, A
 
         row_inventory: dict[str, dict[str, Any]] = {}
         for name in ROW_FILES:
+            rows: Iterable[dict[str, Any]] = bundle[ROW_BUNDLE_KEYS[name]]
+            if name == "pairs.jsonl":
+                rows = (_compact_pair(row) for row in rows)
             count, size = _resource.write_capped_jsonl(
-                root / name, bundle[ROW_BUNDLE_KEYS[name]], row_cap=ROW_CAP,
+                root / name, rows, row_cap=ROW_CAP,
                 file_cap=TOTAL_CAP if name == "conflicts.jsonl" else ROW_LIMITS[name] * ROW_CAP,
                 total_cap=TOTAL_CAP, total_before=row_total,
                 row_count_cap=ROW_LIMITS[name],
@@ -128,7 +155,8 @@ def write_bundle(outdir: str | Path, domain: dict[str, Any], bundle: dict[str, A
             row_inventory[name] = {"rows": count, "bytes": size, "sha256": digest(root / name)}
 
         non_row_inventory: dict[str, dict[str, Any]] = {}
-        for name, value in (("certificates.json", bundle["certificates"]),
+        compact_certificates = [_compact_certificate(row) for row in bundle["certificates"]]
+        for name, value in (("certificates.json", compact_certificates),
                             ("summary.json", bundle["summary"])):
             data = canonical_bytes(value, pretty=True)
             size, non_row_total = _write_artifact(root, name, data, row_total=row_total,
@@ -143,6 +171,11 @@ def write_bundle(outdir: str | Path, domain: dict[str, Any], bundle: dict[str, A
             "source_hashes": dict(sorted(source_hashes.items())),
             "input": input_record,
             "evidence": {"jsonl": row_inventory, "artifacts": non_row_inventory},
+            "conflict_index_format": {
+                "pair_rows": "per-family count and first witness ordinal",
+                "certificate_submasks": "count and first witness ordinal",
+                "complete_witnesses": "conflicts.jsonl",
+            },
             "counts": bundle["summary"],
             "caps": {"row_bytes": ROW_CAP, "non_row_bytes": NON_ROW_CAP,
                      "total_bytes": TOTAL_CAP},

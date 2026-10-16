@@ -94,6 +94,13 @@ bundle_path.write_text(json.dumps(bundle, sort_keys=True, separators=(",", ":"),
             path = output / name
             if hashlib.sha256(path.read_bytes()).hexdigest() != record["sha256"]:
                 raise RuntimeError(f"Manifest hash mismatch for {name}")
+        pair_rows = [json.loads(line) for line in (output / "pairs.jsonl").read_text().splitlines()]
+        certificates = json.loads((output / "certificates.json").read_text())
+        if any("conflict_ordinals" in row or "conflict_index" not in row for row in pair_rows):
+            raise RuntimeError("Pair rows retained an unbounded witness-ordinal list")
+        if any("conflict_ordinals" in item or "conflict_index" not in item
+               for cert in certificates for item in cert["proper_submasks"]):
+            raise RuntimeError("Certificate submask evidence retained duplicated witness ordinals")
         if result["total_bytes"] > writer.TOTAL_CAP:
             raise RuntimeError("Writer exceeded the configured total evidence cap")
         print(json.dumps({"status": "PASS", "purpose": "SUPERVISED_SYNTHETIC_PRODUCER_VERIFIER_WRITER_INTEGRATION",

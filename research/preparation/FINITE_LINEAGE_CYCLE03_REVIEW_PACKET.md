@@ -6,9 +6,9 @@
 
 Review the complete preparation draft at `research/preparation/FINITE_LINEAGE_CHALLENGE_DRAFT.md` with SHA-256:
 
-`a7a51f77ca1c6627c50f3e8063ba09ad20068b95927741f00e84d968c1e97028`
+`6f9de4f0aedc9bba190de6d87ba3b75ccee53bcfe04cda15ba6dfd078d1081da`
 
-The review basis includes the payload-free RP004 structural export at SHA-256 `b448013d9f849f51af1bf026c9bf7b666bd5110a32aa28315c84c1e2819ff1ea`; the proposed writer `research/preparation/finite_lineage_writer.py` at SHA-256 `1970c83a6a1283a989f24db3cab2be04b578594416d21c79f25615df7a483515`; and its toy integration check `scripts/check-finite-lineage-writer-integration.py` at SHA-256 `049bc7714d20b340fb2bceba93ceaaf8805f3c5e85102079b2c33adf647851c5`. The draft names the cited protocols, prior-art sources, author-side checks, and supplemental AI reviews. Do not treat those AI reviews as external approval.
+The review basis includes the payload-free RP004 structural export at SHA-256 `b448013d9f849f51af1bf026c9bf7b666bd5110a32aa28315c84c1e2819ff1ea`; the proposed writer `research/preparation/finite_lineage_writer.py` at SHA-256 `8add7fc3c784f2a73dd2e2f625d15f62e8fd5dc87b9a4e4b626afeb6f19bdde3`; its toy integration check `scripts/check-finite-lineage-writer-integration.py` at SHA-256 `0209834d195248dea22363cdb83a7cc7ae49e05d55b63ec983e1cc4803a03c07`; and the answer-free memory shape check `scripts/check-finite-lineage-memory-shape.py` at SHA-256 `75965edf21abf89bd8c802b4d857e95a9b5b66c3a8dd2c30b0d195d48e7e88b2`. The draft names the cited protocols, prior-art sources, author-side checks, and supplemental AI reviews. Do not treat those AI reviews as external approval.
 
 ## Requested disposition
 
@@ -18,7 +18,7 @@ Assess the exact draft bytes above and return one disposition: **proceed to a se
 2. Are all eight proposed event templates legal under RP004 semantics, and are the three-value state bound and cross-case `A/B/C` alignment defensible?
 3. Are the D/L/R/O overlap definitions, reported motif reuse, and exclusion rule suitable for the stated transfer question?
 4. Is the selective prior-art review sufficient to decide whether to proceed, and what limits must remain on contribution or novelty language?
-5. Are the denominators, independent-truth plan, producer/verifier separation, output contract, resource ceilings, and failure controls adequate for a later separately authorized run? Review the proposed writer and toy supervised test. The current handoff materializes a whole producer bundle before parent-side verification and writing and does not enforce an RSS ceiling; decide what bounded streaming/memory work and host-level checks must precede the entry decision.
+5. Are the denominators, independent-truth plan, producer/verifier separation, output contract, resource ceilings, and failure controls adequate for a later separately authorized run? Review the proposed writer and toy supervised test. The current handoff materializes a whole producer bundle before parent-side verification and writing and does not enforce an RSS ceiling. An answer-free placeholder list reached 900,333,568 bytes for 1,077,936 rows, over the inherited 128 MiB ceiling. Decide whether bounded streaming/incremental replay or a separately justified, measured resource-ceiling change is required before entry; also identify host-level checks.
 
 Do not generate candidate inputs or query outcomes, inspect answer-bearing outputs, tune templates from outcomes, freeze sources or inputs, register a Test/package, or authorize execution. A favorable review only permits a later, separate entry decision; it does not itself open Cycle 03.
 

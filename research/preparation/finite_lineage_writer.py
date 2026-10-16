@@ -192,6 +192,15 @@ def write_bundle(outdir: str | Path, domain: dict[str, Any], bundle: dict[str, A
             raise ValueError("Explicit F4/F5 stratum required (TOY is reserved for synthetic checks)")
         expected_shape = {"F4": (17, 4), "F5": (38, 5)}.get(stratum)
         if expected_shape is not None:
+            domain_cases = domain.get("cases")
+            if not isinstance(domain_cases, list):
+                raise ValueError("Domain case inventory is missing")
+            domain_case_ids = [case.get("id") for case in domain_cases if isinstance(case, dict)]
+            domain_entities = {output.get("id") for case in domain_cases if isinstance(case, dict)
+                               for event in case.get("events", []) if isinstance(event, dict)
+                               for output in event.get("outputs", []) if isinstance(output, dict)}
+            if (len(domain_case_ids), len(domain_entities)) != expected_shape:
+                raise ValueError(f"Domain {stratum} requires {expected_shape[0]} cases and {expected_shape[1]} entities")
             counts = verifier.get("counts", {})
             if (counts.get("cases"), counts.get("entities")) != expected_shape:
                 raise ValueError(f"{stratum} requires {expected_shape[0]} cases and {expected_shape[1]} entities")

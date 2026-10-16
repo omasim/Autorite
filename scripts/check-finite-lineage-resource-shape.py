@@ -88,6 +88,44 @@ def write_capped_jsonl(path, rows, *, row_cap, file_cap, total_cap, total_before
         raise
 
 
+def write_capped_artifact(path, chunks, *, artifact_cap, total_cap, total_before):
+    """Stream a non-row artifact under both its reserve and package ceilings."""
+    path = Path(path)
+    partial = path.with_name(path.name + ".partial")
+    size = 0
+    fd = os.open(partial, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    try:
+        with os.fdopen(fd, "wb") as stream:
+            for chunk in chunks:
+                if not isinstance(chunk, bytes):
+                    raise TypeError("artifact chunks must be bytes")
+                if size + len(chunk) > artifact_cap:
+                    raise OutputCapExceeded("non-row artifact reserve exceeded")
+                if total_before + size + len(chunk) > total_cap:
+                    raise OutputCapExceeded("total-evidence byte cap exceeded")
+                stream.write(chunk)
+                size += len(chunk)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(partial, path)
+        return size
+    except BaseException as exc:
+        try:
+            with partial.open("ab") as stream:
+                stream.flush()
+                os.fsync(stream.fileno())
+        except FileNotFoundError:
+            pass
+        receipt = {"status": "INCOMPLETE", "bytes_written": size,
+                   "failure": type(exc).__name__ + ": " + str(exc)}
+        receipt_path = path.with_name(path.name + ".manifest.json")
+        with receipt_path.open("x", encoding="utf-8") as stream:
+            stream.write(json.dumps(receipt, sort_keys=True) + "\n")
+            stream.flush()
+            os.fsync(stream.fileno())
+        raise
+
+
 def check_cap_failures(root):
     base = {"x": "y"}
     exact_row = {"x": "y" * 439}  # 448 UTF-8 bytes including JSON framing and LF.
@@ -123,6 +161,22 @@ def check_cap_failures(root):
         file_cap=MAX_ROW_BYTES, total_cap=MAX_ROW_BYTES, total_before=0, row_count_cap=1)
     if (count, size) != (1, MAX_ROW_BYTES):
         raise RuntimeError("Exact row-cap boundary did not pass")
+    nonrow_path = Path(root) / "non-row-reserve.json"
+    try:
+        write_capped_artifact(nonrow_path, [b"x", b"y"], artifact_cap=1,
+                              total_cap=MAX_EVIDENCE_BYTES, total_before=0)
+    except OutputCapExceeded:
+        pass
+    else:
+        raise RuntimeError("Non-row reserve overflow was not detected")
+    partial = nonrow_path.with_name(nonrow_path.name + ".partial")
+    receipt_path = nonrow_path.with_name(nonrow_path.name + ".manifest.json")
+    if not partial.exists() or json.loads(receipt_path.read_text())["status"] != "INCOMPLETE":
+        raise RuntimeError("Non-row reserve failure did not preserve INCOMPLETE output")
+    exact_nonrow = Path(root) / "exact-non-row.json"
+    if write_capped_artifact(exact_nonrow, [b"x", b"y"], artifact_cap=2,
+                             total_cap=3, total_before=1) != 2:
+        raise RuntimeError("Exact non-row reserve/total boundary did not pass")
 
 
 def main():
@@ -196,7 +250,8 @@ def main():
         "synthetic_file_bytes": written,
         "synthetic_file_sha256": digest.hexdigest(),
         "free_bytes_before_run": free,
-        "cap_failure_controls": ["row", "row_count", "file_bytes", "total_evidence_bytes", "partial_preserved", "incomplete_receipt"],
+        "cap_failure_controls": ["row", "row_count", "file_bytes", "total_evidence_bytes",
+                                 "non_row_reserve", "partial_preserved", "incomplete_receipt"],
         "elapsed_seconds": round(perf_counter() - start, 3),
         "temporary_output_removed": True,
     }, sort_keys=True))

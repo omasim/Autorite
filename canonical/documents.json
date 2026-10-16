@@ -1682,7 +1682,7 @@
     "path": "research/preparation/FINITE_LINEAGE_CHALLENGE_DRAFT.md",
     "title": "Finite lineage challenge — preparation draft",
     "category": "Research packages",
-    "summary": "Preparation-only finite lineage challenge; AI feedback provenance is limited, while structural rechecks, final-writer integration, and a separate Cycle 03 entry decision remain open.",
+    "summary": "Preparation-only finite lineage challenge; a second answer-free implementation now reproduces the partition, overlap and workload checks. Entry review, writer integration and Cycle 03 authorization remain open.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -1710,7 +1710,7 @@
     "path": "research/preparation/FINITE_LINEAGE_AI_REVIEW_002_2026-10-16.md",
     "title": "Finite lineage challenge — clean AI design re-review 002",
     "category": "Research packages",
-    "summary": "Clean AI design, resource-contract and bounded citation reviews; the user-supplied assessment is retained as AI feedback with unknown authoring system and reviewed-byte hash, while Cycle 03 gates remain open.",
+    "summary": "Clean AI design, resource-contract and bounded citation reviews; later author-side checks are recorded separately. The supplied assessment remains AI feedback with unknown authoring system and reviewed-byte hash.",
     "primary_site": "net",
     "sites": [
       "org",

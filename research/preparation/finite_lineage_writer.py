@@ -40,6 +40,64 @@ NON_ROW_FILES = ("certificates.json", "summary.json", "verifier-receipt.json")
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 
 
+class CappedJsonlSink:
+    """Write one generated row at a time without retaining the witness set."""
+
+    def __init__(self, path: str | Path, *, row_cap: int = ROW_CAP,
+                 file_cap: int = _resource.MAX_WITNESS_FILE_BYTES,
+                 total_cap: int = TOTAL_CAP, total_before: int = 0,
+                 row_count_cap: int = ROW_LIMITS["conflicts.jsonl"], guard=lambda: None):
+        self.path = Path(path)
+        self.partial = self.path.with_name(self.path.name + ".partial")
+        self.row_cap = row_cap
+        self.file_cap = file_cap
+        self.total_cap = total_cap
+        self.total_before = total_before
+        self.row_count_cap = row_count_cap
+        self.guard = guard
+        self.count = 0
+        self.size = 0
+        self._stream = self.partial.open("xb")
+        self._closed = False
+
+    def __call__(self, row: dict[str, Any]) -> None:
+        if self._closed:
+            raise ValueError("Conflict sink is closed")
+        if self.count % 256 == 0:
+            self.guard()
+        data = canonical_bytes(row)
+        if len(data) > self.row_cap:
+            raise ValueError("Conflict row cap breached")
+        if self.count >= self.row_count_cap:
+            raise ValueError("Conflict row-count cap breached")
+        new_size = self.size + len(data)
+        if new_size > self.file_cap:
+            raise ValueError("Conflict file-byte cap breached")
+        if self.total_before + new_size > self.total_cap:
+            raise ValueError("Total evidence-byte cap breached")
+        self._stream.write(data)
+        self.size = new_size
+        self.count += 1
+
+    def close(self, *, complete: bool) -> tuple[int, int]:
+        if self._closed:
+            raise ValueError("Conflict sink already closed")
+        try:
+            self._stream.flush()
+            os.fsync(self._stream.fileno())
+        finally:
+            self._stream.close()
+            self._closed = True
+        if complete:
+            os.replace(self.partial, self.path)
+            directory_fd = os.open(self.path.parent, os.O_RDONLY)
+            try:
+                os.fsync(directory_fd)
+            finally:
+                os.close(directory_fd)
+        return self.count, self.size
+
+
 def canonical_bytes(value: Any, *, pretty: bool = False) -> bytes:
     if pretty:
         text = json.dumps(value, sort_keys=True, indent=2, ensure_ascii=False, allow_nan=False)

@@ -111,6 +111,11 @@
   "changes": [
     [
       "2026-10-16",
+      "Failure-recovery controls independently rechecked",
+      "Answer-free integration now exercises a partial-write ENOSPC fallback, rejects retries for other I/O errors, syncs reserve and receipt directory updates, and verifies that a post-rename sync failure cannot leave conflicting terminal receipts. Synthetic integration, resource-shape and execution-guard checks pass; an independent AI code-review follow-up found the cited defects resolved for the tested paths. Real disk or metadata exhaustion, persistent sync failure, and host-suspension behavior remain unproven. Cycle 03 remains unopened; entry review and final-writer integration are still open."
+    ],
+    [
+      "2026-10-16",
       "Finite-lineage preparation gates advanced",
       "Answer-free synthetic checks now enforce the 64 MiB non-row artifact reserve and exercise dual-clock deadline handling, process-group stop/reap, and crash/partial-output recording. A second answer-free implementation reproduced the 55 state partitions, D/L/R/O structural-overlap table and workload arithmetic from a hash-verified payload-free export. A targeted prior-art follow-up added 2024 project-select view determinacy and 2025 SQL-lineage compression as adjacent work; coverage remains selective. The user classified the supplied assessment as an AI evaluation; its authoring system and reviewed-byte hash are unknown, so it does not satisfy an independent human/external-review gate. These are isolated helper controls, not final-writer integration or genuine host-suspension/disk-failure tests. Entry-review acceptance of overlap criteria and motif reuse, writer integration, any required identifiable external review, and a separate Cycle 03 entry decision remain open; no candidate answers or Cycle 03 run were produced."
     ],

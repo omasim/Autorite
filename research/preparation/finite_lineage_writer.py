@@ -190,6 +190,11 @@ def write_bundle(outdir: str | Path, domain: dict[str, Any], bundle: dict[str, A
             raise ValueError("A passing independent verifier receipt is required")
         if stratum not in {"F4", "F5", "TOY"}:
             raise ValueError("Explicit F4/F5 stratum required (TOY is reserved for synthetic checks)")
+        expected_shape = {"F4": (17, 4), "F5": (38, 5)}.get(stratum)
+        if expected_shape is not None:
+            counts = verifier.get("counts", {})
+            if (counts.get("cases"), counts.get("entities")) != expected_shape:
+                raise ValueError(f"{stratum} requires {expected_shape[0]} cases and {expected_shape[1]} entities")
         if not re.fullmatch(r"[0-9a-f]{40}", source_commit):
             raise ValueError("Source commit must be a full lowercase Git commit hash")
         if not source_hashes or any(not SHA256.fullmatch(v) for v in source_hashes.values()):

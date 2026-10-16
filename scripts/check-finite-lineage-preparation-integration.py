@@ -19,6 +19,7 @@ import tempfile
 HERE = Path(__file__).resolve().parent
 RESOURCE_PATH = HERE / "check-finite-lineage-resource-shape.py"
 GUARD_PATH = HERE / "check-finite-lineage-execution-guard.py"
+FAILURE_RESERVE_BYTES = 16 * 1024
 
 
 def load_module(name: str, path: Path):
@@ -44,14 +45,53 @@ def write_receipt(path: Path, receipt: dict[str, object]) -> None:
     os.replace(temporary, path)
 
 
+def prepare_failure_reserve(root: Path) -> Path:
+    """Allocate emergency space before work so a failure receipt can be saved."""
+    path = root / ".failure-receipt.reserve"
+    fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    try:
+        remaining = FAILURE_RESERVE_BYTES
+        block = b"\0" * 4096
+        while remaining:
+            written = os.write(fd, block[:min(remaining, len(block))])
+            if written <= 0:
+                raise OSError("could not allocate failure-receipt reserve")
+            remaining -= written
+        os.fsync(fd)
+    except BaseException:
+        os.close(fd)
+        path.unlink(missing_ok=True)
+        raise
+    else:
+        os.close(fd)
+    return path
+
+
+def write_incomplete(root: Path, reason: str, reserve: Path) -> None:
+    receipt = {"status": "INCOMPLETE", "failure": reason,
+               "automatic_retry": False, "promotion": False}
+    try:
+        write_receipt(root / "INCOMPLETE.json", receipt)
+    except OSError:
+        # This is a receipt-persistence fallback, never a worker/run retry.
+        # Releasing preallocated blocks gives the same filesystem room to save
+        # the small terminal record after an evidence-write ENOSPC error.
+        if not reserve.exists():
+            raise
+        reserve.unlink()
+        write_receipt(root / "INCOMPLETE.json", receipt)
+    reserve.unlink(missing_ok=True)
+
+
 def run_package(root: Path, command: list[str], *, timeout: float = 3,
                 row_cap: int = 448, row_count_cap: int = 4,
                 writer=resource.write_capped_jsonl) -> dict[str, object]:
     """Compose worker supervision, capped evidence writing and terminal receipt."""
+    reserve = prepare_failure_reserve(root)
     raw = root / "worker-output.partial"
     result = guard.supervise(command + [str(raw)], timeout_seconds=timeout)
     if result["status"] != "COMPLETE":
-        guard.write_incomplete(root, str(result["reason"]))
+        write_incomplete(root, str(result["reason"]), reserve)
         return {"status": "INCOMPLETE", "reason": result["reason"]}
 
     evidence = root / "synthetic-evidence.jsonl"
@@ -70,10 +110,11 @@ def run_package(root: Path, command: list[str], *, timeout: float = 3,
             "status": "COMPLETE", "rows": count, "bytes": size,
             "sha256": digest, "automatic_retry": False,
         })
+        reserve.unlink(missing_ok=True)
         return {"status": "COMPLETE", "rows": count, "bytes": size,
                 "sha256": digest}
     except BaseException as exc:
-        guard.write_incomplete(root, f"{type(exc).__name__}: {exc}")
+        write_incomplete(root, f"{type(exc).__name__}: {exc}", reserve)
         return {"status": "INCOMPLETE", "reason": type(exc).__name__}
 
 
@@ -155,12 +196,38 @@ def check_injected_io_failure(root: Path) -> None:
         raise AssertionError("Capped writer did not preserve its failure receipt")
 
 
+def check_failure_receipt_reserve(root: Path) -> None:
+    original_write_receipt = write_receipt
+    failed_once = False
+
+    def fail_first_incomplete_write(path: Path, receipt: dict[str, object]) -> None:
+        nonlocal failed_once
+        if path.name == "INCOMPLETE.json" and not failed_once:
+            failed_once = True
+            raise OSError("injected synthetic ENOSPC while writing failure receipt")
+        original_write_receipt(path, receipt)
+
+    globals()["write_receipt"] = fail_first_incomplete_write
+    try:
+        failed = "import pathlib,sys; pathlib.Path(sys.argv[1]).write_text('partial'); raise SystemExit(9)"
+        result = run_package(root, worker_command(failed))
+    finally:
+        globals()["write_receipt"] = original_write_receipt
+    receipt = json.loads((root / "INCOMPLETE.json").read_text())
+    if not failed_once or result["status"] != "INCOMPLETE":
+        raise AssertionError("Receipt persistence fallback was not exercised")
+    if receipt["promotion"] or receipt["automatic_retry"]:
+        raise AssertionError("Receipt persistence failure promoted or retried the run")
+    if (root / "COMPLETE.json").exists() or (root / ".failure-receipt.reserve").exists():
+        raise AssertionError("Failure fallback left a completion or reserve marker")
+
+
 def main() -> None:
     temp_root = Path("/private/tmp")
     if shutil.disk_usage(temp_root).free < 2 * 1024**3:
         raise RuntimeError("Need at least 2 GiB free for answer-free integration controls")
     controls = [check_success, check_worker_failure, check_cap_failure,
-                check_injected_io_failure]
+                check_injected_io_failure, check_failure_receipt_reserve]
     for check in controls:
         with tempfile.TemporaryDirectory(prefix="finite-lineage-integration-",
                                          dir=temp_root) as directory:
@@ -172,7 +239,9 @@ def main() -> None:
         "candidate_answers_generated": False,
         "controls": ["supervisor_to_capped_writer", "hash_bound_COMPLETE_receipt",
                      "worker_crash_partial", "cap_failure_no_promotion",
-                     "injected_write_error_incomplete_receipt", "no_automatic_retry"],
+                     "injected_write_error_incomplete_receipt",
+                     "preallocated_reserve_after_incomplete_receipt_enospc",
+                     "no_automatic_retry"],
         "temporary_artifacts_removed": True,
         "python": sys.version.split()[0],
         "platform": sys.platform,

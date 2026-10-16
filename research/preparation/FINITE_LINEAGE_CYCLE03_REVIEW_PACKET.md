@@ -2,6 +2,8 @@
 
 **Packet status:** ready for independent review; Cycle 03 remains unopened. No candidate corpus or answer-bearing challenge output is included.
 
+**Review boundary:** the designated review basis is this packet and the accompanying bundle, together with the exact files and hashes listed below. The bundle includes `research/preparation/FINITE_LINEAGE_RP004_SEMANTICS_EXCERPT_2026-10-16.md` (SHA-256 `44b22c907990094983f1a11dab7f087524cfc519379f204d91c18a682fc31138`), containing only the question and construction/merge semantics. It excludes the full RP004 and RP006 operational protocols because they disclose legacy control answers and outcomes. Do not consult those outcome-bearing protocols, fixture files, or prior answer artifacts for this control-blind design review; disclose and stop if such material is encountered. The excerpt contains no fixture cases or expected answers.
+
 ## Exact material to review
 
 Review the complete preparation draft at `research/preparation/FINITE_LINEAGE_CHALLENGE_DRAFT.md` with SHA-256:

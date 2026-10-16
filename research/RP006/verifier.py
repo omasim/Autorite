@@ -13,7 +13,8 @@ def text(value):
     return json.dumps(value, sort_keys=True, separators=(',', ':'), allow_nan=False)
 
 
-def reconstruct(domain, guard=lambda: None, *, retain_conflicts=True, conflict_sink=None):
+def reconstruct(domain, guard=lambda: None, *, retain_conflicts=True, conflict_sink=None,
+                stratum=None):
     """Independently reconstruct RP006 artifacts, optionally streaming witnesses.
 
     Bounded mode emits each expected conflict to `conflict_sink` and retains
@@ -22,8 +23,14 @@ def reconstruct(domain, guard=lambda: None, *, retain_conflicts=True, conflict_s
     """
     if not retain_conflicts and conflict_sink is None:
         raise ValueError('Bounded replay requires a conflict sink')
+    if not retain_conflicts and stratum not in {'F4', 'F5', 'TOY'}:
+        raise ValueError('Bounded replay requires an explicit F4, F5, or TOY stratum')
     guard()
     cases = domain['cases']
+    if not retain_conflicts:
+        expected_cases = {'F4': 17, 'F5': 38}.get(stratum)
+        if expected_cases is not None and len(cases) != expected_cases:
+            raise ValueError(f'{stratum} requires exactly {expected_cases} cases')
     if not cases or any(set(c) != {'id', 'events'} or not isinstance(c['id'], str) or not c['id'] for c in cases):
         raise ValueError('Independent case inventory')
     identifiers = [c['id'] for c in cases]
@@ -33,6 +40,10 @@ def reconstruct(domain, guard=lambda: None, *, retain_conflicts=True, conflict_s
     universe = sorted(world[identifiers[0]]['state'])
     if any(sorted(w['state']) != universe for w in world.values()):
         raise ValueError('Independent common universe')
+    if not retain_conflicts:
+        expected_entities = {'F4': 4, 'F5': 5}.get(stratum)
+        if expected_entities is not None and len(universe) != expected_entities:
+            raise ValueError(f'{stratum} requires exactly {expected_entities} entities')
     query_list = []
     for kind in NAMES:
         for x in universe:
@@ -161,7 +172,7 @@ def verify(actual, domain, guard=lambda: None):
             'basis': 'Independent RP004 log/matrix truth and separately implemented RP006 projection/classification; no producer imports'}
 
 
-def verify_bounded(actual, conflict_path, domain, guard=lambda: None):
+def verify_bounded(actual, conflict_path, domain, guard=lambda: None, *, stratum=None):
     """Verify compact artifacts and compare every witness in a streaming pass."""
     import hashlib
     from pathlib import Path
@@ -189,7 +200,8 @@ def verify_bounded(actual, conflict_path, domain, guard=lambda: None):
             if encoded != (text(row) + '\n').encode('utf-8'):
                 raise ValueError('Conflict witness row is not canonically serialized')
 
-        expected = reconstruct(domain, guard, retain_conflicts=False, conflict_sink=compare_expected)
+        expected = reconstruct(domain, guard, retain_conflicts=False,
+                               conflict_sink=compare_expected, stratum=stratum)
         if stream.readline():
             raise ValueError('Independent conflict stream has extra rows')
     for kind in ('truth', 'projections', 'pairs', 'certificates', 'summary'):

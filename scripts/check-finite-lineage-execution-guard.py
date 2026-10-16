@@ -13,16 +13,50 @@ import signal
 import subprocess
 import sys
 import tempfile
+import threading
 import time
 
 
 MAX_CLOCK_GAP_SECONDS = 2.0
 TERMINATION_GRACE_SECONDS = 0.25
 POLL_SECONDS = 0.02
+MAX_CAPTURED_LOG_BYTES = 64 * 1024
 
 
 class GuardStop(RuntimeError):
     pass
+
+
+class BoundedCapture:
+    """Drain a worker pipe continuously while retaining only a bounded prefix."""
+    def __init__(self, stream, limit: int = MAX_CAPTURED_LOG_BYTES):
+        self.stream = stream
+        self.limit = limit
+        self.parts: list[bytes] = []
+        self.size = 0
+        self.overflow = threading.Event()
+        self.finished = threading.Event()
+        self.thread = threading.Thread(target=self._drain, daemon=True)
+        self.thread.start()
+
+    def _drain(self) -> None:
+        try:
+            while True:
+                chunk = self.stream.read(8192)
+                if not chunk:
+                    return
+                remaining = self.limit - self.size
+                if remaining > 0:
+                    kept = chunk[:remaining]
+                    self.parts.append(kept)
+                    self.size += len(kept)
+                if len(chunk) > max(remaining, 0):
+                    self.overflow.set()
+        finally:
+            self.finished.set()
+
+    def text(self) -> str:
+        return b"".join(self.parts).decode("utf-8", "replace")
 
 
 def clock_failure(start_wall: float, start_mono: float,
@@ -66,9 +100,17 @@ def supervise(argv: list[str], *, timeout_seconds: float,
     proc = subprocess.Popen(argv, start_new_session=True,
                             stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
                             stderr=subprocess.PIPE, close_fds=True)
+    stdout_capture = BoundedCapture(proc.stdout)
+    stderr_capture = BoundedCapture(proc.stderr)
     reason = None
     try:
         while proc.poll() is None:
+            if stdout_capture.overflow.is_set():
+                reason = "stdout_log_byte_cap"
+                raise GuardStop(reason)
+            if stderr_capture.overflow.is_set():
+                reason = "stderr_log_byte_cap"
+                raise GuardStop(reason)
             now_wall, now_mono = wall_clock(), mono_clock()
             reason = clock_failure(start_wall, start_mono, now_wall, now_mono)
             if reason:
@@ -77,19 +119,31 @@ def supervise(argv: list[str], *, timeout_seconds: float,
                 reason = "deadline"
                 raise GuardStop(reason)
             time.sleep(POLL_SECONDS)
-        stdout, stderr = proc.communicate(timeout=1)
+        proc.wait(timeout=1)
+        stdout_capture.thread.join(timeout=1)
+        stderr_capture.thread.join(timeout=1)
+        if stdout_capture.thread.is_alive() or stderr_capture.thread.is_alive():
+            reason = "worker_pipe_not_closed"
+            raise GuardStop(reason)
+        if stdout_capture.overflow.is_set():
+            reason = "stdout_log_byte_cap"
+        elif stderr_capture.overflow.is_set():
+            reason = "stderr_log_byte_cap"
         if proc.returncode != 0:
-            reason = f"worker_exit_{proc.returncode}"
+            reason = reason or f"worker_exit_{proc.returncode}"
         return {"status": "COMPLETE" if reason is None else "INCOMPLETE",
                 "returncode": proc.returncode, "reason": reason,
-                "stdout": stdout.decode("utf-8", "replace"),
-                "stderr": stderr.decode("utf-8", "replace")}
+                "stdout": stdout_capture.text(),
+                "stderr": stderr_capture.text()}
     except BaseException as exc:
         if reason is None:
             reason = type(exc).__name__
         stop_and_reap(proc)
+        stdout_capture.thread.join(timeout=1)
+        stderr_capture.thread.join(timeout=1)
         return {"status": "INCOMPLETE", "returncode": proc.returncode,
-                "reason": reason, "stdout": "", "stderr": ""}
+                "reason": reason, "stdout": stdout_capture.text(),
+                "stderr": stderr_capture.text()}
 
 
 def write_incomplete(directory: Path, reason: str) -> None:
@@ -147,11 +201,34 @@ def check_crash_partial_preservation(root: Path) -> None:
         raise AssertionError("crash receipt has unsafe retry/promotion fields")
 
 
+def check_large_output_does_not_block() -> None:
+    # Both streams exceed common pipe buffers. The guard must keep draining,
+    # preserve a bounded diagnostic prefix, and stop on its log cap rather
+    # than deadlocking until the wall-clock deadline.
+    code = (
+        "import os; block=b'x'*65536; "
+        "[os.write(1,block) for _ in range(32)]; "
+        "[os.write(2,block) for _ in range(32)]"
+    )
+    result = supervise([sys.executable, "-c", code], timeout_seconds=5)
+    if result["status"] != "INCOMPLETE" or result["reason"] not in (
+            "stdout_log_byte_cap", "stderr_log_byte_cap"):
+        raise AssertionError(f"Large-output worker did not fail closed at log cap: {result}")
+    if len(result["stdout"].encode()) > MAX_CAPTURED_LOG_BYTES or len(result["stderr"].encode()) > MAX_CAPTURED_LOG_BYTES:
+        raise AssertionError("Large-output worker exceeded the bounded log capture")
+
+    normal = "import os; os.write(1,b'o'*4096); os.write(2,b'e'*4096)"
+    result = supervise([sys.executable, "-c", normal], timeout_seconds=5)
+    if result["status"] != "COMPLETE" or len(result["stdout"]) != 4096 or len(result["stderr"]) != 4096:
+        raise AssertionError(f"Bounded diagnostic capture failed: {result}")
+
+
 def main() -> None:
     root_dir = Path("/private/tmp")
     if shutil.disk_usage(root_dir).free < 2 * 1024**3:
         raise RuntimeError("Need at least 2 GiB free for the synthetic guard controls")
     check_clock_controls()
+    check_large_output_does_not_block()
     with tempfile.TemporaryDirectory(prefix="finite-lineage-guard-", dir=root_dir) as tmp:
         root = Path(tmp)
         check_deadline_and_group_reap(root)
@@ -163,7 +240,9 @@ def main() -> None:
         "candidate_answers_generated": False,
         "controls": ["clock_gap", "clock_regression", "dual_clock_deadline",
                      "process_group_stop", "leader_reap", "partial_preserved",
-                     "INCOMPLETE_receipt", "no_automatic_retry_or_promotion"],
+                     "INCOMPLETE_receipt", "continuous_stdout_stderr_drain",
+                     "bounded_log_capture", "log_cap_fail_closed",
+                     "no_automatic_retry_or_promotion"],
         "temporary_artifacts_removed": True,
         "python": sys.version.split()[0],
         "platform": sys.platform,

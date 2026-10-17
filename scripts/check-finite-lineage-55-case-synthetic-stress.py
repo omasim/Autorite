@@ -407,12 +407,12 @@ def main() -> None:
         cgroup = validate_linux_cgroup_v2()
         cgroup_events_before = _read_cgroup_events(Path("/sys/fs/cgroup/memory.events"))
     if shutil_disk_free(TEMP_ROOT) < 2 * 1024**3:
-        raise RuntimeError("Need at least 2 GiB free under /private/tmp")
+        raise RuntimeError(f"Need at least 2 GiB free under {TEMP_ROOT}")
     darwin_sample_self_test()
     with tempfile.TemporaryDirectory(prefix="autorite-lineage-55-stress-", dir=TEMP_ROOT) as name:
         result = run_limited_worker(Path(name))
     if cgroup_events_before is not None:
-        result["cgroup"] = linux_cgroup_after_run(Path("/sys/fs/cgroup"), cgroup_events_before)
+        cgroup = linux_cgroup_after_run(Path("/sys/fs/cgroup"), cgroup_events_before)
     result["python"] = sys.version.split()[0]
     result["platform"] = sys.platform
     if cgroup is not None:

@@ -258,7 +258,8 @@ for stratum,(case_count,entity_count,domain) in domains.items():
  source_paths=[root/"research/RP006/producer.py",root/"research/RP006/verifier.py",root/"research/preparation/finite_lineage_writer.py",root/"scripts/check-finite-lineage-55-case-synthetic-stress.py"]
  source_hashes={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in source_paths}
  write_started=time.perf_counter()
- package=writer.write_bundle(temp/(stratum+"-package"),domain,bundle,receipt,source_hashes,stratum=stratum,source_commit=__import__("subprocess").check_output(["git","rev-parse","HEAD"],cwd=root,text=True).strip(),guard=resources.Guard(seconds=1200,memory_bytes=128*1024*1024),conflicts_path=witness_path)
+ source_commit=__import__("os").environ.get("FINITE_LINEAGE_SOURCE_COMMIT") or __import__("subprocess").check_output(["git","rev-parse","HEAD"],cwd=root,text=True).strip()
+ package=writer.write_bundle(temp/(stratum+"-package"),domain,bundle,receipt,source_hashes,stratum=stratum,source_commit=source_commit,guard=resources.Guard(seconds=1200,memory_bytes=128*1024*1024),conflicts_path=witness_path)
  write_elapsed=time.perf_counter()-write_started
  per_case={}
  for case in sorted(c["id"] for c in domain["cases"]):

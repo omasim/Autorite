@@ -26,6 +26,7 @@ jobs:
             -e PYTHONHASHSEED=0 \
             -e FINITE_LINEAGE_REQUIRE_CGROUP_V2=1 \
             -e FINITE_LINEAGE_MEMORY_LIMIT_BYTES=536870912 \
+            -e FINITE_LINEAGE_SOURCE_COMMIT="$GITHUB_SHA" \
             -e FINITE_LINEAGE_TEMP_ROOT=/tmp \
             -v "$GITHUB_WORKSPACE:/workspace:ro" \
             -v "$RUNNER_TEMP/finite-lineage-tmp:/tmp" \

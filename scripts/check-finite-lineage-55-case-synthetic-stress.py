@@ -27,7 +27,10 @@ import time
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TEMP_ROOT = Path("/private/tmp")
+TEMP_ROOT = Path(os.environ.get(
+    "FINITE_LINEAGE_TEMP_ROOT",
+    "/private/tmp" if sys.platform == "darwin" else tempfile.gettempdir(),
+))
 PYTHON = sys.executable
 HASH_SEED = "0"
 TREE_RSS_CAP = 512 * 1024 * 1024
@@ -270,7 +273,53 @@ print(json.dumps({"status":"PASS","reports":reports,"candidate_inputs_read":Fals
 def darwin_sample_self_test() -> None:
     total, count = proc_group_rss_bytes(os.getpgid(os.getpid()))
     if total <= 0 or count <= 0:
-        raise RuntimeError("Could not measure the current process group through libproc")
+        raise RuntimeError("Could not measure the current process group")
+
+
+def validate_linux_cgroup_v2() -> dict[str, int | str]:
+    """Confirm the enclosing cgroup supplies the requested hard memory bound."""
+    if not sys.platform.startswith("linux"):
+        raise RuntimeError("A cgroups v2 memory boundary is only checked on Linux")
+    root = Path("/sys/fs/cgroup")
+    if not (root / "cgroup.controllers").is_file():
+        raise RuntimeError("The process is not running in a cgroups v2 hierarchy")
+    controllers = (root / "cgroup.controllers").read_text(encoding="ascii").split()
+    if "memory" not in controllers:
+        raise RuntimeError("The cgroups v2 memory controller is unavailable")
+    expected = int(os.environ.get("FINITE_LINEAGE_MEMORY_LIMIT_BYTES", TREE_RSS_CAP))
+    memory_max = (root / "memory.max").read_text(encoding="ascii").strip()
+    swap_max = (root / "memory.swap.max").read_text(encoding="ascii").strip()
+    if memory_max == "max" or int(memory_max) != expected:
+        raise RuntimeError(f"Unexpected cgroup memory.max: {memory_max!r}; expected {expected}")
+    if swap_max == "max" or int(swap_max) != 0:
+        raise RuntimeError(f"Unexpected cgroup memory.swap.max: {swap_max!r}; expected 0")
+    events = _read_cgroup_events(root / "memory.events")
+    return {"cgroup_version": "v2", "memory_max_bytes": expected,
+            "memory_swap_max_bytes": 0, "oom_kill_count_before": events.get("oom_kill", 0)}
+
+
+def _read_cgroup_events(path: Path) -> dict[str, int]:
+    result = {}
+    for line in path.read_text(encoding="ascii").splitlines():
+        key, value = line.split()
+        result[key] = int(value)
+    return result
+
+
+def linux_cgroup_after_run(root: Path, before: dict[str, int]) -> dict[str, int | str]:
+    events = _read_cgroup_events(root / "memory.events")
+    oom_kills = events.get("oom_kill", 0) - before.get("oom_kill", 0)
+    if oom_kills:
+        raise RuntimeError(f"The cgroup recorded {oom_kills} OOM kill(s)")
+    peak_path = root / "memory.peak"
+    if not peak_path.is_file():
+        raise RuntimeError("The Linux cgroup does not expose memory.peak")
+    return {"cgroup_version": "v2",
+            "memory_max_bytes": int((root / "memory.max").read_text(encoding="ascii").strip()),
+            "memory_swap_max_bytes": int((root / "memory.swap.max").read_text(encoding="ascii").strip()),
+            "memory_peak_bytes": int(peak_path.read_text(encoding="ascii").strip()),
+            "oom_kill_count": events.get("oom_kill", 0),
+            "oom_events": events.get("oom", 0)}
 
 
 def run_limited_worker(temp: Path) -> dict:
@@ -288,7 +337,10 @@ def run_limited_worker(temp: Path) -> dict:
         resource_limits={"RLIMIT_FSIZE": FILE_SIZE_CAP,
                          "RLIMIT_NOFILE": NOFILE_CAP,
                          "RLIMIT_CPU": CPU_SECONDS_CAP},
-        max_process_group_rss_bytes=TREE_RSS_CAP,
+        # On Linux the enclosing memory cgroup is the hard boundary. Keep the
+        # sampler above that boundary so only the kernel limit can stop a run.
+        max_process_group_rss_bytes=(TREE_RSS_CAP if sys.platform == "darwin"
+                                     else TREE_RSS_CAP * 2),
         sample_interval=SAMPLE_INTERVAL,
     )
     if supervised["status"] != "COMPLETE":
@@ -305,7 +357,9 @@ def run_limited_worker(temp: Path) -> dict:
         "peak_process_count": supervised["process_group_peak_members"],
         "sample_count": supervised["process_group_rss_samples"],
         "rss_cap_bytes": TREE_RSS_CAP,
-        "sampler": "Darwin libproc PROC_PIDTASKINFO; RSS summed across the isolated process group",
+        "sampler": ("Darwin libproc PROC_PIDTASKINFO; RSS summed across the isolated process group"
+                    if sys.platform == "darwin" else
+                    "Linux /proc VmRSS; RSS summed across the isolated process group"),
     }
     report["host_controls"] = {
         "pythonhashseed": HASH_SEED,
@@ -314,24 +368,37 @@ def run_limited_worker(temp: Path) -> dict:
         "rlimit_cpu_seconds_per_process": CPU_SECONDS_CAP,
         "process_group_wall_timeout_seconds": WALL_SECONDS_CAP,
         "process_group_termination": "SIGTERM then SIGKILL",
-        "memory_limit": "sampled process-group RSS stop; macOS sandbox did not permit finite RLIMIT_AS; no cgroups v2 on this host",
+        "memory_limit": ("sampled process-group RSS stop; macOS sandbox did not permit finite RLIMIT_AS; no cgroups v2 on this host"
+                         if sys.platform == "darwin" else
+                         "kernel-enforced cgroups v2 memory.max and memory.swap.max; process-group RSS is supplementary"),
     }
     report["temporary_artifacts_removed"] = True
     return report
 
 
 def main() -> None:
-    if sys.platform != "darwin":
-        raise RuntimeError("This measurement implementation is scoped to the current macOS host")
+    if sys.platform not in {"darwin", "linux"}:
+        raise RuntimeError(f"Unsupported measurement platform: {sys.platform}")
     if sys.version_info[:3] != (3, 12, 13):
         raise RuntimeError(f"Expected Python 3.12.13; found {sys.version.split()[0]}")
+    cgroup = None
+    cgroup_events_before = None
+    if sys.platform.startswith("linux"):
+        if os.environ.get("FINITE_LINEAGE_REQUIRE_CGROUP_V2") != "1":
+            raise RuntimeError("Linux stress runs require explicit cgroups v2 opt-in")
+        cgroup = validate_linux_cgroup_v2()
+        cgroup_events_before = _read_cgroup_events(Path("/sys/fs/cgroup/memory.events"))
     if shutil_disk_free(TEMP_ROOT) < 2 * 1024**3:
         raise RuntimeError("Need at least 2 GiB free under /private/tmp")
     darwin_sample_self_test()
     with tempfile.TemporaryDirectory(prefix="autorite-lineage-55-stress-", dir=TEMP_ROOT) as name:
         result = run_limited_worker(Path(name))
+    if cgroup_events_before is not None:
+        result["cgroup"] = linux_cgroup_after_run(Path("/sys/fs/cgroup"), cgroup_events_before)
     result["python"] = sys.version.split()[0]
     result["platform"] = sys.platform
+    if cgroup is not None:
+        result["cgroup"] = cgroup
     result["status"] = "PASS"
     if len(sys.argv) > 1:
         output_path = Path(sys.argv[1])

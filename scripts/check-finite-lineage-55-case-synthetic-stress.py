@@ -116,41 +116,58 @@ def apply_inherited_limits() -> dict[str, tuple[int, int]]:
 
 
 def proc_group_rss_bytes(pgid: int) -> tuple[int, int]:
-    """Return (sum RSS bytes, process count) for a Darwin process group."""
-    if sys.platform != "darwin":
-        raise RuntimeError("This process-tree sampler currently supports macOS only")
-    libproc = ctypes.CDLL("/usr/lib/libproc.dylib")
-    list_pids = libproc.proc_listallpids
-    list_pids.argtypes = [ctypes.c_void_p, ctypes.c_int, ctypes.POINTER(ctypes.c_int)]
-    list_pids.restype = ctypes.c_int
-    pid_info = libproc.proc_pidinfo
-    pid_info.argtypes = [ctypes.c_int, ctypes.c_int, ctypes.c_uint64,
-                         ctypes.c_void_p, ctypes.c_int]
-    pid_info.restype = ctypes.c_int
-
-    pids = (ctypes.c_int * 32768)()
-    used = ctypes.c_int()
-    count = list_pids(pids, ctypes.sizeof(pids), ctypes.byref(used))
-    if count <= 0:
-        raise RuntimeError("libproc did not return a process inventory")
-    rss_total = 0
-    member_count = 0
-    for pid in pids[:count]:
-        if pid <= 0:
-            continue
-        try:
-            if os.getpgid(pid) != pgid:
+    """Return sampled RSS bytes and process count for an isolated process group."""
+    if sys.platform == "darwin":
+        libproc = ctypes.CDLL("/usr/lib/libproc.dylib")
+        list_pids = libproc.proc_listallpids
+        list_pids.argtypes = [ctypes.c_void_p, ctypes.c_int, ctypes.POINTER(ctypes.c_int)]
+        list_pids.restype = ctypes.c_int
+        pid_info = libproc.proc_pidinfo
+        pid_info.argtypes = [ctypes.c_int, ctypes.c_int, ctypes.c_uint64,
+                             ctypes.c_void_p, ctypes.c_int]
+        pid_info.restype = ctypes.c_int
+        pids = (ctypes.c_int * 32768)()
+        used = ctypes.c_int()
+        count = list_pids(pids, ctypes.sizeof(pids), ctypes.byref(used))
+        if count <= 0:
+            raise RuntimeError("libproc did not return a process inventory")
+        rss_total = 0
+        member_count = 0
+        for pid in pids[:count]:
+            if pid <= 0:
                 continue
-        except ProcessLookupError:
-            continue
-        info = ctypes.create_string_buffer(256)
-        copied = pid_info(pid, 4, 0, info, ctypes.sizeof(info))  # PROC_PIDTASKINFO
-        if copied < 16:
-            continue
-        # proc_taskinfo begins with pti_virtual_size and pti_resident_size.
-        rss_total += struct.unpack("=Q", info.raw[8:16])[0]
-        member_count += 1
-    return rss_total, member_count
+            try:
+                if os.getpgid(pid) != pgid:
+                    continue
+            except ProcessLookupError:
+                continue
+            info = ctypes.create_string_buffer(256)
+            copied = pid_info(pid, 4, 0, info, ctypes.sizeof(info))  # PROC_PIDTASKINFO
+            if copied < 16:
+                continue
+            # proc_taskinfo begins with pti_virtual_size and pti_resident_size.
+            rss_total += struct.unpack("=Q", info.raw[8:16])[0]
+            member_count += 1
+        return rss_total, member_count
+    if sys.platform.startswith("linux"):
+        rss_total = 0
+        member_count = 0
+        for item in os.scandir("/proc"):
+            if not item.name.isdigit():
+                continue
+            pid = int(item.name)
+            try:
+                if os.getpgid(pid) != pgid:
+                    continue
+                status = Path(item.path, "status").read_text(encoding="ascii")
+            except (FileNotFoundError, ProcessLookupError, PermissionError):
+                continue
+            resident_kib = next((int(line.split()[1]) for line in status.splitlines()
+                                 if line.startswith("VmRSS:")), 0)
+            rss_total += resident_kib * 1024
+            member_count += 1
+        return rss_total, member_count
+    raise RuntimeError(f"Unsupported process-tree sampler platform: {sys.platform}")
 
 
 def process_limits_preexec() -> None:

@@ -1780,7 +1780,7 @@
     "path": "research/preparation/FINITE_LINEAGE_REVALIDATION_2026-10-18.md",
     "title": "Finite lineage challenge — revalidation 2026-10-18",
     "category": "Research packages",
-    "summary": "Records the 55-case synthetic producer/verifier/writer stress test, memory analysis and process-group controls. A kernel-enforced aggregate memory limit and supplemental review remain open; Cycle 03 is unopened.",
+    "summary": "Records the 55-case synthetic pipeline on macOS and Linux cgroups v2, including a 512 MiB hard memory ceiling with swap disabled. The maximum semantic row-count workload, supplemental review and reviewer-provenance gates remain open; Cycle 03 is unopened.",
     "primary_site": "net",
     "sites": [
       "org",

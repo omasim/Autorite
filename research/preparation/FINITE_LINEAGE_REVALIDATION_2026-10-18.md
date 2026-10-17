@@ -23,7 +23,13 @@ The writer used its configured 1,077,936-row conflict cap; the synthetic domains
 
 Per-case graph-construction and truth-evaluation wall measurements are recorded in `FINITE_LINEAGE_55_CASE_SYNTHETIC_STRESS_2026-10-18.json` (SHA-256 `c8423de09606dfd4d15e85668b0d11b25b67ddda5c62e747025f78bd72669805`). Across F4 cases, producer graph-plus-truth time was 0.000049–0.000081 s per case and verifier replay-plus-truth time was 0.000395–0.003032 s. Across F5 cases, producer graph-plus-truth time was 0.000073–0.000102 s and verifier replay-plus-truth time was 0.001035–0.001428 s. These per-case timings cover each case’s event reconstruction and query-truth work; pair/mask comparison, certificate generation, and package writing are reported as full-stage timings because those operations span multiple cases.
 
-The isolated process group contained at most two processes. Darwin `libproc` sampling at 25 ms observed a peak aggregate resident set of 52,428,800 bytes over 91 samples, below the sampled 536,870,912-byte stop threshold. The test also confirmed the verifier rejects a 449-byte witness row. These are sampled measurements and a boundary control, not a kernel-enforced bound; very short peaks between samples could be missed.
+The macOS process group contained at most two processes. Darwin `libproc` sampling at 25 ms observed a 52,428,800-byte peak over 91 samples, below the sampled 536,870,912-byte stop threshold. This is a sampled measurement only; very short peaks between samples could be missed. The verifier also rejected a 449-byte witness row.
+
+### Linux cgroups v2 validation
+
+The same 55-case synthetic pipeline passed in GitHub Actions run [39072987426](https://github.com/omasim/Autorite/actions/runs/39072987426), commit `0666320fa95bc76d400bf212392ffa814a30e47e`, under Python 3.12.13. The runner used a Docker cgroups v2 memory ceiling of 536,870,912 bytes (512 MiB), set swap allowance to zero, and verified `memory.max` and `memory.swap.max` from inside the constrained container. After execution, cgroup `memory.peak` was 62,435,328 bytes, `oom_events` and `oom_kill_count` were both zero. Separate 25 ms `/proc` sampling observed a 57,212,928-byte process-group RSS peak across 180 samples and at most two processes. The hard cgroup ceiling covered the complete container process tree; sampled RSS remained supplementary.
+
+F4 completed 17 cases across four topologies (maximum depth 2, out-degree 2); F5 completed 38 cases across five topologies (maximum depth 3, out-degree 2). The cgroup run produced 22,143 semantic conflict rows in total and passed the bounded producer, independent verifier, and capped package writer. No candidate data or answers were read or generated. The 1,077,936-row upper bound remains separately validated with answer-free placeholder rows, rather than by the semantic 55-case run.
 
 ## Verifier memory bound
 
@@ -31,15 +37,16 @@ The bounded verifier does not retain the full conflict-witness set: `verify_boun
 
 The verifier is not constant-memory in the whole challenge inventory. It retains reconstructed worlds, truth rows/answers, projections, pair records, and certificates. At a high level its memory is bounded by the declared finite inventory: `O(C·(V+E) + C·Q + 8·C·V + 8·C² + 16·C·Q + V² + R)`, where `C` is case count, `V/E` are nodes/edges per case, `Q` is query count per case, and `R` is the largest conflict row. The `V²` term covers a temporary closure matrix rebuilt during query evaluation; the `C·Q` terms cover retained truth/query vectors and certificates. At fixed `C=55` and `V≤5`, this memory is independent of whether the conflict file contains a few rows or approaches its row cap. The measured 55-case process-tree peak above is consistent with this bound on the tested synthetic corpus; it is not a proof for arbitrary inputs beyond the declared caps.
 
-## Execution controls and remaining host limitation
+## Execution controls and host enforcement
 
 The execution supervisor now applies inherited `RLIMIT_FSIZE` (640 MiB per file), `RLIMIT_NOFILE` (256), and `RLIMIT_CPU` (1,800 seconds per process); fixes `PYTHONHASHSEED=0` when requested; samples aggregate process-group RSS; and terminates the process group with SIGTERM followed by SIGKILL on RSS or dual-clock wall-time breach. `scripts/check-finite-lineage-execution-guard.py` passed its synthetic controls for inherited limits, deterministic hash seed, process-group sampling/cap, timeouts, descendant teardown, bounded logs, crash preservation, and fail-closed receipts.
 
-This macOS execution environment does not provide cgroups v2. Attempts to impose finite `RLIMIT_AS` from this sandbox fail with `ValueError: current limit exceeds maximum limit`; therefore a hard aggregate process-tree memory ceiling is **not** established. The 512 MiB process-group RSS threshold is a sampled stop control only. Before any separate entry decision, either run the reviewed supervisor on a Linux host with cgroups v2 (`MemoryMax` and `MemorySwapMax=0`) or obtain and validate an equivalent kernel-enforced process-tree memory limit. Per-process `RLIMIT_CPU` is also not an aggregate CPU budget.
+The local macOS environment still cannot impose cgroups v2 or finite `RLIMIT_AS`; its 512 MiB process-group RSS threshold remains a sampled stop control. The separate Linux synthetic run closes the reviewer’s hard process-tree memory-ceiling requirement for this workload: the container was kernel-limited to 512 MiB with no swap, and the post-run cgroup counters confirmed no OOM event or kill. The workflow applies a 1,200-second process-group wall timeout, per-process `RLIMIT_CPU=1,800` seconds, `RLIMIT_FSIZE=640 MiB`, `RLIMIT_NOFILE=256`, `PYTHONHASHSEED=0`, and process-group teardown on supervisor timeout. Per-process CPU limits are not an aggregate CPU budget.
 
 ## Hashes of updated implementation and check
 
-- Synthetic 55-case stress harness: `3885e1c2fcf55d832ac3281b372f07aed6acb11b63331c242b4fc28821435692`
+- Synthetic 55-case stress harness: `3d7532e855fbd4a6a184318bf5c014fff283217caefd9318cae9e039c7c29390`
+- Linux cgroups v2 workflow: `dc371ca599436541d959f063b4efb0c979aa4c96f12a9ff461426cd78c61f084`
 - Process-group and resource execution guard: `08020b30a22999c83196278c35c5d55d196c02dfbcfc2e898b07dbc9eb2fdc85`
 - Streaming package writer: `4ab37dd0eee7838d58b110164e18ecf164e01b7b1b572baddbdba5bea1553e56`
 - Producer (unchanged from review): `899d6b3b0e70c6b4af420fdd19b9043e790547b92caac2376586da0e27ce8868`
@@ -48,7 +55,7 @@ This macOS execution environment does not provide cgroups v2. Attempts to impose
 
 ## Regression checks after the engineering changes
 
-The following checks passed under Python 3.12.13 on macOS after adding streamed conflict-file packaging and process-group controls:
+The local regression checks below passed under Python 3.12.13 on macOS after adding streamed conflict-file packaging and process-group controls. The separate Linux cgroups v2 run is recorded above:
 
 - `python3.12 -m unittest tests.test_rp006_implementation`: 24 tests passed.
 - `scripts/check-finite-lineage-bounded-pipeline.py`: bounded toy producer/verifier/writer passed.
@@ -57,10 +64,11 @@ The following checks passed under Python 3.12.13 on macOS after adding streamed 
 - `scripts/check-finite-lineage-preparation-integration.py`: preparation and failure-receipt controls passed.
 - `scripts/check-finite-lineage-resource-shape.py`: 1,077,936 placeholder rows (452,733,120 bytes) and row/file/total-cap boundaries passed.
 - `scripts/check-finite-lineage-execution-guard.py`: inherited OS limits, hash seed, sampled process-group RSS, termination, and existing failure controls passed.
-- `scripts/check-finite-lineage-55-case-synthetic-stress.py`: the full synthetic run described above passed.
+- `scripts/check-finite-lineage-55-case-synthetic-stress.py`: the full synthetic run passed on macOS and under Linux cgroups v2.
+- GitHub Actions cgroups v2 job: `memory.max=536870912`, `memory.swap.max=0`, `memory.peak=62435328`, no OOM events or kills.
 
 The placeholder-row test validates the configured maximum row stream independently; the 55-case semantic stress run validates actual producer/verifier/writer behavior below that maximum. Neither creates a candidate corpus or candidate answer output.
 
 ## Entry status
 
-The reviewer’s targeted engineering revisions are substantially addressed by the synthetic end-to-end run, verifier memory analysis, streaming writer path, and inherited OS limits. A hard aggregate process-tree memory ceiling remains open on this host. The reviewer’s post-review implementation changes should be assessed against the updated hashes before a separate entry decision. The existing entry template also requires an identifiable reviewer and institution/organization; this report preserves the reviewer as anonymous, so that provenance condition remains unresolved unless the authorized decision-maker accepts an auditable confidential identity attestation. Cycle 03 remains unopened; no candidate input, Test registration, resource commitment, or research execution is authorized by this revalidation.
+The reviewer’s host-level process-tree memory requirement is now validated for the synthetic 55-case workload under Linux cgroups v2. The full semantic run emitted 22,143 conflict rows; the 1,077,936-row ceiling was exercised separately with placeholders, so the reviewer must accept that separation or request a semantic workload that reaches the cap. Post-review implementation hashes still need supplemental assessment. The entry template asks for an identifiable reviewer and institution/organization; the report preserves the reviewer as anonymous and does not independently verify the claimed identity or organization. That condition remains unresolved unless an authorized decision-maker accepts a confidential, auditable identity attestation. Cycle 03 remains unopened; no candidate input, Test registration, resource commitment, or research execution is authorized by this revalidation.

@@ -111,8 +111,13 @@
   "changes": [
     [
       "2026-10-18",
+      "Linux cgroups v2 hard memory boundary validated for synthetic workload",
+      "GitHub Actions ran the 55-case producer-verifier-writer pipeline on Python 3.12.13 inside a 512 MiB cgroups v2 container with zero swap allowance. The run verified memory.max and memory.swap.max, recorded cgroup memory.peak at 62,435,328 bytes, and observed zero OOM events or kills. It produced 22,143 semantic conflict rows; maximum row-count/file-cap controls remain separately tested with answer-free placeholders. No candidate corpus or answers were read or generated."
+    ],
+    [
+      "2026-10-18",
       "External design review received; synthetic engineering revisions revalidated",
-      "An anonymous industry systems engineer reviewed the exact hash-bound draft and declared no conflicts; identity and institution remain unverified. A 55-case synthetic F4/F5 producer-verifier-writer run passed with 4/5 maximum-depth topologies, a 52.4 MB sampled process-group peak, and a 448-byte witness-line guard. Candidate inputs and outcomes were not read or generated. Linux cgroups v2 or an equivalent hard aggregate memory limit, supplemental review of updated source hashes, and reviewer-provenance resolution remain before a separate entry decision; Cycle 03 is unopened."
+      "An anonymous industry systems engineer reviewed the exact hash-bound draft and declared no conflicts; identity and institution remain unverified. The 55-case synthetic F4/F5 producer-verifier-writer pipeline passed on macOS and under Linux cgroups v2. GitHub Actions enforced memory.max=512 MiB and memory.swap.max=0; cgroup memory.peak was 62.4 MB with no OOM events or kills. The semantic run emitted 22,143 conflict rows; the 1,077,936-row cap was separately checked with answer-free placeholders. Candidate inputs and outcomes were not read or generated. Supplemental review of updated source hashes, acceptance of the cap-test separation, and reviewer-provenance resolution remain before a separate entry decision; Cycle 03 is unopened."
     ],
     [
       "2026-10-17",
@@ -411,6 +416,6 @@
     ]
   ],
   "pilot_report": "/sources/rp002a-pilot-001/",
-  "next_step": "Close the hard process-tree memory gate on a Linux cgroups v2 host or validated equivalent; obtain a supplemental exact-hash review of the post-review writer, verifier and supervisor changes; and resolve the anonymous reviewer’s identity/institution attestation under the entry-record rule. Then record a separate Cycle 03 entry decision. Cycle 03 remains unopened; no freeze, Test, candidate corpus or answers, resource commitment, or research run is authorized.",
+  "next_step": "Obtain a supplemental exact-hash review of the post-review producer, verifier, writer and Linux supervisor changes; have the reviewer accept the separate placeholder test for the 1,077,936-row cap or request a semantic run that reaches it; and resolve the anonymous reviewer’s identity/institution under the entry-record rule, using a confidential auditable attestation if anonymity is retained. Then record a separate Cycle 03 entry decision. Cycle 03 remains unopened; no freeze, Test, candidate corpus or answers, resource commitment, or research run is authorized.",
   "active_cycle_ref": "cycles/cycle-02/manifest.json"
 }

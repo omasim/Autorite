@@ -29,9 +29,20 @@ def validate():
     for name, checksum in manifest['outputs'].items():
         if digest(directory / name) != checksum:
             raise ValueError('Preflight output hash')
+    # Producer and verifier received bounded-streaming revisions after this
+    # historical engineering preflight. Preserve the original source binding
+    # through its immutable Git commit, then separately replay the stored
+    # result with today's implementation below. All non-code inputs must still
+    # match the preflight's current canonical bytes.
+    subsequently_revised_implementations = {
+        'research/RP006/producer.py',
+        'research/RP006/verifier.py',
+    }
     for name, checksum in manifest['input_sha256'].items():
         original = subprocess.check_output(['git', 'show', manifest['source_commit'] + ':' + name], cwd=ROOT)
-        if hashlib.sha256(original).hexdigest() != checksum or digest(ROOT / name) != checksum:
+        if hashlib.sha256(original).hexdigest() != checksum:
+            raise ValueError('Preflight source-commit provenance')
+        if name not in subsequently_revised_implementations and digest(ROOT / name) != checksum:
             raise ValueError('Preflight input/source provenance')
     for path in sorted(directory.iterdir()):
         relative = path.relative_to(ROOT).as_posix()

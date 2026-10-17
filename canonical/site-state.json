@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16",
+  "updated_at": "2026-10-18",
   "phase": "Cycle 02 PUBLISHED: all nine obligations accepted; RP006 remains within its finite scope and Cycle 03 is not open",
   "cycle": {
     "number": "02",
@@ -110,9 +110,44 @@
   ],
   "changes": [
     [
+      "2026-10-18",
+      "External design review received; synthetic engineering revisions revalidated",
+      "An anonymous industry systems engineer reviewed the exact hash-bound draft and declared no conflicts; identity and institution remain unverified. A 55-case synthetic F4/F5 producer-verifier-writer run passed with 4/5 maximum-depth topologies, a 52.4 MB sampled process-group peak, and a 448-byte witness-line guard. Candidate inputs and outcomes were not read or generated. Linux cgroups v2 or an equivalent hard aggregate memory limit, supplemental review of updated source hashes, and reviewer-provenance resolution remain before a separate entry decision; Cycle 03 is unopened."
+    ],
+    [
+      "2026-10-17",
+      "Control-blind review packet published for independent access",
+      "The hash-bound packet and corrected 23-file review bundle are now linked publicly on both English Sites. The downloadable bundle omits the full RP004/RP006 protocols that disclose legacy control outcomes and includes the hash-verified construction-semantics excerpt. No candidate corpus or answers are included; Cycle 03 remains unopened."
+    ],
+    [
       "2026-10-16",
-      "Finite lineage preparation review continued",
-      "The preparation draft now records five bounded prior-art/index rounds, including projection-based query preservation, conjunctive-query finite determinacy, query-preserving graph compression, lossless summaries, and synopsis-based lossless contraction. It frames the proposed work as a finite corpus evaluation of established preservation ideas and records search limits, internal rechecks, and the legacy-fixture control-read deviation for independent review. No candidate answers or Cycle 03 run were produced; Cycle 03 remains unopened."
+      "Control-blind entry-review bundle corrected",
+      "The entry-review bundle now contains the hash-verified RP004 question and construction/merge semantics excerpt only. Full RP004/RP006 operational protocols containing disclosed control outcomes are excluded from the designated review basis. The packet explicitly defines this boundary. No candidate input or answer was generated; Cycle 03 remains unopened."
+    ],
+    [
+      "2026-10-16",
+      "Exact-scope lineage benchmark search recorded",
+      "A targeted search for lineage field projections, query-preserving masks and finite lineage sufficiency surfaced CellTreeQM’s 2025 arXiv Lineage Reconstruction Benchmark. It reconstructs biological cell-lineage tree topology from phenotypic data, including synthetic and lineage-resolved single-cell data, so it is adjacent benchmark work but has a different target from testing query-answer preservation under fixed event-log projections. This bounded public-index search does not establish absence of an exact match or novelty. The external reviewer should assess whether the precedent changes the entry decision or warrants broader citation-chain work. No candidate inputs or answers were generated; Cycle 03 remains unopened."
+    ],
+    [
+      "2026-10-16",
+      "Preparation controls revalidated on supported runtime",
+      "The full answer-free preparation control set was rerun sequentially with Python 3.12.13: 24 RP006 unit tests, finite-design arithmetic/overlap, toy bounded producer/verifier/writer, writer and supervisor failure integrations, execution-guard controls, placeholder memory shapes, maximum-row streaming, and resource caps all passed. The row stream covered 1,077,936 placeholders (451,622,010 bytes) at 20,463,616 bytes worker RSS; the 55-case non-witness placeholder shape measured 30,244,864 bytes. These run-specific RSS values vary and are not worst-case guarantees. No proposed F4/F5 inputs or outcomes were produced. The full semantic workload, full process-tree peak, host suspension and real disk/metadata failures remain unverified. The external reviewer is still unselected; Cycle 03 remains unopened."
+    ],
+    [
+      "2026-10-16",
+      "Bounded preparation integration advanced",
+      "The opt-in producer and independent verifier now stream conflict witnesses into a capped writer, enforce F4/F5 stratum counts, and reject a tampered toy bundle. A two-case toy integration passed with 12 conflict rows and about 15 MB worker peak RSS. Placeholder-only checks streamed 1,077,936 rows (451,622,010 bytes) at 14,467,072 bytes worker RSS and measured 26,116,096 bytes for the 55-case non-witness schema shape; they did not execute F4/F5 inputs or compute candidate answers. The complete 55-case semantic workload, full process-tree peak, host suspension, and real disk/metadata failure behavior remain unverified. The external reviewer has not yet been selected; no hash-bound external review or entry decision exists. Cycle 03 remains unopened; no freeze, Test, resource commitment, or research run is authorized."
+    ],
+    [
+      "2026-10-16",
+      "Failure-recovery controls independently rechecked",
+      "Answer-free integration now exercises a partial-write ENOSPC fallback, rejects retries for other I/O errors, syncs reserve and receipt directory updates, and verifies that a post-rename sync failure cannot leave conflicting terminal receipts. Synthetic integration, resource-shape and execution-guard checks pass; an independent AI code-review follow-up found the cited defects resolved for the tested paths. Real disk or metadata exhaustion, persistent sync failure, and host-suspension behavior remain unproven. Cycle 03 remains unopened; entry review and final-writer integration are still open."
+    ],
+    [
+      "2026-10-16",
+      "Finite-lineage preparation gates advanced",
+      "Answer-free synthetic checks now enforce the 64 MiB non-row artifact reserve and exercise dual-clock deadline handling, process-group stop/reap, and crash/partial-output recording. A second answer-free implementation reproduced the 55 state partitions, D/L/R/O structural-overlap table and workload arithmetic from a hash-verified payload-free export. A targeted prior-art follow-up added 2024 project-select view determinacy and 2025 SQL-lineage compression as adjacent work; coverage remains selective. The user classified the supplied assessment as an AI evaluation; its authoring system and reviewed-byte hash are unknown, so it does not satisfy an independent human/external-review gate. These are isolated helper controls, not final-writer integration or genuine host-suspension/disk-failure tests. Entry-review acceptance of overlap criteria and motif reuse, writer integration, any required identifiable external review, and a separate Cycle 03 entry decision remain open; no candidate answers or Cycle 03 run were produced."
     ],
     [
       "2026-10-13",
@@ -376,6 +411,6 @@
     ]
   ],
   "pilot_report": "/sources/rp002a-pilot-001/",
-  "next_step": "Implement and review the recorded wrapper, external suspension-aware supervisor and complete source freeze; register the Test and accept the actual pre-execution checkpoint.",
+  "next_step": "Close the hard process-tree memory gate on a Linux cgroups v2 host or validated equivalent; obtain a supplemental exact-hash review of the post-review writer, verifier and supervisor changes; and resolve the anonymous reviewer’s identity/institution attestation under the entry-record rule. Then record a separate Cycle 03 entry decision. Cycle 03 remains unopened; no freeze, Test, candidate corpus or answers, resource commitment, or research run is authorized.",
   "active_cycle_ref": "cycles/cycle-02/manifest.json"
 }

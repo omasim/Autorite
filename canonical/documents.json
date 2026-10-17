@@ -1682,7 +1682,7 @@
     "path": "research/preparation/FINITE_LINEAGE_CHALLENGE_DRAFT.md",
     "title": "Finite lineage challenge — preparation draft",
     "category": "Research packages",
-    "summary": "Preparation-only 4/5-entity lineage challenge with a proposed 55-partition state sensitivity set; no Cycle 03 entry or run is authorized.",
+    "summary": "Preparation-only finite lineage challenge. A targeted literature check logged a 2025 biological lineage-reconstruction benchmark as adjacent but non-equivalent; no novelty clearance is claimed. Supported-runtime answer-free checks passed under Python 3.12.13. The full semantic workload, external review and separate entry decision remain open; Cycle 03 is unopened.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -1690,5 +1690,117 @@
     ],
     "label": "Preparation draft",
     "recommended": true
+  },
+  {
+    "key": "finite-lineage-ai-review-001",
+    "path": "research/preparation/FINITE_LINEAGE_AI_REVIEW_001_2026-10-16.md",
+    "title": "Finite lineage challenge — clean AI design review 001",
+    "category": "Research packages",
+    "summary": "Initial clean AI review disposition: revise and return. Records the design corrections that led to the later bounded pass; no entry approval or execution authorization.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Independent AI review",
+    "recommended": false
+  },
+  {
+    "key": "finite-lineage-ai-review-002",
+    "path": "research/preparation/FINITE_LINEAGE_AI_REVIEW_002_2026-10-16.md",
+    "title": "Finite lineage challenge — clean AI design re-review 002",
+    "category": "Research packages",
+    "summary": "Clean AI design, resource-contract and bounded citation reviews; later author-side checks are recorded separately. The supplied assessment remains AI feedback with unknown authoring system and reviewed-byte hash.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Independent AI review",
+    "recommended": true
+  },
+  {
+    "key": "finite-lineage-failure-control-review",
+    "path": "research/preparation/FINITE_LINEAGE_FAILURE_CONTROL_REVIEW_2026-10-16.md",
+    "title": "Finite lineage challenge — failure-control follow-up review",
+    "category": "Research packages",
+    "summary": "Independent AI code review of answer-free ENOSPC and terminal-receipt recovery controls, with synthetic-test scope and environmental limitations recorded.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "AI control review",
+    "recommended": false
+  },
+  {
+    "key": "finite-lineage-rp004-semantics-excerpt",
+    "path": "research/preparation/FINITE_LINEAGE_RP004_SEMANTICS_EXCERPT_2026-10-16.md",
+    "title": "Finite lineage challenge — RP004 construction semantics excerpt (sanitized)",
+    "category": "Research packages",
+    "summary": "Control-blind review support: question and construction/merge rules only. Excludes legacy fixtures, expected answers, and outcome-bearing protocol sections.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Review support",
+    "recommended": false
+  },
+  {
+    "key": "finite-lineage-cycle03-review-packet",
+    "path": "research/preparation/FINITE_LINEAGE_CYCLE03_REVIEW_PACKET.md",
+    "title": "Cycle 03 entry-review packet — finite lineage challenge",
+    "category": "Research packages",
+    "summary": "Public, hash-bound control-blind design-review packet for the preparation-only finite lineage challenge. It includes a sanitized semantics excerpt and downloadable review bundle; Cycle 03 remains unopened.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Independent review packet",
+    "recommended": true
+  },
+  {
+    "key": "finite-lineage-external-review-001",
+    "path": "research/preparation/FINITE_LINEAGE_EXTERNAL_REVIEW_001_2026-10-18.md",
+    "title": "Finite lineage challenge — external design review 001",
+    "category": "Research packages",
+    "summary": "Anonymous industry systems-engineering review of the exact hash-bound draft and supporting code. Disposition: revise and return; the reviewer’s identity and organization remain unverified.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "External design review",
+    "recommended": true
+  },
+  {
+    "key": "finite-lineage-revalidation-2026-10-18",
+    "path": "research/preparation/FINITE_LINEAGE_REVALIDATION_2026-10-18.md",
+    "title": "Finite lineage challenge — revalidation 2026-10-18",
+    "category": "Research packages",
+    "summary": "Records the 55-case synthetic producer/verifier/writer stress test, memory analysis and process-group controls. A kernel-enforced aggregate memory limit and supplemental review remain open; Cycle 03 is unopened.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Engineering revalidation",
+    "recommended": true
+  },
+  {
+    "key": "finite-lineage-review-response-2026-10-18",
+    "path": "research/preparation/FINITE_LINEAGE_CYCLE03_REVIEW_RESPONSE_2026-10-18.md",
+    "title": "Cycle 03 review response package — 2026-10-18",
+    "category": "Research packages",
+    "summary": "Hash-bound follow-up bundle with the external review, synthetic-only measurements and updated validation code. It records the remaining memory-enforcement and reviewer-provenance gates.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Review response bundle",
+    "recommended": false
   }
 ]

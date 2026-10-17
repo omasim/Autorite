@@ -1,44 +1,46 @@
 {
-  "published_at": "2026-10-16",
+  "published_at": "2026-10-18",
   "language": "en",
   "sites": {
     "org": {
       "project_id": "appgprj_6ac624791b8c819180b917fdc3a28cff",
-      "version_id": "appgprj_6ac624791b8c819180b917fdc3a28cff~appgver_43b465fc61448191869149b42f87ad25",
-      "version_number": 74,
-      "deployment_id": "appgdep_6ad14153d1a081919d6236e2f0e89223",
+      "version_id": "appgprj_6ac624791b8c819180b917fdc3a28cff~appgver_67ad80a69ac48191bed7e67220521e7e",
+      "version_number": 93,
+      "deployment_id": "appgdep_6ad3ecbdc6f08191a4143beefe1801cc",
       "url": "https://autorite.org",
       "sites_url": "https://autorite-knowledge.omerasim.chatgpt.site",
       "access_mode": "public",
-      "commit_sha": "eef5698a27f4133b340b6dd991567578edfec90d",
-      "archive_content_sha256": "5941d36ba2c9906b6acb5e2aac513efa561448cbf2211dcbdbc9929a50c738f4",
+      "commit_sha": "ad953b31170edcbcf1d1761b4b4b51f9d1a3e30f",
+      "archive_content_sha256": "6fbdb6bfa243e44a4153dfc447c579e171c9dacdceb091644b324f0845e5e872",
       "custom_domain": "autorite.org",
       "custom_domain_id": "appgdom_6ac6269cddd481918a015e760f855fb8",
       "domain_status": "active",
       "ssl_status": "active",
       "www_hostname": "www.autorite.org",
       "www_custom_domain_id": "appgdom_6ac62711b7b48191a225d21f7e300d3b",
-      "www_status": "active"
+      "www_status": "active",
+      "status": "succeeded"
     },
     "net": {
       "project_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6",
-      "version_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6~appgver_bac701c69dd481919a90374df9b2ac44",
-      "version_number": 73,
-      "deployment_id": "appgdep_6ad1413a278081919d30037f0c1b9483",
+      "version_id": "appgprj_6ac624809e388191b2b9b5ce4d7ee8b6~appgver_3c267939acc88191bb4f35a4f318c3e7",
+      "version_number": 92,
+      "deployment_id": "appgdep_6ad3eca78c988191922f94b2010a64b8",
       "url": "https://autorite.net",
       "sites_url": "https://autorite-laboratory.omerasim.chatgpt.site",
       "access_mode": "public",
-      "commit_sha": "86ecf1b77479c401a71a1d0e12f461f7e26f894f",
-      "archive_content_sha256": "a7715931c07e8b4a398f92cbe07997c181623ca13cab98b826a5ebfd065b91c1",
+      "commit_sha": "015249ad592444f973f2c7862db21749e5d69cde",
+      "archive_content_sha256": "3a44fb747c77e1d1b3c9519f87992a900930a7eb69921159cf7dfa5a8576bcda",
       "custom_domain": "autorite.net",
       "custom_domain_id": "appgdom_6ac626a42f308191afc3eb5d3ee2b9a3",
       "domain_status": "active",
       "ssl_status": "active",
       "www_hostname": "www.autorite.net",
       "www_custom_domain_id": "appgdom_6ac6271a3c7c81918ef18f4f4591d960",
-      "www_status": "active"
+      "www_status": "active",
+      "status": "succeeded"
     }
   },
   "canonical_repository": "https://github.com/omasim/Autorite",
-  "canonical_source_commit": "bc805104540911bb27e07aa8a26b8b24aabac148"
+  "canonical_source_commit": "58a403a01a546bac8e1b309ab086f5cf84a134c9"
 }

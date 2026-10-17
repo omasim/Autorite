@@ -47,7 +47,7 @@ def changes(): return ''.join(f'<article class="row"><div class="label">{d}</div
 def page(site,path,title,body):
  if site=='org' and 'class="cycle-panel"' not in body:
   body=body.replace('class="hero"','class="hero hero--text"',1)
- navs={'org':[('/', 'Program'),('/questions/','Questions'),('/knowledge/','Knowledge'),('/methods/','Methods'),('/publications/','Publications'),('/changes/','Changes'),('/sources/','Documents')], 'net':[('/', 'Laboratory'),('/cycles/','Cycles'),('/research/','Packages'),('/results/','Results'),('/journal/','Journal'),('/sources/','Documents')]}
+ navs={'org':[('/', 'Program'),('/questions/','Questions'),('/knowledge/','Knowledge'),('/methods/','Methods'),('/publications/','Publications'),('/changes/','Changes'),('/sources/','Documents')], 'net':[('/','Laboratory'),('/cycles/','Cycles'),('/research/','Packages'),('/results/','Results'),('/journal/','Journal'),('/sources/','Documents')]}
  other='net' if site=='org' else 'org'; otherlabel='Open laboratory' if site=='org' else 'Knowledge & publication'
  nav=''.join(f'<a href="{p}"'+(' aria-current="page"' if p==path else '')+f'>{t}</a>' for p,t in navs[site])+f'<a href="{href(other)}">{otherlabel}</a>'
  favicon='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56"><rect width="56" height="56" fill="#152235"/><path d="M12 32a19 19 0 1 1 32 0M8 41q20-9 40 0" fill="none" stroke="#fff" stroke-width="3"/></svg>'
@@ -113,6 +113,13 @@ page('net','/results/','Research results',hero('Results / Runs','Scoped audits.<
 page('net','/journal/','Process journal',hero('Process journal','Research progress,<br>in the open.','This journal records documented decisions. Site content reflects the latest published snapshot.',False)+changes())
 for site in routes:
  library.build_library(ROOT,site,json.loads((ROOT/'canonical/documents.json').read_text()),page,href)
+ downloads=ROOT/'apps'/site/'dist'/'downloads'
+ downloads.mkdir(parents=True,exist_ok=True)
+ for filename in ('FINITE_LINEAGE_CYCLE03_REVIEW_BUNDLE_2026-10-16.zip',
+                  'FINITE_LINEAGE_CYCLE03_REVIEW_BUNDLE_2026-10-16.zip.sha256',
+                  'FINITE_LINEAGE_CYCLE03_REVIEW_RESPONSE_2026-10-18.zip',
+                  'FINITE_LINEAGE_CYCLE03_REVIEW_RESPONSE_2026-10-18.zip.sha256'):
+  shutil.copyfile(ROOT/'research'/'preparation'/filename,downloads/filename)
  shutil.copyfile(ROOT/'packages/content/document-library.js',ROOT/'apps'/site/'dist/document-library.js')
  (ROOT/'apps'/site/'dist/sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+href(site,p)+'</loc></url>' for p in routes[site])+'</urlset>')
  (ROOT/'apps'/site/'dist/robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+href(site,'/sitemap.xml')+'\n')

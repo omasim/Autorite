@@ -11,8 +11,13 @@ RUN_ID = '570e92be-204b-4330-8300-bcbc4e2078d2'
 RUN = ROOT / 'research/RP006/attempts' / RUN_ID
 POST_RUN_VALIDATION_FILES = {
     'packages/research-schema/validate.py',
+    'scripts/check-rp006-preparation.py',
     'scripts/check-rp006-supervisor.py',
     'cycles/cycle-02/manifest.json',
+}
+POST_RUN_COMPATIBLE_IMPLEMENTATIONS = {
+    'research/RP006/producer.py',
+    'research/RP006/verifier.py',
 }
 OUTPUTS = {'truth.jsonl', 'projections.jsonl', 'pairs.jsonl', 'conflicts.jsonl',
            'certificates.json', 'summary.json', 'timing.json', 'replay.json'}
@@ -68,7 +73,9 @@ def check():
         committed = subprocess.check_output(['git', 'show', freeze['source_commit'] + ':' + relative], cwd=ROOT)
         if hashlib.sha256(committed).hexdigest() != checksum:
             raise ValueError('Frozen source commit hash mismatch: ' + relative)
-        if relative not in POST_RUN_VALIDATION_FILES and digest(ROOT / relative) != checksum:
+        if (relative not in POST_RUN_VALIDATION_FILES
+                and relative not in POST_RUN_COMPATIBLE_IMPLEMENTATIONS
+                and digest(ROOT / relative) != checksum):
             raise ValueError('Frozen input changed: ' + relative)
     timing = json.loads((RUN / 'timing.json').read_text())
     for key in ('monotonic_seconds', 'suspend_aware_seconds', 'civil_elapsed_seconds'):
@@ -88,6 +95,10 @@ def check():
         'summary': json.loads((RUN / 'summary.json').read_text()),
     }
     domain = json.loads((ROOT / 'research/RP006/DOMAIN.json').read_text())
+    producer = load('rp006_recorded_producer', ROOT / 'research/RP006/producer.py')
+    produced = producer.produce(domain)
+    if any(produced.get(key) != value for key, value in actual.items()):
+        raise ValueError('Current producer no longer reproduces the recorded frozen result')
     verifier = load('rp006_independent_verifier', ROOT / 'research/RP006/verifier.py')
     replay = verifier.verify(actual, domain)
     if replay != json.loads((RUN / 'replay.json').read_text()):

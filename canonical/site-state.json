@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18",
+  "updated_at": "2026-10-21",
   "phase": "Cycle 02 PUBLISHED: all nine obligations accepted; RP006 remains within its finite scope and Cycle 03 is not open",
   "cycle": {
     "number": "02",
@@ -109,6 +109,11 @@
     }
   ],
   "changes": [
+    [
+      "2026-10-21",
+      "Hash-bound supplemental review request prepared for Cycle 03",
+      "The post-review 55-case producer-verifier-writer pipeline passed under Linux cgroups v2 with a 512 MiB hard memory limit and swap disabled. A supplemental exact-hash review request now asks the external reviewer to assess the updated implementation, decide whether the separate 1,077,936-row placeholder-cap test is adequate, and record a revised disposition. Reviewer identity and organization remain unverified; Cycle 03 is unopened and no candidate data or answers have been generated."
+    ],
     [
       "2026-10-18",
       "Linux cgroups v2 hard memory boundary validated for synthetic workload",

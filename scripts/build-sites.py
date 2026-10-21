@@ -118,7 +118,9 @@ for site in routes:
  for filename in ('FINITE_LINEAGE_CYCLE03_REVIEW_BUNDLE_2026-10-16.zip',
                   'FINITE_LINEAGE_CYCLE03_REVIEW_BUNDLE_2026-10-16.zip.sha256',
                   'FINITE_LINEAGE_CYCLE03_REVIEW_RESPONSE_2026-10-18.zip',
-                  'FINITE_LINEAGE_CYCLE03_REVIEW_RESPONSE_2026-10-18.zip.sha256'):
+                  'FINITE_LINEAGE_CYCLE03_REVIEW_RESPONSE_2026-10-18.zip.sha256',
+                  'FINITE_LINEAGE_SUPPLEMENTAL_REVIEW_BUNDLE_2026-10-21.zip',
+                  'FINITE_LINEAGE_SUPPLEMENTAL_REVIEW_BUNDLE_2026-10-21.zip.sha256'):
   shutil.copyfile(ROOT/'research'/'preparation'/filename,downloads/filename)
  shutil.copyfile(ROOT/'packages/content/document-library.js',ROOT/'apps'/site/'dist/document-library.js')
  (ROOT/'apps'/site/'dist/sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+href(site,p)+'</loc></url>' for p in routes[site])+'</urlset>')

@@ -3,6 +3,45 @@ on: [push, pull_request]
 permissions:
   contents: read
 jobs:
+  cycle03-linux-cgroup-synthetic:
+    name: Cycle 03 synthetic pipeline under Linux memory ceiling
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+      - name: Run the 55-case synthetic pipeline in a cgroups v2 container
+        shell: bash
+        run: |
+          set -euo pipefail
+          report="$RUNNER_TEMP/finite-lineage-linux-cgroup-metrics.json"
+          mkdir -p "$RUNNER_TEMP/finite-lineage-tmp"
+          timeout --foreground --signal=TERM --kill-after=30s 1200s docker run --rm --init \
+            --memory=536870912 \
+            --memory-swap=536870912 \
+            --cpus=2 \
+            --pids-limit=64 \
+            --ulimit fsize=671088640:671088640 \
+            --ulimit nofile=256:256 \
+            --ulimit cpu=1800:1800 \
+            -e PYTHONHASHSEED=0 \
+            -e FINITE_LINEAGE_REQUIRE_CGROUP_V2=1 \
+            -e FINITE_LINEAGE_MEMORY_LIMIT_BYTES=536870912 \
+            -e FINITE_LINEAGE_SOURCE_COMMIT="$GITHUB_SHA" \
+            -e FINITE_LINEAGE_TEMP_ROOT=/tmp \
+            -v "$GITHUB_WORKSPACE:/workspace:ro" \
+            -v "$RUNNER_TEMP/finite-lineage-tmp:/tmp" \
+            -w /workspace \
+            python:3.12.13-slim \
+            python scripts/check-finite-lineage-55-case-synthetic-stress.py /tmp/finite-lineage-linux-cgroup-metrics.json
+          cp "$RUNNER_TEMP/finite-lineage-tmp/finite-lineage-linux-cgroup-metrics.json" "$report"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: finite-lineage-linux-cgroup-metrics
+          path: ${{ runner.temp }}/finite-lineage-linux-cgroup-metrics.json
+          if-no-files-found: ignore
+          retention-days: 30
+
   validate:
     runs-on: ubuntu-latest
     steps:

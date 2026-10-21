@@ -7,15 +7,31 @@ spec = importlib.util.spec_from_file_location('rp006_independent_log', Path(__fi
 log = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(log)
 NAMES = ('same_state', 'ancestor', 'shared_root', 'parents', 'birth_kind', 'alive')
+MAX_CONFLICT_ROW_BYTES = 448
 
 
 def text(value):
     return json.dumps(value, sort_keys=True, separators=(',', ':'), allow_nan=False)
 
 
-def reconstruct(domain, guard=lambda: None):
+def reconstruct(domain, guard=lambda: None, *, retain_conflicts=True, conflict_sink=None,
+                stratum=None):
+    """Independently reconstruct RP006 artifacts, optionally streaming witnesses.
+
+    Bounded mode emits each expected conflict to `conflict_sink` and retains
+    only compact pair/certificate indexes. It intentionally implements this
+    path here, separately from the producer's logic.
+    """
+    if not retain_conflicts and conflict_sink is None:
+        raise ValueError('Bounded replay requires a conflict sink')
+    if not retain_conflicts and stratum not in {'F4', 'F5', 'TOY'}:
+        raise ValueError('Bounded replay requires an explicit F4, F5, or TOY stratum')
     guard()
     cases = domain['cases']
+    if not retain_conflicts:
+        expected_cases = {'F4': 17, 'F5': 38}.get(stratum)
+        if expected_cases is not None and len(cases) != expected_cases:
+            raise ValueError(f'{stratum} requires exactly {expected_cases} cases')
     if not cases or any(set(c) != {'id', 'events'} or not isinstance(c['id'], str) or not c['id'] for c in cases):
         raise ValueError('Independent case inventory')
     identifiers = [c['id'] for c in cases]
@@ -25,6 +41,10 @@ def reconstruct(domain, guard=lambda: None):
     universe = sorted(world[identifiers[0]]['state'])
     if any(sorted(w['state']) != universe for w in world.values()):
         raise ValueError('Independent common universe')
+    if not retain_conflicts:
+        expected_entities = {'F4': 4, 'F5': 5}.get(stratum)
+        if expected_entities is not None and len(universe) != expected_entities:
+            raise ValueError(f'{stratum} requires exactly {expected_entities} entities')
     query_list = []
     for kind in NAMES:
         for x in universe:
@@ -59,6 +79,9 @@ def reconstruct(domain, guard=lambda: None):
             packed[mask, name] = encoded
             projections.append({'ordinal': len(projections), 'mask': mask, 'case': name, 'projection': encoded})
     pairs, conflicts = [], []
+    conflict_counts = {(m, f): 0 for m in masks for f in families}
+    conflict_first = {(m, f): None for m in masks for f in families}
+    conflict_ordinal = 0
     compatible = {(m, f): True for m in masks for f in families}
     for mask in masks:
         for i in range(len(identifiers)):
@@ -76,12 +99,27 @@ def reconstruct(domain, guard=lambda: None):
                                 counts[f] += 1
                                 if text(answers[left][n]) != text(answers[right][n]):
                                     compatible[mask, f] = False
-                                    evidence[f].append(len(conflicts))
-                                    conflicts.append({'ordinal': len(conflicts), 'mask': mask, 'family': f,
-                                        'cases': [left, right], 'query': query,
-                                        'left_truth': answers[left][n], 'right_truth': answers[right][n]})
-                pairs.append({'ordinal': len(pairs), 'mask': mask, 'cases': [left, right],
-                    'projections_equal': identical, 'checked_queries': counts, 'conflict_ordinals': evidence})
+                                    row = {'ordinal': conflict_ordinal, 'mask': mask, 'family': f,
+                                           'cases': [left, right], 'query': query,
+                                           'left_truth': answers[left][n], 'right_truth': answers[right][n]}
+                                    if conflict_sink is not None:
+                                        conflict_sink(row)
+                                    if retain_conflicts:
+                                        conflicts.append(row)
+                                    evidence[f].append(conflict_ordinal)
+                                    conflict_counts[mask, f] += 1
+                                    if conflict_first[mask, f] is None:
+                                        conflict_first[mask, f] = conflict_ordinal
+                                    conflict_ordinal += 1
+                if retain_conflicts:
+                    pair = {'ordinal': len(pairs), 'mask': mask, 'cases': [left, right],
+                        'projections_equal': identical, 'checked_queries': counts, 'conflict_ordinals': evidence}
+                else:
+                    pair = {'ordinal': len(pairs), 'mask': mask, 'cases': [left, right],
+                        'projections_equal': identical, 'checked_queries': counts,
+                        'conflict_index': {f: {'count': len(evidence[f]),
+                            'first_ordinal': evidence[f][0] if evidence[f] else None} for f in sorted(families)}}
+                pairs.append(pair)
     certificates = []
     for mask in masks:
         number = int(mask, 2)
@@ -103,17 +141,23 @@ def reconstruct(domain, guard=lambda: None):
                 'sufficient': compatible[mask, f],
                 'inclusion_minimal': compatible[mask, f] and all(not compatible[m, f] for m in smaller),
                 'partitions': groups,
-                'proper_submasks': [{'mask': m, 'sufficient': compatible[m, f],
+                'proper_submasks': ([{'mask': m, 'sufficient': compatible[m, f],
                     'conflict_ordinals': [c['ordinal'] for c in conflicts if c['mask'] == m and c['family'] == f]}
-                    for m in smaller]})
+                    for m in smaller] if retain_conflicts else
+                    [{'mask': m, 'sufficient': compatible[m, f],
+                      'conflict_index': {'count': conflict_counts[m, f],
+                                         'first_ordinal': conflict_first[m, f]}}
+                     for m in smaller])})
     summary = {'cases': len(identifiers), 'entities': len(universe), 'truth_rows': len(truth),
-        'projections': len(projections), 'pair_mask_comparisons': len(pairs), 'conflict_rows': len(conflicts),
+        'projections': len(projections), 'pair_mask_comparisons': len(pairs),
+        'conflict_rows': sum(conflict_counts[m, f] for m in masks for f in families),
         'family_mask_verdicts': len(certificates),
         'families': {f: {'sufficient_masks': [m for m in masks if compatible[m, f]],
             'minimal_masks': [c['mask'] for c in certificates if c['family'] == f and c['inclusion_minimal']],
             'equality_gated_query_checks': sum(p['checked_queries'][f] for p in pairs),
-            'conflict_rows': sum(c['family'] == f for c in conflicts)} for f in families}}
-    return {'truth': truth, 'projections': projections, 'pairs': pairs, 'conflicts': conflicts,
+            'conflict_rows': sum(conflict_counts[m, f] for m in masks)} for f in families}}
+    return {'truth': truth, 'projections': projections, 'pairs': pairs,
+            'conflicts': conflicts if retain_conflicts else [],
             'certificates': certificates, 'summary': summary}
 
 
@@ -127,3 +171,48 @@ def verify(actual, domain, guard=lambda: None):
             raise ValueError('Independent ' + kind + ' mismatch; coverage/types/values/certificates differ')
     return {'status': 'PASS', 'verified_artifacts': list(expected), 'counts': expected['summary'],
             'basis': 'Independent RP004 log/matrix truth and separately implemented RP006 projection/classification; no producer imports'}
+
+
+def verify_bounded(actual, conflict_path, domain, guard=lambda: None, *, stratum=None):
+    """Verify compact artifacts and compare every witness in a streaming pass."""
+    import hashlib
+    from pathlib import Path
+
+    if set(actual) != {'truth', 'projections', 'pairs', 'conflicts', 'certificates', 'summary'}:
+        raise ValueError('Bounded artifact inventory')
+    if actual['conflicts'] not in (None, []):
+        raise ValueError('Bounded handoff must not retain conflicts in memory')
+    path = Path(conflict_path)
+    conflict_hash = hashlib.sha256()
+    with path.open('rb') as stream:
+        def compare_expected(row):
+            guard()
+            line = stream.readline(MAX_CONFLICT_ROW_BYTES + 1)
+            if not line:
+                raise ValueError('Independent conflict stream ended early')
+            if len(line) > MAX_CONFLICT_ROW_BYTES or not line.endswith(b'\n'):
+                raise ValueError('Independent conflict row exceeds the byte cap or lacks final LF')
+            encoded = line
+            conflict_hash.update(encoded)
+            try:
+                observed = json.loads(line.decode('utf-8'))
+            except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+                raise ValueError('Malformed conflict JSONL row') from exc
+            if text(observed) != text(row):
+                raise ValueError('Independent conflict witness mismatch')
+            if encoded != (text(row) + '\n').encode('utf-8'):
+                raise ValueError('Conflict witness row is not canonically serialized')
+
+        expected = reconstruct(domain, guard, retain_conflicts=False,
+                               conflict_sink=compare_expected, stratum=stratum)
+        if stream.read(1):
+            raise ValueError('Independent conflict stream has extra rows')
+    for kind in ('truth', 'projections', 'pairs', 'certificates', 'summary'):
+        guard()
+        if text(actual[kind]) != text(expected[kind]):
+            raise ValueError('Independent ' + kind + ' mismatch; coverage/types/values/certificates differ')
+    return {'status': 'PASS',
+            'verified_artifacts': ['truth', 'projections', 'pairs', 'conflicts', 'certificates', 'summary'],
+            'verified_artifact_sha256': {'conflicts.jsonl': conflict_hash.hexdigest()},
+            'counts': expected['summary'],
+            'basis': 'Independent RP004 log/matrix replay; conflicts compared row-by-row without retaining the witness set'}

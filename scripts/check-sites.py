@@ -1,7 +1,9 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
+import hashlib
 import json
+import zipfile
 ROOT=Path(__file__).resolve().parents[1]
 class Links(HTMLParser):
  def __init__(self): super().__init__();self.links=[];self.lang=None;self.ids=set();self.rings=[];self.arcs=[];self.track_geometry=[];self.progress_geometry=[];self.graphic=None;self.svg_index=0
@@ -56,6 +58,22 @@ for document in json.loads((ROOT/'canonical/documents.json').read_text()):
   assert (ROOT/'apps'/site/'dist/documents'/(document['key']+'.md')).read_bytes()==source,document['path']
  reader=ROOT/'apps'/document['primary_site']/'dist/documents'/Path(document['path']).name
  assert reader.read_bytes()==source,(document['path'],'Reader download differs from source; check filename collisions')
+# Published downloadable review archives must match their source bytes and SHA-256 sidecars.
+for filename in (
+ 'FINITE_LINEAGE_CYCLE03_REVIEW_BUNDLE_2026-10-16.zip',
+ 'FINITE_LINEAGE_CYCLE03_REVIEW_RESPONSE_2026-10-18.zip',
+ 'FINITE_LINEAGE_SUPPLEMENTAL_REVIEW_BUNDLE_2026-10-21.zip',
+):
+ source=ROOT/'research/preparation'/filename
+ digest=hashlib.sha256(source.read_bytes()).hexdigest()
+ sidecar=source.with_suffix(source.suffix+'.sha256').read_text().split()[0]
+ assert digest==sidecar,(filename,'Source sidecar mismatch')
+ with zipfile.ZipFile(source) as archive: assert archive.testzip() is None,(filename,'Corrupt ZIP')
+ for site in ('org','net'):
+  public=ROOT/'apps'/site/'dist/downloads'/filename
+  public_sidecar=public.with_suffix(public.suffix+'.sha256')
+  assert public.read_bytes()==source.read_bytes(),(site,filename,'Published archive differs from source')
+  assert public_sidecar.read_text().split()[0]==digest,(site,filename,'Published sidecar differs')
 state=[json.loads((ROOT/'apps'/s/'dist/research-state.json').read_text()) for s in ('org','net')]
 assert state[0]==state[1],'Site state diverged'
 publication=json.loads((ROOT/'canonical/site-state.json').read_text())

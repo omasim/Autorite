@@ -1,14 +1,14 @@
 # Autorite 2.0 — Codex Handoff v1
 
-## Current package disposition - 2026-10-10
+## Current research status — 2026-10-21
 
-Cycle 01 is PUBLISHED at 13/13. Cycle 02 is OPEN at 0/9 with RP006 PLANNED. [D-0014](docs/decisions/DECISION-0014_RP006_IMPLEMENTATION_PREPARATION.md) accepts the producer, independent verifier, 24 software controls and preserved [known-domain engineering preflight](research/RP006/RP006_IMPLEMENTATION_REVIEW.md). Its observed classifications and interpretation limits are disclosed. Recorded wrapper, external suspension-aware supervisor, complete execution source freeze, Test registration and the actual pre-execution checkpoint remain pending. Existing Results, questions and baseline are preserved.
+Cycle 01 is PUBLISHED at 13/13 and Cycle 02 is PUBLISHED at 9/9. RP006's finite result was accepted within its registered scope; see [D-0017](docs/decisions/DECISION-0017_RP006_RESULT_DISPOSITION.md) and the [Cycle 02 close bundle](cycles/cycle-02/close/CYCLE02_CLOSE_BUNDLE.md). Cycle 03 remains unopened and in preparation only. An anonymous external design review returned the finite-lineage challenge for targeted revision. The 55-case answer-free producer/verifier/writer pipeline subsequently passed under Linux cgroups v2 with a 512 MiB hard memory limit and swap disabled. A [supplemental exact-hash review request](research/preparation/FINITE_LINEAGE_SUPPLEMENTAL_REVIEW_REQUEST_2026-10-21.md) asks the reviewer to assess the updated implementation and a row-bound clarification: the 1,077,936-row placeholder test checks a conservative writer ceiling, while registered RP006 semantics yield a conservative conflict-row upper bound of 547,086. Reviewer identity and organization remain unverified. No Cycle 03 candidate data, Test registration, source/input freeze, resource commitment or research run is authorized. Follow [PR #153](https://github.com/omasim/Autorite/pull/153) for the open review record.
 
 ## Historical pipeline disposition - 2026-10-10
 
 The separately authorized second confirmation `confirmatory-20261010-002` completed: **60 units, 120 learned fits, 20 replicates per world**. All 484 output hashes and data/checkpoint/analysis replay passed. Seven frozen conditional decisions: **two benefit, four equivalent, one indeterminate**; no predeclared trace warning. Test TST-RP002A002 has audited Result R-RP002A002 (VALID). See `research/RP002A/CONFIRMATORY_002_REPORT.md` and the preserved timing/host review.
 
-Civil elapsed time was 12297.895 seconds (3h 24m 58s), including lid-triggered host sleep; monotonic elapsed was 6426.015 seconds. Both stayed below the 14400-second allowance. The first attempt remains INCOMPLETE and unchanged. No samples/checkpoints or primary results were pooled; no further run is authorized. These decisions concern the fixed algorithms and generator settings under independence/normal-theory assumptions and fixture-specific .01-nat margins. No recurrence necessity, broad Claim or Cycle closure follows. RP002A and Cycle 01 remain ACTIVE; 0/13 obligations resolved.
+Civil elapsed time was 12297.895 seconds (3h 24m 58s), including lid-triggered host sleep; monotonic elapsed was 6426.015 seconds. Both stayed below the 14400-second allowance. The first attempt remains INCOMPLETE and unchanged. No samples/checkpoints or primary results were pooled; no further run is authorized. These decisions concern the fixed algorithms and generator settings under independence/normal-theory assumptions and fixture-specific .01-nat margins. No recurrence necessity or broad Claim follows. Cycle 01 and Cycle 02 have since been published closed; see their close bundles for the audited obligation records.
 
 ## Published sites
 - [Knowledge & Publication](https://autorite.org)
@@ -38,7 +38,7 @@ This package contains:
 - first Codex execution prompt;
 - Decision-0001 locking the two-site launch.
 
-The handoff intentionally stops before RP002A execution and before DNS/secrets.
+The initial handoff has been superseded by the dated research and publication records linked above; retain it as historical implementation context.
 
 Additional locked decisions: open-ended program / closable Cycles, mandatory Cycle publications, Horizon identity, and shared obligation-based Cycle Ring.
 

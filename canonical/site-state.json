@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16",
+  "updated_at": "2026-10-21",
   "phase": "Cycle 02 PUBLISHED: all nine obligations accepted; RP006 remains within its finite scope and Cycle 03 is not open",
   "cycle": {
     "number": "02",
@@ -109,6 +109,46 @@
     }
   ],
   "changes": [
+    [
+      "2026-10-21",
+      "Semantic conflict-row bound clarified for Cycle 03 supplemental review",
+      "The post-review 55-case producer-verifier-writer pipeline passed under Linux cgroups v2 with a 512 MiB hard memory limit and swap disabled. A hash-bound clarification shows that 1,077,936 is a conservative defensive writer ceiling, while registered RP004/RP006 semantics give a conservative conflict-row upper bound of 547,086; the smaller bound is not claimed attainable. The supplemental reviewer is asked to assess the updated implementation and this distinction. Reviewer identity and organization remain unverified; Cycle 03 is unopened and no candidate data or answers have been generated."
+    ],
+    [
+      "2026-10-18",
+      "Linux cgroups v2 hard memory boundary validated for synthetic workload",
+      "GitHub Actions ran the 55-case producer-verifier-writer pipeline on Python 3.12.13 inside a 512 MiB cgroups v2 container with zero swap allowance. The run verified memory.max and memory.swap.max, recorded cgroup memory.peak at 62,435,328 bytes, and observed zero OOM events or kills. It produced 22,143 semantic conflict rows; maximum row-count/file-cap controls remain separately tested with answer-free placeholders. No candidate corpus or answers were read or generated."
+    ],
+    [
+      "2026-10-18",
+      "External design review received; synthetic engineering revisions revalidated",
+      "An anonymous industry systems engineer reviewed the exact hash-bound draft and declared no conflicts; identity and institution remain unverified. The 55-case synthetic F4/F5 producer-verifier-writer pipeline passed on macOS and under Linux cgroups v2. GitHub Actions enforced memory.max=512 MiB and memory.swap.max=0; cgroup memory.peak was 62.4 MB with no OOM events or kills. The semantic run emitted 22,143 conflict rows; the 1,077,936-row cap was separately checked with answer-free placeholders. Candidate inputs and outcomes were not read or generated. Supplemental review of updated source hashes, acceptance of the cap-test separation, and reviewer-provenance resolution remain before a separate entry decision; Cycle 03 is unopened."
+    ],
+    [
+      "2026-10-17",
+      "Control-blind review packet published for independent access",
+      "The hash-bound packet and corrected 23-file review bundle are now linked publicly on both English Sites. The downloadable bundle omits the full RP004/RP006 protocols that disclose legacy control outcomes and includes the hash-verified construction-semantics excerpt. No candidate corpus or answers are included; Cycle 03 remains unopened."
+    ],
+    [
+      "2026-10-16",
+      "Control-blind entry-review bundle corrected",
+      "The entry-review bundle now contains the hash-verified RP004 question and construction/merge semantics excerpt only. Full RP004/RP006 operational protocols containing disclosed control outcomes are excluded from the designated review basis. The packet explicitly defines this boundary. No candidate input or answer was generated; Cycle 03 remains unopened."
+    ],
+    [
+      "2026-10-16",
+      "Exact-scope lineage benchmark search recorded",
+      "A targeted search for lineage field projections, query-preserving masks and finite lineage sufficiency surfaced CellTreeQM’s 2025 arXiv Lineage Reconstruction Benchmark. It reconstructs biological cell-lineage tree topology from phenotypic data, including synthetic and lineage-resolved single-cell data, so it is adjacent benchmark work but has a different target from testing query-answer preservation under fixed event-log projections. This bounded public-index search does not establish absence of an exact match or novelty. The external reviewer should assess whether the precedent changes the entry decision or warrants broader citation-chain work. No candidate inputs or answers were generated; Cycle 03 remains unopened."
+    ],
+    [
+      "2026-10-16",
+      "Preparation controls revalidated on supported runtime",
+      "The full answer-free preparation control set was rerun sequentially with Python 3.12.13: 24 RP006 unit tests, finite-design arithmetic/overlap, toy bounded producer/verifier/writer, writer and supervisor failure integrations, execution-guard controls, placeholder memory shapes, maximum-row streaming, and resource caps all passed. The row stream covered 1,077,936 placeholders (451,622,010 bytes) at 20,463,616 bytes worker RSS; the 55-case non-witness placeholder shape measured 30,244,864 bytes. These run-specific RSS values vary and are not worst-case guarantees. No proposed F4/F5 inputs or outcomes were produced. The full semantic workload, full process-tree peak, host suspension and real disk/metadata failures remain unverified. The external reviewer is still unselected; Cycle 03 remains unopened."
+    ],
+    [
+      "2026-10-16",
+      "Bounded preparation integration advanced",
+      "The opt-in producer and independent verifier now stream conflict witnesses into a capped writer, enforce F4/F5 stratum counts, and reject a tampered toy bundle. A two-case toy integration passed with 12 conflict rows and about 15 MB worker peak RSS. Placeholder-only checks streamed 1,077,936 rows (451,622,010 bytes) at 14,467,072 bytes worker RSS and measured 26,116,096 bytes for the 55-case non-witness schema shape; they did not execute F4/F5 inputs or compute candidate answers. The complete 55-case semantic workload, full process-tree peak, host suspension, and real disk/metadata failure behavior remain unverified. The external reviewer has not yet been selected; no hash-bound external review or entry decision exists. Cycle 03 remains unopened; no freeze, Test, resource commitment, or research run is authorized."
+    ],
     [
       "2026-10-16",
       "Failure-recovery controls independently rechecked",
@@ -381,6 +421,6 @@
     ]
   ],
   "pilot_report": "/sources/rp002a-pilot-001/",
-  "next_step": "Have the entry reviewer accept the reproduced structural-overlap criteria, motif reuse, finite state-label bound and alignment; review final-writer/supervisor integration and failure behavior; decide whether identifiable external review is required; then make a separate Cycle 03 entry decision. No freeze, Test, or research run is authorized.",
+  "next_step": "Obtain a supplemental exact-hash review of the post-review producer, verifier, writer and Linux supervisor changes; have the reviewer accept the separate placeholder test for the 1,077,936-row cap or request a semantic run that reaches it; and resolve the anonymous reviewer’s identity/institution under the entry-record rule, using a confidential auditable attestation if anonymity is retained. Then record a separate Cycle 03 entry decision. Cycle 03 remains unopened; no freeze, Test, candidate corpus or answers, resource commitment, or research run is authorized.",
   "active_cycle_ref": "cycles/cycle-02/manifest.json"
 }

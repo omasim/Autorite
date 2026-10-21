@@ -1,5 +1,33 @@
 [
   {
+    "key": "finite-lineage-supplemental-review-request-2026-10-21",
+    "path": "research/preparation/FINITE_LINEAGE_SUPPLEMENTAL_REVIEW_REQUEST_2026-10-21.md",
+    "title": "Cycle 03 — supplemental engineering review request",
+    "category": "Research packages",
+    "summary": "Hash-bound follow-up for the post-review 55-case Linux cgroups v2 validation and the corrected distinction between its configured writer cap and conservative semantic row bound; Cycle 03 remains unopened.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Supplemental review request",
+    "recommended": true
+  },
+  {
+    "key": "finite-lineage-row-bound-2026-10-21",
+    "path": "research/preparation/FINITE_LINEAGE_ROW_BOUND_2026-10-21.md",
+    "title": "Finite-lineage conflict-row bound clarification",
+    "category": "Research packages",
+    "summary": "A query-level derivation distinguishing the configured 1,077,936-row defensive cap from a conservative 547,086-row semantic upper bound; no candidate outcomes or research authorization.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Row-bound clarification",
+    "recommended": true
+  },
+  {
     "key": "zero-paper",
     "path": "baseline/ZERO_PAPER.md",
     "title": "Zero Paper",
@@ -1682,7 +1710,7 @@
     "path": "research/preparation/FINITE_LINEAGE_CHALLENGE_DRAFT.md",
     "title": "Finite lineage challenge — preparation draft",
     "category": "Research packages",
-    "summary": "Preparation-only finite lineage challenge; answer-free controls now cover partial-write recovery and conflicting terminal-receipt prevention. Entry review, final-writer integration and Cycle 03 authorization remain open.",
+    "summary": "Preparation-only finite lineage challenge. A targeted literature check logged a 2025 biological lineage-reconstruction benchmark as adjacent but non-equivalent; no novelty clearance is claimed. Supported-runtime answer-free checks passed under Python 3.12.13. The full semantic workload, external review and separate entry decision remain open; Cycle 03 is unopened.",
     "primary_site": "net",
     "sites": [
       "org",
@@ -1731,6 +1759,76 @@
       "net"
     ],
     "label": "AI control review",
+    "recommended": false
+  },
+  {
+    "key": "finite-lineage-rp004-semantics-excerpt",
+    "path": "research/preparation/FINITE_LINEAGE_RP004_SEMANTICS_EXCERPT_2026-10-16.md",
+    "title": "Finite lineage challenge — RP004 construction semantics excerpt (sanitized)",
+    "category": "Research packages",
+    "summary": "Control-blind review support: question and construction/merge rules only. Excludes legacy fixtures, expected answers, and outcome-bearing protocol sections.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Review support",
+    "recommended": false
+  },
+  {
+    "key": "finite-lineage-cycle03-review-packet",
+    "path": "research/preparation/FINITE_LINEAGE_CYCLE03_REVIEW_PACKET.md",
+    "title": "Cycle 03 entry-review packet — finite lineage challenge",
+    "category": "Research packages",
+    "summary": "Public, hash-bound control-blind design-review packet for the preparation-only finite lineage challenge. It includes a sanitized semantics excerpt and downloadable review bundle; Cycle 03 remains unopened.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Independent review packet",
+    "recommended": true
+  },
+  {
+    "key": "finite-lineage-external-review-001",
+    "path": "research/preparation/FINITE_LINEAGE_EXTERNAL_REVIEW_001_2026-10-18.md",
+    "title": "Finite lineage challenge — external design review 001",
+    "category": "Research packages",
+    "summary": "Anonymous industry systems-engineering review of the exact hash-bound draft and supporting code. Disposition: revise and return; the reviewer’s identity and organization remain unverified.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "External design review",
+    "recommended": true
+  },
+  {
+    "key": "finite-lineage-revalidation-2026-10-18",
+    "path": "research/preparation/FINITE_LINEAGE_REVALIDATION_2026-10-18.md",
+    "title": "Finite lineage challenge — revalidation 2026-10-18",
+    "category": "Research packages",
+    "summary": "Records the 55-case synthetic pipeline on macOS and Linux cgroups v2, including a 512 MiB hard memory ceiling with swap disabled. The maximum semantic row-count workload, supplemental review and reviewer-provenance gates remain open; Cycle 03 is unopened.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Engineering revalidation",
+    "recommended": true
+  },
+  {
+    "key": "finite-lineage-review-response-2026-10-18",
+    "path": "research/preparation/FINITE_LINEAGE_CYCLE03_REVIEW_RESPONSE_2026-10-18.md",
+    "title": "Cycle 03 review response package — 2026-10-18",
+    "category": "Research packages",
+    "summary": "Hash-bound follow-up bundle with the external review, synthetic-only measurements and updated validation code. It records the remaining memory-enforcement and reviewer-provenance gates.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Review response bundle",
     "recommended": false
   }
 ]

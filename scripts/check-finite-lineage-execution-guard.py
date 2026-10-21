@@ -6,7 +6,11 @@ read candidate inputs, calculate lineage answers, or create research evidence.
 from __future__ import annotations
 
 import json
+import ctypes
+import resource
+import struct
 import os
+from pathlib import Path
 from pathlib import Path
 import shutil
 import signal
@@ -21,6 +25,11 @@ MAX_CLOCK_GAP_SECONDS = 2.0
 TERMINATION_GRACE_SECONDS = 0.25
 POLL_SECONDS = 0.02
 MAX_CAPTURED_LOG_BYTES = 64 * 1024
+RESOURCE_LIMIT_NAMES = {
+    "RLIMIT_FSIZE": resource.RLIMIT_FSIZE,
+    "RLIMIT_NOFILE": resource.RLIMIT_NOFILE,
+    "RLIMIT_CPU": resource.RLIMIT_CPU,
+}
 
 
 class GuardStop(RuntimeError):
@@ -78,6 +87,71 @@ def _signal_group(pgid: int, sig: int) -> None:
         pass
 
 
+def process_group_rss_bytes(pgid: int) -> tuple[int, int]:
+    """Sample resident bytes for every visible process in an isolated group."""
+    if sys.platform == "darwin":
+        libproc = ctypes.CDLL("/usr/lib/libproc.dylib")
+        list_pids = libproc.proc_listallpids
+        list_pids.argtypes = [ctypes.c_void_p, ctypes.c_int, ctypes.POINTER(ctypes.c_int)]
+        list_pids.restype = ctypes.c_int
+        pid_info = libproc.proc_pidinfo
+        pid_info.argtypes = [ctypes.c_int, ctypes.c_int, ctypes.c_uint64,
+                             ctypes.c_void_p, ctypes.c_int]
+        pid_info.restype = ctypes.c_int
+        pids = (ctypes.c_int * 32768)()
+        used = ctypes.c_int()
+        count = list_pids(pids, ctypes.sizeof(pids), ctypes.byref(used))
+        if count <= 0:
+            raise RuntimeError("libproc returned no process inventory")
+        total, members = 0, 0
+        for pid in pids[:count]:
+            if pid <= 0:
+                continue
+            try:
+                if os.getpgid(pid) != pgid:
+                    continue
+            except ProcessLookupError:
+                continue
+            info = ctypes.create_string_buffer(256)
+            copied = pid_info(pid, 4, 0, info, ctypes.sizeof(info))
+            if copied < 16:
+                continue
+            total += struct.unpack("=Q", info.raw[8:16])[0]
+            members += 1
+        return total, members
+    if sys.platform.startswith("linux"):
+        total, members = 0, 0
+        for item in os.scandir("/proc"):
+            if not item.name.isdigit():
+                continue
+            pid = int(item.name)
+            try:
+                if os.getpgid(pid) != pgid:
+                    continue
+                status = Path(item.path, "status").read_text(encoding="ascii")
+            except (FileNotFoundError, ProcessLookupError, PermissionError):
+                continue
+            resident_kib = next((int(line.split()[1]) for line in status.splitlines()
+                                 if line.startswith("VmRSS:")), 0)
+            total += resident_kib * 1024
+            members += 1
+        if not members:
+            raise RuntimeError("No process-group members were visible in /proc")
+        return total, members
+    raise RuntimeError(f"Process-group RSS sampling is unsupported on {sys.platform}")
+
+
+def _apply_resource_limits(limits: dict[str, int]) -> None:
+    """Set inherited per-process OS ceilings; process-group memory is sampled separately."""
+    for name, requested in limits.items():
+        if name not in RESOURCE_LIMIT_NAMES or not isinstance(requested, int) or requested <= 0:
+            raise ValueError(f"Unsupported or invalid worker resource limit: {name}")
+        key = RESOURCE_LIMIT_NAMES[name]
+        old_soft, old_hard = resource.getrlimit(key)
+        soft = min(requested, old_soft, old_hard)
+        resource.setrlimit(key, (soft, old_hard))
+
+
 def stop_and_reap(proc: subprocess.Popen[bytes], grace: float = TERMINATION_GRACE_SECONDS) -> None:
     """Stop every process in the isolated worker group, then reap its leader."""
     pgid = proc.pid  # start_new_session makes the leader its process-group ID.
@@ -95,14 +169,23 @@ def stop_and_reap(proc: subprocess.Popen[bytes], grace: float = TERMINATION_GRAC
 
 
 def supervise(argv: list[str], *, timeout_seconds: float,
-              wall_clock=time.time, mono_clock=time.monotonic) -> dict[str, object]:
+              wall_clock=time.time, mono_clock=time.monotonic,
+              environment: dict[str, str] | None = None,
+              resource_limits: dict[str, int] | None = None,
+              max_process_group_rss_bytes: int | None = None,
+              sample_interval: float = POLL_SECONDS) -> dict[str, object]:
     start_wall, start_mono = wall_clock(), mono_clock()
+    preexec_fn = (lambda: _apply_resource_limits(resource_limits)) if resource_limits else None
     proc = subprocess.Popen(argv, start_new_session=True,
                             stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
-                            stderr=subprocess.PIPE, close_fds=True)
+                            stderr=subprocess.PIPE, close_fds=True,
+                            env=environment, preexec_fn=preexec_fn)
     stdout_capture = BoundedCapture(proc.stdout)
     stderr_capture = BoundedCapture(proc.stderr)
     reason = None
+    process_group_peak_rss = 0
+    process_group_peak_members = 0
+    process_group_samples = 0
     try:
         while proc.poll() is None:
             if stdout_capture.overflow.is_set():
@@ -115,10 +198,18 @@ def supervise(argv: list[str], *, timeout_seconds: float,
             reason = clock_failure(start_wall, start_mono, now_wall, now_mono)
             if reason:
                 raise GuardStop(reason)
+            if max_process_group_rss_bytes is not None:
+                rss, members = process_group_rss_bytes(proc.pid)
+                process_group_peak_rss = max(process_group_peak_rss, rss)
+                process_group_peak_members = max(process_group_peak_members, members)
+                process_group_samples += 1
+                if rss > max_process_group_rss_bytes:
+                    reason = "process_group_rss_cap"
+                    raise GuardStop(reason)
             if now_wall - start_wall >= timeout_seconds or now_mono - start_mono >= timeout_seconds:
                 reason = "deadline"
                 raise GuardStop(reason)
-            time.sleep(POLL_SECONDS)
+            time.sleep(sample_interval if max_process_group_rss_bytes is not None else POLL_SECONDS)
         proc.wait(timeout=1)
         stdout_capture.thread.join(timeout=1)
         stderr_capture.thread.join(timeout=1)
@@ -134,7 +225,10 @@ def supervise(argv: list[str], *, timeout_seconds: float,
         return {"status": "COMPLETE" if reason is None else "INCOMPLETE",
                 "returncode": proc.returncode, "reason": reason,
                 "stdout": stdout_capture.text(),
-                "stderr": stderr_capture.text()}
+                "stderr": stderr_capture.text(),
+                "process_group_peak_rss_bytes": process_group_peak_rss,
+                "process_group_peak_members": process_group_peak_members,
+                "process_group_rss_samples": process_group_samples}
     except BaseException as exc:
         if reason is None:
             reason = type(exc).__name__
@@ -143,7 +237,10 @@ def supervise(argv: list[str], *, timeout_seconds: float,
         stderr_capture.thread.join(timeout=1)
         return {"status": "INCOMPLETE", "returncode": proc.returncode,
                 "reason": reason, "stdout": stdout_capture.text(),
-                "stderr": stderr_capture.text()}
+                "stderr": stderr_capture.text(),
+                "process_group_peak_rss_bytes": process_group_peak_rss,
+                "process_group_peak_members": process_group_peak_members,
+                "process_group_rss_samples": process_group_samples}
 
 
 def write_incomplete(directory: Path, reason: str) -> None:
@@ -223,12 +320,46 @@ def check_large_output_does_not_block() -> None:
         raise AssertionError(f"Bounded diagnostic capture failed: {result}")
 
 
+def check_inherited_host_limits() -> None:
+    code = (
+        "import json,os,resource,time; "
+        "print(json.dumps({'seed':os.environ.get('PYTHONHASHSEED'),"
+        "'fsize':resource.getrlimit(resource.RLIMIT_FSIZE)[0],"
+        "'nofile':resource.getrlimit(resource.RLIMIT_NOFILE)[0],"
+        "'cpu':resource.getrlimit(resource.RLIMIT_CPU)[0]}),flush=True); time.sleep(.12)"
+    )
+    result = supervise(
+        [sys.executable, "-c", code], timeout_seconds=3,
+        environment={**os.environ, "PYTHONHASHSEED": "0"},
+        resource_limits={"RLIMIT_FSIZE": 1024 * 1024,
+                         "RLIMIT_NOFILE": 128,
+                         "RLIMIT_CPU": 30},
+        max_process_group_rss_bytes=256 * 1024 * 1024,
+        sample_interval=0.01,
+    )
+    if result["status"] != "COMPLETE":
+        raise AssertionError(f"Inherited host ceilings failed: {result}")
+    limits = json.loads(result["stdout"].splitlines()[0])
+    if limits != {"seed": "0", "fsize": 1024 * 1024, "nofile": 128, "cpu": 30}:
+        raise AssertionError(f"Worker did not inherit the requested host limits: {limits}")
+    if result["process_group_peak_rss_bytes"] <= 0 or result["process_group_rss_samples"] <= 0:
+        raise AssertionError("Process-group RSS sampler returned no measurement")
+
+    capped = supervise(
+        [sys.executable, "-c", "import time; time.sleep(1)"], timeout_seconds=3,
+        max_process_group_rss_bytes=1,
+    )
+    if capped["status"] != "INCOMPLETE" or capped["reason"] != "process_group_rss_cap":
+        raise AssertionError(f"Process-group RSS cap did not fail closed: {capped}")
+
+
 def main() -> None:
     root_dir = Path("/private/tmp")
     if shutil.disk_usage(root_dir).free < 2 * 1024**3:
         raise RuntimeError("Need at least 2 GiB free for the synthetic guard controls")
     check_clock_controls()
     check_large_output_does_not_block()
+    check_inherited_host_limits()
     with tempfile.TemporaryDirectory(prefix="finite-lineage-guard-", dir=root_dir) as tmp:
         root = Path(tmp)
         check_deadline_and_group_reap(root)
@@ -242,7 +373,11 @@ def main() -> None:
                      "process_group_stop", "leader_reap", "partial_preserved",
                      "INCOMPLETE_receipt", "continuous_stdout_stderr_drain",
                      "bounded_log_capture", "log_cap_fail_closed",
-                     "no_automatic_retry_or_promotion"],
+                     "no_automatic_retry_or_promotion", "inherited_RLIMIT_FSIZE",
+                     "inherited_RLIMIT_NOFILE", "inherited_RLIMIT_CPU",
+                     "PYTHONHASHSEED_0", "process_group_RSS_sampling",
+                     "process_group_RSS_cap_fail_closed"],
+        "aggregate_memory_enforcement": "sampled process-group RSS termination; this macOS sandbox cannot impose finite RLIMIT_AS or cgroups v2",
         "temporary_artifacts_removed": True,
         "python": sys.version.split()[0],
         "platform": sys.platform,

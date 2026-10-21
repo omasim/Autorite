@@ -111,8 +111,8 @@
   "changes": [
     [
       "2026-10-21",
-      "Hash-bound supplemental review request prepared for Cycle 03",
-      "The post-review 55-case producer-verifier-writer pipeline passed under Linux cgroups v2 with a 512 MiB hard memory limit and swap disabled. A supplemental exact-hash review request now asks the external reviewer to assess the updated implementation, decide whether the separate 1,077,936-row placeholder-cap test is adequate, and record a revised disposition. Reviewer identity and organization remain unverified; Cycle 03 is unopened and no candidate data or answers have been generated."
+      "Semantic conflict-row bound clarified for Cycle 03 supplemental review",
+      "The post-review 55-case producer-verifier-writer pipeline passed under Linux cgroups v2 with a 512 MiB hard memory limit and swap disabled. A hash-bound clarification shows that 1,077,936 is a conservative defensive writer ceiling, while registered RP004/RP006 semantics give a conservative conflict-row upper bound of 547,086; the smaller bound is not claimed attainable. The supplemental reviewer is asked to assess the updated implementation and this distinction. Reviewer identity and organization remain unverified; Cycle 03 is unopened and no candidate data or answers have been generated."
     ],
     [
       "2026-10-18",

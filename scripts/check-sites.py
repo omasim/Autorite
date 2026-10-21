@@ -62,6 +62,7 @@ for document in json.loads((ROOT/'canonical/documents.json').read_text()):
 for filename in (
  'FINITE_LINEAGE_CYCLE03_REVIEW_BUNDLE_2026-10-16.zip',
  'FINITE_LINEAGE_CYCLE03_REVIEW_RESPONSE_2026-10-18.zip',
+ 'FINITE_LINEAGE_SUPPLEMENTAL_REVIEW_BUNDLE_2026-10-21.zip',
 ):
  source=ROOT/'research/preparation'/filename
  digest=hashlib.sha256(source.read_bytes()).hexdigest()

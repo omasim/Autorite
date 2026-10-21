@@ -4,13 +4,27 @@
     "path": "research/preparation/FINITE_LINEAGE_SUPPLEMENTAL_REVIEW_REQUEST_2026-10-21.md",
     "title": "Cycle 03 — supplemental engineering review request",
     "category": "Research packages",
-    "summary": "Hash-bound follow-up for the post-review 55-case Linux cgroups v2 validation. Requests a reviewer disposition on the separate maximum-row placeholder test and updated implementation; Cycle 03 remains unopened.",
+    "summary": "Hash-bound follow-up for the post-review 55-case Linux cgroups v2 validation and the corrected distinction between its configured writer cap and conservative semantic row bound; Cycle 03 remains unopened.",
     "primary_site": "net",
     "sites": [
       "org",
       "net"
     ],
     "label": "Supplemental review request",
+    "recommended": true
+  },
+  {
+    "key": "finite-lineage-row-bound-2026-10-21",
+    "path": "research/preparation/FINITE_LINEAGE_ROW_BOUND_2026-10-21.md",
+    "title": "Finite-lineage conflict-row bound clarification",
+    "category": "Research packages",
+    "summary": "A query-level derivation distinguishing the configured 1,077,936-row defensive cap from a conservative 547,086-row semantic upper bound; no candidate outcomes or research authorization.",
+    "primary_site": "net",
+    "sites": [
+      "org",
+      "net"
+    ],
+    "label": "Row-bound clarification",
     "recommended": true
   },
   {

@@ -26,15 +26,16 @@ The answer-free 55-case synthetic producer → verifier → capped-writer pipeli
 | Execution guard checks | `08020b30a22999c83196278c35c5d55d196c02dfbcfc2e898b07dbc9eb2fdc85` |
 | Resource-shape and row-cap check | `7ca9c957ac9c069a24f76de52b83675d7b31abd47f36677a728f9897d3adc7d9` |
 | Linux cgroups validation workflow | `dc371ca599436541d959f063b4efb0c979aa4c96f12a9ff461426cd78c61f084` |
+| Row-bound clarification | `b1407596a0af9b666f7e20be4144e6991f0f1a80c81be7164cf67332e7f39895` |
 
 The original review and its reviewed supporting-file hashes are preserved in `FINITE_LINEAGE_EXTERNAL_REVIEW_001_2026-10-18.md`. Hashes above bind the implementation and evidence produced after that review. The supplemental reviewer should independently verify any bytes they rely on.
 
 ## Questions for the reviewer
 
 1. Does the completed 55-case end-to-end run, under the stated Linux cgroup ceiling and OS-level limits, resolve the earlier requirement for full producer/verifier/writer process-tree measurement? Identify any remaining technical limitation.
-2. Is it adequate to validate the 1,077,936-row writer ceiling separately with answer-free placeholder rows while measuring the semantic 55-case pipeline at 22,143 rows? Please select one disposition and explain it:
-   - **Accept separation:** the row-cap mechanism and maximum-size stream are covered independently of semantic traversal; no semantic workload at the ceiling is required before entry.
-   - **Require semantic maximum:** require a control-blind semantic synthetic workload that reaches the ceiling. State the construction constraints and acceptance evidence so the requirement can be implemented without candidate data or outcome-directed design.
+2. Does the attached [row-bound clarification](/sources/finite-lineage-row-bound-2026-10-21/) correctly distinguish the configured 1,077,936-row defensive cap from the semantic workload? It derives a conservative semantic upper bound of 547,086 by excluding query answers fixed by retained projection fields and RP004's `alive` rule; it does not claim that this smaller bound is attainable. Given that the semantic 55-case run emitted 22,143 rows and the 1,077,936-row placeholder stream separately exercised the configured writer ceiling, is the cap validation adequate? Please select one disposition and explain it:
+   - **Accept separation:** the configured cap mechanism and placeholder stream are covered independently; no synthetic workload at the conservative semantic bound is required before entry.
+   - **Require additional semantic coverage:** specify a feasible construction constraint and acceptance evidence below the proven bound, without candidate data or outcome-directed design.
    - **Other:** state the specific evidence or design change required.
 3. Does the verifier’s state-retention analysis and the measured 55-case result adequately address the concern about memory scaling with emitted conflict rows? If not, specify a bounded test or code change.
 4. Provide a supplemental disposition (**accept**, **accept with conditions**, or **revise and return**), concise rationale, any exact required revisions, review date, and the exact hashes actually reviewed.
